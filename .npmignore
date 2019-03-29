@@ -1,0 +1,6 @@
+src
+node_modules
+.git
+test
+.babelrc
+mocha.opts

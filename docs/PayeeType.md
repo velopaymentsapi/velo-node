@@ -1,0 +1,10 @@
+# VeloPaymentsApIs.PayeeType
+
+## Enum
+
+
+* `Individual` (value: `"Individual"`)
+
+* `Company` (value: `"Company"`)
+
+
