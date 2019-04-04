@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payeeId** | **String** |  | 
 **invitationStatus** | **String** |  | 
+**gracePeriodEndDate** | **Date** |  | [optional] 
 
 
 <a name="InvitationStatusEnum"></a>

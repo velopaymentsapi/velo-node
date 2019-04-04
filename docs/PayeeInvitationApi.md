@@ -18,7 +18,7 @@ Returns a list of payees associated with a payor, along with invitation status a
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -60,11 +60,11 @@ Name | Type | Description  | Notes
 
 Invite Payee
 
-Send an invite to the Payee The payee must have already been invited by the payor and not yet accepted or declined
+Resend an invite to the Payee The payee must have already been invited by the payor and not yet accepted or declined Any previous invites to the payee by this Payor will be invalidated
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];

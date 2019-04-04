@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **paymentsSubmitted** | **Number** |  | [optional] 
 **paymentsAccepted** | **Number** |  | [optional] 
 **paymentsRejected** | **Number** |  | [optional] 
-**fxSummaries** | [**[FxSummaries]**](FxSummaries.md) |  | 
+**fxSummaries** | [**[QuoteFxSummary]**](QuoteFxSummary.md) |  | 
 **accounts** | [**[SourceAccount]**](SourceAccount.md) |  | 
 **rejectedPayments** | [**[RejectedPayment]**](RejectedPayment.md) |  | 
 

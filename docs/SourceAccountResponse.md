@@ -11,9 +11,10 @@ Name | Type | Description | Notes
 **railsId** | **String** |  | [optional] 
 **payorId** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**pooled** | **String** |  | [optional] 
+**pooled** | **Boolean** |  | [optional] 
 **balanceVisible** | **Boolean** |  | [optional] 
 **customerId** | **String** |  | [optional] 
+**physicalAccountId** | **String** |  | [optional] 
 
 
 <a name="CurrencyEnum"></a>

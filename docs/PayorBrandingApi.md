@@ -5,7 +5,7 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**payorAddPayorLogo**](PayorBrandingApi.md#payorAddPayorLogo) | **POST** /v1/payors/{payorId}/branding/logos | Add Logo
-[**payorGetBranding**](PayorBrandingApi.md#payorGetBranding) | **POST** /v1/payors/{payorId}/branding | Get Branding
+[**payorGetBranding**](PayorBrandingApi.md#payorGetBranding) | **GET** /v1/payors/{payorId}/branding | Get Branding
 
 
 <a name="payorAddPayorLogo"></a>
@@ -18,7 +18,7 @@ Add Payor Logo
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -60,7 +60,7 @@ null (empty response body)
 
 <a name="payorGetBranding"></a>
 # **payorGetBranding**
-> InlineResponse2001 payorGetBranding(payorId)
+> PayorBrandingResponse payorGetBranding(payorId)
 
 Get Branding
 
@@ -68,7 +68,7 @@ Get the payor branding details.
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**PayorBrandingResponse**](PayorBrandingResponse.md)
 
 ### Authorization
 

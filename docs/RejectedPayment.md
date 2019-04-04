@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **sourceAccountName** | **String** |  | 
 **payorPaymentId** | **String** |  | 
 **reason** | **String** |  | 
-**lineNumber** | **Number** |  | 
-**message** | **String** |  | 
+**lineNumber** | **Number** |  | [optional] 
+**message** | **String** |  | [optional] 
 
 
 <a name="ReasonEnum"></a>

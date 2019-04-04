@@ -5,12 +5,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **rate** | **Object** |  | 
 **invertedRate** | **Object** |  | [optional] 
-**creationTime** | **Date** |  | [optional] 
+**creationTime** | **Date** |  | 
 **expiryTime** | **Date** |  | [optional] 
 **quoteId** | **String** |  | 
-**totalSourceAmount** | **Number** |  | [optional] 
+**totalSourceAmount** | **Number** |  | 
 **totalPaymentAmount** | **Number** |  | 
 **sourceCurrency** | **String** |  | 
 **paymentCurrency** | **String** |  | 
+**fundingStatus** | **String** |  | [optional] 
+**status** | **String** |  | [optional] 
 
 

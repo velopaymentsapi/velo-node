@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**routingNumber** | [**Object**](.md) | Routing number for the payor’s bank | 
-**accountNumber** | [**Object**](.md) | Payor’s bank account number. | 
-**accountName** | [**Object**](.md) | Payor’s bank account name. | 
+**routingNumber** | **String** | Routing number for the payor’s bank | 
+**accountNumber** | **String** | Payor’s bank account number. | 
+**accountName** | **String** | Payor’s bank account name. | 
 
 

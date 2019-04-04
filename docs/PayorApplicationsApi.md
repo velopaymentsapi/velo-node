@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="payorCreateApiKeyRequest"></a>
 # **payorCreateApiKeyRequest**
-> InlineResponse200 payorCreateApiKeyRequest(payorId, applicationId, payorCreateApiKeyRequest)
+> PayorCreateApiKeyResponse payorCreateApiKeyRequest(payorId, applicationId, payorCreateApiKeyRequest)
 
 Create API Key
 
@@ -18,7 +18,7 @@ Create an an API key for the given payor Id and application Id
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**PayorCreateApiKeyResponse**](PayorCreateApiKeyResponse.md)
 
 ### Authorization
 
@@ -68,7 +68,7 @@ Create an application for the given Payor ID
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];

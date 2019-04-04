@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payorId** | **String** |  | 
-**payees** | [**[Payee]**](Payee.md) |  | 
+**payees** | [**[CreatePayee]**](CreatePayee.md) |  | 
 
 

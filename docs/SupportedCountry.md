@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**isoCountryCOde** | **String** |  | [optional] 
+**isoCountryCode** | **String** |  | [optional] 
 **currencies** | **[String]** |  | [optional] 
 
 

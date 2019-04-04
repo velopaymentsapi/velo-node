@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **remoteId** | **String** | Your identifier for payee | 
 **currency** | **String** | Payee&#39;s currency | 
-**amount** | **Object** | Amount to send to Payee | 
+**amount** | **Number** | Amount to send to Payee | 
 **paymentMemo** | **String** |  | [optional] 
 **sourceAccountName** | **String** |  | 
 **payorPaymentId** | **String** |  | [optional] 

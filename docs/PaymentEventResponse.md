@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **routingNumber** | **String** | The routing number attached to the event. | [optional] 
 **iban** | **String** |  | [optional] 
 **accountName** | **String** |  | [optional] 
-**principle** | **String** |  | [optional] 
+**principal** | **String** |  | [optional] 
 
 
 <a name="EventTypeEnum"></a>

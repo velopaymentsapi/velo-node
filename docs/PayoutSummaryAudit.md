@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payoutId** | **String** |  | 
-**payorId** | **String** |  | 
+**payorId** | **String** |  | [optional] 
 **status** | [**PayoutStatus**](PayoutStatus.md) |  | 
 **dateTime** | **Date** |  | [optional] 
 **submittedDateTime** | **String** |  | 

@@ -18,7 +18,7 @@ Initiate the process of creating 1 to 2000 payees in a batch Use the response lo
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, multipart/formdata
+ - **Content-Type**: application/json, multipart/form-data
  - **Accept**: application/json
 
 <a name="v2QueryBatchStatus"></a>
@@ -64,7 +64,7 @@ Fetch the status of a specific batch of payees. The batch is fully processed whe
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];

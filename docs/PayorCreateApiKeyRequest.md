@@ -12,11 +12,9 @@ Name | Type | Description | Notes
 ## Enum: [RolesEnum]
 
 
-* `payor.admin` (value: `"payor.admin"`)
+* `admin` (value: `"payor.admin"`)
 
-* `payee.user` (value: `"payee.user"`)
-
-* `payor.support` (value: `"payor.support"`)
+* `support` (value: `"payor.support"`)
 
 
 

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="listSupportedCountries"></a>
 # **listSupportedCountries**
-> InlineResponse2003 listSupportedCountries(payorCreateApiKeyRequest)
+> SupportedCountriesResponse listSupportedCountries()
 
 List Supported Countries
 
@@ -18,15 +18,14 @@ List the supported countries.
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPaymentsApIs.CountriesApi();
-let payorCreateApiKeyRequest = new VeloPaymentsApIs.PayorCreateApiKeyRequest(); // PayorCreateApiKeyRequest | Details of application API key to create
-apiInstance.listSupportedCountries(payorCreateApiKeyRequest, (error, data, response) => {
+apiInstance.listSupportedCountries((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -36,14 +35,11 @@ apiInstance.listSupportedCountries(payorCreateApiKeyRequest, (error, data, respo
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **payorCreateApiKeyRequest** | [**PayorCreateApiKeyRequest**](PayorCreateApiKeyRequest.md)| Details of application API key to create | 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**SupportedCountriesResponse**](SupportedCountriesResponse.md)
 
 ### Authorization
 
@@ -51,12 +47,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="v1PaymentChannelRulesGet"></a>
 # **v1PaymentChannelRulesGet**
-> InlineResponse2002 v1PaymentChannelRulesGet()
+> PaymentChannelRulesResponse v1PaymentChannelRulesGet()
 
 List Payment Channel Country Rules
 
@@ -64,7 +60,7 @@ List the country specific payment channel rules.
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -85,7 +81,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**PaymentChannelRulesResponse**](PaymentChannelRulesResponse.md)
 
 ### Authorization
 

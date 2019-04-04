@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="listSupportedCurrencies"></a>
 # **listSupportedCurrencies**
-> InlineResponse2004 listSupportedCurrencies()
+> SupportedCurrencyResponse listSupportedCurrencies()
 
 List Supported Currencies
 
@@ -17,7 +17,7 @@ List the supported currencies.
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -38,7 +38,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**SupportedCurrencyResponse**](SupportedCurrencyResponse.md)
 
 ### Authorization
 

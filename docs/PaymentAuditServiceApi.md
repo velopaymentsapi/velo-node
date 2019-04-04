@@ -4,18 +4,17 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**exportTransactionsCSV**](PaymentAuditServiceApi.md#exportTransactionsCSV) | **GET** /v3/paymentaudit/transactions | Export Transactions
+[**exportTransactionsCSV**](PaymentAuditServiceApi.md#exportTransactionsCSV) | **GET** /v4/paymentaudit/transactions | Export Transactions
 [**getFundings**](PaymentAuditServiceApi.md#getFundings) | **GET** /v1/paymentaudit/fundings | Get Fundings for Payor
 [**getPaymentDetails**](PaymentAuditServiceApi.md#getPaymentDetails) | **GET** /v3/paymentaudit/payments/{paymentId} | Get Payment
 [**getPaymentsForPayout**](PaymentAuditServiceApi.md#getPaymentsForPayout) | **GET** /v3/paymentaudit/payouts/{payoutId} | Get Payments for Payout
-[**getPayoutStats**](PaymentAuditServiceApi.md#getPayoutStats) | **GET** /v1/paymentaudit/payoutStatistics | Get Payout Statistics
 [**getPayoutsForPayor**](PaymentAuditServiceApi.md#getPayoutsForPayor) | **GET** /v3/paymentaudit/payouts | Get Payouts for Payor
 [**listPaymentsAudit**](PaymentAuditServiceApi.md#listPaymentsAudit) | **GET** /v3/paymentaudit/payments | Get List of Payments
 
 
 <a name="exportTransactionsCSV"></a>
 # **exportTransactionsCSV**
-> String exportTransactionsCSV(payorId, opts)
+> String exportTransactionsCSV(opts)
 
 Export Transactions
 
@@ -23,19 +22,19 @@ Download a CSV file containing payments in a date range. Uses Transfer-Encoding 
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPaymentsApIs.PaymentAuditServiceApi();
-let payorId = null; // String | The account owner Payor ID
 let opts = {
+  'payorId': null, // String | The account owner Payor ID
   'startDate': new Date("2013-10-20"), // Date | Start date, inclusive. Format is YYYY-MM-DD
   'submittedDateFrom': new Date("2013-10-20") // Date | Start date, inclusive. Format is YYYY-MM-DD
 };
-apiInstance.exportTransactionsCSV(payorId, opts, (error, data, response) => {
+apiInstance.exportTransactionsCSV(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -48,7 +47,7 @@ apiInstance.exportTransactionsCSV(payorId, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The account owner Payor ID | 
+ **payorId** | [**String**](.md)| The account owner Payor ID | [optional] 
  **startDate** | **Date**| Start date, inclusive. Format is YYYY-MM-DD | [optional] 
  **submittedDateFrom** | **Date**| Start date, inclusive. Format is YYYY-MM-DD | [optional] 
 
@@ -67,7 +66,7 @@ Name | Type | Description  | Notes
 
 <a name="getFundings"></a>
 # **getFundings**
-> GetFundingsResponse getFundings(payorId, opts)
+> GetFundingsResponse getFundings(opts)
 
 Get Fundings for Payor
 
@@ -75,20 +74,20 @@ Get a list of Fundings for a payor.
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPaymentsApIs.PaymentAuditServiceApi();
-let payorId = null; // String | The account owner Payor ID
 let opts = {
+  'payorId': null, // String | The account owner Payor ID
   'pageNumber': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
   'sort': "sort_example" // String | List of sort fields. Example: ```?sort=destinationCurrency:asc,destinationAmount:asc``` Default is no sort. The supported sort fields are: dateTime and amount. 
 };
-apiInstance.getFundings(payorId, opts, (error, data, response) => {
+apiInstance.getFundings(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -101,7 +100,7 @@ apiInstance.getFundings(payorId, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The account owner Payor ID | 
+ **payorId** | [**String**](.md)| The account owner Payor ID | [optional] 
  **pageNumber** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
  **sort** | **String**| List of sort fields. Example: &#x60;&#x60;&#x60;?sort&#x3D;destinationCurrency:asc,destinationAmount:asc&#x60;&#x60;&#x60; Default is no sort. The supported sort fields are: dateTime and amount.  | [optional] 
@@ -129,7 +128,7 @@ Get the payment with the given id. This contains the payment history.
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -179,7 +178,7 @@ Get List of payments for Payout
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -241,52 +240,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="getPayoutStats"></a>
-# **getPayoutStats**
-> GetPayoutStatistics getPayoutStats(payorId)
-
-Get Payout Statistics
-
-Get payout statistics for a payor.
-
-### Example
-```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
-let defaultClient = VeloPaymentsApIs.ApiClient.instance;
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new VeloPaymentsApIs.PaymentAuditServiceApi();
-let payorId = null; // String | The account owner Payor ID
-apiInstance.getPayoutStats(payorId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The account owner Payor ID | 
-
-### Return type
-
-[**GetPayoutStatistics**](GetPayoutStatistics.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
 <a name="getPayoutsForPayor"></a>
 # **getPayoutsForPayor**
 > GetPayoutsResponse getPayoutsForPayor(payorId, opts)
@@ -297,7 +250,7 @@ Get List of payouts for payor
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -351,7 +304,7 @@ Name | Type | Description  | Notes
 
 <a name="listPaymentsAudit"></a>
 # **listPaymentsAudit**
-> ListPaymentsResponse listPaymentsAudit(payeeId, payorId, opts)
+> ListPaymentsResponse listPaymentsAudit(opts)
 
 Get List of Payments
 
@@ -359,16 +312,16 @@ Get payments for the given payor Id
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPaymentsApIs.PaymentAuditServiceApi();
-let payeeId = null; // String | The UUID of the payee.
-let payorId = null; // String | The account owner Payor ID
 let opts = {
+  'payeeId': null, // String | The UUID of the payee.
+  'payorId': null, // String | The account owner Payor Id. Required for external users.
   'payorName': "payorName_example", // String | The payor’s name. This filters via a case insensitive substring match.
   'remoteId': "remoteId_example", // String | The remote id of the payees.
   'status': "status_example", // String | Payment Status
@@ -387,7 +340,7 @@ let opts = {
   'sort': "sort_example", // String | List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status 
   'sensitive': true // Boolean | Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
 };
-apiInstance.listPaymentsAudit(payeeId, payorId, opts, (error, data, response) => {
+apiInstance.listPaymentsAudit(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -400,8 +353,8 @@ apiInstance.listPaymentsAudit(payeeId, payorId, opts, (error, data, response) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payeeId** | [**String**](.md)| The UUID of the payee. | 
- **payorId** | [**String**](.md)| The account owner Payor ID | 
+ **payeeId** | [**String**](.md)| The UUID of the payee. | [optional] 
+ **payorId** | [**String**](.md)| The account owner Payor Id. Required for external users. | [optional] 
  **payorName** | **String**| The payor’s name. This filters via a case insensitive substring match. | [optional] 
  **remoteId** | **String**| The remote id of the payees. | [optional] 
  **status** | **String**| Payment Status | [optional] 

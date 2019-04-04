@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payorId** | **String** |  | [optional] 
+**payorId** | **String** |  | 
 
 

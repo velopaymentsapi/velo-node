@@ -5,6 +5,7 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getPaymentsForPayout**](PayoutHistoryApi.md#getPaymentsForPayout) | **GET** /v3/paymentaudit/payouts/{payoutId} | Get Payments for Payout
+[**getPayoutStats**](PayoutHistoryApi.md#getPayoutStats) | **GET** /v1/paymentaudit/payoutStatistics | Get Payout Statistics
 
 
 <a name="getPaymentsForPayout"></a>
@@ -17,7 +18,7 @@ Get List of payments for Payout
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -69,6 +70,54 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetPaymentsForPayoutResponse**](GetPaymentsForPayoutResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getPayoutStats"></a>
+# **getPayoutStats**
+> GetPayoutStatistics getPayoutStats(opts)
+
+Get Payout Statistics
+
+Get payout statistics for a payor.
+
+### Example
+```javascript
+import VeloPaymentsApIs from 'velo';
+let defaultClient = VeloPaymentsApIs.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPaymentsApIs.PayoutHistoryApi();
+let opts = {
+  'payorId': null // String | The account owner Payor ID. Required for external users.
+};
+apiInstance.getPayoutStats(opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payorId** | [**String**](.md)| The account owner Payor ID. Required for external users. | [optional] 
+
+### Return type
+
+[**GetPayoutStatistics**](GetPayoutStatistics.md)
 
 ### Authorization
 

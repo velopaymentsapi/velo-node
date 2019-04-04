@@ -18,7 +18,7 @@ Get Payee by Id
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -68,7 +68,7 @@ Get a paginated response listing the payees for a payor.
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo_payments_ap_is';
+import VeloPaymentsApIs from 'velo';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -77,7 +77,7 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new VeloPaymentsApIs.PayeesApi();
 let payorId = null; // String | The account owner Payor ID
 let opts = {
-  'ofacStatus': null, // Object | The ofacStatus of the payees.
+  'ofacStatus': new VeloPaymentsApIs.OfacStatus(), // OfacStatus | The ofacStatus of the payees.
   'onboardedStatus': new VeloPaymentsApIs.OnboardedStatus(), // OnboardedStatus | The onboarded status of the payees.
   'email': null, // String | Email address
   'displayName': "displayName_example", // String | The display name of the payees.
@@ -102,7 +102,7 @@ apiInstance.listPayees(payorId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payorId** | [**String**](.md)| The account owner Payor ID | 
- **ofacStatus** | [**Object**](.md)| The ofacStatus of the payees. | [optional] 
+ **ofacStatus** | [**OfacStatus**](.md)| The ofacStatus of the payees. | [optional] 
  **onboardedStatus** | [**OnboardedStatus**](.md)| The onboarded status of the payees. | [optional] 
  **email** | [**String**](.md)| Email address | [optional] 
  **displayName** | **String**| The display name of the payees. | [optional] 

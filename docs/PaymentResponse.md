@@ -34,6 +34,8 @@ Name | Type | Description | Notes
 **railsId** | **String** |  | 
 **countryCode** | **String** |  | [optional] 
 **events** | [**[PaymentEventResponse]**](PaymentEventResponse.md) |  | 
+**returnCost** | **Number** |  | [optional] 
+**returnReason** | **String** |  | [optional] 
 
 
 <a name="StatusEnum"></a>

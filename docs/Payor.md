@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payorId** | **String** |  | 
+**payorId** | **String** |  | [optional] 
 **payorName** | **String** | The name of the payor. | 
-**address** | [**Address**](Address.md) |  | 
-**primaryContactName** | **String** | Name of primary contact for the payor. | 
-**primaryContactPhone** | **String** | Primary contact phone number for the payor. | 
-**primaryContactEmail** | **String** | Primary contact email for the payor. | 
+**address** | [**Address**](Address.md) |  | [optional] 
+**primaryContactName** | **String** | Name of primary contact for the payor. | [optional] 
+**primaryContactPhone** | **String** | Primary contact phone number for the payor. | [optional] 
+**primaryContactEmail** | **String** | Primary contact email for the payor. | [optional] 
 **fundingAccountRoutingNumber** | **String** | The funding account routing number to be used for the payor. | [optional] 
 **fundingAccountAccountNumber** | **String** | The funding account number to be used for the payor. | [optional] 
 **fundingAccountAccountName** | **String** | The funding account name to be used for the payor. | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **dbaName** | **String** | The payor’s &#39;Doing Business As&#39; name. | [optional] 
 **allowsLanguageChoice** | **Boolean** | Whether or not the payor allows language choice in the UI. | [optional] 
 **reminderEmailsOptOut** | **Boolean** | Whether or not the payor has opted-out of reminder emails being sent. | [optional] 
-**language** | **String** | The payor’s language preference. Must be one of [EN, FR]. | 
+**language** | **String** | The payor’s language preference. Must be one of [EN, FR]. | [optional] 
 **includesReports** | **Boolean** |  | [optional] 
 
 
