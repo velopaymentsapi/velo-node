@@ -34,7 +34,8 @@ trim:
 
 info:
 	sed -i.bak 's/"name": "velo_payments_ap_is"/"name": "velo"/' package.json && rm package.json.bak
-	sed -i.bak 's/"main": "src\/index.js"/"main": "dist\/index.js"/' package.json && rm package.json.bak
+	# sed -i.bak 's/"main": "src\/index.js"/"main": "dist\/index.js"/' package.json && rm package.json.bak
+	sed -i.bak 's/"main": "src\/index.js"/"main": "dist\/index.js", "repository": {"type": "git","url": "git+ssh:\/\/git@github.com\/velopaymentsapi\/velo-node.git"}/' package.json && rm package.json.bak
 	sed -i.bak 's/"test": "mocha/"clean": "rm \-rf dist \&\& mkdir dist", "build": "npm run clean \&\& babel src \-\-out\-dir dist", "test": "mocha/' package.json && rm package.json.bak
 	grep -rl 'velo_payments_ap_is' ./docs | xargs sed -i.bak 's/velo_payments_ap_is/velo/'
 	rm -Rf ./docs/*.bak
