@@ -18,7 +18,7 @@ Get List of payments for Payout
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo';
+import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -90,7 +90,7 @@ Get payout statistics for a payor.
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo';
+import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];

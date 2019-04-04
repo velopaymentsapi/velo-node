@@ -22,7 +22,7 @@ Download a CSV file containing payments in a date range. Uses Transfer-Encoding 
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo';
+import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -74,7 +74,7 @@ Get a list of Fundings for a payor.
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo';
+import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -128,7 +128,7 @@ Get the payment with the given id. This contains the payment history.
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo';
+import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -178,7 +178,7 @@ Get List of payments for Payout
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo';
+import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -250,7 +250,7 @@ Get List of payouts for payor
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo';
+import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -312,7 +312,7 @@ Get payments for the given payor Id
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo';
+import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];

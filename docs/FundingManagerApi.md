@@ -20,7 +20,7 @@ Instruct a funding request to transfer funds from the payor’s funding bank to 
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo';
+import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -68,7 +68,7 @@ Get details about given source account.
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo';
+import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -114,7 +114,7 @@ List source accounts.
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo';
+import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -170,7 +170,7 @@ This API allows you to set or update the funding details for the given Payor ID.
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo';
+import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];

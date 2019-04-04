@@ -33,13 +33,12 @@ trim:
 	rm git_push.sh
 
 info:
-	sed -i.bak 's/"name": "velo_payments_ap_is"/"name": "velo"/' package.json && rm package.json.bak
-	# sed -i.bak 's/"main": "src\/index.js"/"main": "dist\/index.js"/' package.json && rm package.json.bak
+	sed -i.bak 's/"name": "velo_payments_ap_is"/"name": "velo-payments"/' package.json && rm package.json.bak
 	sed -i.bak 's/"main": "src\/index.js"/"main": "dist\/index.js", "repository": {"type": "git","url": "git+ssh:\/\/git@github.com\/velopaymentsapi\/velo-node.git"}/' package.json && rm package.json.bak
 	sed -i.bak 's/"test": "mocha/"clean": "rm \-rf dist \&\& mkdir dist", "build": "npm run clean \&\& babel src \-\-out\-dir dist", "test": "mocha/' package.json && rm package.json.bak
-	grep -rl 'velo_payments_ap_is' ./docs | xargs sed -i.bak 's/velo_payments_ap_is/velo/'
+	grep -rl 'velo_payments_ap_is' ./docs | xargs sed -i.bak 's/velo_payments_ap_is/velo-payments/'
 	rm -Rf ./docs/*.bak
-	sed -i.bak 's/velo_payments_ap_is/velo/' README.md && rm README.md.bak
+	sed -i.bak 's/velo_payments_ap_is/velo-payments/' README.md && rm README.md.bak
 	sed -i.bak '1s/# velo/# JavaScript client for Velo/' README.md && rm README.md.bak
 	sed -i.bak '2s/.*/This library provides a JavaScript client that simplifies interactions with the Velo Payments API. For full details covering the API visit our docs at [Velo Payments APIs](https:\/\/apidocs.velopayments.com). Note: some of the Velo API calls which require authorization via an access token, see the full docs on how to configure./' README.md && rm README.md.bak
 	sed -i.bak '3s/.*//' README.md && rm README.md.bak

@@ -17,7 +17,7 @@ Get a Single Payor by Id (200 - OK, 404 - payor not found).
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo';
+import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];

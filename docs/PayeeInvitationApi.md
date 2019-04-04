@@ -18,7 +18,7 @@ Returns a list of payees associated with a payor, along with invitation status a
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo';
+import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
@@ -64,7 +64,7 @@ Resend an invite to the Payee The payee must have already been invited by the pa
 
 ### Example
 ```javascript
-import VeloPaymentsApIs from 'velo';
+import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
