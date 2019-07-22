@@ -1,6 +1,7 @@
 # VeloPaymentsApIs.PaymentChannel
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **paymentChannelName** | **String** |  | [optional] 
@@ -12,7 +13,7 @@ Name | Type | Description | Notes
 **accountName** | **String** |  | 
 
 
-<a name="CurrencyEnum"></a>
+
 ## Enum: CurrencyEnum
 
 

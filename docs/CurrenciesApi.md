@@ -7,8 +7,9 @@ Method | HTTP request | Description
 [**listSupportedCurrencies**](CurrenciesApi.md#listSupportedCurrencies) | **GET** /v2/currencies | List Supported Currencies
 
 
-<a name="listSupportedCurrencies"></a>
-# **listSupportedCurrencies**
+
+## listSupportedCurrencies
+
 > SupportedCurrencyResponse listSupportedCurrencies()
 
 List Supported Currencies
@@ -16,6 +17,7 @@ List Supported Currencies
 List the supported currencies.
 
 ### Example
+
 ```javascript
 import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
@@ -34,6 +36,7 @@ apiInstance.listSupportedCurrencies((error, data, response) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -46,6 +49,6 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

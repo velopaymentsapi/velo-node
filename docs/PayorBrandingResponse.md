@@ -1,6 +1,7 @@
 # VeloPaymentsApIs.PayorBrandingResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payorName** | **String** | The name of the payor | 

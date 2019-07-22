@@ -1,6 +1,7 @@
 # VeloPaymentsApIs.FundingAudit
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **Number** |  | [optional] 
@@ -13,7 +14,7 @@ Name | Type | Description | Notes
 **events** | [**[FundingEvent]**](FundingEvent.md) |  | [optional] 
 
 
-<a name="StatusEnum"></a>
+
 ## Enum: StatusEnum
 
 

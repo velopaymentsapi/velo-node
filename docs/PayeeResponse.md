@@ -1,11 +1,12 @@
 # VeloPaymentsApIs.PayeeResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**summary** | [**GetPaymentsForPayoutResponseSummary**](GetPaymentsForPayoutResponseSummary.md) |  | [optional] 
-**page** | [**GetPaymentsForPayoutResponsePage**](GetPaymentsForPayoutResponsePage.md) |  | [optional] 
-**links** | [**[GetPaymentsForPayoutResponseLinks]**](GetPaymentsForPayoutResponseLinks.md) |  | [optional] 
+**summary** | [**PayeeResponseSummary**](PayeeResponseSummary.md) |  | [optional] 
+**page** | [**PayeeResponsePage**](PayeeResponsePage.md) |  | [optional] 
+**links** | [**[PayeeResponseLinks]**](PayeeResponseLinks.md) |  | [optional] 
 **content** | [**[Payee]**](Payee.md) |  | [optional] 
 
 

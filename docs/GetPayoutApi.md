@@ -7,8 +7,9 @@ Method | HTTP request | Description
 [**v3PayoutsPayoutIdGet**](GetPayoutApi.md#v3PayoutsPayoutIdGet) | **GET** /v3/payouts/{payoutId} | Get Payout Summary
 
 
-<a name="v3PayoutsPayoutIdGet"></a>
-# **v3PayoutsPayoutIdGet**
+
+## v3PayoutsPayoutIdGet
+
 > PayoutSummaryResponse v3PayoutsPayoutIdGet(payoutId)
 
 Get Payout Summary
@@ -16,6 +17,7 @@ Get Payout Summary
 Get payout summary - returns the current state of the payout.
 
 ### Example
+
 ```javascript
 import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
@@ -36,6 +38,7 @@ apiInstance.v3PayoutsPayoutIdGet(payoutId, (error, data, response) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payoutId** | [**String**](.md)| Id of the payout | 
@@ -50,6 +53,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

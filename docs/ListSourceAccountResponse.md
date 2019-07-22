@@ -1,10 +1,11 @@
 # VeloPaymentsApIs.ListSourceAccountResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**page** | [**GetPaymentsForPayoutResponsePage**](GetPaymentsForPayoutResponsePage.md) |  | [optional] 
-**links** | [**[GetPaymentsForPayoutResponseLinks]**](GetPaymentsForPayoutResponseLinks.md) |  | [optional] 
+**page** | [**ListSourceAccountResponsePage**](ListSourceAccountResponsePage.md) |  | [optional] 
+**links** | [**[ListSourceAccountResponseLinks]**](ListSourceAccountResponseLinks.md) |  | [optional] 
 **content** | [**[SourceAccountResponse]**](SourceAccountResponse.md) |  | [optional] 
 
 

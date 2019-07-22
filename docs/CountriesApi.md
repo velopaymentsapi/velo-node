@@ -8,8 +8,9 @@ Method | HTTP request | Description
 [**v1PaymentChannelRulesGet**](CountriesApi.md#v1PaymentChannelRulesGet) | **GET** /v1/paymentChannelRules | List Payment Channel Country Rules
 
 
-<a name="listSupportedCountries"></a>
-# **listSupportedCountries**
+
+## listSupportedCountries
+
 > SupportedCountriesResponse listSupportedCountries()
 
 List Supported Countries
@@ -17,6 +18,7 @@ List Supported Countries
 List the supported countries.
 
 ### Example
+
 ```javascript
 import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
@@ -35,6 +37,7 @@ apiInstance.listSupportedCountries((error, data, response) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -47,11 +50,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="v1PaymentChannelRulesGet"></a>
-# **v1PaymentChannelRulesGet**
+
+## v1PaymentChannelRulesGet
+
 > PaymentChannelRulesResponse v1PaymentChannelRulesGet()
 
 List Payment Channel Country Rules
@@ -59,6 +63,7 @@ List Payment Channel Country Rules
 List the country specific payment channel rules.
 
 ### Example
+
 ```javascript
 import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
@@ -77,6 +82,7 @@ apiInstance.v1PaymentChannelRulesGet((error, data, response) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -89,6 +95,6 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

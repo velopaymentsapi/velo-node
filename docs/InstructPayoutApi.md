@@ -7,8 +7,9 @@ Method | HTTP request | Description
 [**v3PayoutsPayoutIdPost**](InstructPayoutApi.md#v3PayoutsPayoutIdPost) | **POST** /v3/payouts/{payoutId} | Instruct Payout
 
 
-<a name="v3PayoutsPayoutIdPost"></a>
-# **v3PayoutsPayoutIdPost**
+
+## v3PayoutsPayoutIdPost
+
 > v3PayoutsPayoutIdPost(payoutId)
 
 Instruct Payout
@@ -16,6 +17,7 @@ Instruct Payout
 Instruct a payout to be made for the specified payoutId.
 
 ### Example
+
 ```javascript
 import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
@@ -36,6 +38,7 @@ apiInstance.v3PayoutsPayoutIdPost(payoutId, (error, data, response) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payoutId** | [**String**](.md)| Id of the payout | 
@@ -50,6 +53,6 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 

@@ -1,10 +1,11 @@
 # VeloPaymentsApIs.Individual
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | [**IndividualName**](IndividualName.md) |  | 
-**nationalIdentification** | [**OneOfstringstring**](OneOfstringstring.md) |  | [optional] 
-**dateOfBirth** | [**OneOfdatestring**](OneOfdatestring.md) |  | 
+**nationalIdentification** | **String** | If not authorized to view, value will be masked. Example: XXXXX1234 | [optional] 
+**dateOfBirth** | **String** | If not authorized to view, value will be masked. Example: - XXXX-XX-XX | 
 
 

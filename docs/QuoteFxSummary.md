@@ -1,10 +1,11 @@
 # VeloPaymentsApIs.QuoteFxSummary
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rate** | **Object** |  | 
-**invertedRate** | **Object** |  | [optional] 
+**rate** | **Number** |  | 
+**invertedRate** | **Number** |  | [optional] 
 **creationTime** | **Date** |  | 
 **expiryTime** | **Date** |  | [optional] 
 **quoteId** | **String** |  | 

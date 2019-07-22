@@ -1,6 +1,7 @@
 # VeloPaymentsApIs.CreatePayoutRequest
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payorId** | **String** |  | 

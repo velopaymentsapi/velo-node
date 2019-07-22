@@ -7,8 +7,9 @@ Method | HTTP request | Description
 [**v3PayoutsPayoutIdQuotePost**](QuotePayoutApi.md#v3PayoutsPayoutIdQuotePost) | **POST** /v3/payouts/{payoutId}/quote | Create a quote for the payout
 
 
-<a name="v3PayoutsPayoutIdQuotePost"></a>
-# **v3PayoutsPayoutIdQuotePost**
+
+## v3PayoutsPayoutIdQuotePost
+
 > QuoteResponse v3PayoutsPayoutIdQuotePost(payoutId)
 
 Create a quote for the payout
@@ -16,6 +17,7 @@ Create a quote for the payout
 Create quote for a payout
 
 ### Example
+
 ```javascript
 import VeloPaymentsApIs from 'velo-payments';
 let defaultClient = VeloPaymentsApIs.ApiClient.instance;
@@ -36,6 +38,7 @@ apiInstance.v3PayoutsPayoutIdQuotePost(payoutId, (error, data, response) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payoutId** | [**String**](.md)| Id of the payout | 
@@ -50,6 +53,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

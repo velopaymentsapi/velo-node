@@ -1,6 +1,7 @@
 # VeloPaymentsApIs.Payee
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payeeId** | **String** |  | [optional] 
@@ -23,6 +24,5 @@ Name | Type | Description | Notes
 **marketingOptIns** | [**[MarketingOptIn]**](MarketingOptIn.md) |  | [optional] 
 **ofacStatus** | [**OfacStatus**](OfacStatus.md) |  | [optional] 
 **onboardedStatus** | [**OnboardedStatus**](OnboardedStatus.md) |  | [optional] 
-**social** | [**Social**](Social.md) |  | [optional] 
 
 

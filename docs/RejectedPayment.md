@@ -1,6 +1,7 @@
 # VeloPaymentsApIs.RejectedPayment
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **remoteId** | **String** |  | 
@@ -13,7 +14,7 @@ Name | Type | Description | Notes
 **message** | **String** |  | [optional] 
 
 
-<a name="ReasonEnum"></a>
+
 ## Enum: ReasonEnum
 
 

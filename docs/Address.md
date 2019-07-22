@@ -1,6 +1,7 @@
 # VeloPaymentsApIs.Address
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **line1** | **String** |  | 

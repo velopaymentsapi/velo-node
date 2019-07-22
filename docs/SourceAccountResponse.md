@@ -1,10 +1,11 @@
 # VeloPaymentsApIs.SourceAccountResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | Source Account Id | [optional] 
-**balance** | **Object** | Decimal implied | [optional] 
+**balance** | **Number** | Decimal implied | [optional] 
 **currency** | **String** |  | [optional] 
 **fundingRef** | **String** |  | [optional] 
 **physicalAccountName** | **String** |  | [optional] 
@@ -15,9 +16,10 @@ Name | Type | Description | Notes
 **balanceVisible** | **Boolean** |  | [optional] 
 **customerId** | **String** |  | [optional] 
 **physicalAccountId** | **String** |  | [optional] 
+**fundingAccountId** | **String** |  | [optional] 
 
 
-<a name="CurrencyEnum"></a>
+
 ## Enum: CurrencyEnum
 
 

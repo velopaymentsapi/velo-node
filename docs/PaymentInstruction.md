@@ -1,6 +1,7 @@
 # VeloPaymentsApIs.PaymentInstruction
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **remoteId** | **String** | Your identifier for payee | 
@@ -11,7 +12,7 @@ Name | Type | Description | Notes
 **payorPaymentId** | **String** |  | [optional] 
 
 
-<a name="CurrencyEnum"></a>
+
 ## Enum: CurrencyEnum
 
 
