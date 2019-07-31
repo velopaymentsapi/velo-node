@@ -26,6 +26,22 @@ node-client:
 		-g javascript \
 		-o /local
 
+	echo "import ApiClient from '../ApiClient';" >> OneOfstringstring.js
+	echo "export default class OneOfstringstring {" >> OneOfstringstring.js
+	echo "	static constructFromObject(object) {" >> OneOfstringstring.js
+	echo "		return object;" >> OneOfstringstring.js
+	echo "	}" >> OneOfstringstring.js
+	echo "}" >> OneOfstringstring.js
+	mv OneOfstringstring.js src/model/
+
+	echo "import ApiClient from '../ApiClient';" >> OneOfdatestring.js
+	echo "export default class OneOfdatestring {" >> OneOfdatestring.js
+	echo "	static constructFromObject(object) {" >> OneOfdatestring.js
+	echo "		return object;" >> OneOfdatestring.js
+	echo "	}" >> OneOfdatestring.js
+	echo "}" >> OneOfdatestring.js
+	mv OneOfdatestring.js src/model/
+
 trim:
 	rm -Rf .openapi-generator
 	rm .openapi-generator-ignore
@@ -50,3 +66,12 @@ client: clean node-client trim info
 	npm i
 	npm run build
 	rm -Rf node_modules
+
+build:
+	@echo "Client lib already built in the /dist dir."
+
+publish:
+	# make version=2.14.90-rc.1 publish
+	git tag $(version)
+	git push origin tag $(version)
+	npm publish
