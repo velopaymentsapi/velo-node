@@ -1,4 +1,4 @@
-# VeloPaymentsApIs.PayeeType
+# VeloPayments.PayeeType
 
 ## Enum
 

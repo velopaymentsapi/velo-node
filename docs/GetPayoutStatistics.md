@@ -1,6 +1,7 @@
-# VeloPaymentsApIs.GetPayoutStatistics
+# VeloPayments.GetPayoutStatistics
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **thisMonthPayoutsCount** | **Number** |  | 

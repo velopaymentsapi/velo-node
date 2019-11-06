@@ -1,6 +1,7 @@
-# VeloPaymentsApIs.PagedResponsePage
+# VeloPayments.PagedResponsePage
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **numberOfElements** | **Number** |  | [optional] 

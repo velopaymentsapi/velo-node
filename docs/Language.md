@@ -1,4 +1,4 @@
-# VeloPaymentsApIs.Language
+# VeloPayments.Language
 
 ## Enum
 

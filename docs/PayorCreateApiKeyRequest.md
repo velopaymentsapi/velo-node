@@ -1,6 +1,7 @@
-# VeloPaymentsApIs.PayorCreateApiKeyRequest
+# VeloPayments.PayorCreateApiKeyRequest
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | A name for the key. | 
@@ -8,7 +9,7 @@ Name | Type | Description | Notes
 **roles** | **[String]** | A list of roles to assign to the key. | 
 
 
-<a name="[RolesEnum]"></a>
+
 ## Enum: [RolesEnum]
 
 

@@ -1,6 +1,7 @@
-# VeloPaymentsApIs.PayoutSummaryResponse
+# VeloPayments.PayoutSummaryResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payoutId** | **String** |  | [optional] 

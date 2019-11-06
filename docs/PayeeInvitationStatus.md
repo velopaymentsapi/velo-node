@@ -1,6 +1,7 @@
-# VeloPaymentsApIs.PayeeInvitationStatus
+# VeloPayments.PayeeInvitationStatus
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payeeId** | **String** |  | 
@@ -8,7 +9,7 @@ Name | Type | Description | Notes
 **gracePeriodEndDate** | **Date** |  | [optional] 
 
 
-<a name="InvitationStatusEnum"></a>
+
 ## Enum: InvitationStatusEnum
 
 

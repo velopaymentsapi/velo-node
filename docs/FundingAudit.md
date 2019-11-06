@@ -1,6 +1,7 @@
-# VeloPaymentsApIs.FundingAudit
+# VeloPayments.FundingAudit
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **Number** |  | [optional] 
@@ -11,9 +12,10 @@ Name | Type | Description | Notes
 **fundingAccountName** | **String** |  | [optional] 
 **fundingType** | **String** |  | [optional] 
 **events** | [**[FundingEvent]**](FundingEvent.md) |  | [optional] 
+**topupType** | **String** |  | [optional] 
 
 
-<a name="StatusEnum"></a>
+
 ## Enum: StatusEnum
 
 
@@ -24,6 +26,17 @@ Name | Type | Description | Notes
 * `CREDIT` (value: `"CREDIT"`)
 
 * `DEBIT` (value: `"DEBIT"`)
+
+
+
+
+
+## Enum: TopupTypeEnum
+
+
+* `AUTOMATIC` (value: `"AUTOMATIC"`)
+
+* `MANUAL` (value: `"MANUAL"`)
 
 
 

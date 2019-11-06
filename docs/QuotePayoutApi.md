@@ -1,4 +1,4 @@
-# VeloPaymentsApIs.QuotePayoutApi
+# VeloPayments.QuotePayoutApi
 
 All URIs are relative to *https://api.sandbox.velopayments.com*
 
@@ -7,8 +7,9 @@ Method | HTTP request | Description
 [**v3PayoutsPayoutIdQuotePost**](QuotePayoutApi.md#v3PayoutsPayoutIdQuotePost) | **POST** /v3/payouts/{payoutId}/quote | Create a quote for the payout
 
 
-<a name="v3PayoutsPayoutIdQuotePost"></a>
-# **v3PayoutsPayoutIdQuotePost**
+
+## v3PayoutsPayoutIdQuotePost
+
 > QuoteResponse v3PayoutsPayoutIdQuotePost(payoutId)
 
 Create a quote for the payout
@@ -16,14 +17,15 @@ Create a quote for the payout
 Create quote for a payout
 
 ### Example
+
 ```javascript
-import VeloPaymentsApIs from 'velo-payments';
-let defaultClient = VeloPaymentsApIs.ApiClient.instance;
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new VeloPaymentsApIs.QuotePayoutApi();
+let apiInstance = new VeloPayments.QuotePayoutApi();
 let payoutId = null; // String | Id of the payout
 apiInstance.v3PayoutsPayoutIdQuotePost(payoutId, (error, data, response) => {
   if (error) {
@@ -35,6 +37,7 @@ apiInstance.v3PayoutsPayoutIdQuotePost(payoutId, (error, data, response) => {
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -50,6 +53,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

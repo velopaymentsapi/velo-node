@@ -1,10 +1,11 @@
-# VeloPaymentsApIs.QuoteFxSummary
+# VeloPayments.QuoteFxSummary
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rate** | **Object** |  | 
-**invertedRate** | **Object** |  | [optional] 
+**rate** | **Number** |  | 
+**invertedRate** | **Number** |  | [optional] 
 **creationTime** | **Date** |  | 
 **expiryTime** | **Date** |  | [optional] 
 **quoteId** | **String** |  | 
@@ -12,7 +13,37 @@ Name | Type | Description | Notes
 **totalPaymentAmount** | **Number** |  | 
 **sourceCurrency** | **String** |  | 
 **paymentCurrency** | **String** |  | 
-**fundingStatus** | **String** |  | [optional] 
-**status** | **String** |  | [optional] 
+**fundingStatus** | **String** |  | 
+**status** | **String** |  | 
+
+
+
+## Enum: FundingStatusEnum
+
+
+* `UNFUNDED` (value: `"UNFUNDED"`)
+
+* `INSTRUCTED` (value: `"INSTRUCTED"`)
+
+* `FUNDED` (value: `"FUNDED"`)
+
+
+
+
+
+## Enum: StatusEnum
+
+
+* `UNQUOTED` (value: `"UNQUOTED"`)
+
+* `QUOTED` (value: `"QUOTED"`)
+
+* `EXPIRED` (value: `"EXPIRED"`)
+
+* `EXECUTED` (value: `"EXECUTED"`)
+
+* `REJECTED` (value: `"REJECTED"`)
+
+
 
 

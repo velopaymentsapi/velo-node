@@ -1,6 +1,7 @@
-# VeloPaymentsApIs.PagedResponse
+# VeloPayments.PagedResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **page** | [**PagedResponsePage**](PagedResponsePage.md) |  | [optional] 

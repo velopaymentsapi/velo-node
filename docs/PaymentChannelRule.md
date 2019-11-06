@@ -1,6 +1,7 @@
-# VeloPaymentsApIs.PaymentChannelRule
+# VeloPayments.PaymentChannelRule
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **element** | **String** |  | [optional] 

@@ -1,4 +1,4 @@
-# VeloPaymentsApIs.FundingEventType
+# VeloPayments.FundingEventType
 
 ## Enum
 

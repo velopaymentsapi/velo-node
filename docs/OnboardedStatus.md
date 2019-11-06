@@ -1,4 +1,4 @@
-# VeloPaymentsApIs.OnboardedStatus
+# VeloPayments.OnboardedStatus
 
 ## Enum
 

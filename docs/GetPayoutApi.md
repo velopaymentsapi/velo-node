@@ -1,4 +1,4 @@
-# VeloPaymentsApIs.GetPayoutApi
+# VeloPayments.GetPayoutApi
 
 All URIs are relative to *https://api.sandbox.velopayments.com*
 
@@ -7,8 +7,9 @@ Method | HTTP request | Description
 [**v3PayoutsPayoutIdGet**](GetPayoutApi.md#v3PayoutsPayoutIdGet) | **GET** /v3/payouts/{payoutId} | Get Payout Summary
 
 
-<a name="v3PayoutsPayoutIdGet"></a>
-# **v3PayoutsPayoutIdGet**
+
+## v3PayoutsPayoutIdGet
+
 > PayoutSummaryResponse v3PayoutsPayoutIdGet(payoutId)
 
 Get Payout Summary
@@ -16,14 +17,15 @@ Get Payout Summary
 Get payout summary - returns the current state of the payout.
 
 ### Example
+
 ```javascript
-import VeloPaymentsApIs from 'velo-payments';
-let defaultClient = VeloPaymentsApIs.ApiClient.instance;
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new VeloPaymentsApIs.GetPayoutApi();
+let apiInstance = new VeloPayments.GetPayoutApi();
 let payoutId = null; // String | Id of the payout
 apiInstance.v3PayoutsPayoutIdGet(payoutId, (error, data, response) => {
   if (error) {
@@ -35,6 +37,7 @@ apiInstance.v3PayoutsPayoutIdGet(payoutId, (error, data, response) => {
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -50,6 +53,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

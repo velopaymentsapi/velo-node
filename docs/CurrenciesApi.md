@@ -1,4 +1,4 @@
-# VeloPaymentsApIs.CurrenciesApi
+# VeloPayments.CurrenciesApi
 
 All URIs are relative to *https://api.sandbox.velopayments.com*
 
@@ -7,8 +7,9 @@ Method | HTTP request | Description
 [**listSupportedCurrencies**](CurrenciesApi.md#listSupportedCurrencies) | **GET** /v2/currencies | List Supported Currencies
 
 
-<a name="listSupportedCurrencies"></a>
-# **listSupportedCurrencies**
+
+## listSupportedCurrencies
+
 > SupportedCurrencyResponse listSupportedCurrencies()
 
 List Supported Currencies
@@ -16,14 +17,15 @@ List Supported Currencies
 List the supported currencies.
 
 ### Example
+
 ```javascript
-import VeloPaymentsApIs from 'velo-payments';
-let defaultClient = VeloPaymentsApIs.ApiClient.instance;
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new VeloPaymentsApIs.CurrenciesApi();
+let apiInstance = new VeloPayments.CurrenciesApi();
 apiInstance.listSupportedCurrencies((error, data, response) => {
   if (error) {
     console.error(error);
@@ -34,6 +36,7 @@ apiInstance.listSupportedCurrencies((error, data, response) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -46,6 +49,6 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

@@ -1,6 +1,7 @@
-# VeloPaymentsApIs.CreatePayeesCSVResponse
+# VeloPayments.CreatePayeesCSVResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **batchId** | **String** |  | [optional] 

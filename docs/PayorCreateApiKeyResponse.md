@@ -1,6 +1,7 @@
-# VeloPaymentsApIs.PayorCreateApiKeyResponse
+# VeloPayments.PayorCreateApiKeyResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **apiKey** | **String** | API Key | [optional] 

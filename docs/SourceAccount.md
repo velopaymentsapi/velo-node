@@ -1,6 +1,7 @@
-# VeloPaymentsApIs.SourceAccount
+# VeloPayments.SourceAccount
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sourceAccountName** | **String** |  | 

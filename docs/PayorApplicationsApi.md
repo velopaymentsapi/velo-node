@@ -1,4 +1,4 @@
-# VeloPaymentsApIs.PayorApplicationsApi
+# VeloPayments.PayorApplicationsApi
 
 All URIs are relative to *https://api.sandbox.velopayments.com*
 
@@ -8,8 +8,9 @@ Method | HTTP request | Description
 [**payorCreateApplicationRequest**](PayorApplicationsApi.md#payorCreateApplicationRequest) | **POST** /v1/payors/{payorId}/applications | Create Application
 
 
-<a name="payorCreateApiKeyRequest"></a>
-# **payorCreateApiKeyRequest**
+
+## payorCreateApiKeyRequest
+
 > PayorCreateApiKeyResponse payorCreateApiKeyRequest(payorId, applicationId, payorCreateApiKeyRequest)
 
 Create API Key
@@ -17,17 +18,18 @@ Create API Key
 Create an an API key for the given payor Id and application Id
 
 ### Example
+
 ```javascript
-import VeloPaymentsApIs from 'velo-payments';
-let defaultClient = VeloPaymentsApIs.ApiClient.instance;
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new VeloPaymentsApIs.PayorApplicationsApi();
+let apiInstance = new VeloPayments.PayorApplicationsApi();
 let payorId = null; // String | The account owner Payor ID
 let applicationId = null; // String | Application ID
-let payorCreateApiKeyRequest = new VeloPaymentsApIs.PayorCreateApiKeyRequest(); // PayorCreateApiKeyRequest | Details of application API key to create
+let payorCreateApiKeyRequest = new VeloPayments.PayorCreateApiKeyRequest(); // PayorCreateApiKeyRequest | Details of application API key to create
 apiInstance.payorCreateApiKeyRequest(payorId, applicationId, payorCreateApiKeyRequest, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -38,6 +40,7 @@ apiInstance.payorCreateApiKeyRequest(payorId, applicationId, payorCreateApiKeyRe
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -55,28 +58,30 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="payorCreateApplicationRequest"></a>
-# **payorCreateApplicationRequest**
+
+## payorCreateApplicationRequest
+
 > payorCreateApplicationRequest(payorId, payorCreateApplicationRequest)
 
 Create Application
 
-Create an application for the given Payor ID
+Create an application for the given Payor ID. Applications are programatic users which can be assigned unique keys.
 
 ### Example
+
 ```javascript
-import VeloPaymentsApIs from 'velo-payments';
-let defaultClient = VeloPaymentsApIs.ApiClient.instance;
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new VeloPaymentsApIs.PayorApplicationsApi();
+let apiInstance = new VeloPayments.PayorApplicationsApi();
 let payorId = null; // String | The account owner Payor ID
-let payorCreateApplicationRequest = new VeloPaymentsApIs.PayorCreateApplicationRequest(); // PayorCreateApplicationRequest | Details of application to create
+let payorCreateApplicationRequest = new VeloPayments.PayorCreateApplicationRequest(); // PayorCreateApplicationRequest | Details of application to create
 apiInstance.payorCreateApplicationRequest(payorId, payorCreateApplicationRequest, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -87,6 +92,7 @@ apiInstance.payorCreateApplicationRequest(payorId, payorCreateApplicationRequest
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -103,6 +109,6 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: Not defined
 

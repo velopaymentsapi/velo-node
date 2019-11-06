@@ -1,4 +1,4 @@
-# VeloPaymentsApIs.OfacStatus
+# VeloPayments.OfacStatus
 
 ## Enum
 

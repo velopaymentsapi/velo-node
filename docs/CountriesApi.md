@@ -1,4 +1,4 @@
-# VeloPaymentsApIs.CountriesApi
+# VeloPayments.CountriesApi
 
 All URIs are relative to *https://api.sandbox.velopayments.com*
 
@@ -8,8 +8,9 @@ Method | HTTP request | Description
 [**v1PaymentChannelRulesGet**](CountriesApi.md#v1PaymentChannelRulesGet) | **GET** /v1/paymentChannelRules | List Payment Channel Country Rules
 
 
-<a name="listSupportedCountries"></a>
-# **listSupportedCountries**
+
+## listSupportedCountries
+
 > SupportedCountriesResponse listSupportedCountries()
 
 List Supported Countries
@@ -17,14 +18,15 @@ List Supported Countries
 List the supported countries.
 
 ### Example
+
 ```javascript
-import VeloPaymentsApIs from 'velo-payments';
-let defaultClient = VeloPaymentsApIs.ApiClient.instance;
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new VeloPaymentsApIs.CountriesApi();
+let apiInstance = new VeloPayments.CountriesApi();
 apiInstance.listSupportedCountries((error, data, response) => {
   if (error) {
     console.error(error);
@@ -35,6 +37,7 @@ apiInstance.listSupportedCountries((error, data, response) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -47,11 +50,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="v1PaymentChannelRulesGet"></a>
-# **v1PaymentChannelRulesGet**
+
+## v1PaymentChannelRulesGet
+
 > PaymentChannelRulesResponse v1PaymentChannelRulesGet()
 
 List Payment Channel Country Rules
@@ -59,14 +63,15 @@ List Payment Channel Country Rules
 List the country specific payment channel rules.
 
 ### Example
+
 ```javascript
-import VeloPaymentsApIs from 'velo-payments';
-let defaultClient = VeloPaymentsApIs.ApiClient.instance;
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new VeloPaymentsApIs.CountriesApi();
+let apiInstance = new VeloPayments.CountriesApi();
 apiInstance.v1PaymentChannelRulesGet((error, data, response) => {
   if (error) {
     console.error(error);
@@ -77,6 +82,7 @@ apiInstance.v1PaymentChannelRulesGet((error, data, response) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -89,6 +95,6 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

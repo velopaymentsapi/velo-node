@@ -1,4 +1,4 @@
-# VeloPaymentsApIs.InstructPayoutApi
+# VeloPayments.InstructPayoutApi
 
 All URIs are relative to *https://api.sandbox.velopayments.com*
 
@@ -7,8 +7,9 @@ Method | HTTP request | Description
 [**v3PayoutsPayoutIdPost**](InstructPayoutApi.md#v3PayoutsPayoutIdPost) | **POST** /v3/payouts/{payoutId} | Instruct Payout
 
 
-<a name="v3PayoutsPayoutIdPost"></a>
-# **v3PayoutsPayoutIdPost**
+
+## v3PayoutsPayoutIdPost
+
 > v3PayoutsPayoutIdPost(payoutId)
 
 Instruct Payout
@@ -16,14 +17,15 @@ Instruct Payout
 Instruct a payout to be made for the specified payoutId.
 
 ### Example
+
 ```javascript
-import VeloPaymentsApIs from 'velo-payments';
-let defaultClient = VeloPaymentsApIs.ApiClient.instance;
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
 // Configure OAuth2 access token for authorization: OAuth2
 let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new VeloPaymentsApIs.InstructPayoutApi();
+let apiInstance = new VeloPayments.InstructPayoutApi();
 let payoutId = null; // String | Id of the payout
 apiInstance.v3PayoutsPayoutIdPost(payoutId, (error, data, response) => {
   if (error) {
@@ -35,6 +37,7 @@ apiInstance.v3PayoutsPayoutIdPost(payoutId, (error, data, response) => {
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -50,6 +53,6 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 

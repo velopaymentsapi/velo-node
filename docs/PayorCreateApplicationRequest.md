@@ -1,6 +1,7 @@
-# VeloPaymentsApIs.PayorCreateApplicationRequest
+# VeloPayments.PayorCreateApplicationRequest
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | The name of the application. | 
