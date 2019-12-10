@@ -7,8 +7,10 @@ Method | HTTP request | Description
 [**getPayeesInvitationStatus**](PayeeInvitationApi.md#getPayeesInvitationStatus) | **GET** /v1/payees/payors/{payorId}/invitationStatus | Get Payee Invitation Status
 [**getPayeesInvitationStatusV2**](PayeeInvitationApi.md#getPayeesInvitationStatusV2) | **GET** /v2/payees/payors/{payorId}/invitationStatus | Get Payee Invitation Status
 [**resendPayeeInvite**](PayeeInvitationApi.md#resendPayeeInvite) | **POST** /v1/payees/{payeeId}/invite | Resend Payee Invite
-[**v2CreatePayee**](PayeeInvitationApi.md#v2CreatePayee) | **POST** /v2/payees | Intiate Payee Creation
+[**v2CreatePayee**](PayeeInvitationApi.md#v2CreatePayee) | **POST** /v2/payees | Intiate Payee Creation V2
 [**v2QueryBatchStatus**](PayeeInvitationApi.md#v2QueryBatchStatus) | **GET** /v2/payees/batch/{batchId} | Query Batch Status
+[**v3CreatePayee**](PayeeInvitationApi.md#v3CreatePayee) | **POST** /v3/payees | Intiate Payee Creation V3
+[**v3QueryBatchStatus**](PayeeInvitationApi.md#v3QueryBatchStatus) | **GET** /v3/payees/batch/{batchId} | Query Batch Status
 
 
 
@@ -175,7 +177,7 @@ Name | Type | Description  | Notes
 
 > CreatePayeesCSVResponse v2CreatePayee(createPayeesRequest)
 
-Intiate Payee Creation
+Intiate Payee Creation V2
 
 Initiate the process of creating 1 to 2000 payees in a batch Use the response location header to query for status (201 - Created, 400 - invalid request body, 409 - if there is a duplicate remote id within the batch / if there is a duplicate email within the batch). 
 
@@ -240,6 +242,104 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new VeloPayments.PayeeInvitationApi();
 let batchId = null; // String | Batch Id
 apiInstance.v2QueryBatchStatus(batchId, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **batchId** | [**String**](.md)| Batch Id | 
+
+### Return type
+
+[**QueryBatchResponse**](QueryBatchResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v3CreatePayee
+
+> CreatePayeesCSVResponse2 v3CreatePayee(createPayeesRequest2)
+
+Intiate Payee Creation V3
+
+Initiate the process of creating 1 to 2000 payees in a batch Use the response location header to query for status (201 - Created, 400 - invalid request body, 409 - if there is a duplicate remote id within the batch / if there is a duplicate email within the batch). 
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.PayeeInvitationApi();
+let createPayeesRequest2 = new VeloPayments.CreatePayeesRequest2(); // CreatePayeesRequest2 | Post payees to create.
+apiInstance.v3CreatePayee(createPayeesRequest2, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createPayeesRequest2** | [**CreatePayeesRequest2**](CreatePayeesRequest2.md)| Post payees to create. | 
+
+### Return type
+
+[**CreatePayeesCSVResponse2**](CreatePayeesCSVResponse2.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+
+## v3QueryBatchStatus
+
+> QueryBatchResponse v3QueryBatchStatus(batchId)
+
+Query Batch Status
+
+Fetch the status of a specific batch of payees. The batch is fully processed when status is ACCEPTED and pendingCount is 0 ( 200 - OK, 404 - batch not found ). 
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.PayeeInvitationApi();
+let batchId = null; // String | Batch Id
+apiInstance.v3QueryBatchStatus(batchId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
