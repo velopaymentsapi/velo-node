@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**getPayeeById**](PayeesApi.md#getPayeeById) | **GET** /v1/payees/{payeeId} | Get Payee by Id
 [**listPayeeChanges**](PayeesApi.md#listPayeeChanges) | **GET** /v1/deltas/payees | List Payee Changes
 [**listPayees**](PayeesApi.md#listPayees) | **GET** /v1/payees | List Payees
+[**listPayeesV3**](PayeesApi.md#listPayeesV3) | **GET** /v3/payees | List Payees
+[**v1PayeesPayeeIdRemoteIdUpdatePost**](PayeesApi.md#v1PayeesPayeeIdRemoteIdUpdatePost) | **POST** /v1/payees/{payeeId}/remoteIdUpdate | Update Payee Remote Id
 
 
 
@@ -196,7 +198,7 @@ let opts = {
   'displayName': "displayName_example", // String | The display name of the payees.
   'remoteId': "remoteId_example", // String | The remote id of the payees.
   'payeeType': new VeloPayments.PayeeType(), // PayeeType | The onboarded status of the payees.
-  'payeeCountry': "payeeCountry_example", // String | The country of the payees.
+  'payeeCountry': "payeeCountry_example", // String | The country of the payee - 2 letter ISO 3166-1 country code (upper case)
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
   'sort': "'displayName:asc'" // String | List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
@@ -222,7 +224,7 @@ Name | Type | Description  | Notes
  **displayName** | **String**| The display name of the payees. | [optional] 
  **remoteId** | **String**| The remote id of the payees. | [optional] 
  **payeeType** | [**PayeeType**](.md)| The onboarded status of the payees. | [optional] 
- **payeeCountry** | **String**| The country of the payees. | [optional] 
+ **payeeCountry** | **String**| The country of the payee - 2 letter ISO 3166-1 country code (upper case) | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
  **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;onboardedStatus:asc,name:asc) Default is name:asc &#39;name&#39; is treated as company name for companies - last name + &#39;,&#39; + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus.  | [optional] [default to &#39;displayName:asc&#39;]
@@ -238,5 +240,127 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## listPayeesV3
+
+> PagedPayeeResponse2 listPayeesV3(payorId, opts)
+
+List Payees
+
+Get a paginated response listing the payees for a payor.
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.PayeesApi();
+let payorId = null; // String | The account owner Payor ID
+let opts = {
+  'ofacStatus': new VeloPayments.WatchlistStatus(), // WatchlistStatus | The watchlistStatus of the payees.
+  'onboardedStatus': new VeloPayments.OnboardedStatus(), // OnboardedStatus | The onboarded status of the payees.
+  'email': null, // String | Email address
+  'displayName': "displayName_example", // String | The display name of the payees.
+  'remoteId': "remoteId_example", // String | The remote id of the payees.
+  'payeeType': new VeloPayments.PayeeType(), // PayeeType | The onboarded status of the payees.
+  'payeeCountry': "payeeCountry_example", // String | The country of the payee - 2 letter ISO 3166-1 country code (upper case)
+  'page': 1, // Number | Page number. Default is 1.
+  'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
+  'sort': "'displayName:asc'" // String | List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
+};
+apiInstance.listPayeesV3(payorId, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payorId** | [**String**](.md)| The account owner Payor ID | 
+ **ofacStatus** | [**WatchlistStatus**](.md)| The watchlistStatus of the payees. | [optional] 
+ **onboardedStatus** | [**OnboardedStatus**](.md)| The onboarded status of the payees. | [optional] 
+ **email** | [**String**](.md)| Email address | [optional] 
+ **displayName** | **String**| The display name of the payees. | [optional] 
+ **remoteId** | **String**| The remote id of the payees. | [optional] 
+ **payeeType** | [**PayeeType**](.md)| The onboarded status of the payees. | [optional] 
+ **payeeCountry** | **String**| The country of the payee - 2 letter ISO 3166-1 country code (upper case) | [optional] 
+ **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
+ **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
+ **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;onboardedStatus:asc,name:asc) Default is name:asc &#39;name&#39; is treated as company name for companies - last name + &#39;,&#39; + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus.  | [optional] [default to &#39;displayName:asc&#39;]
+
+### Return type
+
+[**PagedPayeeResponse2**](PagedPayeeResponse2.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v1PayeesPayeeIdRemoteIdUpdatePost
+
+> v1PayeesPayeeIdRemoteIdUpdatePost(payeeId, updateRemoteIdRequest)
+
+Update Payee Remote Id
+
+Update the remote Id for the given Payee Id.
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.PayeesApi();
+let payeeId = null; // String | The UUID of the payee.
+let updateRemoteIdRequest = new VeloPayments.UpdateRemoteIdRequest(); // UpdateRemoteIdRequest | Request to update payee remote id
+apiInstance.v1PayeesPayeeIdRemoteIdUpdatePost(payeeId, updateRemoteIdRequest, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payeeId** | [**String**](.md)| The UUID of the payee. | 
+ **updateRemoteIdRequest** | [**UpdateRemoteIdRequest**](UpdateRemoteIdRequest.md)| Request to update payee remote id | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 

@@ -1,4 +1,4 @@
-# VeloPayments.PayeePayorRefV2
+# VeloPayments.PayeePayorRef2
 
 ## Properties
 
