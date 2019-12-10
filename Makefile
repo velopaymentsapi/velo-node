@@ -33,6 +33,13 @@ generate:
 		-o /local \
 		-c /local/oa3-config.json
 
+trim:
+	- rm -Rf .openapi-generator
+	- rm .openapi-generator-ignore
+	- rm .travis.yml
+	- rm git_push.sh
+
+info:
 	echo "import ApiClient from '../ApiClient';" >> OneOfstringstring.js
 	echo "export default class OneOfstringstring {" >> OneOfstringstring.js
 	echo "	static constructFromObject(object) {" >> OneOfstringstring.js
@@ -48,14 +55,7 @@ generate:
 	echo "	}" >> OneOfdatestring.js
 	echo "}" >> OneOfdatestring.js
 	mv OneOfdatestring.js src/model/
-
-trim:
-	- rm -Rf .openapi-generator
-	- rm .openapi-generator-ignore
-	- rm .travis.yml
-	- rm git_push.sh
-
-info:
+	
 	# adjust package.json
 	sed -i.bak 's/"main": "src\/index.js"/"main": "dist\/index.js", "repository": {"type": "git","url": "git+ssh:\/\/git@github.com\/velopaymentsapi\/velo-node.git"}/' package.json && rm package.json.bak
 	sed -i.bak 's/"test": "mocha/"clean": "rm \-rf dist \&\& mkdir dist", "build": "npm run clean \&\& babel src \-\-out\-dir dist", "test": "mocha/' package.json && rm package.json.bak
