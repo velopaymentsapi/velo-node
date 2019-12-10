@@ -1,3 +1,7 @@
 dist
 .npmrc
 node_modules
+.openapi-generator
+.openapi-generator-ignore
+.travis.yml
+git_push.sh
