@@ -62,7 +62,7 @@ info:
 	sed -i.bak 's/"test": "mocha/"clean": "rm \-rf dist \&\& mkdir dist", "build": "npm run clean \&\& babel src \-\-out\-dir dist", "test": "mocha/' package.json && rm package.json.bak
 	# adjust README.md
 	sed -i.bak '1s/.*/# JavaScript client for Velo/' README.md && rm README.md.bak
-	sed -i.bak '2s/.*/[![License](https:\/\/img.shields.io\/badge\/License-Apache%202.0-blue.svg)](https:\/\/opensource.org\/licenses\/Apache-2.0) [![npm version](https:\/\/badge.fury.io\/js\/velo-node.svg)](https:\/\/badge.fury.io\/js\/velo-node) [![CircleCI](https:\/\/circleci.com\/gh\/velopaymentsapi\/velo-node.svg?style=svg)](https:\/\/circleci.com\/gh\/velopaymentsapi\/velo-node)\\/' README.md && rm README.md.bak
+	sed -i.bak '2s/.*/[![License](https:\/\/img.shields.io\/badge\/License-Apache%202.0-blue.svg)](https:\/\/opensource.org\/licenses\/Apache-2.0) [![npm version](https:\/\/badge.fury.io\/js\/velo-payments.svg)](https:\/\/badge.fury.io\/js\/velo-payments) [![CircleCI](https:\/\/circleci.com\/gh\/velopaymentsapi\/velo-node.svg?style=svg)](https:\/\/circleci.com\/gh\/velopaymentsapi\/velo-node)\\/' README.md && rm README.md.bak
 	sed -i.bak '3s/.*/This library provides a JavaScript client that simplifies interactions with the Velo Payments API. For full details covering the API visit our docs at [Velo Payments APIs](https:\/\/apidocs.velopayments.com). Note: some of the Velo API calls which require authorization via an access token, see the full docs on how to configure./' README.md && rm README.md.bak
 	sed -i.bak '4d' README.md && rm README.md.bak
 	sed -i.bak '25,64d' README.md && rm README.md.bak
