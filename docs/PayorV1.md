@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **fundingAccountRoutingNumber** | **String** | The funding account routing number to be used for the payor. | [optional] 
 **fundingAccountAccountNumber** | **String** | The funding account number to be used for the payor. | [optional] 
 **fundingAccountAccountName** | **String** | The funding account name to be used for the payor. | [optional] 
-**kycState** | **String** | The kyc state of the payor. | [optional] [readonly] 
+**kycState** | [**KycState**](KycState.md) |  | [optional] 
 **manualLockout** | **Boolean** | Whether or not the payor has been manually locked by the backoffice. | [optional] 
 **payeeGracePeriodProcessingEnabled** | **Boolean** | Whether grace period processing is enabled. | [optional] [readonly] 
 **payeeGracePeriodDays** | **Number** | The grace period for paying payees in days. | [optional] [readonly] 
@@ -25,19 +25,6 @@ Name | Type | Description | Notes
 **language** | **String** | The payor’s language preference. Must be one of [EN, FR]. | [optional] 
 **includesReports** | **Boolean** |  | [optional] 
 **maxMasterPayorAdmins** | **Number** |  | [optional] 
-
-
-
-## Enum: KycStateEnum
-
-
-* `FAILED_KYC` (value: `"FAILED_KYC"`)
-
-* `PASSED_KYC` (value: `"PASSED_KYC"`)
-
-* `REQUIRES_KYC` (value: `"REQUIRES_KYC"`)
-
-
 
 
 

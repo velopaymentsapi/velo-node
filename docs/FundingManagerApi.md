@@ -6,13 +6,16 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createAchFundingRequest**](FundingManagerApi.md#createAchFundingRequest) | **POST** /v1/sourceAccounts/{sourceAccountId}/achFundingRequest | Create Funding Request
 [**createFundingRequest**](FundingManagerApi.md#createFundingRequest) | **POST** /v2/sourceAccounts/{sourceAccountId}/fundingRequest | Create Funding Request
-[**getFundings**](FundingManagerApi.md#getFundings) | **GET** /v1/paymentaudit/fundings | Get Fundings for Payor
+[**getFundingAccount**](FundingManagerApi.md#getFundingAccount) | **GET** /v1/fundingAccounts/{fundingAccountId} | Get Funding Account
+[**getFundingAccounts**](FundingManagerApi.md#getFundingAccounts) | **GET** /v1/fundingAccounts | Get Funding Accounts
+[**getFundingsV1**](FundingManagerApi.md#getFundingsV1) | **GET** /v1/paymentaudit/fundings | Get Fundings for Payor
 [**getSourceAccount**](FundingManagerApi.md#getSourceAccount) | **GET** /v1/sourceAccounts/{sourceAccountId} | Get details about given source account.
 [**getSourceAccountV2**](FundingManagerApi.md#getSourceAccountV2) | **GET** /v2/sourceAccounts/{sourceAccountId} | Get details about given source account.
 [**getSourceAccounts**](FundingManagerApi.md#getSourceAccounts) | **GET** /v1/sourceAccounts | Get list of source accounts
 [**getSourceAccountsV2**](FundingManagerApi.md#getSourceAccountsV2) | **GET** /v2/sourceAccounts | Get list of source accounts
-[**listFundingAuditDeltas**](FundingManagerApi.md#listFundingAuditDeltas) | **GET** /v1/deltas/fundings | List Funding changes
+[**listFundingAuditDeltas**](FundingManagerApi.md#listFundingAuditDeltas) | **GET** /v1/deltas/fundings | Get Funding Audit Delta
 [**setNotificationsRequest**](FundingManagerApi.md#setNotificationsRequest) | **POST** /v1/sourceAccounts/{sourceAccountId}/notifications | Set notifications
+[**transferFunds**](FundingManagerApi.md#transferFunds) | **POST** /v2/sourceAccounts/{sourceAccountId}/transfers | Transfer Funds between source accounts
 
 
 
@@ -22,7 +25,7 @@ Method | HTTP request | Description
 
 Create Funding Request
 
-Instruct a funding request to transfer funds from the payor’s funding bank to the payor’s balance held within Velo  (202 - accepted, 400 - invalid request body, 404 - source account not found).
+Instruct a funding request to transfer funds from the payor’s funding bank to the payor’s balance held within Velo.
 
 ### Example
 
@@ -64,7 +67,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## createFundingRequest
@@ -115,12 +118,126 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
-## getFundings
+## getFundingAccount
 
-> GetFundingsResponse getFundings(opts)
+> FundingAccountResponse getFundingAccount(fundingAccountId, opts)
+
+Get Funding Account
+
+Get Funding Account by ID
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.FundingManagerApi();
+let fundingAccountId = null; // String | 
+let opts = {
+  'sensitive': false // Boolean | 
+};
+apiInstance.getFundingAccount(fundingAccountId, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fundingAccountId** | [**String**](.md)|  | 
+ **sensitive** | **Boolean**|  | [optional] [default to false]
+
+### Return type
+
+[**FundingAccountResponse**](FundingAccountResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getFundingAccounts
+
+> ListFundingAccountsResponse getFundingAccounts(opts)
+
+Get Funding Accounts
+
+Get the source accounts.
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.FundingManagerApi();
+let opts = {
+  'payorId': null, // String | 
+  'sourceAccountId': null, // String | 
+  'page': 1, // Number | Page number. Default is 1.
+  'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
+  'sort': "'accountName:asc'", // String | 
+  'sensitive': false // Boolean | 
+};
+apiInstance.getFundingAccounts(opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payorId** | [**String**](.md)|  | [optional] 
+ **sourceAccountId** | [**String**](.md)|  | [optional] 
+ **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
+ **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
+ **sort** | **String**|  | [optional] [default to &#39;accountName:asc&#39;]
+ **sensitive** | **Boolean**|  | [optional] [default to false]
+
+### Return type
+
+[**ListFundingAccountsResponse**](ListFundingAccountsResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getFundingsV1
+
+> GetFundingsResponse getFundingsV1(opts)
 
 Get Fundings for Payor
 
@@ -142,7 +259,7 @@ let opts = {
   'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
   'sort': "sort_example" // String | List of sort fields. Example: ```?sort=destinationCurrency:asc,destinationAmount:asc``` Default is no sort. The supported sort fields are: dateTime and amount. 
 };
-apiInstance.getFundings(opts, (error, data, response) => {
+apiInstance.getFundingsV1(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -393,11 +510,11 @@ Name | Type | Description  | Notes
 
 ## listFundingAuditDeltas
 
-> FundingDeltaResponse listFundingAuditDeltas(payorId, updatedSince, opts)
+> PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse listFundingAuditDeltas(payorId, updatedSince, opts)
 
-List Funding changes
+Get Funding Audit Delta
 
-Get a paginated response listing funding changes.
+Get funding audit deltas for a payor
 
 ### Example
 
@@ -409,11 +526,11 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.FundingManagerApi();
-let payorId = null; // String | The Payor ID to find associated funding records
-let updatedSince = new Date("2013-10-20T19:20:30+01:00"); // Date | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
+let payorId = null; // String | 
+let updatedSince = new Date("2013-10-20T19:20:30+01:00"); // Date | 
 let opts = {
   'page': 1, // Number | Page number. Default is 1.
-  'pageSize': 100 // Number | Page size. Default is 100. Max allowable is 1000.
+  'pageSize': 25 // Number | Page size. Default is 25. Max allowable is 100.
 };
 apiInstance.listFundingAuditDeltas(payorId, updatedSince, opts, (error, data, response) => {
   if (error) {
@@ -429,14 +546,14 @@ apiInstance.listFundingAuditDeltas(payorId, updatedSince, opts, (error, data, re
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The Payor ID to find associated funding records | 
- **updatedSince** | **Date**| The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm | 
+ **payorId** | [**String**](.md)|  | 
+ **updatedSince** | **Date**|  | 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
- **pageSize** | **Number**| Page size. Default is 100. Max allowable is 1000. | [optional] [default to 100]
+ **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
 
 ### Return type
 
-[**FundingDeltaResponse**](FundingDeltaResponse.md)
+[**PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse**](PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse.md)
 
 ### Authorization
 
@@ -496,5 +613,56 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
+
+
+## transferFunds
+
+> transferFunds(sourceAccountId, transferRequest)
+
+Transfer Funds between source accounts
+
+Transfer funds between source accounts for a Payor. The &#39;from&#39; source account is identified in the URL, and is the account which will be debited. The &#39;to&#39; (destination) source account is in the body, and is the account which will be credited. Both source accounts must belong to the same Payor. There must be sufficient balance in the &#39;from&#39; source account, otherwise the transfer attempt will fail.
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.FundingManagerApi();
+let sourceAccountId = null; // String | The 'from' source account id, which will be debited
+let transferRequest = new VeloPayments.TransferRequest(); // TransferRequest | Body
+apiInstance.transferFunds(sourceAccountId, transferRequest, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sourceAccountId** | [**String**](.md)| The &#39;from&#39; source account id, which will be debited | 
+ **transferRequest** | [**TransferRequest**](TransferRequest.md)| Body | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 

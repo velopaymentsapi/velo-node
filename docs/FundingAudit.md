@@ -31,6 +31,19 @@ Name | Type | Description | Notes
 
 
 
+## Enum: FundingTypeEnum
+
+
+* `ACH` (value: `"ACH"`)
+
+* `WIRE` (value: `"WIRE"`)
+
+* `EMBEDDED` (value: `"EMBEDDED"`)
+
+
+
+
+
 ## Enum: TopupTypeEnum
 
 

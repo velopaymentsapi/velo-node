@@ -4,13 +4,14 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**exportTransactionsCSV**](PaymentAuditServiceApi.md#exportTransactionsCSV) | **GET** /v4/paymentaudit/transactions | Export Transactions
-[**getFundings**](PaymentAuditServiceApi.md#getFundings) | **GET** /v1/paymentaudit/fundings | Get Fundings for Payor
+[**exportTransactionsCSVV3**](PaymentAuditServiceApi.md#exportTransactionsCSVV3) | **GET** /v3/paymentaudit/transactions | Export Transactions
+[**exportTransactionsCSVV4**](PaymentAuditServiceApi.md#exportTransactionsCSVV4) | **GET** /v4/paymentaudit/transactions | Export Transactions
+[**getFundingsV1**](PaymentAuditServiceApi.md#getFundingsV1) | **GET** /v1/paymentaudit/fundings | Get Fundings for Payor
 [**getPaymentDetails**](PaymentAuditServiceApi.md#getPaymentDetails) | **GET** /v3/paymentaudit/payments/{paymentId} | Get Payment
 [**getPaymentDetailsV4**](PaymentAuditServiceApi.md#getPaymentDetailsV4) | **GET** /v4/paymentaudit/payments/{paymentId} | Get Payment
 [**getPaymentsForPayout**](PaymentAuditServiceApi.md#getPaymentsForPayout) | **GET** /v3/paymentaudit/payouts/{payoutId} | Get Payments for Payout
 [**getPaymentsForPayoutV4**](PaymentAuditServiceApi.md#getPaymentsForPayoutV4) | **GET** /v4/paymentaudit/payouts/{payoutId} | Get Payments for Payout
-[**getPayoutsForPayor**](PaymentAuditServiceApi.md#getPayoutsForPayor) | **GET** /v3/paymentaudit/payouts | Get Payouts for Payor
+[**getPayoutsForPayorV3**](PaymentAuditServiceApi.md#getPayoutsForPayorV3) | **GET** /v3/paymentaudit/payouts | Get Payouts for Payor
 [**getPayoutsForPayorV4**](PaymentAuditServiceApi.md#getPayoutsForPayorV4) | **GET** /v4/paymentaudit/payouts | Get Payouts for Payor
 [**listPaymentChanges**](PaymentAuditServiceApi.md#listPaymentChanges) | **GET** /v1/deltas/payments | List Payment Changes
 [**listPaymentsAudit**](PaymentAuditServiceApi.md#listPaymentsAudit) | **GET** /v3/paymentaudit/payments | Get List of Payments
@@ -18,9 +19,64 @@ Method | HTTP request | Description
 
 
 
-## exportTransactionsCSV
+## exportTransactionsCSVV3
 
-> String exportTransactionsCSV(opts)
+> PayorAmlTransactionV3 exportTransactionsCSVV3(opts)
+
+Export Transactions
+
+Download a CSV file containing payments in a date range. Uses Transfer-Encoding - chunked to stream to the client. Date range is inclusive of both the start and end dates.
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.PaymentAuditServiceApi();
+let opts = {
+  'payorId': null, // String | The Payor ID for whom you wish to run the report. For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor. 
+  'startDate': new Date("2013-10-20"), // Date | Start date, inclusive. Format is YYYY-MM-DD
+  'endDate': new Date("2013-10-20") // Date | End date, inclusive. Format is YYYY-MM-DD
+};
+apiInstance.exportTransactionsCSVV3(opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payorId** | [**String**](.md)| The Payor ID for whom you wish to run the report. For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor.  | [optional] 
+ **startDate** | **Date**| Start date, inclusive. Format is YYYY-MM-DD | [optional] 
+ **endDate** | **Date**| End date, inclusive. Format is YYYY-MM-DD | [optional] 
+
+### Return type
+
+[**PayorAmlTransactionV3**](PayorAmlTransactionV3.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/csv
+
+
+## exportTransactionsCSVV4
+
+> PayorAmlTransactionV4 exportTransactionsCSVV4(opts)
 
 Export Transactions
 
@@ -42,7 +98,7 @@ let opts = {
   'submittedDateFrom': new Date("2013-10-20"), // Date | Start date, inclusive. Format is YYYY-MM-DD
   'include': "include_example" // String | Mode to determine whether to include other Payor's data in the results. May only be used if payorId is specified. Can be omitted or set to 'payorOnly' or 'payorAndDescendants'. payorOnly: Only include results for the specified Payor. This is the default if 'include' is omitted. payorAndDescendants: Aggregate results for all descendant Payors of the specified Payor. Should only be used if the Payor with the specified payorId has at least one child Payor.                      Note when a Payor requests the report and include=payorAndDescendants is used, the following additional columns are included in the CSV: Payor Name, Payor Id 
 };
-apiInstance.exportTransactionsCSV(opts, (error, data, response) => {
+apiInstance.exportTransactionsCSVV4(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -63,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**PayorAmlTransactionV4**](PayorAmlTransactionV4.md)
 
 ### Authorization
 
@@ -75,9 +131,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/csv
 
 
-## getFundings
+## getFundingsV1
 
-> GetFundingsResponse getFundings(opts)
+> GetFundingsResponse getFundingsV1(opts)
 
 Get Fundings for Payor
 
@@ -99,7 +155,7 @@ let opts = {
   'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
   'sort': "sort_example" // String | List of sort fields. Example: ```?sort=destinationCurrency:asc,destinationAmount:asc``` Default is no sort. The supported sort fields are: dateTime and amount. 
 };
-apiInstance.getFundings(opts, (error, data, response) => {
+apiInstance.getFundingsV1(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -388,9 +444,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getPayoutsForPayor
+## getPayoutsForPayorV3
 
-> GetPayoutsResponseV3 getPayoutsForPayor(payorId, opts)
+> GetPayoutsResponseV3 getPayoutsForPayorV3(payorId, opts)
 
 Get Payouts for Payor
 
@@ -416,7 +472,7 @@ let opts = {
   'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
   'sort': "sort_example" // String | List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status. 
 };
-apiInstance.getPayoutsForPayor(payorId, opts, (error, data, response) => {
+apiInstance.getPayoutsForPayorV3(payorId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -455,7 +511,7 @@ Name | Type | Description  | Notes
 
 ## getPayoutsForPayorV4
 
-> GetPayoutsResponseV4 getPayoutsForPayorV4(payorId, opts)
+> GetPayoutsResponseV4 getPayoutsForPayorV4(opts)
 
 Get Payouts for Payor
 
@@ -471,17 +527,18 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceApi();
-let payorId = null; // String | The account owner Payor ID
 let opts = {
+  'payorId': null, // String | The id (UUID) of the payor funding the payout or the payor whose payees are being paid.
   'payoutMemo': "payoutMemo_example", // String | Payout Memo filter - case insensitive sub-string match
   'status': "status_example", // String | Payout Status
   'submittedDateFrom': new Date("2013-10-20"), // Date | The submitted date from range filter. Format is yyyy-MM-dd.
   'submittedDateTo': new Date("2013-10-20"), // Date | The submitted date to range filter. Format is yyyy-MM-dd.
+  'fromPayorName': "fromPayorName_example", // String | The name of the payor whose payees are being paid. This filters via a case insensitive substring match.
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
-  'sort': "sort_example" // String | List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status. 
+  'sort': "sort_example" // String | List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments 
 };
-apiInstance.getPayoutsForPayorV4(payorId, opts, (error, data, response) => {
+apiInstance.getPayoutsForPayorV4(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -495,14 +552,15 @@ apiInstance.getPayoutsForPayorV4(payorId, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The account owner Payor ID | 
+ **payorId** | [**String**](.md)| The id (UUID) of the payor funding the payout or the payor whose payees are being paid. | [optional] 
  **payoutMemo** | **String**| Payout Memo filter - case insensitive sub-string match | [optional] 
  **status** | **String**| Payout Status | [optional] 
  **submittedDateFrom** | **Date**| The submitted date from range filter. Format is yyyy-MM-dd. | [optional] 
  **submittedDateTo** | **Date**| The submitted date to range filter. Format is yyyy-MM-dd. | [optional] 
+ **fromPayorName** | **String**| The name of the payor whose payees are being paid. This filters via a case insensitive substring match. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
- **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status.  | [optional] 
+ **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments  | [optional] 
 
 ### Return type
 
@@ -664,7 +722,7 @@ Name | Type | Description  | Notes
 
 ## listPaymentsAuditV4
 
-> ListPaymentsResponse listPaymentsAuditV4(opts)
+> ListPaymentsResponseV4 listPaymentsAuditV4(opts)
 
 Get List of Payments
 
@@ -737,7 +795,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListPaymentsResponse**](ListPaymentsResponse.md)
+[**ListPaymentsResponseV4**](ListPaymentsResponseV4.md)
 
 ### Authorization
 

@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getPaymentsForPayout**](PayoutHistoryApi.md#getPaymentsForPayout) | **GET** /v3/paymentaudit/payouts/{payoutId} | Get Payments for Payout
 [**getPaymentsForPayoutV4**](PayoutHistoryApi.md#getPaymentsForPayoutV4) | **GET** /v4/paymentaudit/payouts/{payoutId} | Get Payments for Payout
-[**getPayoutStats**](PayoutHistoryApi.md#getPayoutStats) | **GET** /v1/paymentaudit/payoutStatistics | Get Payout Statistics
+[**getPayoutStatsV1**](PayoutHistoryApi.md#getPayoutStatsV1) | **GET** /v1/paymentaudit/payoutStatistics | Get Payout Statistics
 
 
 
@@ -160,9 +160,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getPayoutStats
+## getPayoutStatsV1
 
-> GetPayoutStatistics getPayoutStats(opts)
+> GetPayoutStatistics getPayoutStatsV1(opts)
 
 Get Payout Statistics
 
@@ -181,7 +181,7 @@ let apiInstance = new VeloPayments.PayoutHistoryApi();
 let opts = {
   'payorId': null // String | The account owner Payor ID. Required for external users.
 };
-apiInstance.getPayoutStats(opts, (error, data, response) => {
+apiInstance.getPayoutStatsV1(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **paymentsRejected** | **Number** |  | [optional] 
 **fxSummaries** | [**[QuoteFxSummary]**](QuoteFxSummary.md) |  | 
 **accounts** | [**[SourceAccount]**](SourceAccount.md) |  | 
+**acceptedPayments** | [**[AcceptedPayment]**](AcceptedPayment.md) |  | 
 **rejectedPayments** | [**[RejectedPayment]**](RejectedPayment.md) |  | 
 
 

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payorId** | **String** |  | [optional] [readonly] 
+**payorId** | **String** |  | [readonly] 
 **payorName** | **String** | The name of the payor. | 
 **address** | [**PayorAddressV2**](PayorAddressV2.md) |  | [optional] 
 **primaryContactName** | **String** | Name of primary contact for the payor. | [optional] 
 **primaryContactPhone** | **String** | Primary contact phone number for the payor. | [optional] 
 **primaryContactEmail** | **String** | Primary contact email for the payor. | [optional] 
-**kycState** | **String** | The kyc state of the payor. | [optional] [readonly] 
+**kycState** | [**KycState**](KycState.md) |  | [optional] 
 **manualLockout** | **Boolean** | Whether or not the payor has been manually locked by the backoffice. | [optional] 
 **payeeGracePeriodProcessingEnabled** | **Boolean** | Whether grace period processing is enabled. | [optional] [readonly] 
 **payeeGracePeriodDays** | **Number** | The grace period for paying payees in days. | [optional] [readonly] 
@@ -21,20 +21,9 @@ Name | Type | Description | Notes
 **reminderEmailsOptOut** | **Boolean** | Whether or not the payor has opted-out of reminder emails being sent. | [optional] [readonly] 
 **language** | **String** | The payor’s language preference. Must be one of [EN, FR]. | [optional] 
 **includesReports** | **Boolean** |  | [optional] 
+**wuCustomerId** | **String** |  | [optional] 
 **maxMasterPayorAdmins** | **Number** |  | [optional] 
-
-
-
-## Enum: KycStateEnum
-
-
-* `FAILED_KYC` (value: `"FAILED_KYC"`)
-
-* `PASSED_KYC` (value: `"PASSED_KYC"`)
-
-* `REQUIRES_KYC` (value: `"REQUIRES_KYC"`)
-
-
+**paymentRails** | [**PaymentRails**](PaymentRails.md) |  | [optional] 
 
 
 

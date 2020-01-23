@@ -4,13 +4,13 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v3PayoutsPayoutIdDelete**](WithdrawPayoutApi.md#v3PayoutsPayoutIdDelete) | **DELETE** /v3/payouts/{payoutId} | Withdraw Payout
+[**withdrawPayoutV3**](WithdrawPayoutApi.md#withdrawPayoutV3) | **DELETE** /v3/payouts/{payoutId} | Withdraw Payout
 
 
 
-## v3PayoutsPayoutIdDelete
+## withdrawPayoutV3
 
-> v3PayoutsPayoutIdDelete(payoutId)
+> withdrawPayoutV3(payoutId)
 
 Withdraw Payout
 
@@ -27,7 +27,7 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.WithdrawPayoutApi();
 let payoutId = null; // String | Id of the payout
-apiInstance.v3PayoutsPayoutIdDelete(payoutId, (error, data, response) => {
+apiInstance.withdrawPayoutV3(payoutId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
