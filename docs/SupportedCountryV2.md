@@ -1,4 +1,4 @@
-# VeloPayments.SupportedCountry2
+# VeloPayments.SupportedCountryV2
 
 ## Properties
 
