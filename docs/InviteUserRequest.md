@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **String** | the email address of the invited user | 
-**mfaType** | **String** | The MFA type that the user will use The type may be conditional on the role(s) the user has  | 
+**mfaType** | **String** | &lt;p&gt;The MFA type that the user will use&lt;/p&gt; &lt;p&gt;The type may be conditional on the role(s) the user has&lt;/p&gt;  | 
 **smsNumber** | **String** | The phone number of a device that the user can receive sms messages on  | 
 **primaryContactNumber** | **String** | The main contact number for the user  | 
 **secondaryContactNumber** | **String** | The secondary contact number for the user  | [optional] 

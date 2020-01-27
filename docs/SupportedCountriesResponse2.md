@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**countries** | [**[SupportedCountryV2]**](SupportedCountryV2.md) |  | [optional] 
+**countries** | [**[SupportedCountry2]**](SupportedCountry2.md) |  | [optional] 
 
 

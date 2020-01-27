@@ -4,13 +4,13 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPayoutSummaryV3**](GetPayoutApi.md#getPayoutSummaryV3) | **GET** /v3/payouts/{payoutId} | Get Payout Summary
+[**v3PayoutsPayoutIdGet**](GetPayoutApi.md#v3PayoutsPayoutIdGet) | **GET** /v3/payouts/{payoutId} | Get Payout Summary
 
 
 
-## getPayoutSummaryV3
+## v3PayoutsPayoutIdGet
 
-> PayoutSummaryResponse getPayoutSummaryV3(payoutId)
+> PayoutSummaryResponse v3PayoutsPayoutIdGet(payoutId)
 
 Get Payout Summary
 
@@ -27,7 +27,7 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.GetPayoutApi();
 let payoutId = null; // String | Id of the payout
-apiInstance.getPayoutSummaryV3(payoutId, (error, data, response) => {
+apiInstance.v3PayoutsPayoutIdGet(payoutId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteUserByIdV2**](UsersApi.md#deleteUserByIdV2) | **DELETE** /v2/users/{userId} | Delete a User
 [**disableUserV2**](UsersApi.md#disableUserV2) | **POST** /v2/users/{userId}/disable | Disable a User
-[**emailUpdate**](UsersApi.md#emailUpdate) | **POST** /v2/users/{userId}/emailUpdate | Update Email Address
 [**enableUserV2**](UsersApi.md#enableUserV2) | **POST** /v2/users/{userId}/enable | Enable a User
 [**getSelf**](UsersApi.md#getSelf) | **GET** /v2/users/self | Get Self
 [**getUserByIdV2**](UsersApi.md#getUserByIdV2) | **GET** /v2/users/{userId} | Get User
@@ -14,10 +13,12 @@ Method | HTTP request | Description
 [**listUsers**](UsersApi.md#listUsers) | **GET** /v2/users | List Users
 [**registerSms**](UsersApi.md#registerSms) | **POST** /v2/users/registration/sms | Register SMS Number
 [**resendToken**](UsersApi.md#resendToken) | **POST** /v2/users/{userId}/tokens | Resend a token
+[**roleUpdate**](UsersApi.md#roleUpdate) | **POST** /v2/users/{userId}/roleUpdate | Update User Role
 [**unlockUserV2**](UsersApi.md#unlockUserV2) | **POST** /v2/users/{userId}/unlock | Unlock a User
 [**unregisterMFA**](UsersApi.md#unregisterMFA) | **POST** /v2/users/{userId}/mfa/unregister | Unregister MFA for the user
 [**unregisterMFAForSelf**](UsersApi.md#unregisterMFAForSelf) | **POST** /v2/users/self/mfa/unregister | Unregister MFA for Self
 [**updatePasswordSelf**](UsersApi.md#updatePasswordSelf) | **POST** /v2/users/self/password | Update Password for self
+[**userDetailsUpdate**](UsersApi.md#userDetailsUpdate) | **POST** /v2/users/{userId}/userDetailsUpdate | Update User Details
 [**validatePasswordSelf**](UsersApi.md#validatePasswordSelf) | **POST** /v2/users/self/password/validate | Validate the proposed password
 
 
@@ -117,57 +118,6 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## emailUpdate
-
-> emailUpdate(userId, emailUpdateRequest)
-
-Update Email Address
-
-&lt;p&gt;Update the user&#39;s email address &lt;/p&gt; &lt;p&gt;If the email address is already in use a 409 will be returned&lt;/p&gt; 
-
-### Example
-
-```javascript
-import VeloPayments from 'velo-payments';
-let defaultClient = VeloPayments.ApiClient.instance;
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new VeloPayments.UsersApi();
-let userId = null; // String | The UUID of the User.
-let emailUpdateRequest = new VeloPayments.EmailUpdateRequest(); // EmailUpdateRequest | a new email address
-apiInstance.emailUpdate(userId, emailUpdateRequest, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userId** | [**String**](.md)| The UUID of the User. | 
- **emailUpdateRequest** | [**EmailUpdateRequest**](EmailUpdateRequest.md)| a new email address | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -524,6 +474,57 @@ null (empty response body)
 - **Accept**: application/json
 
 
+## roleUpdate
+
+> roleUpdate(userId, roleUpdateRequest)
+
+Update User Role
+
+&lt;p&gt;Update the user&#39;s Role&lt;/p&gt; 
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.UsersApi();
+let userId = null; // String | The UUID of the User.
+let roleUpdateRequest = new VeloPayments.RoleUpdateRequest(); // RoleUpdateRequest | The Role to change to
+apiInstance.roleUpdate(userId, roleUpdateRequest, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | [**String**](.md)| The UUID of the User. | 
+ **roleUpdateRequest** | [**RoleUpdateRequest**](RoleUpdateRequest.md)| The Role to change to | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## unlockUserV2
 
 > unlockUserV2(userId)
@@ -707,6 +708,57 @@ apiInstance.updatePasswordSelf(selfUpdatePasswordRequest, (error, data, response
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **selfUpdatePasswordRequest** | [**SelfUpdatePasswordRequest**](SelfUpdatePasswordRequest.md)| The password | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## userDetailsUpdate
+
+> userDetailsUpdate(userId, userDetailsUpdateRequest)
+
+Update User Details
+
+&lt;p&gt;Update the profile details for the given user&lt;/p&gt; &lt;p&gt;When updating Payor users with the role of payor.master_admin a verificationCode is required&lt;/p&gt; 
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.UsersApi();
+let userId = null; // String | The UUID of the User.
+let userDetailsUpdateRequest = new VeloPayments.UserDetailsUpdateRequest(); // UserDetailsUpdateRequest | The details of the user to update
+apiInstance.userDetailsUpdate(userId, userDetailsUpdateRequest, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | [**String**](.md)| The UUID of the User. | 
+ **userDetailsUpdateRequest** | [**UserDetailsUpdateRequest**](UserDetailsUpdateRequest.md)| The details of the user to update | 
 
 ### Return type
 

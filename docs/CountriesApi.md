@@ -22,10 +22,6 @@ List the supported countries.
 
 ```javascript
 import VeloPayments from 'velo-payments';
-let defaultClient = VeloPayments.ApiClient.instance;
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.CountriesApi();
 apiInstance.listSupportedCountries((error, data, response) => {
@@ -47,7 +43,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -61,16 +57,12 @@ This endpoint does not need any parameter.
 
 List Supported Countries
 
-List the supported countries.
+&lt;p&gt;List the supported countries.&lt;/p&gt; &lt;p&gt;This version will be retired in March 2020. Use /v2/supportedCountries&lt;/p&gt; 
 
 ### Example
 
 ```javascript
 import VeloPayments from 'velo-payments';
-let defaultClient = VeloPayments.ApiClient.instance;
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.CountriesApi();
 apiInstance.listSupportedCountriesV1((error, data, response) => {
@@ -92,7 +84,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

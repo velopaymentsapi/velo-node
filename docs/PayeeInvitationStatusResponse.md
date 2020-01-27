@@ -5,7 +5,20 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payeeId** | **String** |  | 
-**invitationStatus** | [**InvitationStatus**](InvitationStatus.md) |  | 
+**invitationStatus** | **String** |  | 
 **gracePeriodEndDate** | **Date** |  | [optional] 
+
+
+
+## Enum: InvitationStatusEnum
+
+
+* `ACCEPTED` (value: `"ACCEPTED"`)
+
+* `PENDING` (value: `"PENDING"`)
+
+* `DECLINED` (value: `"DECLINED"`)
+
+
 
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**failedSubmission** | [**Payee**](Payee.md) |  | [optional] 
+**failedSubmission** | [**Payee2**](Payee2.md) |  | [optional] 
 **failureMessage** | **String** |  | [optional] 
 
 

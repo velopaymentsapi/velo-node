@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payeeId** | **String** |  | [optional] [readonly] 
-**payorRefs** | [**[PayeePayorRef]**](PayeePayorRef.md) |  | [optional] [readonly] 
+**payorRefs** | [**[PayeePayorRefV3]**](PayeePayorRefV3.md) |  | [optional] [readonly] 
 **email** | **String** |  | [optional] 
 **address** | [**PayeeAddress**](PayeeAddress.md) |  | [optional] 
 **country** | **String** |  | [optional] 

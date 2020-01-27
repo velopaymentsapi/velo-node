@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **paymentChannelName** | **String** |  | [optional] 
 **iban** | **String** | Must match the regular expression &#x60;&#x60;&#x60;^[A-Za-z0-9]+$&#x60;&#x60;&#x60;. | [optional] 
 **accountNumber** | **String** |  | 
-**routingNo** | **String** |  | 
-**countryCode** | **String** | Must be a 3 character currency code. ISO 4217 | 
+**routingNumber** | **String** |  | 
+**countryCode** | **String** | Country Code must be a valid 2 letter ISO 3166-1 country code. | 
 **currency** | **String** |  | 
 **accountName** | **String** |  | 
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**isoCountryCode** | **String** |  | [optional] 
-**rules** | [**[PaymentChannelRule]**](PaymentChannelRule.md) |  | [optional] 
+**isoCountryCode** | **String** | The ISO code for the country | 
+**rules** | [**[PaymentChannelRule]**](PaymentChannelRule.md) | The rules for the given country | 
 
 
