@@ -4,41 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**isoCountryCode** | **String** |  | [optional] 
+**isoCountryCode** | **String** | Valid ISO 3166 2 character country code. See the &lt;a href&#x3D;\&quot;https://www.iso.org/iso-3166-country-codes.html\&quot; target&#x3D;\&quot;_blank\&quot; a&gt;ISO specification&lt;/a&gt; for details. | [optional] 
 **currencies** | **[String]** |  | [optional] 
-
-
-
-## Enum: IsoCountryCodeEnum
-
-
-* `US` (value: `"US"`)
-
-* `GB` (value: `"GB"`)
-
-* `FR` (value: `"FR"`)
-
-* `CA` (value: `"CA"`)
-
-* `JP` (value: `"JP"`)
-
-
-
-
-
-## Enum: [CurrenciesEnum]
-
-
-* `USD` (value: `"USD"`)
-
-* `GBP` (value: `"GBP"`)
-
-* `EUR` (value: `"EUR"`)
-
-* `CAD` (value: `"CAD"`)
-
-* `JPY` (value: `"JPY"`)
-
-
 
 
