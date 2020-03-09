@@ -5,3 +5,4 @@ node_modules
 .openapi-generator-ignore
 .travis.yml
 git_push.sh
+.nyc_output

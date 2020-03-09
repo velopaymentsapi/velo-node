@@ -8,7 +8,7 @@
     "build": "npm run clean && babel src --out-dir dist",
     "prepack": "npm run build",
     "clean": "rm -rf dist && mkdir dist",
-    "test": "mocha --require @babel/register --recursive"
+    "test": "nyc --reporter=text mocha --require @babel/register tests/**/*.js --recursive"
   },
   "browser": {
     "fs": false
@@ -18,6 +18,7 @@
     "superagent": "3.7.0"
   },
   "devDependencies": {
+    "nyc": "^15.0.0",
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-decorators": "^7.0.0",

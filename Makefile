@@ -1,3 +1,5 @@
+.PHONY: tests
+
 help:
 	@echo ""
 	@echo "\033[0;34m    Velo Payments - Node Client (\033[1;34mvelo-payments\033[0;34m) \033[0m"
@@ -60,6 +62,10 @@ info:
 	# adjust package.json
 	sed -i.bak 's/"main": "src\/index.js"/"main": "dist\/index.js", "repository": {"type": "git","url": "git+ssh:\/\/git@github.com\/velopaymentsapi\/velo-node.git"}/' package.json && rm package.json.bak
 	sed -i.bak 's/"test": "mocha/"clean": "rm \-rf dist \&\& mkdir dist", "build": "npm run clean \&\& babel src \-\-out\-dir dist", "test": "mocha/' package.json && rm package.json.bak
+	sed -i.bak 's/register --recursive/register tests\/**\/*.js --recursive/' package.json && rm package.json.bak
+	sed -i.bak 's/mocha --require/nyc --reporter=text mocha --require/' package.json && rm package.json.bak
+	sed -i.bak 's/"devDependencies": {/"devDependencies": { "nyc": "^15.0.0",/' package.json && rm package.json.bak
+	
 	# adjust README.md
 	sed -i.bak '1s/.*/# JavaScript client for Velo/' README.md && rm README.md.bak
 	sed -i.bak '2s/.*/[![License](https:\/\/img.shields.io\/badge\/License-Apache%202.0-blue.svg)](https:\/\/opensource.org\/licenses\/Apache-2.0) [![npm version](https:\/\/badge.fury.io\/js\/velo-payments.svg)](https:\/\/badge.fury.io\/js\/velo-payments) [![CircleCI](https:\/\/circleci.com\/gh\/velopaymentsapi\/velo-node.svg?style=svg)](https:\/\/circleci.com\/gh\/velopaymentsapi\/velo-node)\\/' README.md && rm README.md.bak
@@ -76,11 +82,8 @@ build_client:
 client: clean generate trim info build_client
 
 tests:
-	# language: node_js
-	# cache: npm
-	# node_js:
-	# - "6"
-	# - "6.1"
+	npm i
+	KEY=${KEY} SECRET=${SECRET} PAYOR=${PAYOR} npm run test
 
 commit:
 	sed -i.bak 's/"version": ".*"/"version": "${VERSION}"/g' package.json && rm package.json.bak
