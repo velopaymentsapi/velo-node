@@ -48,15 +48,6 @@
   }
 
   describe('CountriesApi', function() {
-    describe('listSupportedCountries', function() {
-      it('should call listSupportedCountries successfully', function(done) {
-        instance.listSupportedCountries(function(error, data, response) {
-         if (error) throw error;
-        expect(response.statusCode).to.be(200);
-        });
-        done();
-      });
-    });
     describe('listSupportedCountriesV1', function() {
       it('should call listSupportedCountriesV1 successfully', function(done) {
         instance.listSupportedCountriesV1(function(error, data, response) {
@@ -66,12 +57,21 @@
         done();
       });
     });
-    describe('v1PaymentChannelRulesGet', function() {
-      it('should call v1PaymentChannelRulesGet successfully', function(done) {
-        instance.v1PaymentChannelRulesGet(function(error, data, response) {
+    describe('listSupportedCountriesV2', function() {
+      it('should call listSupportedCountriesV2 successfully', function(done) {
+        instance.listSupportedCountriesV2(function(error, data, response) {
          if (error) throw error;
-         expect(response.statusCode).to.be(200);
+        expect(response.statusCode).to.be(200);
         });
+        done();
+      });
+    });
+    describe('listPaymentChannelRulesV1', function() {
+      it('should call listPaymentChannelRulesV1 successfully', function(done) {
+        // instance.listPaymentChannelRulesV1(function(error, data, response) {
+        //  if (error) throw error;
+        //  expect(response.statusCode).to.be(200);
+        // });
         done();
       });
     });

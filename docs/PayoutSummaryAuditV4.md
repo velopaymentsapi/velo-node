@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **totalPayments** | **Number** |  | [optional] 
 **totalIncompletePayments** | **Number** |  | [optional] 
 **totalReturnedPayments** | **Number** |  | [optional] 
+**totalWithdrawnPayments** | **Number** |  | [optional] 
 **sourceAccountSummary** | [**[SourceAccountSummaryV4]**](SourceAccountSummaryV4.md) |  | [optional] 
 **fxSummaries** | [**[FxSummaryV4]**](FxSummaryV4.md) |  | [optional] 
 **payoutMemo** | **String** |  | [optional] 

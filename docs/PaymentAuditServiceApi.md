@@ -7,13 +7,17 @@ Method | HTTP request | Description
 [**exportTransactionsCSVV3**](PaymentAuditServiceApi.md#exportTransactionsCSVV3) | **GET** /v3/paymentaudit/transactions | Export Transactions
 [**exportTransactionsCSVV4**](PaymentAuditServiceApi.md#exportTransactionsCSVV4) | **GET** /v4/paymentaudit/transactions | Export Transactions
 [**getFundingsV1**](PaymentAuditServiceApi.md#getFundingsV1) | **GET** /v1/paymentaudit/fundings | Get Fundings for Payor
+[**getFundingsV4**](PaymentAuditServiceApi.md#getFundingsV4) | **GET** /v4/paymentaudit/fundings | Get Fundings for Payor
 [**getPaymentDetails**](PaymentAuditServiceApi.md#getPaymentDetails) | **GET** /v3/paymentaudit/payments/{paymentId} | Get Payment
 [**getPaymentDetailsV4**](PaymentAuditServiceApi.md#getPaymentDetailsV4) | **GET** /v4/paymentaudit/payments/{paymentId} | Get Payment
 [**getPaymentsForPayout**](PaymentAuditServiceApi.md#getPaymentsForPayout) | **GET** /v3/paymentaudit/payouts/{payoutId} | Get Payments for Payout
 [**getPaymentsForPayoutV4**](PaymentAuditServiceApi.md#getPaymentsForPayoutV4) | **GET** /v4/paymentaudit/payouts/{payoutId} | Get Payments for Payout
+[**getPayoutStatsV1**](PaymentAuditServiceApi.md#getPayoutStatsV1) | **GET** /v1/paymentaudit/payoutStatistics | Get Payout Statistics
+[**getPayoutStatsV4**](PaymentAuditServiceApi.md#getPayoutStatsV4) | **GET** /v4/paymentaudit/payoutStatistics | Get Payout Statistics
 [**getPayoutsForPayorV3**](PaymentAuditServiceApi.md#getPayoutsForPayorV3) | **GET** /v3/paymentaudit/payouts | Get Payouts for Payor
 [**getPayoutsForPayorV4**](PaymentAuditServiceApi.md#getPayoutsForPayorV4) | **GET** /v4/paymentaudit/payouts | Get Payouts for Payor
 [**listPaymentChanges**](PaymentAuditServiceApi.md#listPaymentChanges) | **GET** /v1/deltas/payments | List Payment Changes
+[**listPaymentChangesV4**](PaymentAuditServiceApi.md#listPaymentChangesV4) | **GET** /v4/payments/deltas | List Payment Changes
 [**listPaymentsAudit**](PaymentAuditServiceApi.md#listPaymentsAudit) | **GET** /v3/paymentaudit/payments | Get List of Payments
 [**listPaymentsAuditV4**](PaymentAuditServiceApi.md#listPaymentsAuditV4) | **GET** /v4/paymentaudit/payments | Get List of Payments
 
@@ -71,7 +75,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/csv
+- **Accept**: application/csv, application/json
 
 
 ## exportTransactionsCSVV4
@@ -93,10 +97,10 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceApi();
 let opts = {
-  'payorId': null, // String | The Payor ID for whom you wish to run the report. For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor. 
+  'payorId': null, // String | <p>The Payor ID for whom you wish to run the report.</p> <p>For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor.</p> 
   'startDate': new Date("2013-10-20"), // Date | Start date, inclusive. Format is YYYY-MM-DD
-  'submittedDateFrom': new Date("2013-10-20"), // Date | Start date, inclusive. Format is YYYY-MM-DD
-  'include': "include_example" // String | Mode to determine whether to include other Payor's data in the results. May only be used if payorId is specified. Can be omitted or set to 'payorOnly' or 'payorAndDescendants'. payorOnly: Only include results for the specified Payor. This is the default if 'include' is omitted. payorAndDescendants: Aggregate results for all descendant Payors of the specified Payor. Should only be used if the Payor with the specified payorId has at least one child Payor.                      Note when a Payor requests the report and include=payorAndDescendants is used, the following additional columns are included in the CSV: Payor Name, Payor Id 
+  'endDate': new Date("2013-10-20"), // Date | End date, inclusive. Format is YYYY-MM-DD
+  'include': "include_example" // String | <p>Mode to determine whether to include other Payor's data in the results.</p> <p>May only be used if payorId is specified.</p> <p>Can be omitted or set to 'payorOnly' or 'payorAndDescendants'.</p> <p>payorOnly: Only include results for the specified Payor. This is the default if 'include' is omitted.</p> <p>payorAndDescendants: Aggregate results for all descendant Payors of the specified Payor. Should only be used if the Payor with the specified payorId has at least one child Payor.</p> <p>Note when a Payor requests the report and include=payorAndDescendants is used, the following additional columns are included in the CSV: Payor Name, Payor Id</p> 
 };
 apiInstance.exportTransactionsCSVV4(opts, (error, data, response) => {
   if (error) {
@@ -112,10 +116,10 @@ apiInstance.exportTransactionsCSVV4(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The Payor ID for whom you wish to run the report. For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor.  | [optional] 
+ **payorId** | [**String**](.md)| &lt;p&gt;The Payor ID for whom you wish to run the report.&lt;/p&gt; &lt;p&gt;For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor.&lt;/p&gt;  | [optional] 
  **startDate** | **Date**| Start date, inclusive. Format is YYYY-MM-DD | [optional] 
- **submittedDateFrom** | **Date**| Start date, inclusive. Format is YYYY-MM-DD | [optional] 
- **include** | **String**| Mode to determine whether to include other Payor&#39;s data in the results. May only be used if payorId is specified. Can be omitted or set to &#39;payorOnly&#39; or &#39;payorAndDescendants&#39;. payorOnly: Only include results for the specified Payor. This is the default if &#39;include&#39; is omitted. payorAndDescendants: Aggregate results for all descendant Payors of the specified Payor. Should only be used if the Payor with the specified payorId has at least one child Payor.                      Note when a Payor requests the report and include&#x3D;payorAndDescendants is used, the following additional columns are included in the CSV: Payor Name, Payor Id  | [optional] 
+ **endDate** | **Date**| End date, inclusive. Format is YYYY-MM-DD | [optional] 
+ **include** | **String**| &lt;p&gt;Mode to determine whether to include other Payor&#39;s data in the results.&lt;/p&gt; &lt;p&gt;May only be used if payorId is specified.&lt;/p&gt; &lt;p&gt;Can be omitted or set to &#39;payorOnly&#39; or &#39;payorAndDescendants&#39;.&lt;/p&gt; &lt;p&gt;payorOnly: Only include results for the specified Payor. This is the default if &#39;include&#39; is omitted.&lt;/p&gt; &lt;p&gt;payorAndDescendants: Aggregate results for all descendant Payors of the specified Payor. Should only be used if the Payor with the specified payorId has at least one child Payor.&lt;/p&gt; &lt;p&gt;Note when a Payor requests the report and include&#x3D;payorAndDescendants is used, the following additional columns are included in the CSV: Payor Name, Payor Id&lt;/p&gt;  | [optional] 
 
 ### Return type
 
@@ -133,11 +137,11 @@ Name | Type | Description  | Notes
 
 ## getFundingsV1
 
-> GetFundingsResponse getFundingsV1(opts)
+> GetFundingsResponse getFundingsV1(payorId, opts)
 
 Get Fundings for Payor
 
-Get a list of Fundings for a payor. 
+&lt;p&gt;Get a list of Fundings for a payor.&lt;/p&gt; &lt;p&gt;Deprecated (use v4/paymentaudit/fundings)&lt;/p&gt; 
 
 ### Example
 
@@ -149,13 +153,13 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceApi();
+let payorId = null; // String | The account owner Payor ID
 let opts = {
-  'payorId': null, // String | The account owner Payor ID
   'page': 1, // Number | Page number. Default is 1.
-  'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
+  'pageSize': 25, // Number | The number of results to return in a page
   'sort': "sort_example" // String | List of sort fields. Example: ```?sort=destinationCurrency:asc,destinationAmount:asc``` Default is no sort. The supported sort fields are: dateTime and amount. 
 };
-apiInstance.getFundingsV1(opts, (error, data, response) => {
+apiInstance.getFundingsV1(payorId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -169,9 +173,66 @@ apiInstance.getFundingsV1(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The account owner Payor ID | [optional] 
+ **payorId** | [**String**](.md)| The account owner Payor ID | 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
- **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
+ **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
+ **sort** | **String**| List of sort fields. Example: &#x60;&#x60;&#x60;?sort&#x3D;destinationCurrency:asc,destinationAmount:asc&#x60;&#x60;&#x60; Default is no sort. The supported sort fields are: dateTime and amount.  | [optional] 
+
+### Return type
+
+[**GetFundingsResponse**](GetFundingsResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getFundingsV4
+
+> GetFundingsResponse getFundingsV4(payorId, opts)
+
+Get Fundings for Payor
+
+&lt;p&gt;Get a list of Fundings for a payor.&lt;/p&gt; 
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.PaymentAuditServiceApi();
+let payorId = null; // String | The account owner Payor ID
+let opts = {
+  'page': 1, // Number | Page number. Default is 1.
+  'pageSize': 25, // Number | The number of results to return in a page
+  'sort': "sort_example" // String | List of sort fields. Example: ```?sort=destinationCurrency:asc,destinationAmount:asc``` Default is no sort. The supported sort fields are: dateTime and amount. 
+};
+apiInstance.getFundingsV4(payorId, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payorId** | [**String**](.md)| The account owner Payor ID | 
+ **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
+ **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields. Example: &#x60;&#x60;&#x60;?sort&#x3D;destinationCurrency:asc,destinationAmount:asc&#x60;&#x60;&#x60; Default is no sort. The supported sort fields are: dateTime and amount.  | [optional] 
 
 ### Return type
@@ -323,8 +384,8 @@ let opts = {
   'submittedDateFrom': new Date("2013-10-20"), // Date | The submitted date from range filter. Format is yyyy-MM-dd.
   'submittedDateTo': new Date("2013-10-20"), // Date | The submitted date to range filter. Format is yyyy-MM-dd.
   'page': 1, // Number | Page number. Default is 1.
-  'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
-  'sort': "sort_example", // String | List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status 
+  'pageSize': 25, // Number | The number of results to return in a page
+  'sort': "sort_example", // String | <p>List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId</p> <p>The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status</p> 
   'sensitive': true // Boolean | Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
 };
 apiInstance.getPaymentsForPayout(payoutId, opts, (error, data, response) => {
@@ -351,8 +412,8 @@ Name | Type | Description  | Notes
  **submittedDateFrom** | **Date**| The submitted date from range filter. Format is yyyy-MM-dd. | [optional] 
  **submittedDateTo** | **Date**| The submitted date to range filter. Format is yyyy-MM-dd. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
- **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
- **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status  | [optional] 
+ **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
+ **sort** | **String**| &lt;p&gt;List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,status:asc). Default is sort by remoteId&lt;/p&gt; &lt;p&gt;The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status&lt;/p&gt;  | [optional] 
  **sensitive** | **Boolean**| Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values.  | [optional] 
 
 ### Return type
@@ -398,7 +459,7 @@ let opts = {
   'submittedDateFrom': new Date("2013-10-20"), // Date | The submitted date from range filter. Format is yyyy-MM-dd.
   'submittedDateTo': new Date("2013-10-20"), // Date | The submitted date to range filter. Format is yyyy-MM-dd.
   'page': 1, // Number | Page number. Default is 1.
-  'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
+  'pageSize': 25, // Number | The number of results to return in a page
   'sort': "sort_example", // String | List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status 
   'sensitive': true // Boolean | Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
 };
@@ -426,7 +487,7 @@ Name | Type | Description  | Notes
  **submittedDateFrom** | **Date**| The submitted date from range filter. Format is yyyy-MM-dd. | [optional] 
  **submittedDateTo** | **Date**| The submitted date to range filter. Format is yyyy-MM-dd. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
- **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
+ **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status  | [optional] 
  **sensitive** | **Boolean**| Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values.  | [optional] 
 
@@ -444,13 +505,115 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## getPayoutStatsV1
+
+> GetPayoutStatistics getPayoutStatsV1(opts)
+
+Get Payout Statistics
+
+&lt;p&gt;Get payout statistics for a payor.&lt;/p&gt; &lt;p&gt;Deprecated (Use /v4/paymentaudit/payoutStatistics)&lt;/p&gt; 
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.PaymentAuditServiceApi();
+let opts = {
+  'payorId': null // String | The account owner Payor ID. Required for external users.
+};
+apiInstance.getPayoutStatsV1(opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payorId** | [**String**](.md)| The account owner Payor ID. Required for external users. | [optional] 
+
+### Return type
+
+[**GetPayoutStatistics**](GetPayoutStatistics.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getPayoutStatsV4
+
+> GetPayoutStatistics getPayoutStatsV4(opts)
+
+Get Payout Statistics
+
+&lt;p&gt;Get payout statistics for a payor.&lt;/p&gt; 
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.PaymentAuditServiceApi();
+let opts = {
+  'payorId': null // String | The account owner Payor ID. Required for external users.
+};
+apiInstance.getPayoutStatsV4(opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payorId** | [**String**](.md)| The account owner Payor ID. Required for external users. | [optional] 
+
+### Return type
+
+[**GetPayoutStatistics**](GetPayoutStatistics.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## getPayoutsForPayorV3
 
 > GetPayoutsResponseV3 getPayoutsForPayorV3(payorId, opts)
 
 Get Payouts for Payor
 
-Get List of payouts for payor 
+&lt;p&gt;Get List of payouts for payor&lt;/p&gt; &lt;p&gt;Deprecated Use v4&lt;/p&gt; 
 
 ### Example
 
@@ -469,7 +632,7 @@ let opts = {
   'submittedDateFrom': new Date("2013-10-20"), // Date | The submitted date from range filter. Format is yyyy-MM-dd.
   'submittedDateTo': new Date("2013-10-20"), // Date | The submitted date to range filter. Format is yyyy-MM-dd.
   'page': 1, // Number | Page number. Default is 1.
-  'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
+  'pageSize': 25, // Number | The number of results to return in a page
   'sort': "sort_example" // String | List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status. 
 };
 apiInstance.getPayoutsForPayorV3(payorId, opts, (error, data, response) => {
@@ -492,7 +655,7 @@ Name | Type | Description  | Notes
  **submittedDateFrom** | **Date**| The submitted date from range filter. Format is yyyy-MM-dd. | [optional] 
  **submittedDateTo** | **Date**| The submitted date to range filter. Format is yyyy-MM-dd. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
- **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
+ **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status.  | [optional] 
 
 ### Return type
@@ -535,7 +698,7 @@ let opts = {
   'submittedDateTo': new Date("2013-10-20"), // Date | The submitted date to range filter. Format is yyyy-MM-dd.
   'fromPayorName': "fromPayorName_example", // String | The name of the payor whose payees are being paid. This filters via a case insensitive substring match.
   'page': 1, // Number | Page number. Default is 1.
-  'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
+  'pageSize': 25, // Number | The number of results to return in a page
   'sort': "sort_example" // String | List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments, payoutId 
 };
 apiInstance.getPayoutsForPayorV4(opts, (error, data, response) => {
@@ -559,7 +722,7 @@ Name | Type | Description  | Notes
  **submittedDateTo** | **Date**| The submitted date to range filter. Format is yyyy-MM-dd. | [optional] 
  **fromPayorName** | **String**| The name of the payor whose payees are being paid. This filters via a case insensitive substring match. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
- **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
+ **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments, payoutId  | [optional] 
 
 ### Return type
@@ -598,7 +761,7 @@ let payorId = null; // String | The Payor ID to find associated Payments
 let updatedSince = new Date("2013-10-20T19:20:30+01:00"); // Date | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
 let opts = {
   'page': 1, // Number | Page number. Default is 1.
-  'pageSize': 100 // Number | Page size. Default is 100. Max allowable is 1000.
+  'pageSize': 100 // Number | The number of results to return in a page
 };
 apiInstance.listPaymentChanges(payorId, updatedSince, opts, (error, data, response) => {
   if (error) {
@@ -617,7 +780,7 @@ Name | Type | Description  | Notes
  **payorId** | [**String**](.md)| The Payor ID to find associated Payments | 
  **updatedSince** | **Date**| The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm | 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
- **pageSize** | **Number**| Page size. Default is 100. Max allowable is 1000. | [optional] [default to 100]
+ **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 100]
 
 ### Return type
 
@@ -633,9 +796,66 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## listPaymentChangesV4
+
+> PaymentDeltaResponseV4 listPaymentChangesV4(payorId, updatedSince, opts)
+
+List Payment Changes
+
+Get a paginated response listing payment changes.
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.PaymentAuditServiceApi();
+let payorId = null; // String | The Payor ID to find associated Payments
+let updatedSince = new Date("2013-10-20T19:20:30+01:00"); // Date | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
+let opts = {
+  'page': 1, // Number | Page number. Default is 1.
+  'pageSize': 100 // Number | The number of results to return in a page
+};
+apiInstance.listPaymentChangesV4(payorId, updatedSince, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payorId** | [**String**](.md)| The Payor ID to find associated Payments | 
+ **updatedSince** | **Date**| The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm | 
+ **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
+ **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 100]
+
+### Return type
+
+[**PaymentDeltaResponseV4**](PaymentDeltaResponseV4.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## listPaymentsAudit
 
-> ListPaymentsResponse listPaymentsAudit(opts)
+> ListPaymentsResponseV3 listPaymentsAudit(opts)
 
 Get List of Payments
 
@@ -668,7 +888,7 @@ let opts = {
   'submittedDateTo': new Date("2013-10-20"), // Date | The submitted date to range filter. Format is yyyy-MM-dd.
   'paymentMemo': "paymentMemo_example", // String | The payment memo filter. This filters via a case insensitive substring match.
   'page': 1, // Number | Page number. Default is 1.
-  'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
+  'pageSize': 25, // Number | The number of results to return in a page
   'sort': "sort_example", // String | List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status 
   'sensitive': true // Boolean | Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
 };
@@ -702,13 +922,13 @@ Name | Type | Description  | Notes
  **submittedDateTo** | **Date**| The submitted date to range filter. Format is yyyy-MM-dd. | [optional] 
  **paymentMemo** | **String**| The payment memo filter. This filters via a case insensitive substring match. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
- **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
+ **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status  | [optional] 
  **sensitive** | **Boolean**| Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values.  | [optional] 
 
 ### Return type
 
-[**ListPaymentsResponse**](ListPaymentsResponse.md)
+[**ListPaymentsResponseV3**](ListPaymentsResponseV3.md)
 
 ### Authorization
 
@@ -755,7 +975,7 @@ let opts = {
   'submittedDateTo': new Date("2013-10-20"), // Date | The submitted date to range filter. Format is yyyy-MM-dd.
   'paymentMemo': "paymentMemo_example", // String | The payment memo filter. This filters via a case insensitive substring match.
   'page': 1, // Number | Page number. Default is 1.
-  'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
+  'pageSize': 25, // Number | The number of results to return in a page
   'sort': "sort_example", // String | List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by submittedDateTime:desc,paymentId:asc The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime, status and paymentId 
   'sensitive': true // Boolean | Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
 };
@@ -789,7 +1009,7 @@ Name | Type | Description  | Notes
  **submittedDateTo** | **Date**| The submitted date to range filter. Format is yyyy-MM-dd. | [optional] 
  **paymentMemo** | **String**| The payment memo filter. This filters via a case insensitive substring match. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
- **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
+ **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,status:asc). Default is sort by submittedDateTime:desc,paymentId:asc The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime, status and paymentId  | [optional] 
  **sensitive** | **Boolean**| Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values.  | [optional] 
 

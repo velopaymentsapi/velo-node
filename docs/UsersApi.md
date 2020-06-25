@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**unregisterMFAForSelf**](UsersApi.md#unregisterMFAForSelf) | **POST** /v2/users/self/mfa/unregister | Unregister MFA for Self
 [**updatePasswordSelf**](UsersApi.md#updatePasswordSelf) | **POST** /v2/users/self/password | Update Password for self
 [**userDetailsUpdate**](UsersApi.md#userDetailsUpdate) | **POST** /v2/users/{userId}/userDetailsUpdate | Update User Details
+[**userDetailsUpdateForSelf**](UsersApi.md#userDetailsUpdateForSelf) | **POST** /v2/users/self/userDetailsUpdate | Update User Details for self
 [**validatePasswordSelf**](UsersApi.md#validatePasswordSelf) | **POST** /v2/users/self/password/validate | Validate the proposed password
 
 
@@ -172,7 +173,7 @@ null (empty response body)
 
 ## getSelf
 
-> UserResponse2 getSelf()
+> UserResponse getSelf()
 
 Get Self
 
@@ -203,7 +204,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**UserResponse2**](UserResponse2.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -336,7 +337,7 @@ let opts = {
   'status': new VeloPayments.UserStatus(), // UserStatus | The status of the User.
   'entityId': null, // String | The entityId of the User.
   'page': 1, // Number | Page number. Default is 1.
-  'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
+  'pageSize': 25, // Number | The number of results to return in a page
   'sort': "'email:asc'" // String | List of sort fields (e.g. ?sort=email:asc,lastName:asc) Default is email:asc 'name' The supported sort fields are - email, lastNmae. 
 };
 apiInstance.listUsers(opts, (error, data, response) => {
@@ -357,7 +358,7 @@ Name | Type | Description  | Notes
  **status** | [**UserStatus**](.md)| The status of the User. | [optional] 
  **entityId** | [**String**](.md)| The entityId of the User. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
- **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
+ **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;email:asc,lastName:asc) Default is email:asc &#39;name&#39; The supported sort fields are - email, lastNmae.  | [optional] [default to &#39;email:asc&#39;]
 
 ### Return type
@@ -759,6 +760,55 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | [**String**](.md)| The UUID of the User. | 
  **userDetailsUpdateRequest** | [**UserDetailsUpdateRequest**](UserDetailsUpdateRequest.md)| The details of the user to update | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## userDetailsUpdateForSelf
+
+> userDetailsUpdateForSelf(payeeUserSelfUpdateRequest)
+
+Update User Details for self
+
+&lt;p&gt;Update the profile details for the given user&lt;/p&gt; &lt;p&gt;Only Payee user types are supported&lt;/p&gt; 
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.UsersApi();
+let payeeUserSelfUpdateRequest = new VeloPayments.PayeeUserSelfUpdateRequest(); // PayeeUserSelfUpdateRequest | The details of the user to update
+apiInstance.userDetailsUpdateForSelf(payeeUserSelfUpdateRequest, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payeeUserSelfUpdateRequest** | [**PayeeUserSelfUpdateRequest**](PayeeUserSelfUpdateRequest.md)| The details of the user to update | 
 
 ### Return type
 

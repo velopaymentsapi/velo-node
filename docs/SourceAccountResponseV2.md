@@ -18,7 +18,8 @@ Name | Type | Description | Notes
 **physicalAccountId** | **String** |  | [optional] 
 **notifications** | [**Notifications**](Notifications.md) |  | [optional] 
 **fundingAccountId** | **String** |  | [optional] 
-**autoTopUpConfig** | [**AutoTopUpConfig**](AutoTopUpConfig.md) |  | 
+**autoTopUpConfig** | [**AutoTopUpConfig**](AutoTopUpConfig.md) |  | [optional] 
+**accountType** | **String** |  | 
 
 
 

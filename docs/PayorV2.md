@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **wuCustomerId** | **String** |  | [optional] 
 **maxMasterPayorAdmins** | **Number** |  | [optional] 
 **paymentRails** | [**PaymentRails**](PaymentRails.md) |  | [optional] 
+**transmissionTypes** | [**TransmissionTypes2**](TransmissionTypes2.md) |  | [optional] 
 
 
 

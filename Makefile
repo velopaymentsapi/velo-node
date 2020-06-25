@@ -62,7 +62,7 @@ info:
 	# adjust package.json
 	sed -i.bak 's/"main": "src\/index.js"/"main": "dist\/index.js", "repository": {"type": "git","url": "git+ssh:\/\/git@github.com\/velopaymentsapi\/velo-node.git"}/' package.json && rm package.json.bak
 	sed -i.bak 's/"test": "mocha/"clean": "rm \-rf dist \&\& mkdir dist", "build": "npm run clean \&\& babel src \-\-out\-dir dist", "test": "mocha/' package.json && rm package.json.bak
-	sed -i.bak 's/register --recursive/register tests\/**\/*.js --recursive/' package.json && rm package.json.bak
+	# sed -i.bak 's/register --recursive/register tests\/**\/*.js --recursive/' package.json && rm package.json.bak
 	sed -i.bak 's/mocha --require/nyc --reporter=text mocha --require/' package.json && rm package.json.bak
 	sed -i.bak 's/"devDependencies": {/"devDependencies": { "nyc": "^15.0.0",/' package.json && rm package.json.bak
 	
@@ -82,6 +82,8 @@ build_client:
 client: clean generate trim info build_client
 
 tests:
+	# overwrite the generated test stubs
+	cp tests/api/* test/api/
 	npm i
 	KEY=${KEY} SECRET=${SECRET} PAYOR=${PAYOR} npm run test
 

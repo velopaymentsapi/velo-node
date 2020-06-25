@@ -6,21 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payorId** | **String** |  | [optional] 
 **remoteId** | **String** |  | [optional] 
-**invitationStatus** | **String** |  | [optional] 
+**invitationStatus** | [**InvitationStatus2**](InvitationStatus2.md) |  | [optional] 
 **invitationStatusTimestamp** | **Date** | The timestamp when the invitation status is updated | [optional] 
 **paymentChannelId** | **String** |  | [optional] 
-
-
-
-## Enum: InvitationStatusEnum
-
-
-* `ACCEPTED` (value: `"ACCEPTED"`)
-
-* `PENDING` (value: `"PENDING"`)
-
-* `DECLINED` (value: `"DECLINED"`)
-
-
 
 

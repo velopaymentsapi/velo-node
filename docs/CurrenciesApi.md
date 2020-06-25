@@ -4,13 +4,13 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listSupportedCurrencies**](CurrenciesApi.md#listSupportedCurrencies) | **GET** /v2/currencies | List Supported Currencies
+[**listSupportedCurrenciesV2**](CurrenciesApi.md#listSupportedCurrenciesV2) | **GET** /v2/currencies | List Supported Currencies
 
 
 
-## listSupportedCurrencies
+## listSupportedCurrenciesV2
 
-> SupportedCurrencyResponse listSupportedCurrencies()
+> SupportedCurrencyResponseV2 listSupportedCurrenciesV2()
 
 List Supported Currencies
 
@@ -22,7 +22,7 @@ List the supported currencies.
 import VeloPayments from 'velo-payments';
 
 let apiInstance = new VeloPayments.CurrenciesApi();
-apiInstance.listSupportedCurrencies((error, data, response) => {
+apiInstance.listSupportedCurrenciesV2((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -37,7 +37,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**SupportedCurrencyResponse**](SupportedCurrencyResponse.md)
+[**SupportedCurrencyResponseV2**](SupportedCurrencyResponseV2.md)
 
 ### Authorization
 

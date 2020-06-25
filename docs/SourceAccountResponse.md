@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **customerId** | **String** |  | [optional] 
 **physicalAccountId** | **String** |  | [optional] 
 **fundingAccountId** | **String** |  | [optional] 
+**accountType** | **String** |  | [optional] 
 
 
 

@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **language** | **String** | The payor’s language preference. Must be one of [EN, FR]. | [optional] 
 **includesReports** | **Boolean** |  | [optional] 
 **maxMasterPayorAdmins** | **Number** |  | [optional] 
+**transmissionTypes** | [**TransmissionTypes**](TransmissionTypes.md) |  | [optional] 
 
 
 

@@ -4,13 +4,13 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createFundingAccount**](FundingManagerPrivateApi.md#createFundingAccount) | **POST** /v1/fundingAccounts | Create Funding Account
+[**createFundingAccountV2**](FundingManagerPrivateApi.md#createFundingAccountV2) | **POST** /v2/fundingAccounts | Create Funding Account
 
 
 
-## createFundingAccount
+## createFundingAccountV2
 
-> createFundingAccount(opts)
+> createFundingAccountV2(opts)
 
 Create Funding Account
 
@@ -27,9 +27,9 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.FundingManagerPrivateApi();
 let opts = {
-  'createFundingAccountRequest': new VeloPayments.CreateFundingAccountRequest() // CreateFundingAccountRequest | 
+  'createFundingAccountRequestV2': {"type":"FBO","name":"My FBO Account","payorId":"ee53e01d-c078-43fd-abd4-47e92f4a06cf","accountName":"My Account Name","accountNumber":1231231234556,"routingNumber":123456789} // CreateFundingAccountRequestV2 | 
 };
-apiInstance.createFundingAccount(opts, (error, data, response) => {
+apiInstance.createFundingAccountV2(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -43,7 +43,7 @@ apiInstance.createFundingAccount(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createFundingAccountRequest** | [**CreateFundingAccountRequest**](CreateFundingAccountRequest.md)|  | [optional] 
+ **createFundingAccountRequestV2** | [**CreateFundingAccountRequestV2**](CreateFundingAccountRequestV2.md)|  | [optional] 
 
 ### Return type
 

@@ -4,27 +4,31 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listSupportedCountries**](CountriesApi.md#listSupportedCountries) | **GET** /v2/supportedCountries | List Supported Countries
+[**listPaymentChannelRulesV1**](CountriesApi.md#listPaymentChannelRulesV1) | **GET** /v1/paymentChannelRules | List Payment Channel Country Rules
 [**listSupportedCountriesV1**](CountriesApi.md#listSupportedCountriesV1) | **GET** /v1/supportedCountries | List Supported Countries
-[**v1PaymentChannelRulesGet**](CountriesApi.md#v1PaymentChannelRulesGet) | **GET** /v1/paymentChannelRules | List Payment Channel Country Rules
+[**listSupportedCountriesV2**](CountriesApi.md#listSupportedCountriesV2) | **GET** /v2/supportedCountries | List Supported Countries
 
 
 
-## listSupportedCountries
+## listPaymentChannelRulesV1
 
-> SupportedCountriesResponse2 listSupportedCountries()
+> PaymentChannelRulesResponse listPaymentChannelRulesV1()
 
-List Supported Countries
+List Payment Channel Country Rules
 
-List the supported countries.
+List the country specific payment channel rules.
 
 ### Example
 
 ```javascript
 import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.CountriesApi();
-apiInstance.listSupportedCountries((error, data, response) => {
+apiInstance.listPaymentChannelRulesV1((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -39,11 +43,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**SupportedCountriesResponse2**](SupportedCountriesResponse2.md)
+[**PaymentChannelRulesResponse**](PaymentChannelRulesResponse.md)
 
 ### Authorization
 
-No authorization required
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -92,25 +96,21 @@ No authorization required
 - **Accept**: application/json
 
 
-## v1PaymentChannelRulesGet
+## listSupportedCountriesV2
 
-> PaymentChannelRulesResponse v1PaymentChannelRulesGet()
+> SupportedCountriesResponseV2 listSupportedCountriesV2()
 
-List Payment Channel Country Rules
+List Supported Countries
 
-List the country specific payment channel rules.
+List the supported countries.
 
 ### Example
 
 ```javascript
 import VeloPayments from 'velo-payments';
-let defaultClient = VeloPayments.ApiClient.instance;
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.CountriesApi();
-apiInstance.v1PaymentChannelRulesGet((error, data, response) => {
+apiInstance.listSupportedCountriesV2((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -125,11 +125,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**PaymentChannelRulesResponse**](PaymentChannelRulesResponse.md)
+[**SupportedCountriesResponseV2**](SupportedCountriesResponseV2.md)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

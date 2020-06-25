@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**listPayeeChangesV3**](PayeesApi.md#listPayeeChangesV3) | **GET** /v3/payees/deltas | List Payee Changes
 [**listPayeesV1**](PayeesApi.md#listPayeesV1) | **GET** /v1/payees | List Payees V1
 [**listPayeesV3**](PayeesApi.md#listPayeesV3) | **GET** /v3/payees | List Payees
+[**payeeDetailsUpdateV3**](PayeesApi.md#payeeDetailsUpdateV3) | **POST** /v3/payees/{payeeId}/payeeDetailsUpdate | Update Payee Details
 [**v1PayeesPayeeIdRemoteIdUpdatePost**](PayeesApi.md#v1PayeesPayeeIdRemoteIdUpdatePost) | **POST** /v1/payees/{payeeId}/remoteIdUpdate | Update Payee Remote Id
 [**v3PayeesPayeeIdRemoteIdUpdatePost**](PayeesApi.md#v3PayeesPayeeIdRemoteIdUpdatePost) | **POST** /v3/payees/{payeeId}/remoteIdUpdate | Update Payee Remote Id
 
@@ -224,7 +225,7 @@ Name | Type | Description  | Notes
 
 ## getPayeeByIdV3
 
-> PayeeResponseV3 getPayeeByIdV3(payeeId, opts)
+> PayeeDetailResponse getPayeeByIdV3(payeeId, opts)
 
 Get Payee by Id
 
@@ -263,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PayeeResponseV3**](PayeeResponseV3.md)
+[**PayeeDetailResponse**](PayeeDetailResponse.md)
 
 ### Authorization
 
@@ -480,7 +481,8 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new VeloPayments.PayeesApi();
 let payorId = null; // String | The account owner Payor ID
 let opts = {
-  'ofacStatus': new VeloPayments.WatchlistStatus(), // WatchlistStatus | The watchlistStatus of the payees.
+  'watchlistStatus': new VeloPayments.WatchlistStatus(), // WatchlistStatus | The watchlistStatus of the payees.
+  'disabled': true, // Boolean | Payee disabled
   'onboardedStatus': new VeloPayments.OnboardedStatus(), // OnboardedStatus | The onboarded status of the payees.
   'email': bob@example.com, // String | Email address
   'displayName': Bob Smith, // String | The display name of the payees.
@@ -506,7 +508,8 @@ apiInstance.listPayeesV3(payorId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payorId** | [**String**](.md)| The account owner Payor ID | 
- **ofacStatus** | [**WatchlistStatus**](.md)| The watchlistStatus of the payees. | [optional] 
+ **watchlistStatus** | [**WatchlistStatus**](.md)| The watchlistStatus of the payees. | [optional] 
+ **disabled** | **Boolean**| Payee disabled | [optional] 
  **onboardedStatus** | [**OnboardedStatus**](.md)| The onboarded status of the payees. | [optional] 
  **email** | [**String**](.md)| Email address | [optional] 
  **displayName** | **String**| The display name of the payees. | [optional] 
@@ -528,6 +531,57 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## payeeDetailsUpdateV3
+
+> payeeDetailsUpdateV3(payeeId, updatePayeeDetailsRequest)
+
+Update Payee Details
+
+&lt;p&gt;Update payee details for the given Payee Id.&lt;p&gt; 
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.PayeesApi();
+let payeeId = 2aa5d7e0-2ecb-403f-8494-1865ed0454e9; // String | The UUID of the payee.
+let updatePayeeDetailsRequest = new VeloPayments.UpdatePayeeDetailsRequest(); // UpdatePayeeDetailsRequest | Request to update payee details
+apiInstance.payeeDetailsUpdateV3(payeeId, updatePayeeDetailsRequest, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payeeId** | [**String**](.md)| The UUID of the payee. | 
+ **updatePayeeDetailsRequest** | [**UpdatePayeeDetailsRequest**](UpdatePayeeDetailsRequest.md)| Request to update payee details | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

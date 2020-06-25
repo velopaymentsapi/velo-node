@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **Number** |  | [optional] 
+**amount** | **Number** | The amount funded | [optional] 
+**currency** | **String** | The currency of the funding | [optional] 
 **dateTime** | **Date** |  | [optional] 
 **status** | **String** |  | [optional] 
-**currency** | **String** |  | [optional] 
 **sourceAccountName** | **String** |  | [optional] 
 **fundingAccountName** | **String** |  | [optional] 
 **fundingType** | **String** |  | [optional] 

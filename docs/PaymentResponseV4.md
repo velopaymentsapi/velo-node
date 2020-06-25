@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **paymentCurrency** | [**PaymentAuditCurrencyV4**](PaymentAuditCurrencyV4.md) |  | [optional] 
 **rate** | **Number** | The FX rate for the payment, if FX was involved. **Note** that (depending on the role of the caller) this information may not be displayed | [optional] 
 **invertedRate** | **Number** | The inverted FX rate for the payment, if FX was involved. **Note** that (depending on the role of the caller) this information may not be displayed | [optional] 
+**isPaymentCcyBaseCcy** | **Boolean** |  | [optional] 
 **submittedDateTime** | **Date** |  | 
 **status** | **String** |  | 
 **fundingStatus** | **String** | The funding status of the payment | 
@@ -40,6 +41,8 @@ Name | Type | Description | Notes
 **railsPaymentId** | **String** |  | [optional] 
 **railsBatchId** | **String** |  | [optional] 
 **rejectionReason** | **String** |  | [optional] 
+**withdrawnReason** | **String** |  | [optional] 
+**withdrawable** | **Boolean** |  | [optional] 
 **payout** | [**PaymentResponseV4Payout**](PaymentResponseV4Payout.md) |  | [optional] 
 
 
