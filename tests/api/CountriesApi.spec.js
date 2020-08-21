@@ -28,6 +28,26 @@
   var instance;
 
   beforeEach(function() {
+    if (process.env.APITOKEN == "") {
+      let defaultClient = VeloPayments.ApiClient.instance;
+      let basicAuth = defaultClient.authentications['basicAuth'];
+      basicAuth.username = process.env.KEY;
+      basicAuth.password = process.env.SECRET;
+
+      let apiInstance = new VeloPayments.LoginApi();
+      let opts = {
+        'grantType': "client_credentials"
+      };
+
+      apiInstance.veloAuth(opts, (error, data, response) => {
+        if (error) {
+          console.error(error);
+        } else {
+          process.env.APITOKEN = data.access_token;
+        }
+      });
+    }
+
     instance = new VeloPayments.CountriesApi();
   });
 
@@ -68,10 +88,14 @@
     });
     describe('listPaymentChannelRulesV1', function() {
       it('should call listPaymentChannelRulesV1 successfully', function(done) {
-        // instance.listPaymentChannelRulesV1(function(error, data, response) {
-        //  if (error) throw error;
-        //  expect(response.statusCode).to.be(200);
-        // });
+        let defaultClient = VeloPayments.ApiClient.instance;
+        let OAuth2 = defaultClient.authentications['OAuth2'];
+        OAuth2.accessToken = process.env.APITOKEN;
+
+        instance.listPaymentChannelRulesV1(function(error, data, response) {
+         if (error) throw error;
+         expect(response.statusCode).to.be(200);
+        });
         done();
       });
     });

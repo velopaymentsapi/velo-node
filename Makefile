@@ -82,10 +82,12 @@ build_client:
 client: clean generate trim info build_client
 
 tests:
+	# TODO: test/model
+	rm -Rf test/model
 	# overwrite the generated test stubs
 	cp tests/api/* test/api/
-	npm i
-	KEY=${KEY} SECRET=${SECRET} PAYOR=${PAYOR} npm run test
+	docker build -t=client-node-tests .
+	docker run -t -v $(PWD):/usr/src/app -e KEY=${KEY} -e SECRET=${SECRET} -e PAYOR=${PAYOR} -e APITOKEN="" client-node-tests npm run test
 
 commit:
 	sed -i.bak 's/"version": ".*"/"version": "${VERSION}"/g' package.json && rm package.json.bak
