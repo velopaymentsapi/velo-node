@@ -82,7 +82,7 @@ build_client:
 client: clean generate trim info build_client
 
 tests:
-	# TODO: test/model
+	# TODO: test/model since generated model tests are empty remove for now
 	rm -Rf test/model
 	# overwrite the generated test stubs
 	cp tests/api/* test/api/

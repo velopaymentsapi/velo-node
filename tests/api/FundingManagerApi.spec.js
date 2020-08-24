@@ -130,7 +130,7 @@
         OAuth2.accessToken = process.env.APITOKEN;
 
         let opts = {
-          'payorId': null, // String | 
+          'payorId': process.env.PAYOR, // String | 
           'sourceAccountId': null, // String | 
           'page': 1, // Number | Page number. Default is 1.
           'pageSize': 25, // Number | The number of results to return in a page
@@ -153,7 +153,7 @@
         OAuth2.accessToken = process.env.APITOKEN;
         
         let opts = {
-          'payorId': null, // String | 
+          'payorId': process.env.PAYOR, // String | 
           'name': "name_example", // String | The descriptive funding account name
           'country': "US", // String | The 2 letter ISO 3166-1 country code (upper case)
           'currency': "USD", // String | The ISO 4217 currency code
@@ -205,46 +205,90 @@
       });
     });
     describe('getSourceAccounts', function() {
-      it.skip('skipping test', function (done) {
-      // it('should call getSourceAccounts successfully', function(done) {
-        //uncomment below and update the code to test getSourceAccounts
-        //instance.getSourceAccounts(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
+      it('should call getSourceAccounts successfully', function(done) {
+        let defaultClient = VeloPayments.ApiClient.instance;
+        let OAuth2 = defaultClient.authentications['OAuth2'];
+        OAuth2.accessToken = process.env.APITOKEN;
+
+        let opts = {
+          'physicalAccountName': null, // String | Physical Account Name
+          'payorId': process.env.PAYOR, // String | The account owner Payor ID
+          'page': 1, // Number | Page number. Default is 1.
+          'pageSize': 25, // Number | The number of results to return in a page
+          'sort': "'fundingRef:asc'" // String | List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef 
+        };
+
+        instance.getSourceAccounts(opts, (error, data, response) => {
+         if (error) throw error;
+        expect().to.be();
+        });
         done();
       });
     });
     describe('getSourceAccountsV2', function() {
-      it.skip('skipping test', function (done) {
-      // it('should call getSourceAccountsV2 successfully', function(done) {
-        //uncomment below and update the code to test getSourceAccountsV2
-        //instance.getSourceAccountsV2(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
+      it('should call getSourceAccountsV2 successfully', function(done) {
+        let defaultClient = VeloPayments.ApiClient.instance;
+        let OAuth2 = defaultClient.authentications['OAuth2'];
+        OAuth2.accessToken = process.env.APITOKEN;
+
+        let opts = {
+          'physicalAccountName': null, // String | Physical Account Name
+          'physicalAccountId': null, // String | The physical account ID
+          'payorId': process.env.PAYOR, // String | The account owner Payor ID
+          'fundingAccountId': null, // String | The funding account ID
+          'page': 1, // Number | Page number. Default is 1.
+          'pageSize': 25, // Number | The number of results to return in a page
+          'sort': "'fundingRef:asc'" // String | List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance 
+        };
+
+        instance.getSourceAccountsV2(opts, (error, data, response) => {
+         if (error) throw error;
+        expect().to.be();
+        });
         done();
       });
     });
     describe('getSourceAccountsV3', function() {
-      it.skip('skipping test', function (done) {
-      // it('should call getSourceAccountsV3 successfully', function(done) {
-        //uncomment below and update the code to test getSourceAccountsV3
-        //instance.getSourceAccountsV3(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
+      it('should call getSourceAccountsV3 successfully', function(done) {
+        let defaultClient = VeloPayments.ApiClient.instance;
+        let OAuth2 = defaultClient.authentications['OAuth2'];
+        OAuth2.accessToken = process.env.APITOKEN;
+
+        let opts = {
+          'physicalAccountName': null, // String | Physical Account Name
+          'physicalAccountId': null, // String | The physical account ID
+          'payorId': process.env.PAYOR, // String | The account owner Payor ID
+          'fundingAccountId': null, // String | The funding account ID
+          'type': new VeloPayments.SourceAccountType(), // SourceAccountType | The type of source account.
+          'page': 1, // Number | Page number. Default is 1.
+          'pageSize': 25, // Number | The number of results to return in a page
+          'sort': "'fundingRef:asc'" // String | List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance 
+        };
+
+        instance.getSourceAccountsV3(opts, (error, data, response) => {
+         if (error) throw error;
+        expect().to.be();
+        });
         done();
       });
     });
     describe('listFundingAuditDeltas', function() {
-      it.skip('skipping test', function (done) {
-      // it('should call listFundingAuditDeltas successfully', function(done) {
-        //uncomment below and update the code to test listFundingAuditDeltas
-        //instance.listFundingAuditDeltas(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
+      it('should call listFundingAuditDeltas successfully', function(done) {
+        let defaultClient = VeloPayments.ApiClient.instance;
+        let OAuth2 = defaultClient.authentications['OAuth2'];
+        OAuth2.accessToken = process.env.APITOKEN;
+
+        let payorId = process.env.PAYOR; // String | 
+        let updatedSince = new Date("2013-10-20T19:20:30+01:00"); // Date | 
+        let opts = {
+          'page': 1, // Number | Page number. Default is 1.
+          'pageSize': 25 // Number | The number of results to return in a page
+        };
+
+        instance.listFundingAuditDeltas(payorId, updatedSince, opts, (error, data, response) => {
+         if (error) throw error;
+        expect().to.be();
+        });
         done();
       });
     });
