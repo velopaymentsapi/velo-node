@@ -52,7 +52,7 @@
       it('should call listSupportedCurrenciesV2 successfully', function(done) {
         instance.listSupportedCurrenciesV2(function(error) {
          if (error) throw error;
-        expect().to.be();
+         expect(response.statusCode).to.be(200);
         });
         done();
       });

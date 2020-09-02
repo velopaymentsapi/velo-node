@@ -140,7 +140,7 @@
 
         instance.getFundingAccounts(opts, (error, data, response) => {
           if (error) throw error;
-          expect().to.be();
+          expect(response.statusCode).to.be(200);
         });
         done();
       });
@@ -166,7 +166,7 @@
 
         instance.getFundingAccountsV2(opts, (error, data, response) => {
           if (error) throw error;
-          expect().to.be();
+          expect(response.statusCode).to.be(200);
         });
         done();
       });
@@ -220,7 +220,7 @@
 
         instance.getSourceAccounts(opts, (error, data, response) => {
          if (error) throw error;
-        expect().to.be();
+         expect(response.statusCode).to.be(200);
         });
         done();
       });
@@ -243,7 +243,7 @@
 
         instance.getSourceAccountsV2(opts, (error, data, response) => {
          if (error) throw error;
-        expect().to.be();
+         expect(response.statusCode).to.be(200);
         });
         done();
       });
@@ -267,7 +267,7 @@
 
         instance.getSourceAccountsV3(opts, (error, data, response) => {
          if (error) throw error;
-        expect().to.be();
+         expect(response.statusCode).to.be(200);
         });
         done();
       });
@@ -287,7 +287,7 @@
 
         instance.listFundingAuditDeltas(payorId, updatedSince, opts, (error, data, response) => {
          if (error) throw error;
-        expect().to.be();
+         expect(response.statusCode).to.be(200);
         });
         done();
       });

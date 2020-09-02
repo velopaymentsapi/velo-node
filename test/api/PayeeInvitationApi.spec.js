@@ -49,35 +49,56 @@
 
   describe('PayeeInvitationApi', function() {
     describe('getPayeesInvitationStatusV1', function() {
-      it.skip('skipping test', function (done) {
-      // it('should call getPayeesInvitationStatusV1 successfully', function(done) {
-        //uncomment below and update the code to test getPayeesInvitationStatusV1
-        //instance.getPayeesInvitationStatusV1(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
+      it('should call getPayeesInvitationStatusV1 successfully', function(done) {
+        let defaultClient = VeloPayments.ApiClient.instance;
+        let OAuth2 = defaultClient.authentications['OAuth2'];
+        OAuth2.accessToken = process.env.APITOKEN;
+
+        let payorId = process.env.PAYOR; // String | 
+        instance.getPayeesInvitationStatusV1(payorId, (error, data, response) => {
+         if (error) throw error;
+         expect(response.statusCode).to.be(200);
+        });
         done();
       });
     });
     describe('getPayeesInvitationStatusV2', function() {
-      it.skip('skipping test', function (done) {
-      // it('should call getPayeesInvitationStatusV2 successfully', function(done) {
-        //uncomment below and update the code to test getPayeesInvitationStatusV2
-        //instance.getPayeesInvitationStatusV2(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
+      it('should call getPayeesInvitationStatusV2 successfully', function(done) {
+        let defaultClient = VeloPayments.ApiClient.instance;
+        let OAuth2 = defaultClient.authentications['OAuth2'];
+        OAuth2.accessToken = process.env.APITOKEN;
+
+        let payorId = process.env.PAYOR; // String | 
+        let opts = {
+          'payeeId': null, // String | The UUID of the payee.
+          'invitationStatus': null, // InvitationStatus | The invitation status of the payees.
+          'page': 1, // Number | Page number. Default is 1.
+          'pageSize': 25 // Number | Page size. Default is 25. Max allowable is 100.
+        };
+        instance.getPayeesInvitationStatusV2(payorId, opts, (error, data, response) => {
+         if (error) throw error;
+         expect(response.statusCode).to.be(200);
+        });
         done();
       });
     });
     describe('getPayeesInvitationStatusV3', function() {
-      it.skip('skipping test', function (done) {
-      // it('should call getPayeesInvitationStatusV3 successfully', function(done) {
-        //uncomment below and update the code to test getPayeesInvitationStatusV3
-        //instance.getPayeesInvitationStatusV3(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
+      it('should call getPayeesInvitationStatusV3 successfully', function(done) {
+        let defaultClient = VeloPayments.ApiClient.instance;
+        let OAuth2 = defaultClient.authentications['OAuth2'];
+        OAuth2.accessToken = process.env.APITOKEN;
+
+        let payorId = process.env.PAYOR; // String | 
+        let opts = {
+          'payeeId': null, // String | The UUID of the payee.
+          'invitationStatus': null, // InvitationStatus | The invitation status of the payees.
+          'page': 1, // Number | Page number. Default is 1.
+          'pageSize': 25 // Number | Page size. Default is 25. Max allowable is 100.
+        };
+        instance.getPayeesInvitationStatusV3(payorId, opts, (error, data, response) => {
+         if (error) throw error;
+         expect(response.statusCode).to.be(200);
+        });
         done();
       });
     });

@@ -126,13 +126,21 @@
       });
     });
     describe('payorLinks', function() {
-      it.skip('skipping test', function (done) {
-      // it('should call payorLinks successfully', function(done) {
-        //uncomment below and update the code to test payorLinks
-        //instance.payorLinks(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
+      it('should call payorLinks successfully', function(done) {
+        let defaultClient = VeloPayments.ApiClient.instance;
+        let OAuth2 = defaultClient.authentications['OAuth2'];
+        OAuth2.accessToken = process.env.APITOKEN;
+
+        let opts = {
+          'descendantsOfPayor': process.env.PAYOR, // String | The Payor ID from which to start the query to show all descendants
+          'parentOfPayor': null, // String | Look for the parent payor details for this payor id
+          'fields': null // String | List of additional Payor fields to include in the response for each Payor. The values of payorId and payorName and always included for each Payor - 'fields' allows you to add to this. Example: ```fields=primaryContactEmail,kycState``` - will include payorId+payorName+primaryContactEmail+kycState for each Payor Default if not specified is to include only payorId and payorName. The supported fields are any combination of: primaryContactEmail,kycState 
+        };
+
+        instance.payorLinks(opts, (error, data, response) => {
+         if (error) throw error;
+         expect(response.statusCode).to.be(200);
+          });
         done();
       });
     });

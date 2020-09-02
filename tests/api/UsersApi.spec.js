@@ -115,13 +115,24 @@
       });
     });
     describe('listUsers', function() {
-      it.skip('skipping test', function (done) {
-      // it('should call listUsers successfully', function(done) {
-        //uncomment below and update the code to test listUsers
-        //instance.listUsers(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
+      it('should call listUsers successfully', function(done) {
+        let defaultClient = VeloPayments.ApiClient.instance;
+        let OAuth2 = defaultClient.authentications['OAuth2'];
+        OAuth2.accessToken = process.env.APITOKEN;
+
+        let opts = {
+          'type': null, // new VeloPayments.UserType(), // UserType | The Type of the User.
+          'status': null, // new VeloPayments.UserStatus(), // UserStatus | The status of the User.
+          'entityId': process.env.PAYOR, // String | The entityId of the User.
+          'page': 1, // Number | Page number. Default is 1.
+          'pageSize': 25, // Number | The number of results to return in a page
+          'sort': 'email:asc' // String | List of sort fields (e.g. ?sort=email:asc,lastName:asc) Default is email:asc 'name' The supported sort fields are - email, lastNmae. 
+        };
+
+        instance.listUsers(opts, (error, data, response) => {
+         if (error) throw error;
+         expect(response.statusCode).to.be(200);
+          });
         done();
       });
     });
