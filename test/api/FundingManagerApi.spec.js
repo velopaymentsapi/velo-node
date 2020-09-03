@@ -27,7 +27,9 @@
 
   var instance;
 
-  beforeEach(function() {
+  beforeEach(function(done) {
+    instance = new VeloPayments.FundingManagerApi();
+
     if (process.env.APITOKEN == "") {
       let defaultClient = VeloPayments.ApiClient.instance;
       let basicAuth = defaultClient.authentications['basicAuth'];
@@ -44,11 +46,12 @@
           console.error(error);
         } else {
           process.env.APITOKEN = data.access_token;
+          done();
         }
       });
+    } else {
+      done();
     }
-    
-    instance = new VeloPayments.FundingManagerApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -128,6 +131,7 @@
         let defaultClient = VeloPayments.ApiClient.instance;
         let OAuth2 = defaultClient.authentications['OAuth2'];
         OAuth2.accessToken = process.env.APITOKEN;
+        defaultClient.basePath = process.env.APIURL;
 
         let opts = {
           'payorId': process.env.PAYOR, // String | 
@@ -151,6 +155,7 @@
         let defaultClient = VeloPayments.ApiClient.instance;
         let OAuth2 = defaultClient.authentications['OAuth2'];
         OAuth2.accessToken = process.env.APITOKEN;
+        defaultClient.basePath = process.env.APIURL;
         
         let opts = {
           'payorId': process.env.PAYOR, // String | 
@@ -209,6 +214,7 @@
         let defaultClient = VeloPayments.ApiClient.instance;
         let OAuth2 = defaultClient.authentications['OAuth2'];
         OAuth2.accessToken = process.env.APITOKEN;
+        defaultClient.basePath = process.env.APIURL;
 
         let opts = {
           'physicalAccountName': null, // String | Physical Account Name
@@ -230,6 +236,7 @@
         let defaultClient = VeloPayments.ApiClient.instance;
         let OAuth2 = defaultClient.authentications['OAuth2'];
         OAuth2.accessToken = process.env.APITOKEN;
+        defaultClient.basePath = process.env.APIURL;
 
         let opts = {
           'physicalAccountName': null, // String | Physical Account Name
@@ -253,6 +260,7 @@
         let defaultClient = VeloPayments.ApiClient.instance;
         let OAuth2 = defaultClient.authentications['OAuth2'];
         OAuth2.accessToken = process.env.APITOKEN;
+        defaultClient.basePath = process.env.APIURL;
 
         let opts = {
           'physicalAccountName': null, // String | Physical Account Name
@@ -277,6 +285,7 @@
         let defaultClient = VeloPayments.ApiClient.instance;
         let OAuth2 = defaultClient.authentications['OAuth2'];
         OAuth2.accessToken = process.env.APITOKEN;
+        defaultClient.basePath = process.env.APIURL;
 
         let payorId = process.env.PAYOR; // String | 
         let updatedSince = new Date("2013-10-20T19:20:30+01:00"); // Date | 

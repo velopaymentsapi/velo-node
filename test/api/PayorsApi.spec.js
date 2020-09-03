@@ -27,8 +27,31 @@
 
   var instance;
 
-  beforeEach(function() {
+  beforeEach(function(done) {
     instance = new VeloPayments.PayorsApi();
+
+    if (process.env.APITOKEN == "") {
+      let defaultClient = VeloPayments.ApiClient.instance;
+      let basicAuth = defaultClient.authentications['basicAuth'];
+      basicAuth.username = process.env.KEY;
+      basicAuth.password = process.env.SECRET;
+
+      let apiInstance = new VeloPayments.LoginApi();
+      let opts = {
+        'grantType': "client_credentials"
+      };
+
+      apiInstance.veloAuth(opts, (error, data, response) => {
+        if (error) {
+          console.error(error);
+        } else {
+          process.env.APITOKEN = data.access_token;
+          done();
+        }
+      });
+    } else {
+      done();
+    }
   });
 
   var getProperty = function(object, getter, property) {
@@ -130,6 +153,7 @@
         let defaultClient = VeloPayments.ApiClient.instance;
         let OAuth2 = defaultClient.authentications['OAuth2'];
         OAuth2.accessToken = process.env.APITOKEN;
+        defaultClient.basePath = process.env.APIURL;
 
         let opts = {
           'descendantsOfPayor': process.env.PAYOR, // String | The Payor ID from which to start the query to show all descendants

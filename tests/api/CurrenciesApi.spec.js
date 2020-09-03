@@ -27,8 +27,31 @@
 
   var instance;
 
-  beforeEach(function() {
+  beforeEach(function(done) {
     instance = new VeloPayments.CurrenciesApi();
+
+    if (process.env.APITOKEN == "") {
+      let defaultClient = VeloPayments.ApiClient.instance;
+      let basicAuth = defaultClient.authentications['basicAuth'];
+      basicAuth.username = process.env.KEY;
+      basicAuth.password = process.env.SECRET;
+
+      let apiInstance = new VeloPayments.LoginApi();
+      let opts = {
+        'grantType': "client_credentials"
+      };
+
+      apiInstance.veloAuth(opts, (error, data, response) => {
+        if (error) {
+          console.error(error);
+        } else {
+          process.env.APITOKEN = data.access_token;
+          done();
+        }
+      });
+    } else {
+      done();
+    }
   });
 
   var getProperty = function(object, getter, property) {

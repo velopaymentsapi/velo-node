@@ -87,7 +87,7 @@ tests:
 	# overwrite the generated test stubs
 	cp tests/api/* test/api/
 	docker build -t=client-node-tests .
-	docker run -t -v $(PWD):/usr/src/app -e KEY=${KEY} -e SECRET=${SECRET} -e PAYOR=${PAYOR} -e APITOKEN="" client-node-tests npm run test
+	docker run -t -v $(PWD):/usr/src/app -e KEY=${KEY} -e SECRET=${SECRET} -e PAYOR=${PAYOR} -e APIURL=${APIURL} -e APITOKEN="" client-node-tests npm run test 
 
 commit:
 	sed -i.bak 's/"version": ".*"/"version": "${VERSION}"/g' package.json && rm package.json.bak
