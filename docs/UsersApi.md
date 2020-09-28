@@ -628,7 +628,7 @@ null (empty response body)
 
 ## unregisterMFAForSelf
 
-> unregisterMFAForSelf(selfMFATypeUnregisterRequest)
+> unregisterMFAForSelf(selfMFATypeUnregisterRequest, opts)
 
 Unregister MFA for Self
 
@@ -645,7 +645,10 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.UsersApi();
 let selfMFATypeUnregisterRequest = new VeloPayments.SelfMFATypeUnregisterRequest(); // SelfMFATypeUnregisterRequest | The MFA Type to unregister
-apiInstance.unregisterMFAForSelf(selfMFATypeUnregisterRequest, (error, data, response) => {
+let opts = {
+  'authorization': "authorization_example" // String | Bearer token authorization leg of validate
+};
+apiInstance.unregisterMFAForSelf(selfMFATypeUnregisterRequest, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -660,6 +663,7 @@ apiInstance.unregisterMFAForSelf(selfMFATypeUnregisterRequest, (error, data, res
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **selfMFATypeUnregisterRequest** | [**SelfMFATypeUnregisterRequest**](SelfMFATypeUnregisterRequest.md)| The MFA Type to unregister | 
+ **authorization** | **String**| Bearer token authorization leg of validate | [optional] 
 
 ### Return type
 

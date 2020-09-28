@@ -103,7 +103,7 @@ No authorization required
 
 ## validateAccessToken
 
-> AccessTokenResponse validateAccessToken(accessTokenValidationRequest)
+> AccessTokenResponse validateAccessToken(accessTokenValidationRequest, opts)
 
 validate
 
@@ -120,7 +120,10 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.LoginApi();
 let accessTokenValidationRequest = new VeloPayments.AccessTokenValidationRequest(); // AccessTokenValidationRequest | An OTP from the user's registered MFA Device 
-apiInstance.validateAccessToken(accessTokenValidationRequest, (error, data, response) => {
+let opts = {
+  'authorization': "authorization_example" // String | Bearer token authorization leg of validate
+};
+apiInstance.validateAccessToken(accessTokenValidationRequest, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -135,6 +138,7 @@ apiInstance.validateAccessToken(accessTokenValidationRequest, (error, data, resp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessTokenValidationRequest** | [**AccessTokenValidationRequest**](AccessTokenValidationRequest.md)| An OTP from the user&#39;s registered MFA Device  | 
+ **authorization** | **String**| Bearer token authorization leg of validate | [optional] 
 
 ### Return type
 

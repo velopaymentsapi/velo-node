@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payorId** | **String** |  | [readonly] 
 **payorName** | **String** | The name of the payor. | 
+**payorXid** | **String** | A unique identifier that an external system uses to reference the payor in their system | [optional] 
 **address** | [**PayorAddressV2**](PayorAddressV2.md) |  | [optional] 
 **primaryContactName** | **String** | Name of primary contact for the payor. | [optional] 
 **primaryContactPhone** | **String** | Primary contact phone number for the payor. | [optional] 
