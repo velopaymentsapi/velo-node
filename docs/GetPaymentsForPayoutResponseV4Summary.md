@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payoutStatus** | **String** | The current status of the payout. | [optional] 
+**payoutStatus** | [**PayoutStatus**](PayoutStatus.md) |  | [optional] 
 **submittedDateTime** | **Date** | The date/time at which the payout was submitted. | [optional] 
 **instructedDateTime** | **Date** | The date/time at which the payout was instructed. | [optional] 
 **withdrawnDateTime** | **Date** |  | [optional] 
@@ -16,37 +16,12 @@ Name | Type | Description | Notes
 **incompletePayments** | **Number** | The count of payments within the payout which are incomplete. | [optional] 
 **returnedPayments** | **Number** | The count of payments within the payout which have been returned. | [optional] 
 **withdrawnPayments** | **Number** | The count of payments within the payout which have been withdrawn. | [optional] 
-**payoutType** | [**PayoutTypeV4**](PayoutTypeV4.md) |  | [optional] 
-**submitting** | [**PayoutPayorV4**](PayoutPayorV4.md) |  | [optional] 
-**payoutFrom** | [**PayoutPayorV4**](PayoutPayorV4.md) |  | [optional] 
-**payoutTo** | [**PayoutPayorV4**](PayoutPayorV4.md) |  | [optional] 
-**quoted** | [**PayoutPrincipalV4**](PayoutPrincipalV4.md) |  | [optional] 
-**instructed** | [**PayoutPrincipalV4**](PayoutPrincipalV4.md) |  | [optional] 
-**withdrawn** | [**PayoutPrincipalV4**](PayoutPrincipalV4.md) |  | [optional] 
-
-
-
-## Enum: PayoutStatusEnum
-
-
-* `ACCEPTED` (value: `"ACCEPTED"`)
-
-* `REJECTED` (value: `"REJECTED"`)
-
-* `SUBMITTED` (value: `"SUBMITTED"`)
-
-* `QUOTED` (value: `"QUOTED"`)
-
-* `INSTRUCTED` (value: `"INSTRUCTED"`)
-
-* `COMPLETED` (value: `"COMPLETED"`)
-
-* `INCOMPLETE` (value: `"INCOMPLETE"`)
-
-* `CONFIRMED` (value: `"CONFIRMED"`)
-
-* `WITHDRAWN` (value: `"WITHDRAWN"`)
-
-
+**payoutType** | [**PayoutType**](PayoutType.md) |  | [optional] 
+**submitting** | [**PayoutPayor**](PayoutPayor.md) |  | [optional] 
+**payoutFrom** | [**PayoutPayor**](PayoutPayor.md) |  | [optional] 
+**payoutTo** | [**PayoutPayor**](PayoutPayor.md) |  | [optional] 
+**quoted** | [**PayoutPrincipal**](PayoutPrincipal.md) |  | [optional] 
+**instructed** | [**PayoutPrincipal**](PayoutPrincipal.md) |  | [optional] 
+**withdrawn** | [**PayoutPrincipal**](PayoutPrincipal.md) |  | [optional] 
 
 

@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payeeId** | **String** |  | [optional] [readonly] 
-**payorRefs** | [**[PayeePayorRefV2]**](PayeePayorRefV2.md) |  | [optional] [readonly] 
+**payorRefs** | [**[PayeePayorRefV3]**](PayeePayorRefV3.md) |  | [optional] [readonly] 
 **email** | **String** |  | 
 **remoteId** | **String** |  | 
 **type** | [**PayeeType**](PayeeType.md) |  | 
 **address** | [**CreatePayeeAddress**](CreatePayeeAddress.md) |  | 
 **paymentChannel** | [**CreatePaymentChannel**](CreatePaymentChannel.md) |  | [optional] 
 **challenge** | [**Challenge**](Challenge.md) |  | [optional] 
-**language** | [**Language**](Language.md) |  | [optional] 
-**company** | [**CompanyV1**](CompanyV1.md) |  | [optional] 
+**language** | **String** | An IETF BCP 47 language code which has been configured for use within this Velo environment.&lt;BR&gt; See the /v1/supportedLanguages endpoint to list the available codes for an environment.  | [optional] 
+**company** | [**Company**](Company.md) |  | [optional] 
 **individual** | [**CreateIndividual**](CreateIndividual.md) |  | [optional] 
 
 

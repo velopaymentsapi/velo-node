@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The WithdrawPaymentRequest model module.
  * @module model/WithdrawPaymentRequest
- * @version 2.23.78
+ * @version 2.26.127
  */
 var WithdrawPaymentRequest = /*#__PURE__*/function () {
   /**

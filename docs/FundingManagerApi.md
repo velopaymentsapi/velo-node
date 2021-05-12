@@ -703,6 +703,7 @@ let opts = {
   'physicalAccountId': null, // String | The physical account ID
   'payorId': null, // String | The account owner Payor ID
   'fundingAccountId': null, // String | The funding account ID
+  'includeUserDeleted': "includeUserDeleted_example", // Boolean | A filter for retrieving both active accounts and user deleted ones
   'type': new VeloPayments.SourceAccountType(), // SourceAccountType | The type of source account.
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | The number of results to return in a page
@@ -726,6 +727,7 @@ Name | Type | Description  | Notes
  **physicalAccountId** | [**String**](.md)| The physical account ID | [optional] 
  **payorId** | [**String**](.md)| The account owner Payor ID | [optional] 
  **fundingAccountId** | [**String**](.md)| The funding account ID | [optional] 
+ **includeUserDeleted** | **Boolean**| A filter for retrieving both active accounts and user deleted ones | [optional] 
  **type** | [**SourceAccountType**](.md)| The type of source account. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]

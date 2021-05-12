@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayorAmlTransactionV3 model module.
  * @module model/PayorAmlTransactionV3
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PayorAmlTransactionV3 = /*#__PURE__*/function () {
   /**
@@ -110,20 +110,12 @@ var PayorAmlTransactionV3 = /*#__PURE__*/function () {
           obj['dateFundingRequested'] = _ApiClient["default"].convertToType(data['dateFundingRequested'], 'String');
         }
 
-        if (data.hasOwnProperty('payeeName')) {
-          obj['payeeName'] = _ApiClient["default"].convertToType(data['payeeName'], 'String');
-        }
-
         if (data.hasOwnProperty('remoteId')) {
           obj['remoteId'] = _ApiClient["default"].convertToType(data['remoteId'], 'String');
         }
 
         if (data.hasOwnProperty('payeeType')) {
           obj['payeeType'] = _ApiClient["default"].convertToType(data['payeeType'], 'String');
-        }
-
-        if (data.hasOwnProperty('payeeEmail')) {
-          obj['payeeEmail'] = _ApiClient["default"].convertToType(data['payeeEmail'], 'String');
         }
 
         if (data.hasOwnProperty('sourceAccount')) {
@@ -140,10 +132,6 @@ var PayorAmlTransactionV3 = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('paymentMemo')) {
           obj['paymentMemo'] = _ApiClient["default"].convertToType(data['paymentMemo'], 'String');
-        }
-
-        if (data.hasOwnProperty('paymentType')) {
-          obj['paymentType'] = _ApiClient["default"].convertToType(data['paymentType'], 'String');
         }
 
         if (data.hasOwnProperty('paymentRails')) {
@@ -248,11 +236,6 @@ PayorAmlTransactionV3.prototype['fundingType'] = undefined;
 
 PayorAmlTransactionV3.prototype['dateFundingRequested'] = undefined;
 /**
- * @member {String} payeeName
- */
-
-PayorAmlTransactionV3.prototype['payeeName'] = undefined;
-/**
  * Remote ID of the Payee, set by Payor
  * @member {String} remoteId
  */
@@ -263,11 +246,6 @@ PayorAmlTransactionV3.prototype['remoteId'] = undefined;
  */
 
 PayorAmlTransactionV3.prototype['payeeType'] = undefined;
-/**
- * @member {String} payeeEmail
- */
-
-PayorAmlTransactionV3.prototype['payeeEmail'] = undefined;
 /**
  * @member {String} sourceAccount
  */
@@ -289,11 +267,6 @@ PayorAmlTransactionV3.prototype['paymentCurrency'] = undefined;
  */
 
 PayorAmlTransactionV3.prototype['paymentMemo'] = undefined;
-/**
- * @member {String} paymentType
- */
-
-PayorAmlTransactionV3.prototype['paymentType'] = undefined;
 /**
  * @member {String} paymentRails
  */

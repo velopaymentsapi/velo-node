@@ -11,8 +11,6 @@ var _GetPayeeListResponseCompany = _interopRequireDefault(require("./GetPayeeLis
 
 var _GetPayeeListResponseIndividual = _interopRequireDefault(require("./GetPayeeListResponseIndividual"));
 
-var _Language = _interopRequireDefault(require("./Language2"));
-
 var _OnboardedStatus = _interopRequireDefault(require("./OnboardedStatus2"));
 
 var _PayeePayorRefV = _interopRequireDefault(require("./PayeePayorRefV3"));
@@ -32,7 +30,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetPayeeListResponse model module.
  * @module model/GetPayeeListResponse
- * @version 2.23.78
+ * @version 2.26.127
  */
 var GetPayeeListResponse = /*#__PURE__*/function () {
   /**
@@ -97,7 +95,7 @@ var GetPayeeListResponse = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('language')) {
-          obj['language'] = _Language["default"].constructFromObject(data['language']);
+          obj['language'] = _ApiClient["default"].convertToType(data['language'], 'String');
         }
 
         if (data.hasOwnProperty('created')) {
@@ -180,7 +178,8 @@ GetPayeeListResponse.prototype['watchlistStatusUpdatedTimestamp'] = undefined;
 
 GetPayeeListResponse.prototype['watchlistOverrideComment'] = undefined;
 /**
- * @member {module:model/Language2} language
+ * An IETF BCP 47 language code which has been configured for use within this Velo environment.<BR> See the /v1/supportedLanguages endpoint to list the available codes for an environment. 
+ * @member {String} language
  */
 
 GetPayeeListResponse.prototype['language'] = undefined;

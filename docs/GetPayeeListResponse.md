@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **watchlistStatus** | [**WatchlistStatus**](WatchlistStatus.md) |  | [optional] 
 **watchlistStatusUpdatedTimestamp** | **String** |  | [optional] [readonly] 
 **watchlistOverrideComment** | **String** |  | [optional] 
-**language** | [**Language2**](Language2.md) |  | [optional] 
+**language** | **String** | An IETF BCP 47 language code which has been configured for use within this Velo environment.&lt;BR&gt; See the /v1/supportedLanguages endpoint to list the available codes for an environment.  | [optional] 
 **created** | **Date** |  | [optional] 
 **country** | **String** |  | [optional] 
 **displayName** | **String** |  | [optional] 

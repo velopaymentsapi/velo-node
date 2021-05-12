@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _InlineResponse401Errors = _interopRequireDefault(require("./InlineResponse401Errors"));
+var _Error = _interopRequireDefault(require("./Error"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse401 model module.
  * @module model/InlineResponse401
- * @version 2.23.78
+ * @version 2.26.127
  */
 var InlineResponse401 = /*#__PURE__*/function () {
   /**
@@ -57,11 +57,15 @@ var InlineResponse401 = /*#__PURE__*/function () {
         obj = obj || new InlineResponse401();
 
         if (data.hasOwnProperty('errors')) {
-          obj['errors'] = _ApiClient["default"].convertToType(data['errors'], [_InlineResponse401Errors["default"]]);
+          obj['errors'] = _ApiClient["default"].convertToType(data['errors'], [_Error["default"]]);
         }
 
         if (data.hasOwnProperty('correlationId')) {
           obj['correlationId'] = _ApiClient["default"].convertToType(data['correlationId'], 'String');
+        }
+
+        if (data.hasOwnProperty('httpStatusCode')) {
+          obj['httpStatusCode'] = _ApiClient["default"].convertToType(data['httpStatusCode'], 'Number');
         }
       }
 
@@ -73,7 +77,7 @@ var InlineResponse401 = /*#__PURE__*/function () {
 }();
 /**
  * one or more errors
- * @member {Array.<module:model/InlineResponse401Errors>} errors
+ * @member {Array.<module:model/Error>} errors
  */
 
 
@@ -84,5 +88,11 @@ InlineResponse401.prototype['errors'] = undefined;
  */
 
 InlineResponse401.prototype['correlationId'] = undefined;
+/**
+ * this will mirror the Status-Code part of the Status-Line http response header and is included for extra clarity
+ * @member {Number} httpStatusCode
+ */
+
+InlineResponse401.prototype['httpStatusCode'] = undefined;
 var _default = InlineResponse401;
 exports["default"] = _default;

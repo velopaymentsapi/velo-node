@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetPayoutStatistics model module.
  * @module model/GetPayoutStatistics
- * @version 2.23.78
+ * @version 2.26.127
  */
 var GetPayoutStatistics = /*#__PURE__*/function () {
   /**

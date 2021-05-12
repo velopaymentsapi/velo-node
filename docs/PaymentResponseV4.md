@@ -12,10 +12,12 @@ Name | Type | Description | Notes
 **sourceAccountId** | **String** | The id of the source account from which the payment was taken | 
 **sourceAccountName** | **String** | The name of the source account from which the payment was taken | [optional] 
 **remoteId** | **String** | The remote id by which the payor refers to the payee. Only populated once payment is confirmed | [optional] 
+**remoteSystemId** | **String** | The velo id of the remote system orchestrating the payment. Not populated for normal Velo payments. | [optional] 
+**remoteSystemPaymentId** | **String** | The id of the payment in the remote system. Not populated for normal Velo payments. | [optional] 
 **sourceAmount** | **Number** | The source amount for the payment (amount debited to make the payment) | [optional] 
-**sourceCurrency** | [**PaymentAuditCurrencyV4**](PaymentAuditCurrencyV4.md) |  | [optional] 
+**sourceCurrency** | [**PaymentAuditCurrency**](PaymentAuditCurrency.md) |  | [optional] 
 **paymentAmount** | **Number** | The amount which the payee will receive | 
-**paymentCurrency** | [**PaymentAuditCurrencyV4**](PaymentAuditCurrencyV4.md) |  | [optional] 
+**paymentCurrency** | [**PaymentAuditCurrency**](PaymentAuditCurrency.md) |  | [optional] 
 **rate** | **Number** | The FX rate for the payment, if FX was involved. **Note** that (depending on the role of the caller) this information may not be displayed | [optional] 
 **invertedRate** | **Number** | The inverted FX rate for the payment, if FX was involved. **Note** that (depending on the role of the caller) this information may not be displayed | [optional] 
 **isPaymentCcyBaseCcy** | **Boolean** |  | [optional] 
@@ -35,7 +37,7 @@ Name | Type | Description | Notes
 **accountName** | **String** |  | [optional] 
 **railsId** | **String** | The rails ID. Default value is RAILS ID UNAVAILABLE when not populated. | [default to &#39;RAILS ID UNAVAILABLE&#39;]
 **countryCode** | **String** | The country code of the payment channel. | [optional] 
-**events** | [**[PaymentEventResponseV4]**](PaymentEventResponseV4.md) |  | 
+**events** | [**[PaymentEventResponse]**](PaymentEventResponse.md) |  | 
 **returnCost** | **Number** | The return cost if a returned payment. | [optional] 
 **returnReason** | **String** |  | [optional] 
 **railsPaymentId** | **String** |  | [optional] 
@@ -43,6 +45,9 @@ Name | Type | Description | Notes
 **rejectionReason** | **String** |  | [optional] 
 **withdrawnReason** | **String** |  | [optional] 
 **withdrawable** | **Boolean** |  | [optional] 
+**transmissionType** | **String** | The transmission type of the payment, e.g. ACH, SAME_DAY_ACH, WIRE | [optional] 
+**paymentTrackingReference** | **String** |  | [optional] 
+**paymentMetadata** | **String** | Metadata for the payment | [optional] 
 **payout** | [**PaymentResponseV4Payout**](PaymentResponseV4Payout.md) |  | [optional] 
 
 

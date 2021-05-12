@@ -126,33 +126,6 @@
         done();
       });
     });
-    describe('listPayeeChanges', function() {
-      it('should call listPayeesV1 successfully', function(done) {
-        let defaultClient = VeloPayments.ApiClient.instance;
-        let OAuth2 = defaultClient.authentications['OAuth2'];
-        OAuth2.accessToken = process.env.APITOKEN;
-        defaultClient.basePath = process.env.APIURL;
-
-        let payorId = process.env.PAYOR; // String | 
-        let opts = {
-          'ofacStatus': null, // new VeloPayments.OfacStatus(), // OfacStatus | The ofacStatus of the payees.
-          'onboardedStatus': null, // new VeloPayments.OnboardedStatus(), // OnboardedStatus | The onboarded status of the payees.
-          'email': null, // String | Email address
-          'displayName': null, // String | The display name of the payees.
-          'remoteId': null, // String | The remote id of the payees.
-          'payeeType': null, // PayeeType | The onboarded status of the payees.
-          'payeeCountry': 'US', // String | The country of the payee - 2 letter ISO 3166-1 country code (upper case)
-          'page': 1, // Number | Page number. Default is 1.
-          'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
-          'sort': 'displayName:asc' // String | List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
-        };
-        instance.listPayeesV1(payorId, opts, (error, data, response) => {
-         if (error) throw error;
-         expect(response.statusCode).to.be(200);
-          });
-        done();
-      });
-    });
     describe('listPayeeChangesV3', function() {
       it('should call listPayeesV3 successfully', function(done) {
         let defaultClient = VeloPayments.ApiClient.instance;
@@ -175,33 +148,6 @@
           'sort': 'displayName:asc' // String | List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
         };
         instance.listPayeesV3(payorId, opts, (error, data, response) => {
-         if (error) throw error;
-         expect(response.statusCode).to.be(200);
-          });
-        done();
-      });
-    });
-    describe('listPayeesV1', function() {
-      it('should call listPayeesV1 successfully', function(done) {
-        let defaultClient = VeloPayments.ApiClient.instance;
-        let OAuth2 = defaultClient.authentications['OAuth2'];
-        OAuth2.accessToken = process.env.APITOKEN;
-        defaultClient.basePath = process.env.APIURL;
-
-        let payorId = process.env.PAYOR; // String | 
-        let opts = {
-          'ofacStatus': null, // new VeloPayments.OfacStatus(), // OfacStatus | The ofacStatus of the payees.
-          'onboardedStatus': null, // new VeloPayments.OnboardedStatus(), // OnboardedStatus | The onboarded status of the payees.
-          'email': null, //  String | Email address
-          'displayName': null, //  String | The display name of the payees.
-          'remoteId': null, //  String | The remote id of the payees.
-          'payeeType': null, // new VeloPayments.PayeeType(), // PayeeType | The onboarded status of the payees.
-          'payeeCountry': 'US', // String | The country of the payee - 2 letter ISO 3166-1 country code (upper case)
-          'page': 1, // Number | Page number. Default is 1.
-          'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
-          'sort': 'displayName:asc' // String | List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
-        };
-        instance.listPayeesV1(payorId, opts, (error, data, response) => {
          if (error) throw error;
          expect(response.statusCode).to.be(200);
           });

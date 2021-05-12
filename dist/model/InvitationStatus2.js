@@ -35,13 +35,13 @@ var InvitationStatus2 = /*#__PURE__*/function () {
 
   _createClass(InvitationStatus2, null, [{
     key: "constructFromObject",
-
+    value:
     /**
     * Returns a <code>InvitationStatus2</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/InvitationStatus2} The enum <code>InvitationStatus2</code> value.
     */
-    value: function constructFromObject(object) {
+    function constructFromObject(object) {
       return object;
     }
   }]);

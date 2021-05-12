@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CreateIndividual2Name = _interopRequireDefault(require("./CreateIndividual2Name"));
+var _CreateIndividualName = _interopRequireDefault(require("./CreateIndividualName"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,13 +20,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateIndividual2 model module.
  * @module model/CreateIndividual2
- * @version 2.23.78
+ * @version 2.26.127
  */
 var CreateIndividual2 = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CreateIndividual2</code>.
    * @alias module:model/CreateIndividual2
-   * @param name {module:model/CreateIndividual2Name} 
+   * @param name {module:model/CreateIndividualName} 
    * @param dateOfBirth {Date} Must not be date in future. Example - 1970-05-20
    */
   function CreateIndividual2(name, dateOfBirth) {
@@ -62,7 +62,7 @@ var CreateIndividual2 = /*#__PURE__*/function () {
         obj = obj || new CreateIndividual2();
 
         if (data.hasOwnProperty('name')) {
-          obj['name'] = _CreateIndividual2Name["default"].constructFromObject(data['name']);
+          obj['name'] = _CreateIndividualName["default"].constructFromObject(data['name']);
         }
 
         if (data.hasOwnProperty('nationalIdentification')) {
@@ -81,7 +81,7 @@ var CreateIndividual2 = /*#__PURE__*/function () {
   return CreateIndividual2;
 }();
 /**
- * @member {module:model/CreateIndividual2Name} name
+ * @member {module:model/CreateIndividualName} name
  */
 
 

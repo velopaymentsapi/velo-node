@@ -47,13 +47,13 @@ var PayoutStatusV3 = /*#__PURE__*/function () {
 
   _createClass(PayoutStatusV3, null, [{
     key: "constructFromObject",
-
+    value:
     /**
     * Returns a <code>PayoutStatusV3</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/PayoutStatusV3} The enum <code>PayoutStatusV3</code> value.
     */
-    value: function constructFromObject(object) {
+    function constructFromObject(object) {
       return object;
     }
   }]);

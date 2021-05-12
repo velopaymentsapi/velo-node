@@ -21,7 +21,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 /**
 * @module ApiClient
-* @version 2.23.78
+* @version 2.26.127
 */
 
 /**
@@ -63,7 +63,9 @@ var ApiClient = /*#__PURE__*/function () {
      * @default {}
      */
 
-    this.defaultHeaders = {};
+    this.defaultHeaders = {
+      'User-Agent': 'OpenAPI-Generator/2.26.127/Javascript'
+    };
     /**
      * The default HTTP timeout for all API calls.
      * @type {Number}
@@ -138,7 +140,7 @@ var ApiClient = /*#__PURE__*/function () {
 
   }, {
     key: "buildUrl",
-
+    value:
     /**
      * Builds full URL by appending the given path to the base URL and replacing path parameter place-holders with parameter values.
      * NOTE: query parameters are not handled here.
@@ -147,7 +149,7 @@ var ApiClient = /*#__PURE__*/function () {
      * @param {String} apiBasePath Base path defined in the path, operation level to override the default one
      * @returns {String} The encoded path with parameter values substituted.
      */
-    value: function buildUrl(path, pathParams, apiBasePath) {
+    function buildUrl(path, pathParams, apiBasePath) {
       var _this = this;
 
       if (!path.match(/^\//)) {
@@ -160,7 +162,7 @@ var ApiClient = /*#__PURE__*/function () {
         url = apiBasePath + path;
       }
 
-      url = url.replace(/\{([\w-]+)\}/g, function (fullMatch, key) {
+      url = url.replace(/\{([\w-\.]+)\}/g, function (fullMatch, key) {
         var value;
 
         if (pathParams.hasOwnProperty(key)) {
@@ -293,20 +295,23 @@ var ApiClient = /*#__PURE__*/function () {
 
       switch (collectionFormat) {
         case 'csv':
-          return param.map(this.paramToString).join(',');
+          return param.map(this.paramToString, this).join(',');
 
         case 'ssv':
-          return param.map(this.paramToString).join(' ');
+          return param.map(this.paramToString, this).join(' ');
 
         case 'tsv':
-          return param.map(this.paramToString).join('\t');
+          return param.map(this.paramToString, this).join('\t');
 
         case 'pipes':
-          return param.map(this.paramToString).join('|');
+          return param.map(this.paramToString, this).join('|');
 
         case 'multi':
           //return the array directly as SuperAgent will handle it as expected
-          return param.map(this.paramToString);
+          return param.map(this.paramToString, this);
+
+        case 'passthrough':
+          return param;
 
         default:
           throw new Error('Unknown collection format: ' + collectionFormat);
@@ -336,8 +341,9 @@ var ApiClient = /*#__PURE__*/function () {
 
           case 'bearer':
             if (auth.accessToken) {
+              var localVarBearerToken = typeof auth.accessToken === 'function' ? auth.accessToken() : auth.accessToken;
               request.set({
-                'Authorization': 'Bearer ' + auth.accessToken
+                'Authorization': 'Bearer ' + localVarBearerToken
               });
             }
 
@@ -480,11 +486,18 @@ var ApiClient = /*#__PURE__*/function () {
 
         for (var key in _formParams) {
           if (_formParams.hasOwnProperty(key)) {
-            if (this.isFileParam(_formParams[key])) {
+            var _formParamsValue = _formParams[key];
+
+            if (this.isFileParam(_formParamsValue)) {
               // file field
-              request.attach(key, _formParams[key]);
+              request.attach(key, _formParamsValue);
+            } else if (Array.isArray(_formParamsValue) && _formParamsValue.length && this.isFileParam(_formParamsValue[0])) {
+              // multiple files
+              _formParamsValue.forEach(function (file) {
+                return request.attach(key, file);
+              });
             } else {
-              request.field(key, _formParams[key]);
+              request.field(key, _formParamsValue);
             }
           }
         }
@@ -546,14 +559,14 @@ var ApiClient = /*#__PURE__*/function () {
 
   }, {
     key: "hostSettings",
-
+    value:
     /**
       * Gets an array of host settings
       * @returns An array of host settings
       */
-    value: function hostSettings() {
+    function hostSettings() {
       return [{
-        'url': "https://api.sandbox.velopayments.com/",
+        'url': "https://api.sandbox.velopayments.com",
         'description': "Velo Payments Sandbox for testing"
       }, {
         'url': "https://api.payouts.velopayments.com",
@@ -612,7 +625,7 @@ var ApiClient = /*#__PURE__*/function () {
     key: "parseDate",
     value: function parseDate(str) {
       if (isNaN(str)) {
-        return new Date(str);
+        return new Date(str.replace(/(\d)(T)(\d)/i, '$1 $3'));
       }
 
       return new Date(+str);

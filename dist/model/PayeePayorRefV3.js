@@ -9,6 +9,8 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _InvitationStatus = _interopRequireDefault(require("./InvitationStatus2"));
 
+var _PayableIssue = _interopRequireDefault(require("./PayableIssue"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayeePayorRefV3 model module.
  * @module model/PayeePayorRefV3
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PayeePayorRefV3 = /*#__PURE__*/function () {
   /**
@@ -75,6 +77,14 @@ var PayeePayorRefV3 = /*#__PURE__*/function () {
         if (data.hasOwnProperty('paymentChannelId')) {
           obj['paymentChannelId'] = _ApiClient["default"].convertToType(data['paymentChannelId'], 'String');
         }
+
+        if (data.hasOwnProperty('payableStatus')) {
+          obj['payableStatus'] = _ApiClient["default"].convertToType(data['payableStatus'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('payableIssues')) {
+          obj['payableIssues'] = _ApiClient["default"].convertToType(data['payableIssues'], [_PayableIssue["default"]]);
+        }
       }
 
       return obj;
@@ -110,5 +120,17 @@ PayeePayorRefV3.prototype['invitationStatusTimestamp'] = undefined;
  */
 
 PayeePayorRefV3.prototype['paymentChannelId'] = undefined;
+/**
+ * Indicates if the payee is payable for this payor
+ * @member {Boolean} payableStatus
+ */
+
+PayeePayorRefV3.prototype['payableStatus'] = undefined;
+/**
+ * Indicates any conditions which prevent the payee from being payable for this payor
+ * @member {Array.<module:model/PayableIssue>} payableIssues
+ */
+
+PayeePayorRefV3.prototype['payableIssues'] = undefined;
 var _default = PayeePayorRefV3;
 exports["default"] = _default;

@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SourceAccountResponseV3 model module.
  * @module model/SourceAccountResponseV3
- * @version 2.23.78
+ * @version 2.26.127
  */
 var SourceAccountResponseV3 = /*#__PURE__*/function () {
   /**
@@ -125,8 +125,16 @@ var SourceAccountResponseV3 = /*#__PURE__*/function () {
           obj['country'] = _ApiClient["default"].convertToType(data['country'], 'String');
         }
 
-        if (data.hasOwnProperty('archived')) {
-          obj['archived'] = _ApiClient["default"].convertToType(data['archived'], 'Boolean');
+        if (data.hasOwnProperty('deleted')) {
+          obj['deleted'] = _ApiClient["default"].convertToType(data['deleted'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('userDeleted')) {
+          obj['userDeleted'] = _ApiClient["default"].convertToType(data['userDeleted'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('deletedAt')) {
+          obj['deletedAt'] = _ApiClient["default"].convertToType(data['deletedAt'], 'Date');
         }
       }
 
@@ -220,11 +228,23 @@ SourceAccountResponseV3.prototype['type'] = undefined;
 
 SourceAccountResponseV3.prototype['country'] = undefined;
 /**
- * A flag for whether the source account has been archived.  Only present in the response if true.
- * @member {Boolean} archived
+ * An optional flag for whether the source account has been deleted. Only present in the response if true.
+ * @member {Boolean} deleted
  */
 
-SourceAccountResponseV3.prototype['archived'] = undefined;
+SourceAccountResponseV3.prototype['deleted'] = undefined;
+/**
+ * An optional flag for whether the source account has been deleted by a user. Only present in the response if true.
+ * @member {Boolean} userDeleted
+ */
+
+SourceAccountResponseV3.prototype['userDeleted'] = undefined;
+/**
+ * An optional timestamp when the source account has been deleted. Only present in the response if deleted.
+ * @member {Date} deletedAt
+ */
+
+SourceAccountResponseV3.prototype['deletedAt'] = undefined;
 /**
  * Allowed values for the <code>currency</code> property.
  * @enum {String}

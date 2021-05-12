@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreatePayoutRequestV3 model module.
  * @module model/CreatePayoutRequestV3
- * @version 2.23.78
+ * @version 2.26.127
  */
 var CreatePayoutRequestV3 = /*#__PURE__*/function () {
   /**
@@ -59,10 +59,6 @@ var CreatePayoutRequestV3 = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new CreatePayoutRequestV3();
 
-        if (data.hasOwnProperty('payorId')) {
-          obj['payorId'] = _ApiClient["default"].convertToType(data['payorId'], 'String');
-        }
-
         if (data.hasOwnProperty('payoutFromPayorId')) {
           obj['payoutFromPayorId'] = _ApiClient["default"].convertToType(data['payoutFromPayorId'], 'String');
         }
@@ -87,26 +83,20 @@ var CreatePayoutRequestV3 = /*#__PURE__*/function () {
   return CreatePayoutRequestV3;
 }();
 /**
- * Deprecated in v2.16. Any value supplied here will be ignored.
- * @member {String} payorId
- */
-
-
-CreatePayoutRequestV3.prototype['payorId'] = undefined;
-/**
- * The id of the payor whose source account(s) will be debited. payoutFromPayorId and payoutToPayorId must be both supplied or both omitted.
+ * <p>The id of the payor whose source account(s) will be debited</p> <p>payoutFromPayorId and payoutToPayorId must be both supplied or both omitted</p> 
  * @member {String} payoutFromPayorId
  */
 
+
 CreatePayoutRequestV3.prototype['payoutFromPayorId'] = undefined;
 /**
- * The id of the payor whose payees will be paid. payoutFromPayorId and payoutToPayorId must be both supplied or both omitted.
+ * <p>The id of the payor whose payees will be paid</p> <p>payoutFromPayorId and payoutToPayorId must be both supplied or both omitted</p> 
  * @member {String} payoutToPayorId
  */
 
 CreatePayoutRequestV3.prototype['payoutToPayorId'] = undefined;
 /**
- * Text applied to all payment memos unless specified explicitly on a payment. This should be the reference field on the statement seen by the payee (but not via ACH)
+ * <p>Text applied to all payment memos unless specified explicitly on a payment</p> <p>This should be the reference field on the statement seen by the payee (but not via ACH)</p> 
  * @member {String} payoutMemo
  */
 

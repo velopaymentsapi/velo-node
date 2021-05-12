@@ -7,6 +7,10 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _ErrorData = _interopRequireDefault(require("./ErrorData"));
+
+var _LocalisationDetails = _interopRequireDefault(require("./LocalisationDetails"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Error model module.
  * @module model/Error
- * @version 2.23.78
+ * @version 2.26.127
  */
 var Error = /*#__PURE__*/function () {
   /**
@@ -58,6 +62,14 @@ var Error = /*#__PURE__*/function () {
           obj['errorMessage'] = _ApiClient["default"].convertToType(data['errorMessage'], 'String');
         }
 
+        if (data.hasOwnProperty('errorCode')) {
+          obj['errorCode'] = _ApiClient["default"].convertToType(data['errorCode'], 'String');
+        }
+
+        if (data.hasOwnProperty('localisationDetails')) {
+          obj['localisationDetails'] = _LocalisationDetails["default"].constructFromObject(data['localisationDetails']);
+        }
+
         if (data.hasOwnProperty('location')) {
           obj['location'] = _ApiClient["default"].convertToType(data['location'], 'String');
         }
@@ -69,6 +81,10 @@ var Error = /*#__PURE__*/function () {
         if (data.hasOwnProperty('reasonCode')) {
           obj['reasonCode'] = _ApiClient["default"].convertToType(data['reasonCode'], 'String');
         }
+
+        if (data.hasOwnProperty('errorData')) {
+          obj['errorData'] = _ErrorData["default"].constructFromObject(data['errorData']);
+        }
       }
 
       return obj;
@@ -78,12 +94,23 @@ var Error = /*#__PURE__*/function () {
   return Error;
 }();
 /**
- * verbose message indicating the nature of the error Will be localised 
+ * English language message indicating the nature of the error
  * @member {String} errorMessage
  */
 
 
 Error.prototype['errorMessage'] = undefined;
+/**
+ * Unique numeric code that can be used for switching client behavior or to drive translated or customised error messages
+ * @member {String} errorCode
+ */
+
+Error.prototype['errorCode'] = undefined;
+/**
+ * @member {module:model/LocalisationDetails} localisationDetails
+ */
+
+Error.prototype['localisationDetails'] = undefined;
 /**
  * the property or object that caused the error
  * @member {String} location
@@ -97,11 +124,16 @@ Error.prototype['location'] = undefined;
 
 Error.prototype['locationType'] = undefined;
 /**
- * a camel-cased string that can be used by clients to localise client error messages
+ * a camel-cased string that can be used by clients to localise client error messages (deprecated)
  * @member {String} reasonCode
  */
 
 Error.prototype['reasonCode'] = undefined;
+/**
+ * @member {module:model/ErrorData} errorData
+ */
+
+Error.prototype['errorData'] = undefined;
 /**
  * Allowed values for the <code>locationType</code> property.
  * @enum {String}

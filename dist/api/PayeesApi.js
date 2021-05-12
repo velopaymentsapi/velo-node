@@ -25,8 +25,6 @@ var _PagedPayeeResponse = _interopRequireDefault(require("../model/PagedPayeeRes
 
 var _PagedPayeeResponse2 = _interopRequireDefault(require("../model/PagedPayeeResponse2"));
 
-var _Payee = _interopRequireDefault(require("../model/Payee"));
-
 var _PayeeDeltaResponse = _interopRequireDefault(require("../model/PayeeDeltaResponse"));
 
 var _PayeeDeltaResponse2 = _interopRequireDefault(require("../model/PayeeDeltaResponse2"));
@@ -35,8 +33,6 @@ var _PayeeDetailResponse = _interopRequireDefault(require("../model/PayeeDetailR
 
 var _PayeeDetailResponse2 = _interopRequireDefault(require("../model/PayeeDetailResponse2"));
 
-var _PayeeResponseV = _interopRequireDefault(require("../model/PayeeResponseV2"));
-
 var _PayeeType = _interopRequireDefault(require("../model/PayeeType"));
 
 var _UpdatePayeeDetailsRequest = _interopRequireDefault(require("../model/UpdatePayeeDetailsRequest"));
@@ -44,6 +40,8 @@ var _UpdatePayeeDetailsRequest = _interopRequireDefault(require("../model/Update
 var _UpdatePayeeDetailsRequest2 = _interopRequireDefault(require("../model/UpdatePayeeDetailsRequest2"));
 
 var _UpdateRemoteIdRequest = _interopRequireDefault(require("../model/UpdateRemoteIdRequest"));
+
+var _UpdateRemoteIdRequest2 = _interopRequireDefault(require("../model/UpdateRemoteIdRequest2"));
 
 var _WatchlistStatus = _interopRequireDefault(require("../model/WatchlistStatus"));
 
@@ -58,7 +56,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Payees service.
 * @module api/PayeesApi
-* @version 2.23.78
+* @version 2.26.127
 */
 var PayeesApi = /*#__PURE__*/function () {
   /**
@@ -74,8 +72,8 @@ var PayeesApi = /*#__PURE__*/function () {
     this.apiClient = apiClient || _ApiClient["default"].instance;
   }
   /**
-   * Callback function to receive the result of the deletePayeeByIdV1 operation.
-   * @callback module:api/PayeesApi~deletePayeeByIdV1Callback
+   * Callback function to receive the result of the deletePayeeByIdV3 operation.
+   * @callback module:api/PayeesApi~deletePayeeByIdV3Callback
    * @param {String} error Error message, if any.
    * @param data This operation does not return a value.
    * @param {String} response The complete HTTP response.
@@ -83,49 +81,13 @@ var PayeesApi = /*#__PURE__*/function () {
 
   /**
    * Delete Payee by Id
-   * <p>This API will delete Payee by Id (UUID). Deletion by ID is not allowed if:</p> <p>* Payee ID is not found</p> <p>* If Payee has not been on-boarded</p> <p>* If Payee is in grace period</p> <p>* If Payee has existing payments</p> <p>Please use V3 instead.</p> 
+   * <p>Use v4 instead</p> <p>This API will delete Payee by Id (UUID). Deletion by ID is not allowed if:</p> <p>* Payee ID is not found</p> <p>* If Payee has not been on-boarded</p> <p>* If Payee is in grace period</p> <p>* If Payee has existing payments</p> 
    * @param {String} payeeId The UUID of the payee.
-   * @param {module:api/PayeesApi~deletePayeeByIdV1Callback} callback The callback function, accepting three arguments: error, data, response
+   * @param {module:api/PayeesApi~deletePayeeByIdV3Callback} callback The callback function, accepting three arguments: error, data, response
    */
 
 
   _createClass(PayeesApi, [{
-    key: "deletePayeeByIdV1",
-    value: function deletePayeeByIdV1(payeeId, callback) {
-      var postBody = null; // verify the required parameter 'payeeId' is set
-
-      if (payeeId === undefined || payeeId === null) {
-        throw new Error("Missing the required parameter 'payeeId' when calling deletePayeeByIdV1");
-      }
-
-      var pathParams = {
-        'payeeId': payeeId
-      };
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['OAuth2'];
-      var contentTypes = [];
-      var accepts = [];
-      var returnType = null;
-      return this.apiClient.callApi('/v1/payees/{payeeId}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
-    }
-    /**
-     * Callback function to receive the result of the deletePayeeByIdV3 operation.
-     * @callback module:api/PayeesApi~deletePayeeByIdV3Callback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Delete Payee by Id
-     * <p>This API will delete Payee by Id (UUID). Deletion by ID is not allowed if:</p> <p>* Payee ID is not found</p> <p>* If Payee has not been on-boarded</p> <p>* If Payee is in grace period</p> <p>* If Payee has existing payments</p> 
-     * @param {String} payeeId The UUID of the payee.
-     * @param {module:api/PayeesApi~deletePayeeByIdV3Callback} callback The callback function, accepting three arguments: error, data, response
-     */
-
-  }, {
     key: "deletePayeeByIdV3",
     value: function deletePayeeByIdV3(payeeId, callback) {
       var postBody = null; // verify the required parameter 'payeeId' is set
@@ -183,90 +145,6 @@ var PayeesApi = /*#__PURE__*/function () {
       return this.apiClient.callApi('/v4/payees/{payeeId}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
-     * Callback function to receive the result of the getPayeeByIdV1 operation.
-     * @callback module:api/PayeesApi~getPayeeByIdV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Payee} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get Payee by Id
-     * <p>Get Payee by Id</p> <p>Please use V3 instead.</p> 
-     * @param {String} payeeId The UUID of the payee.
-     * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.sensitive Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
-     * @param {module:api/PayeesApi~getPayeeByIdV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Payee}
-     */
-
-  }, {
-    key: "getPayeeByIdV1",
-    value: function getPayeeByIdV1(payeeId, opts, callback) {
-      opts = opts || {};
-      var postBody = null; // verify the required parameter 'payeeId' is set
-
-      if (payeeId === undefined || payeeId === null) {
-        throw new Error("Missing the required parameter 'payeeId' when calling getPayeeByIdV1");
-      }
-
-      var pathParams = {
-        'payeeId': payeeId
-      };
-      var queryParams = {
-        'sensitive': opts['sensitive']
-      };
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['OAuth2'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _Payee["default"];
-      return this.apiClient.callApi('/v1/payees/{payeeId}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
-    }
-    /**
-     * Callback function to receive the result of the getPayeeByIdV2 operation.
-     * @callback module:api/PayeesApi~getPayeeByIdV2Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PayeeResponseV2} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get Payee by Id
-     * <p>Get Payee by Id</p> <p>Please use V3 instead.</p> 
-     * @param {String} payeeId The UUID of the payee.
-     * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.sensitive Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
-     * @param {module:api/PayeesApi~getPayeeByIdV2Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PayeeResponseV2}
-     */
-
-  }, {
-    key: "getPayeeByIdV2",
-    value: function getPayeeByIdV2(payeeId, opts, callback) {
-      opts = opts || {};
-      var postBody = null; // verify the required parameter 'payeeId' is set
-
-      if (payeeId === undefined || payeeId === null) {
-        throw new Error("Missing the required parameter 'payeeId' when calling getPayeeByIdV2");
-      }
-
-      var pathParams = {
-        'payeeId': payeeId
-      };
-      var queryParams = {
-        'sensitive': opts['sensitive']
-      };
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['OAuth2'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _PayeeResponseV["default"];
-      return this.apiClient.callApi('/v2/payees/{payeeId}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
-    }
-    /**
      * Callback function to receive the result of the getPayeeByIdV3 operation.
      * @callback module:api/PayeesApi~getPayeeByIdV3Callback
      * @param {String} error Error message, if any.
@@ -276,7 +154,7 @@ var PayeesApi = /*#__PURE__*/function () {
 
     /**
      * Get Payee by Id
-     * Get Payee by Id
+     * <p>Use v4 instead</p> <p>Get Payee by Id</p> 
      * @param {String} payeeId The UUID of the payee.
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.sensitive Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
@@ -351,8 +229,8 @@ var PayeesApi = /*#__PURE__*/function () {
       return this.apiClient.callApi('/v4/payees/{payeeId}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
-     * Callback function to receive the result of the listPayeeChanges operation.
-     * @callback module:api/PayeesApi~listPayeeChangesCallback
+     * Callback function to receive the result of the listPayeeChangesV3 operation.
+     * @callback module:api/PayeesApi~listPayeeChangesV3Callback
      * @param {String} error Error message, if any.
      * @param {module:model/PayeeDeltaResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -360,64 +238,14 @@ var PayeesApi = /*#__PURE__*/function () {
 
     /**
      * List Payee Changes
-     * <p>Get a paginated response listing payee changes.</p> <p>Please use V3 instead.</p> 
-     * @param {String} payorId The Payor ID to find associated Payees
-     * @param {Date} updatedSince The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize Page size. Default is 100. Max allowable is 1000. (default to 100)
-     * @param {module:api/PayeesApi~listPayeeChangesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PayeeDeltaResponse}
-     */
-
-  }, {
-    key: "listPayeeChanges",
-    value: function listPayeeChanges(payorId, updatedSince, opts, callback) {
-      opts = opts || {};
-      var postBody = null; // verify the required parameter 'payorId' is set
-
-      if (payorId === undefined || payorId === null) {
-        throw new Error("Missing the required parameter 'payorId' when calling listPayeeChanges");
-      } // verify the required parameter 'updatedSince' is set
-
-
-      if (updatedSince === undefined || updatedSince === null) {
-        throw new Error("Missing the required parameter 'updatedSince' when calling listPayeeChanges");
-      }
-
-      var pathParams = {};
-      var queryParams = {
-        'payorId': payorId,
-        'updatedSince': updatedSince,
-        'page': opts['page'],
-        'pageSize': opts['pageSize']
-      };
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['OAuth2'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _PayeeDeltaResponse["default"];
-      return this.apiClient.callApi('/v1/deltas/payees', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
-    }
-    /**
-     * Callback function to receive the result of the listPayeeChangesV3 operation.
-     * @callback module:api/PayeesApi~listPayeeChangesV3Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PayeeDeltaResponse2} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * List Payee Changes
-     * Get a paginated response listing payee changes.
+     * <p>Use v4 instead</p> <p>Get a paginated response listing payee changes.</p> 
      * @param {String} payorId The Payor ID to find associated Payees
      * @param {Date} updatedSince The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number. Default is 1. (default to 1)
      * @param {Number} opts.pageSize Page size. Default is 100. Max allowable is 1000. (default to 100)
      * @param {module:api/PayeesApi~listPayeeChangesV3Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PayeeDeltaResponse2}
+     * data is of type: {@link module:model/PayeeDeltaResponse}
      */
 
   }, {
@@ -447,7 +275,7 @@ var PayeesApi = /*#__PURE__*/function () {
       var authNames = ['OAuth2'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _PayeeDeltaResponse2["default"];
+      var returnType = _PayeeDeltaResponse["default"];
       return this.apiClient.callApi('/v3/payees/deltas', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
@@ -501,75 +329,16 @@ var PayeesApi = /*#__PURE__*/function () {
       return this.apiClient.callApi('/v4/payees/deltas', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
-     * Callback function to receive the result of the listPayeesV1 operation.
-     * @callback module:api/PayeesApi~listPayeesV1Callback
+     * Callback function to receive the result of the listPayeesV3 operation.
+     * @callback module:api/PayeesApi~listPayeesV3Callback
      * @param {String} error Error message, if any.
      * @param {module:model/PagedPayeeResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * List Payees V1
-     * <p>Get a paginated response listing the payees for a payor.</p> <p>Please use V3 instead.</> 
-     * @param {String} payorId The account owner Payor ID
-     * @param {Object} opts Optional parameters
-     * @param {module:model/OfacStatus} opts.ofacStatus The ofacStatus of the payees.
-     * @param {module:model/OnboardedStatus} opts.onboardedStatus The onboarded status of the payees.
-     * @param {String} opts.email Email address
-     * @param {String} opts.displayName The display name of the payees.
-     * @param {String} opts.remoteId The remote id of the payees.
-     * @param {module:model/PayeeType} opts.payeeType The onboarded status of the payees.
-     * @param {String} opts.payeeCountry The country of the payee - 2 letter ISO 3166-1 country code (upper case)
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize Page size. Default is 25. Max allowable is 100. (default to 25)
-     * @param {String} opts.sort List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus.  (default to 'displayName:asc')
-     * @param {module:api/PayeesApi~listPayeesV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PagedPayeeResponse}
-     */
-
-  }, {
-    key: "listPayeesV1",
-    value: function listPayeesV1(payorId, opts, callback) {
-      opts = opts || {};
-      var postBody = null; // verify the required parameter 'payorId' is set
-
-      if (payorId === undefined || payorId === null) {
-        throw new Error("Missing the required parameter 'payorId' when calling listPayeesV1");
-      }
-
-      var pathParams = {};
-      var queryParams = {
-        'payorId': payorId,
-        'ofacStatus': opts['ofacStatus'],
-        'onboardedStatus': opts['onboardedStatus'],
-        'email': opts['email'],
-        'displayName': opts['displayName'],
-        'remoteId': opts['remoteId'],
-        'payeeType': opts['payeeType'],
-        'payeeCountry': opts['payeeCountry'],
-        'page': opts['page'],
-        'pageSize': opts['pageSize'],
-        'sort': opts['sort']
-      };
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['OAuth2'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _PagedPayeeResponse["default"];
-      return this.apiClient.callApi('/v1/payees', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
-    }
-    /**
-     * Callback function to receive the result of the listPayeesV3 operation.
-     * @callback module:api/PayeesApi~listPayeesV3Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PagedPayeeResponse2} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
      * List Payees
-     * Get a paginated response listing the payees for a payor.
+     * <p>Use v4 instead</p> Get a paginated response listing the payees for a payor. 
      * @param {String} payorId The account owner Payor ID
      * @param {Object} opts Optional parameters
      * @param {module:model/WatchlistStatus} opts.watchlistStatus The watchlistStatus of the payees.
@@ -584,7 +353,7 @@ var PayeesApi = /*#__PURE__*/function () {
      * @param {Number} opts.pageSize Page size. Default is 25. Max allowable is 100. (default to 25)
      * @param {String} opts.sort List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus.  (default to 'displayName:asc')
      * @param {module:api/PayeesApi~listPayeesV3Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PagedPayeeResponse2}
+     * data is of type: {@link module:model/PagedPayeeResponse}
      */
 
   }, {
@@ -617,7 +386,7 @@ var PayeesApi = /*#__PURE__*/function () {
       var authNames = ['OAuth2'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _PagedPayeeResponse2["default"];
+      var returnType = _PagedPayeeResponse["default"];
       return this.apiClient.callApi('/v3/payees', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
@@ -693,7 +462,7 @@ var PayeesApi = /*#__PURE__*/function () {
 
     /**
      * Update Payee Details
-     * <p>Update payee details for the given Payee Id.<p> 
+     * <p>Use v4 instead</p> <p>Update payee details for the given Payee Id.<p> 
      * @param {String} payeeId The UUID of the payee.
      * @param {module:model/UpdatePayeeDetailsRequest} updatePayeeDetailsRequest Request to update payee details
      * @param {module:api/PayeesApi~payeeDetailsUpdateV3Callback} callback The callback function, accepting three arguments: error, data, response
@@ -768,48 +537,6 @@ var PayeesApi = /*#__PURE__*/function () {
       return this.apiClient.callApi('/v4/payees/{payeeId}/payeeDetailsUpdate', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
-     * Callback function to receive the result of the v1PayeesPayeeIdRemoteIdUpdatePost operation.
-     * @callback module:api/PayeesApi~v1PayeesPayeeIdRemoteIdUpdatePostCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Update Payee Remote Id
-     * <p>Update the remote Id for the given Payee Id.</p> <p>Please use V3 instead</p> 
-     * @param {String} payeeId The UUID of the payee.
-     * @param {module:model/UpdateRemoteIdRequest} updateRemoteIdRequest Request to update payee remote id v1
-     * @param {module:api/PayeesApi~v1PayeesPayeeIdRemoteIdUpdatePostCallback} callback The callback function, accepting three arguments: error, data, response
-     */
-
-  }, {
-    key: "v1PayeesPayeeIdRemoteIdUpdatePost",
-    value: function v1PayeesPayeeIdRemoteIdUpdatePost(payeeId, updateRemoteIdRequest, callback) {
-      var postBody = updateRemoteIdRequest; // verify the required parameter 'payeeId' is set
-
-      if (payeeId === undefined || payeeId === null) {
-        throw new Error("Missing the required parameter 'payeeId' when calling v1PayeesPayeeIdRemoteIdUpdatePost");
-      } // verify the required parameter 'updateRemoteIdRequest' is set
-
-
-      if (updateRemoteIdRequest === undefined || updateRemoteIdRequest === null) {
-        throw new Error("Missing the required parameter 'updateRemoteIdRequest' when calling v1PayeesPayeeIdRemoteIdUpdatePost");
-      }
-
-      var pathParams = {
-        'payeeId': payeeId
-      };
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['OAuth2'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-      return this.apiClient.callApi('/v1/payees/{payeeId}/remoteIdUpdate', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
-    }
-    /**
      * Callback function to receive the result of the v3PayeesPayeeIdRemoteIdUpdatePost operation.
      * @callback module:api/PayeesApi~v3PayeesPayeeIdRemoteIdUpdatePostCallback
      * @param {String} error Error message, if any.
@@ -819,7 +546,7 @@ var PayeesApi = /*#__PURE__*/function () {
 
     /**
      * Update Payee Remote Id
-     * <p>Update the remote Id for the given Payee Id.</p> 
+     * <p>Use v4 instead</p> <p>Update the remote Id for the given Payee Id.</p> 
      * @param {String} payeeId The UUID of the payee.
      * @param {module:model/UpdateRemoteIdRequest} updateRemoteIdRequest Request to update payee remote id v3
      * @param {module:api/PayeesApi~v3PayeesPayeeIdRemoteIdUpdatePostCallback} callback The callback function, accepting three arguments: error, data, response
@@ -863,22 +590,22 @@ var PayeesApi = /*#__PURE__*/function () {
      * Update Payee Remote Id
      * <p>Update the remote Id for the given Payee Id.</p> 
      * @param {String} payeeId The UUID of the payee.
-     * @param {module:model/UpdateRemoteIdRequest} updateRemoteIdRequest Request to update payee remote id v4
+     * @param {module:model/UpdateRemoteIdRequest2} updateRemoteIdRequest2 Request to update payee remote id v4
      * @param {module:api/PayeesApi~v4PayeesPayeeIdRemoteIdUpdatePostCallback} callback The callback function, accepting three arguments: error, data, response
      */
 
   }, {
     key: "v4PayeesPayeeIdRemoteIdUpdatePost",
-    value: function v4PayeesPayeeIdRemoteIdUpdatePost(payeeId, updateRemoteIdRequest, callback) {
-      var postBody = updateRemoteIdRequest; // verify the required parameter 'payeeId' is set
+    value: function v4PayeesPayeeIdRemoteIdUpdatePost(payeeId, updateRemoteIdRequest2, callback) {
+      var postBody = updateRemoteIdRequest2; // verify the required parameter 'payeeId' is set
 
       if (payeeId === undefined || payeeId === null) {
         throw new Error("Missing the required parameter 'payeeId' when calling v4PayeesPayeeIdRemoteIdUpdatePost");
-      } // verify the required parameter 'updateRemoteIdRequest' is set
+      } // verify the required parameter 'updateRemoteIdRequest2' is set
 
 
-      if (updateRemoteIdRequest === undefined || updateRemoteIdRequest === null) {
-        throw new Error("Missing the required parameter 'updateRemoteIdRequest' when calling v4PayeesPayeeIdRemoteIdUpdatePost");
+      if (updateRemoteIdRequest2 === undefined || updateRemoteIdRequest2 === null) {
+        throw new Error("Missing the required parameter 'updateRemoteIdRequest2' when calling v4PayeesPayeeIdRemoteIdUpdatePost");
       }
 
       var pathParams = {

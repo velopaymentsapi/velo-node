@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _IndividualV1Name = _interopRequireDefault(require("./IndividualV1Name"));
+var _IndividualName = _interopRequireDefault(require("./IndividualName"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,13 +20,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Individual model module.
  * @module model/Individual
- * @version 2.23.78
+ * @version 2.26.127
  */
 var Individual = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Individual</code>.
    * @alias module:model/Individual
-   * @param name {module:model/IndividualV1Name} 
+   * @param name {module:model/IndividualName} 
    * @param dateOfBirth {String} If not authorized to view, value will be masked. Example: - XXXX-XX-XX
    */
   function Individual(name, dateOfBirth) {
@@ -62,7 +62,7 @@ var Individual = /*#__PURE__*/function () {
         obj = obj || new Individual();
 
         if (data.hasOwnProperty('name')) {
-          obj['name'] = _IndividualV1Name["default"].constructFromObject(data['name']);
+          obj['name'] = _IndividualName["default"].constructFromObject(data['name']);
         }
 
         if (data.hasOwnProperty('nationalIdentification')) {
@@ -81,7 +81,7 @@ var Individual = /*#__PURE__*/function () {
   return Individual;
 }();
 /**
- * @member {module:model/IndividualV1Name} name
+ * @member {module:model/IndividualName} name
  */
 
 

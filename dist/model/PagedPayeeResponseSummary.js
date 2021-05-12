@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PagedPayeeResponseSummary model module.
  * @module model/PagedPayeeResponseSummary
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PagedPayeeResponseSummary = /*#__PURE__*/function () {
   /**
@@ -70,8 +70,8 @@ var PagedPayeeResponseSummary = /*#__PURE__*/function () {
           obj['totalOnboardedCount'] = _ApiClient["default"].convertToType(data['totalOnboardedCount'], 'Number');
         }
 
-        if (data.hasOwnProperty('totalOfacFailedCount')) {
-          obj['totalOfacFailedCount'] = _ApiClient["default"].convertToType(data['totalOfacFailedCount'], 'Number');
+        if (data.hasOwnProperty('totalWatchlistFailedCount')) {
+          obj['totalWatchlistFailedCount'] = _ApiClient["default"].convertToType(data['totalWatchlistFailedCount'], 'Number');
         }
       }
 
@@ -103,9 +103,9 @@ PagedPayeeResponseSummary.prototype['totalRegisteredCount'] = undefined;
 
 PagedPayeeResponseSummary.prototype['totalOnboardedCount'] = undefined;
 /**
- * @member {Number} totalOfacFailedCount
+ * @member {Number} totalWatchlistFailedCount
  */
 
-PagedPayeeResponseSummary.prototype['totalOfacFailedCount'] = undefined;
+PagedPayeeResponseSummary.prototype['totalWatchlistFailedCount'] = undefined;
 var _default = PagedPayeeResponseSummary;
 exports["default"] = _default;

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SetNotificationsRequest model module.
  * @module model/SetNotificationsRequest
- * @version 2.23.78
+ * @version 2.26.127
  */
 var SetNotificationsRequest = /*#__PURE__*/function () {
   /**

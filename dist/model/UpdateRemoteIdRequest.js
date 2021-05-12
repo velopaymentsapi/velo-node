@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UpdateRemoteIdRequest model module.
  * @module model/UpdateRemoteIdRequest
- * @version 2.23.78
+ * @version 2.26.127
  */
 var UpdateRemoteIdRequest = /*#__PURE__*/function () {
   /**

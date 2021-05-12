@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetFundingsResponse model module.
  * @module model/GetFundingsResponse
- * @version 2.23.78
+ * @version 2.26.127
  */
 var GetFundingsResponse = /*#__PURE__*/function () {
   /**

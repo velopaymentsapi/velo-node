@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayorBrandingResponse model module.
  * @module model/PayorBrandingResponse
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PayorBrandingResponse = /*#__PURE__*/function () {
   /**

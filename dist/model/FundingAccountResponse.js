@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FundingAccountResponse model module.
  * @module model/FundingAccountResponse
- * @version 2.23.78
+ * @version 2.26.127
  */
 var FundingAccountResponse = /*#__PURE__*/function () {
   /**

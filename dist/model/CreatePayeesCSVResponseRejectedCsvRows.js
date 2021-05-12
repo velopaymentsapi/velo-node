@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreatePayeesCSVResponseRejectedCsvRows model module.
  * @module model/CreatePayeesCSVResponseRejectedCsvRows
- * @version 2.23.78
+ * @version 2.26.127
  */
 var CreatePayeesCSVResponseRejectedCsvRows = /*#__PURE__*/function () {
   /**

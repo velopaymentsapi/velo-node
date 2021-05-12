@@ -42,27 +42,17 @@ trim:
 	- rm git_push.sh
 
 info:
-	# adjustments for generated files
-	echo "import ApiClient from '../ApiClient';" >> OneOfstringstring.js
-	echo "export default class OneOfstringstring {" >> OneOfstringstring.js
-	echo "	static constructFromObject(object) {" >> OneOfstringstring.js
-	echo "		return object;" >> OneOfstringstring.js
-	echo "	}" >> OneOfstringstring.js
-	echo "}" >> OneOfstringstring.js
-	mv OneOfstringstring.js src/model/
-
-	echo "import ApiClient from '../ApiClient';" >> OneOfdatestring.js
-	echo "export default class OneOfdatestring {" >> OneOfdatestring.js
-	echo "	static constructFromObject(object) {" >> OneOfdatestring.js
-	echo "		return object;" >> OneOfdatestring.js
-	echo "	}" >> OneOfdatestring.js
-	echo "}" >> OneOfdatestring.js
-	mv OneOfdatestring.js src/model/
+	echo "import ApiClient from '../ApiClient';" >> OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged.js
+	echo "export default class OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged {" >> OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged.js
+	echo "	static constructFromObject(object) {" >> OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged.js
+	echo "		return object;" >> OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged.js
+	echo "	}" >> OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged.js
+	echo "}" >> OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged.js
+	mv OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged.js src/model/
 
 	# adjust package.json
 	sed -i.bak 's/"main": "src\/index.js"/"main": "dist\/index.js", "repository": {"type": "git","url": "git+ssh:\/\/git@github.com\/velopaymentsapi\/velo-node.git"}/' package.json && rm package.json.bak
 	sed -i.bak 's/"test": "mocha/"clean": "rm \-rf dist \&\& mkdir dist", "build": "npm run clean \&\& babel src \-\-out\-dir dist", "test": "mocha/' package.json && rm package.json.bak
-	# sed -i.bak 's/register --recursive/register tests\/**\/*.js --recursive/' package.json && rm package.json.bak
 	sed -i.bak 's/mocha --require/nyc --reporter=text mocha --require/' package.json && rm package.json.bak
 	sed -i.bak 's/"devDependencies": {/"devDependencies": { "nyc": "^15.0.0",/' package.json && rm package.json.bak
 	
@@ -87,7 +77,7 @@ tests:
 	# overwrite the generated test stubs
 	cp tests/api/* test/api/
 	docker build -t=client-node-tests .
-	docker run -t -v $(PWD):/usr/src/app -e KEY=${KEY} -e SECRET=${SECRET} -e PAYOR=${PAYOR} -e APIURL=${APIURL} -e APITOKEN="" client-node-tests npm run test 
+	docker run -t -e KEY=${KEY} -e SECRET=${SECRET} -e PAYOR=${PAYOR} -e APIURL=${APIURL} -e APITOKEN="" client-node-tests npm test 
 
 commit:
 	sed -i.bak 's/"version": ".*"/"version": "${VERSION}"/g' package.json && rm package.json.bak

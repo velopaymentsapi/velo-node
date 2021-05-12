@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ListPaymentsResponseV3 model module.
  * @module model/ListPaymentsResponseV3
- * @version 2.23.78
+ * @version 2.26.127
  */
 var ListPaymentsResponseV3 = /*#__PURE__*/function () {
   /**

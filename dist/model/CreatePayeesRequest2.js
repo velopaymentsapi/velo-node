@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreatePayeesRequest2 model module.
  * @module model/CreatePayeesRequest2
- * @version 2.23.78
+ * @version 2.26.127
  */
 var CreatePayeesRequest2 = /*#__PURE__*/function () {
   /**

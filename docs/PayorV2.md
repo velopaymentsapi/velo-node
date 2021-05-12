@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **maxMasterPayorAdmins** | **Number** |  | [optional] 
 **paymentRails** | [**PaymentRails**](PaymentRails.md) |  | [optional] 
 **transmissionTypes** | [**TransmissionTypes2**](TransmissionTypes2.md) |  | [optional] 
+**remoteSystemIds** | **[String]** | The payor’s supported remote systems by id | [optional] 
 
 
 

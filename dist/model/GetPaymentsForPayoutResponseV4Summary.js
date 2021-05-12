@@ -7,11 +7,13 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _PayoutPayorV = _interopRequireDefault(require("./PayoutPayorV4"));
+var _PayoutPayor = _interopRequireDefault(require("./PayoutPayor"));
 
-var _PayoutPrincipalV = _interopRequireDefault(require("./PayoutPrincipalV4"));
+var _PayoutPrincipal = _interopRequireDefault(require("./PayoutPrincipal"));
 
-var _PayoutTypeV = _interopRequireDefault(require("./PayoutTypeV4"));
+var _PayoutStatus = _interopRequireDefault(require("./PayoutStatus"));
+
+var _PayoutType = _interopRequireDefault(require("./PayoutType"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -24,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetPaymentsForPayoutResponseV4Summary model module.
  * @module model/GetPaymentsForPayoutResponseV4Summary
- * @version 2.23.78
+ * @version 2.26.127
  */
 var GetPaymentsForPayoutResponseV4Summary = /*#__PURE__*/function () {
   /**
@@ -61,7 +63,7 @@ var GetPaymentsForPayoutResponseV4Summary = /*#__PURE__*/function () {
         obj = obj || new GetPaymentsForPayoutResponseV4Summary();
 
         if (data.hasOwnProperty('payoutStatus')) {
-          obj['payoutStatus'] = _ApiClient["default"].convertToType(data['payoutStatus'], 'String');
+          obj['payoutStatus'] = _PayoutStatus["default"].constructFromObject(data['payoutStatus']);
         }
 
         if (data.hasOwnProperty('submittedDateTime')) {
@@ -109,31 +111,31 @@ var GetPaymentsForPayoutResponseV4Summary = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('payoutType')) {
-          obj['payoutType'] = _PayoutTypeV["default"].constructFromObject(data['payoutType']);
+          obj['payoutType'] = _PayoutType["default"].constructFromObject(data['payoutType']);
         }
 
         if (data.hasOwnProperty('submitting')) {
-          obj['submitting'] = _PayoutPayorV["default"].constructFromObject(data['submitting']);
+          obj['submitting'] = _PayoutPayor["default"].constructFromObject(data['submitting']);
         }
 
         if (data.hasOwnProperty('payoutFrom')) {
-          obj['payoutFrom'] = _PayoutPayorV["default"].constructFromObject(data['payoutFrom']);
+          obj['payoutFrom'] = _PayoutPayor["default"].constructFromObject(data['payoutFrom']);
         }
 
         if (data.hasOwnProperty('payoutTo')) {
-          obj['payoutTo'] = _PayoutPayorV["default"].constructFromObject(data['payoutTo']);
+          obj['payoutTo'] = _PayoutPayor["default"].constructFromObject(data['payoutTo']);
         }
 
         if (data.hasOwnProperty('quoted')) {
-          obj['quoted'] = _PayoutPrincipalV["default"].constructFromObject(data['quoted']);
+          obj['quoted'] = _PayoutPrincipal["default"].constructFromObject(data['quoted']);
         }
 
         if (data.hasOwnProperty('instructed')) {
-          obj['instructed'] = _PayoutPrincipalV["default"].constructFromObject(data['instructed']);
+          obj['instructed'] = _PayoutPrincipal["default"].constructFromObject(data['instructed']);
         }
 
         if (data.hasOwnProperty('withdrawn')) {
-          obj['withdrawn'] = _PayoutPrincipalV["default"].constructFromObject(data['withdrawn']);
+          obj['withdrawn'] = _PayoutPrincipal["default"].constructFromObject(data['withdrawn']);
         }
       }
 
@@ -144,8 +146,7 @@ var GetPaymentsForPayoutResponseV4Summary = /*#__PURE__*/function () {
   return GetPaymentsForPayoutResponseV4Summary;
 }();
 /**
- * The current status of the payout.
- * @member {module:model/GetPaymentsForPayoutResponseV4Summary.PayoutStatusEnum} payoutStatus
+ * @member {module:model/PayoutStatus} payoutStatus
  */
 
 
@@ -216,100 +217,39 @@ GetPaymentsForPayoutResponseV4Summary.prototype['returnedPayments'] = undefined;
 
 GetPaymentsForPayoutResponseV4Summary.prototype['withdrawnPayments'] = undefined;
 /**
- * @member {module:model/PayoutTypeV4} payoutType
+ * @member {module:model/PayoutType} payoutType
  */
 
 GetPaymentsForPayoutResponseV4Summary.prototype['payoutType'] = undefined;
 /**
- * @member {module:model/PayoutPayorV4} submitting
+ * @member {module:model/PayoutPayor} submitting
  */
 
 GetPaymentsForPayoutResponseV4Summary.prototype['submitting'] = undefined;
 /**
- * @member {module:model/PayoutPayorV4} payoutFrom
+ * @member {module:model/PayoutPayor} payoutFrom
  */
 
 GetPaymentsForPayoutResponseV4Summary.prototype['payoutFrom'] = undefined;
 /**
- * @member {module:model/PayoutPayorV4} payoutTo
+ * @member {module:model/PayoutPayor} payoutTo
  */
 
 GetPaymentsForPayoutResponseV4Summary.prototype['payoutTo'] = undefined;
 /**
- * @member {module:model/PayoutPrincipalV4} quoted
+ * @member {module:model/PayoutPrincipal} quoted
  */
 
 GetPaymentsForPayoutResponseV4Summary.prototype['quoted'] = undefined;
 /**
- * @member {module:model/PayoutPrincipalV4} instructed
+ * @member {module:model/PayoutPrincipal} instructed
  */
 
 GetPaymentsForPayoutResponseV4Summary.prototype['instructed'] = undefined;
 /**
- * @member {module:model/PayoutPrincipalV4} withdrawn
+ * @member {module:model/PayoutPrincipal} withdrawn
  */
 
 GetPaymentsForPayoutResponseV4Summary.prototype['withdrawn'] = undefined;
-/**
- * Allowed values for the <code>payoutStatus</code> property.
- * @enum {String}
- * @readonly
- */
-
-GetPaymentsForPayoutResponseV4Summary['PayoutStatusEnum'] = {
-  /**
-   * value: "ACCEPTED"
-   * @const
-   */
-  "ACCEPTED": "ACCEPTED",
-
-  /**
-   * value: "REJECTED"
-   * @const
-   */
-  "REJECTED": "REJECTED",
-
-  /**
-   * value: "SUBMITTED"
-   * @const
-   */
-  "SUBMITTED": "SUBMITTED",
-
-  /**
-   * value: "QUOTED"
-   * @const
-   */
-  "QUOTED": "QUOTED",
-
-  /**
-   * value: "INSTRUCTED"
-   * @const
-   */
-  "INSTRUCTED": "INSTRUCTED",
-
-  /**
-   * value: "COMPLETED"
-   * @const
-   */
-  "COMPLETED": "COMPLETED",
-
-  /**
-   * value: "INCOMPLETE"
-   * @const
-   */
-  "INCOMPLETE": "INCOMPLETE",
-
-  /**
-   * value: "CONFIRMED"
-   * @const
-   */
-  "CONFIRMED": "CONFIRMED",
-
-  /**
-   * value: "WITHDRAWN"
-   * @const
-   */
-  "WITHDRAWN": "WITHDRAWN"
-};
 var _default = GetPaymentsForPayoutResponseV4Summary;
 exports["default"] = _default;

@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **amount** | **Number** |  | 
 **sourceAccountName** | **String** |  | 
 **payorPaymentId** | **String** |  | 
+**remoteSystemId** | **String** |  | [optional] 
+**paymentMetadata** | **String** |  | [optional] 
 **reason** | **String** |  | 
 **reasonCode** | **String** |  | [optional] 
 **lineNumber** | **Number** |  | [optional] 

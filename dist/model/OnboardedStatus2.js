@@ -37,13 +37,13 @@ var OnboardedStatus2 = /*#__PURE__*/function () {
 
   _createClass(OnboardedStatus2, null, [{
     key: "constructFromObject",
-
+    value:
     /**
     * Returns a <code>OnboardedStatus2</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/OnboardedStatus2} The enum <code>OnboardedStatus2</code> value.
     */
-    value: function constructFromObject(object) {
+    function constructFromObject(object) {
       return object;
     }
   }]);

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AcceptedPaymentV3 model module.
  * @module model/AcceptedPaymentV3
- * @version 2.23.78
+ * @version 2.26.127
  */
 var AcceptedPaymentV3 = /*#__PURE__*/function () {
   /**
@@ -88,6 +88,14 @@ var AcceptedPaymentV3 = /*#__PURE__*/function () {
         if (data.hasOwnProperty('paymentMemo')) {
           obj['paymentMemo'] = _ApiClient["default"].convertToType(data['paymentMemo'], 'String');
         }
+
+        if (data.hasOwnProperty('remoteSystemId')) {
+          obj['remoteSystemId'] = _ApiClient["default"].convertToType(data['remoteSystemId'], 'String');
+        }
+
+        if (data.hasOwnProperty('paymentMetadata')) {
+          obj['paymentMetadata'] = _ApiClient["default"].convertToType(data['paymentMetadata'], 'String');
+        }
       }
 
       return obj;
@@ -128,5 +136,15 @@ AcceptedPaymentV3.prototype['payorPaymentId'] = undefined;
  */
 
 AcceptedPaymentV3.prototype['paymentMemo'] = undefined;
+/**
+ * @member {String} remoteSystemId
+ */
+
+AcceptedPaymentV3.prototype['remoteSystemId'] = undefined;
+/**
+ * @member {String} paymentMetadata
+ */
+
+AcceptedPaymentV3.prototype['paymentMetadata'] = undefined;
 var _default = AcceptedPaymentV3;
 exports["default"] = _default;

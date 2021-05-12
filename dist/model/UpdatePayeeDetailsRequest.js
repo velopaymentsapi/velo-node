@@ -7,17 +7,15 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Challenge = _interopRequireDefault(require("./Challenge2"));
+var _Challenge = _interopRequireDefault(require("./Challenge"));
 
-var _Company = _interopRequireDefault(require("./Company2"));
+var _Company = _interopRequireDefault(require("./Company"));
 
-var _Individual = _interopRequireDefault(require("./Individual2"));
+var _Individual = _interopRequireDefault(require("./Individual"));
 
-var _Language = _interopRequireDefault(require("./Language2"));
+var _PayeeAddress = _interopRequireDefault(require("./PayeeAddress"));
 
-var _PayeeAddress = _interopRequireDefault(require("./PayeeAddress2"));
-
-var _PayeeType = _interopRequireDefault(require("./PayeeType2"));
+var _PayeeType = _interopRequireDefault(require("./PayeeType"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -30,7 +28,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UpdatePayeeDetailsRequest model module.
  * @module model/UpdatePayeeDetailsRequest
- * @version 2.23.78
+ * @version 2.26.127
  */
 var UpdatePayeeDetailsRequest = /*#__PURE__*/function () {
   /**
@@ -79,7 +77,7 @@ var UpdatePayeeDetailsRequest = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('language')) {
-          obj['language'] = _Language["default"].constructFromObject(data['language']);
+          obj['language'] = _ApiClient["default"].convertToType(data['language'], 'String');
         }
 
         if (data.hasOwnProperty('payeeType')) {
@@ -102,33 +100,34 @@ var UpdatePayeeDetailsRequest = /*#__PURE__*/function () {
   return UpdatePayeeDetailsRequest;
 }();
 /**
- * @member {module:model/PayeeAddress2} address
+ * @member {module:model/PayeeAddress} address
  */
 
 
 UpdatePayeeDetailsRequest.prototype['address'] = undefined;
 /**
- * @member {module:model/Individual2} individual
+ * @member {module:model/Individual} individual
  */
 
 UpdatePayeeDetailsRequest.prototype['individual'] = undefined;
 /**
- * @member {module:model/Company2} company
+ * @member {module:model/Company} company
  */
 
 UpdatePayeeDetailsRequest.prototype['company'] = undefined;
 /**
- * @member {module:model/Language2} language
+ * An IETF BCP 47 language code which has been configured for use within this Velo environment.<BR> See the /v1/supportedLanguages endpoint to list the available codes for an environment. 
+ * @member {String} language
  */
 
 UpdatePayeeDetailsRequest.prototype['language'] = undefined;
 /**
- * @member {module:model/PayeeType2} payeeType
+ * @member {module:model/PayeeType} payeeType
  */
 
 UpdatePayeeDetailsRequest.prototype['payeeType'] = undefined;
 /**
- * @member {module:model/Challenge2} challenge
+ * @member {module:model/Challenge} challenge
  */
 
 UpdatePayeeDetailsRequest.prototype['challenge'] = undefined;

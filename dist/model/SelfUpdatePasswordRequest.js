@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SelfUpdatePasswordRequest model module.
  * @module model/SelfUpdatePasswordRequest
- * @version 2.23.78
+ * @version 2.26.127
  */
 var SelfUpdatePasswordRequest = /*#__PURE__*/function () {
   /**

@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **dbaName** | **String** |  | [optional] 
 **email** | **String** |  | [optional] 
 **payeeCountry** | **String** |  | [optional] 
-**onboardedStatus** | [**OnboardedStatus**](OnboardedStatus.md) |  | [optional] 
+**onboardedStatus** | [**OnboardedStatus2**](OnboardedStatus2.md) |  | [optional] 
 
 

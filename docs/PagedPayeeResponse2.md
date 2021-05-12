@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**summary** | [**PagedPayeeResponse2Summary**](PagedPayeeResponse2Summary.md) |  | [optional] 
+**summary** | [**PagedPayeeResponseSummary**](PagedPayeeResponseSummary.md) |  | [optional] 
 **page** | [**PagedPayeeResponsePage**](PagedPayeeResponsePage.md) |  | [optional] 
 **links** | [**[PagedPayeeResponseLinks]**](PagedPayeeResponseLinks.md) |  | [optional] 
-**content** | [**[GetPayeeListResponse]**](GetPayeeListResponse.md) |  | [optional] 
+**content** | [**[GetPayeeListResponse2]**](GetPayeeListResponse2.md) |  | [optional] 
 
 

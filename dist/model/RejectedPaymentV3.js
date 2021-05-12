@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RejectedPaymentV3 model module.
  * @module model/RejectedPaymentV3
- * @version 2.23.78
+ * @version 2.26.127
  */
 var RejectedPaymentV3 = /*#__PURE__*/function () {
   /**
@@ -87,6 +87,14 @@ var RejectedPaymentV3 = /*#__PURE__*/function () {
           obj['payorPaymentId'] = _ApiClient["default"].convertToType(data['payorPaymentId'], 'String');
         }
 
+        if (data.hasOwnProperty('remoteSystemId')) {
+          obj['remoteSystemId'] = _ApiClient["default"].convertToType(data['remoteSystemId'], 'String');
+        }
+
+        if (data.hasOwnProperty('paymentMetadata')) {
+          obj['paymentMetadata'] = _ApiClient["default"].convertToType(data['paymentMetadata'], 'String');
+        }
+
         if (data.hasOwnProperty('reason')) {
           obj['reason'] = _ApiClient["default"].convertToType(data['reason'], 'String');
         }
@@ -137,6 +145,16 @@ RejectedPaymentV3.prototype['sourceAccountName'] = undefined;
  */
 
 RejectedPaymentV3.prototype['payorPaymentId'] = undefined;
+/**
+ * @member {String} remoteSystemId
+ */
+
+RejectedPaymentV3.prototype['remoteSystemId'] = undefined;
+/**
+ * @member {String} paymentMetadata
+ */
+
+RejectedPaymentV3.prototype['paymentMetadata'] = undefined;
 /**
  * @member {String} reason
  */

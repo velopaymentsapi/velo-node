@@ -7,13 +7,13 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _GetPayeeListResponse = _interopRequireDefault(require("./GetPayeeListResponse"));
-
-var _PagedPayeeResponse2Summary = _interopRequireDefault(require("./PagedPayeeResponse2Summary"));
+var _GetPayeeListResponse = _interopRequireDefault(require("./GetPayeeListResponse2"));
 
 var _PagedPayeeResponseLinks = _interopRequireDefault(require("./PagedPayeeResponseLinks"));
 
 var _PagedPayeeResponsePage = _interopRequireDefault(require("./PagedPayeeResponsePage"));
+
+var _PagedPayeeResponseSummary = _interopRequireDefault(require("./PagedPayeeResponseSummary"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PagedPayeeResponse2 model module.
  * @module model/PagedPayeeResponse2
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PagedPayeeResponse2 = /*#__PURE__*/function () {
   /**
@@ -64,7 +64,7 @@ var PagedPayeeResponse2 = /*#__PURE__*/function () {
         obj = obj || new PagedPayeeResponse2();
 
         if (data.hasOwnProperty('summary')) {
-          obj['summary'] = _PagedPayeeResponse2Summary["default"].constructFromObject(data['summary']);
+          obj['summary'] = _PagedPayeeResponseSummary["default"].constructFromObject(data['summary']);
         }
 
         if (data.hasOwnProperty('page')) {
@@ -87,7 +87,7 @@ var PagedPayeeResponse2 = /*#__PURE__*/function () {
   return PagedPayeeResponse2;
 }();
 /**
- * @member {module:model/PagedPayeeResponse2Summary} summary
+ * @member {module:model/PagedPayeeResponseSummary} summary
  */
 
 
@@ -103,7 +103,7 @@ PagedPayeeResponse2.prototype['page'] = undefined;
 
 PagedPayeeResponse2.prototype['links'] = undefined;
 /**
- * @member {Array.<module:model/GetPayeeListResponse>} content
+ * @member {Array.<module:model/GetPayeeListResponse2>} content
  */
 
 PagedPayeeResponse2.prototype['content'] = undefined;

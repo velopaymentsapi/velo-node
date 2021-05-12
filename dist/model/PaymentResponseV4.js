@@ -7,9 +7,9 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _PaymentAuditCurrencyV = _interopRequireDefault(require("./PaymentAuditCurrencyV4"));
+var _PaymentAuditCurrency = _interopRequireDefault(require("./PaymentAuditCurrency"));
 
-var _PaymentEventResponseV = _interopRequireDefault(require("./PaymentEventResponseV4"));
+var _PaymentEventResponse = _interopRequireDefault(require("./PaymentEventResponse"));
 
 var _PaymentResponseV4Payout = _interopRequireDefault(require("./PaymentResponseV4Payout"));
 
@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaymentResponseV4 model module.
  * @module model/PaymentResponseV4
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PaymentResponseV4 = /*#__PURE__*/function () {
   /**
@@ -40,7 +40,7 @@ var PaymentResponseV4 = /*#__PURE__*/function () {
    * @param status {module:model/PaymentResponseV4.StatusEnum} 
    * @param fundingStatus {module:model/PaymentResponseV4.FundingStatusEnum} The funding status of the payment
    * @param railsId {String} The rails ID. Default value is RAILS ID UNAVAILABLE when not populated.
-   * @param events {Array.<module:model/PaymentEventResponseV4>} 
+   * @param events {Array.<module:model/PaymentEventResponse>} 
    */
   function PaymentResponseV4(paymentId, payeeId, payorId, quoteId, sourceAccountId, paymentAmount, submittedDateTime, status, fundingStatus, railsId, events) {
     _classCallCheck(this, PaymentResponseV4);
@@ -115,12 +115,20 @@ var PaymentResponseV4 = /*#__PURE__*/function () {
           obj['remoteId'] = _ApiClient["default"].convertToType(data['remoteId'], 'String');
         }
 
+        if (data.hasOwnProperty('remoteSystemId')) {
+          obj['remoteSystemId'] = _ApiClient["default"].convertToType(data['remoteSystemId'], 'String');
+        }
+
+        if (data.hasOwnProperty('remoteSystemPaymentId')) {
+          obj['remoteSystemPaymentId'] = _ApiClient["default"].convertToType(data['remoteSystemPaymentId'], 'String');
+        }
+
         if (data.hasOwnProperty('sourceAmount')) {
           obj['sourceAmount'] = _ApiClient["default"].convertToType(data['sourceAmount'], 'Number');
         }
 
         if (data.hasOwnProperty('sourceCurrency')) {
-          obj['sourceCurrency'] = _PaymentAuditCurrencyV["default"].constructFromObject(data['sourceCurrency']);
+          obj['sourceCurrency'] = _PaymentAuditCurrency["default"].constructFromObject(data['sourceCurrency']);
         }
 
         if (data.hasOwnProperty('paymentAmount')) {
@@ -128,7 +136,7 @@ var PaymentResponseV4 = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('paymentCurrency')) {
-          obj['paymentCurrency'] = _PaymentAuditCurrencyV["default"].constructFromObject(data['paymentCurrency']);
+          obj['paymentCurrency'] = _PaymentAuditCurrency["default"].constructFromObject(data['paymentCurrency']);
         }
 
         if (data.hasOwnProperty('rate')) {
@@ -208,7 +216,7 @@ var PaymentResponseV4 = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('events')) {
-          obj['events'] = _ApiClient["default"].convertToType(data['events'], [_PaymentEventResponseV["default"]]);
+          obj['events'] = _ApiClient["default"].convertToType(data['events'], [_PaymentEventResponse["default"]]);
         }
 
         if (data.hasOwnProperty('returnCost')) {
@@ -237,6 +245,18 @@ var PaymentResponseV4 = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('withdrawable')) {
           obj['withdrawable'] = _ApiClient["default"].convertToType(data['withdrawable'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('transmissionType')) {
+          obj['transmissionType'] = _ApiClient["default"].convertToType(data['transmissionType'], 'String');
+        }
+
+        if (data.hasOwnProperty('paymentTrackingReference')) {
+          obj['paymentTrackingReference'] = _ApiClient["default"].convertToType(data['paymentTrackingReference'], 'String');
+        }
+
+        if (data.hasOwnProperty('paymentMetadata')) {
+          obj['paymentMetadata'] = _ApiClient["default"].convertToType(data['paymentMetadata'], 'String');
         }
 
         if (data.hasOwnProperty('payout')) {
@@ -300,13 +320,25 @@ PaymentResponseV4.prototype['sourceAccountName'] = undefined;
 
 PaymentResponseV4.prototype['remoteId'] = undefined;
 /**
+ * The velo id of the remote system orchestrating the payment. Not populated for normal Velo payments.
+ * @member {String} remoteSystemId
+ */
+
+PaymentResponseV4.prototype['remoteSystemId'] = undefined;
+/**
+ * The id of the payment in the remote system. Not populated for normal Velo payments.
+ * @member {String} remoteSystemPaymentId
+ */
+
+PaymentResponseV4.prototype['remoteSystemPaymentId'] = undefined;
+/**
  * The source amount for the payment (amount debited to make the payment)
  * @member {Number} sourceAmount
  */
 
 PaymentResponseV4.prototype['sourceAmount'] = undefined;
 /**
- * @member {module:model/PaymentAuditCurrencyV4} sourceCurrency
+ * @member {module:model/PaymentAuditCurrency} sourceCurrency
  */
 
 PaymentResponseV4.prototype['sourceCurrency'] = undefined;
@@ -317,7 +349,7 @@ PaymentResponseV4.prototype['sourceCurrency'] = undefined;
 
 PaymentResponseV4.prototype['paymentAmount'] = undefined;
 /**
- * @member {module:model/PaymentAuditCurrencyV4} paymentCurrency
+ * @member {module:model/PaymentAuditCurrency} paymentCurrency
  */
 
 PaymentResponseV4.prototype['paymentCurrency'] = undefined;
@@ -430,7 +462,7 @@ PaymentResponseV4.prototype['railsId'] = 'RAILS ID UNAVAILABLE';
 
 PaymentResponseV4.prototype['countryCode'] = undefined;
 /**
- * @member {Array.<module:model/PaymentEventResponseV4>} events
+ * @member {Array.<module:model/PaymentEventResponse>} events
  */
 
 PaymentResponseV4.prototype['events'] = undefined;
@@ -470,6 +502,23 @@ PaymentResponseV4.prototype['withdrawnReason'] = undefined;
  */
 
 PaymentResponseV4.prototype['withdrawable'] = undefined;
+/**
+ * The transmission type of the payment, e.g. ACH, SAME_DAY_ACH, WIRE
+ * @member {String} transmissionType
+ */
+
+PaymentResponseV4.prototype['transmissionType'] = undefined;
+/**
+ * @member {String} paymentTrackingReference
+ */
+
+PaymentResponseV4.prototype['paymentTrackingReference'] = undefined;
+/**
+ * Metadata for the payment
+ * @member {String} paymentMetadata
+ */
+
+PaymentResponseV4.prototype['paymentMetadata'] = undefined;
 /**
  * @member {module:model/PaymentResponseV4Payout} payout
  */

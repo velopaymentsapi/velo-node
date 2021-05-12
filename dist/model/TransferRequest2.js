@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TransferRequest2 model module.
  * @module model/TransferRequest2
- * @version 2.23.78
+ * @version 2.26.127
  */
 var TransferRequest2 = /*#__PURE__*/function () {
   /**

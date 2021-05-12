@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaymentV3 model module.
  * @module model/PaymentV3
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PaymentV3 = /*#__PURE__*/function () {
   /**
@@ -104,6 +104,14 @@ var PaymentV3 = /*#__PURE__*/function () {
         if (data.hasOwnProperty('transmissionType')) {
           obj['transmissionType'] = _TransmissionType["default"].constructFromObject(data['transmissionType']);
         }
+
+        if (data.hasOwnProperty('remoteSystemId')) {
+          obj['remoteSystemId'] = _ApiClient["default"].convertToType(data['remoteSystemId'], 'String');
+        }
+
+        if (data.hasOwnProperty('paymentMetadata')) {
+          obj['paymentMetadata'] = _ApiClient["default"].convertToType(data['paymentMetadata'], 'String');
+        }
       }
 
       return obj;
@@ -168,6 +176,16 @@ PaymentV3.prototype['status'] = undefined;
  */
 
 PaymentV3.prototype['transmissionType'] = undefined;
+/**
+ * @member {String} remoteSystemId
+ */
+
+PaymentV3.prototype['remoteSystemId'] = undefined;
+/**
+ * @member {String} paymentMetadata
+ */
+
+PaymentV3.prototype['paymentMetadata'] = undefined;
 /**
  * Allowed values for the <code>status</code> property.
  * @enum {String}

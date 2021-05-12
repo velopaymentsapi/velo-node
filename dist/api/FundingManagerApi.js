@@ -64,7 +64,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * FundingManager service.
 * @module api/FundingManagerApi
-* @version 2.23.78
+* @version 2.26.127
 */
 var FundingManagerApi = /*#__PURE__*/function () {
   /**
@@ -599,6 +599,7 @@ var FundingManagerApi = /*#__PURE__*/function () {
      * @param {String} opts.physicalAccountId The physical account ID
      * @param {String} opts.payorId The account owner Payor ID
      * @param {String} opts.fundingAccountId The funding account ID
+     * @param {Boolean} opts.includeUserDeleted A filter for retrieving both active accounts and user deleted ones
      * @param {module:model/SourceAccountType} opts.type The type of source account.
      * @param {Number} opts.page Page number. Default is 1. (default to 1)
      * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
@@ -618,6 +619,7 @@ var FundingManagerApi = /*#__PURE__*/function () {
         'physicalAccountId': opts['physicalAccountId'],
         'payorId': opts['payorId'],
         'fundingAccountId': opts['fundingAccountId'],
+        'includeUserDeleted': opts['includeUserDeleted'],
         'type': opts['type'],
         'page': opts['page'],
         'pageSize': opts['pageSize'],

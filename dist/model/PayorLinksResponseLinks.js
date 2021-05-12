@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayorLinksResponseLinks model module.
  * @module model/PayorLinksResponseLinks
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PayorLinksResponseLinks = /*#__PURE__*/function () {
   /**

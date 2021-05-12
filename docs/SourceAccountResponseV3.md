@@ -19,7 +19,9 @@ Name | Type | Description | Notes
 **autoTopUpConfig** | [**AutoTopUpConfig2**](AutoTopUpConfig2.md) |  | [optional] 
 **type** | **String** |  | 
 **country** | **String** | The two character ISO country code for the associated account | [optional] 
-**archived** | **Boolean** | A flag for whether the source account has been archived.  Only present in the response if true. | [optional] 
+**deleted** | **Boolean** | An optional flag for whether the source account has been deleted. Only present in the response if true. | [optional] 
+**userDeleted** | **Boolean** | An optional flag for whether the source account has been deleted by a user. Only present in the response if true. | [optional] 
+**deletedAt** | **Date** | An optional timestamp when the source account has been deleted. Only present in the response if deleted. | [optional] 
 
 
 

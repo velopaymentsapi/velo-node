@@ -7,17 +7,15 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Challenge = _interopRequireDefault(require("./Challenge2"));
+var _Challenge = _interopRequireDefault(require("./Challenge"));
 
-var _Company = _interopRequireDefault(require("./Company2"));
+var _Company = _interopRequireDefault(require("./Company"));
 
-var _Individual = _interopRequireDefault(require("./Individual2"));
-
-var _Language = _interopRequireDefault(require("./Language2"));
+var _Individual = _interopRequireDefault(require("./Individual"));
 
 var _OnboardedStatus = _interopRequireDefault(require("./OnboardedStatus2"));
 
-var _PayeeAddress = _interopRequireDefault(require("./PayeeAddress2"));
+var _PayeeAddress = _interopRequireDefault(require("./PayeeAddress"));
 
 var _PayeePayorRefV = _interopRequireDefault(require("./PayeePayorRefV3"));
 
@@ -36,7 +34,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayeeDetailResponse model module.
  * @module model/PayeeDetailResponse
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PayeeDetailResponse = /*#__PURE__*/function () {
   /**
@@ -101,7 +99,7 @@ var PayeeDetailResponse = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('language')) {
-          obj['language'] = _Language["default"].constructFromObject(data['language']);
+          obj['language'] = _ApiClient["default"].convertToType(data['language'], 'String');
         }
 
         if (data.hasOwnProperty('created')) {
@@ -232,7 +230,8 @@ PayeeDetailResponse.prototype['watchlistOverrideExpiresAtTimestamp'] = undefined
 
 PayeeDetailResponse.prototype['watchlistOverrideComment'] = undefined;
 /**
- * @member {module:model/Language2} language
+ * An IETF BCP 47 language code which has been configured for use within this Velo environment.<BR> See the /v1/supportedLanguages endpoint to list the available codes for an environment. 
+ * @member {String} language
  */
 
 PayeeDetailResponse.prototype['language'] = undefined;
@@ -272,17 +271,17 @@ PayeeDetailResponse.prototype['disabledComment'] = undefined;
 
 PayeeDetailResponse.prototype['disabledUpdatedTimestamp'] = undefined;
 /**
- * @member {module:model/PayeeAddress2} address
+ * @member {module:model/PayeeAddress} address
  */
 
 PayeeDetailResponse.prototype['address'] = undefined;
 /**
- * @member {module:model/Individual2} individual
+ * @member {module:model/Individual} individual
  */
 
 PayeeDetailResponse.prototype['individual'] = undefined;
 /**
- * @member {module:model/Company2} company
+ * @member {module:model/Company} company
  */
 
 PayeeDetailResponse.prototype['company'] = undefined;
@@ -338,7 +337,7 @@ PayeeDetailResponse.prototype['marketingOptInTimestamp'] = undefined;
 
 PayeeDetailResponse.prototype['acceptTermsAndConditionsTimestamp'] = undefined;
 /**
- * @member {module:model/Challenge2} challenge
+ * @member {module:model/Challenge} challenge
  */
 
 PayeeDetailResponse.prototype['challenge'] = undefined;

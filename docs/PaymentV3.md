@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **withdrawable** | **Boolean** |  | [optional] 
 **status** | **String** |  | [optional] 
 **transmissionType** | [**TransmissionType**](TransmissionType.md) |  | [optional] 
+**remoteSystemId** | **String** |  | [optional] 
+**paymentMetadata** | **String** |  | [optional] 
 
 
 

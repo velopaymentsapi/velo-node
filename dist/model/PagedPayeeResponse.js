@@ -7,13 +7,13 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _GetPayeeListResponse = _interopRequireDefault(require("./GetPayeeListResponse"));
+
 var _PagedPayeeResponseLinks = _interopRequireDefault(require("./PagedPayeeResponseLinks"));
 
 var _PagedPayeeResponsePage = _interopRequireDefault(require("./PagedPayeeResponsePage"));
 
 var _PagedPayeeResponseSummary = _interopRequireDefault(require("./PagedPayeeResponseSummary"));
-
-var _PayeeResponse = _interopRequireDefault(require("./PayeeResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PagedPayeeResponse model module.
  * @module model/PagedPayeeResponse
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PagedPayeeResponse = /*#__PURE__*/function () {
   /**
@@ -76,7 +76,7 @@ var PagedPayeeResponse = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('content')) {
-          obj['content'] = _ApiClient["default"].convertToType(data['content'], [_PayeeResponse["default"]]);
+          obj['content'] = _ApiClient["default"].convertToType(data['content'], [_GetPayeeListResponse["default"]]);
         }
       }
 
@@ -103,7 +103,7 @@ PagedPayeeResponse.prototype['page'] = undefined;
 
 PagedPayeeResponse.prototype['links'] = undefined;
 /**
- * @member {Array.<module:model/PayeeResponse>} content
+ * @member {Array.<module:model/GetPayeeListResponse>} content
  */
 
 PagedPayeeResponse.prototype['content'] = undefined;

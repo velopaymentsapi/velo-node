@@ -33,13 +33,13 @@ var PaymentRails = /*#__PURE__*/function () {
 
   _createClass(PaymentRails, null, [{
     key: "constructFromObject",
-
+    value:
     /**
     * Returns a <code>PaymentRails</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/PaymentRails} The enum <code>PaymentRails</code> value.
     */
-    value: function constructFromObject(object) {
+    function constructFromObject(object) {
       return object;
     }
   }]);

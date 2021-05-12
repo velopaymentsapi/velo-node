@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **totalInvitedCount** | **Number** |  | [optional] 
 **totalRegisteredCount** | **Number** |  | [optional] 
 **totalOnboardedCount** | **Number** |  | [optional] 
-**totalOfacFailedCount** | **Number** |  | [optional] 
+**totalWatchlistFailedCount** | **Number** |  | [optional] 
 
 

@@ -33,13 +33,13 @@ var SourceAccountType = /*#__PURE__*/function () {
 
   _createClass(SourceAccountType, null, [{
     key: "constructFromObject",
-
+    value:
     /**
     * Returns a <code>SourceAccountType</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/SourceAccountType} The enum <code>SourceAccountType</code> value.
     */
-    value: function constructFromObject(object) {
+    function constructFromObject(object) {
       return object;
     }
   }]);

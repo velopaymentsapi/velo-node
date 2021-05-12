@@ -9,7 +9,7 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _Challenge = _interopRequireDefault(require("./Challenge"));
 
-var _CompanyV = _interopRequireDefault(require("./CompanyV1"));
+var _Company = _interopRequireDefault(require("./Company"));
 
 var _CreateIndividual = _interopRequireDefault(require("./CreateIndividual"));
 
@@ -17,9 +17,7 @@ var _CreatePayeeAddress = _interopRequireDefault(require("./CreatePayeeAddress")
 
 var _CreatePaymentChannel = _interopRequireDefault(require("./CreatePaymentChannel"));
 
-var _Language = _interopRequireDefault(require("./Language"));
-
-var _PayeePayorRefV = _interopRequireDefault(require("./PayeePayorRefV2"));
+var _PayeePayorRefV = _interopRequireDefault(require("./PayeePayorRefV3"));
 
 var _PayeeType = _interopRequireDefault(require("./PayeeType"));
 
@@ -34,7 +32,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreatePayee model module.
  * @module model/CreatePayee
- * @version 2.23.78
+ * @version 2.26.127
  */
 var CreatePayee = /*#__PURE__*/function () {
   /**
@@ -112,11 +110,11 @@ var CreatePayee = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('language')) {
-          obj['language'] = _Language["default"].constructFromObject(data['language']);
+          obj['language'] = _ApiClient["default"].convertToType(data['language'], 'String');
         }
 
         if (data.hasOwnProperty('company')) {
-          obj['company'] = _CompanyV["default"].constructFromObject(data['company']);
+          obj['company'] = _Company["default"].constructFromObject(data['company']);
         }
 
         if (data.hasOwnProperty('individual')) {
@@ -137,7 +135,7 @@ var CreatePayee = /*#__PURE__*/function () {
 
 CreatePayee.prototype['payeeId'] = undefined;
 /**
- * @member {Array.<module:model/PayeePayorRefV2>} payorRefs
+ * @member {Array.<module:model/PayeePayorRefV3>} payorRefs
  */
 
 CreatePayee.prototype['payorRefs'] = undefined;
@@ -172,12 +170,13 @@ CreatePayee.prototype['paymentChannel'] = undefined;
 
 CreatePayee.prototype['challenge'] = undefined;
 /**
- * @member {module:model/Language} language
+ * An IETF BCP 47 language code which has been configured for use within this Velo environment.<BR> See the /v1/supportedLanguages endpoint to list the available codes for an environment. 
+ * @member {String} language
  */
 
 CreatePayee.prototype['language'] = undefined;
 /**
- * @member {module:model/CompanyV1} company
+ * @member {module:model/Company} company
  */
 
 CreatePayee.prototype['company'] = undefined;

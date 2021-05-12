@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _Category = _interopRequireDefault(require("./Category"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The WebhookResponse model module.
  * @module model/WebhookResponse
- * @version 2.23.78
+ * @version 2.26.127
  */
 var WebhookResponse = /*#__PURE__*/function () {
   /**
@@ -73,6 +75,10 @@ var WebhookResponse = /*#__PURE__*/function () {
         if (data.hasOwnProperty('enabled')) {
           obj['enabled'] = _ApiClient["default"].convertToType(data['enabled'], 'Boolean');
         }
+
+        if (data.hasOwnProperty('categories')) {
+          obj['categories'] = _ApiClient["default"].convertToType(data['categories'], [_Category["default"]]);
+        }
       }
 
       return obj;
@@ -107,5 +113,10 @@ WebhookResponse.prototype['authorizationHeader'] = undefined;
  */
 
 WebhookResponse.prototype['enabled'] = undefined;
+/**
+ * @member {Array.<module:model/Category>} categories
+ */
+
+WebhookResponse.prototype['categories'] = undefined;
 var _default = WebhookResponse;
 exports["default"] = _default;

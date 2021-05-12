@@ -93,26 +93,7 @@
         done();
       });
     });
-    describe('getFundingsV1', function() {
-      it('should call getFundingsV1 successfully', function(done) {
-        let defaultClient = VeloPayments.ApiClient.instance;
-        let OAuth2 = defaultClient.authentications['OAuth2'];
-        OAuth2.accessToken = process.env.APITOKEN;
-        defaultClient.basePath = process.env.APIURL;
-
-        let payorId = process.env.PAYOR; // String | 
-        let opts = {
-          'page': 1, // Number | Page number. Default is 1.
-          'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
-          'sort': 'displayName:asc' // String | List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
-        };
-        instance.getFundingsV1(payorId, opts, (error, data, response) => {
-         if (error) throw error;
-         expect(response.statusCode).to.be(200);
-          });
-        done();
-      });
-    });
+    
     describe('getFundingsV4', function() {
       it('should call getFundingsV4 successfully', function(done) {
         let defaultClient = VeloPayments.ApiClient.instance;
@@ -124,7 +105,6 @@
         let opts = {
           'page': 1, // Number | Page number. Default is 1.
           'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
-          'sort': 'displayName:asc' // String | List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
         };
         instance.getFundingsV4(payorId, opts, (error, data, response) => {
          if (error) throw error;
@@ -177,23 +157,7 @@
         done();
       });
     });
-    describe('getPayoutStatsV1', function() {
-      it('should call getPayoutStatsV1 successfully', function(done) {
-        let defaultClient = VeloPayments.ApiClient.instance;
-        let OAuth2 = defaultClient.authentications['OAuth2'];
-        OAuth2.accessToken = process.env.APITOKEN;
-        defaultClient.basePath = process.env.APIURL;
-
-        let opts = {
-          'payorId': process.env.PAYOR
-        };
-        instance.getPayoutStatsV1(opts, (error, data, response) => {
-         if (error) throw error;
-         expect(response.statusCode).to.be(200);
-          });
-        done();
-      });
-    });
+    
     describe('getPayoutStatsV4', function() {
       it('should call getPayoutStatsV4 successfully', function(done) {
         let defaultClient = VeloPayments.ApiClient.instance;
@@ -211,31 +175,7 @@
         done();
       });
     });
-    describe('getPayoutsForPayorV3', function() {
-      it('should call getPayoutsForPayorV3 successfully', function(done) {
-        let defaultClient = VeloPayments.ApiClient.instance;
-        let OAuth2 = defaultClient.authentications['OAuth2'];
-        OAuth2.accessToken = process.env.APITOKEN;
-        defaultClient.basePath = process.env.APIURL;
-
-        let payorId = process.env.PAYOR; // String | The account owner Payor ID
-        let opts = {
-          'payoutMemo': null, // String | Payout Memo filter - case insensitive sub-string match
-          'status': null, // String | Payout Status
-          'submittedDateFrom': null, // new Date("2013-10-20"), // Date | The submitted date from range filter. Format is yyyy-MM-dd.
-          'submittedDateTo': null, // new Date("2013-10-20"), // Date | The submitted date to range filter. Format is yyyy-MM-dd.
-          'page': 1, // Number | Page number. Default is 1.
-          'pageSize': 25, // Number | The number of results to return in a page
-          'sort': "submittedDateTime:desc" // String | List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status. 
-        };
-
-        instance.getPayoutsForPayorV3(payorId, opts, (error, data, response) => {
-         if (error) throw error;
-         expect(response.statusCode).to.be(200);
-          });
-        done();
-      });
-    });
+    
     describe('getPayoutsForPayorV4', function() {
       it('should call getPayoutsForPayorV4 successfully', function(done) {
         let defaultClient = VeloPayments.ApiClient.instance;
@@ -262,85 +202,30 @@
         done();
       });
     });
-    describe('listPaymentChanges', function() {
-      it('should call listPaymentChanges successfully', function(done) {
-        let defaultClient = VeloPayments.ApiClient.instance;
-        let OAuth2 = defaultClient.authentications['OAuth2'];
-        OAuth2.accessToken = process.env.APITOKEN;
-        defaultClient.basePath = process.env.APIURL;
+    
+    // describe('listPaymentChangesV4', function() {
+    //   it('should call listPaymentChangesV4 successfully', function(done) {
+    //     let defaultClient = VeloPayments.ApiClient.instance;
+    //     let OAuth2 = defaultClient.authentications['OAuth2'];
+    //     OAuth2.accessToken = process.env.APITOKEN;
+    //     defaultClient.basePath = process.env.APIURL;
 
-        let payorId = process.env.PAYOR; // String | The account owner Payor ID
-        let updatedSince = new Date("2013-10-20T19:20:30+01:00");
-        let opts = {
-          'page': 1, // Number | Page number. Default is 1.
-          'pageSize': 25, // Number | The number of results to return in a page
-        };
+    //     let payorId = process.env.PAYOR; // String | The account owner Payor ID
+    //     let updatedSince = "2013-10-20";
+    //     let opts = {
+    //       'page': 1, // Number | Page number. Default is 1.
+    //       'pageSize': 25, // Number | The number of results to return in a page
+    //     };
 
-        instance.listPaymentChanges(payorId, updatedSince, opts, (error, data, response) => {
-         if (error) throw error;
-         expect(response.statusCode).to.be(200);
-          });
-        done();
-      });
-    });
-    describe('listPaymentChangesV4', function() {
-      it('should call listPaymentChangesV4 successfully', function(done) {
-        let defaultClient = VeloPayments.ApiClient.instance;
-        let OAuth2 = defaultClient.authentications['OAuth2'];
-        OAuth2.accessToken = process.env.APITOKEN;
-        defaultClient.basePath = process.env.APIURL;
-
-        let payorId = process.env.PAYOR; // String | The account owner Payor ID
-        let updatedSince = new Date("2013-10-20T19:20:30+01:00");
-        let opts = {
-          'page': 1, // Number | Page number. Default is 1.
-          'pageSize': 25, // Number | The number of results to return in a page
-        };
-
-        instance.listPaymentChangesV4(payorId, updatedSince, opts, (error, data, response) => {
-          if (error) throw error;
-          expect(response.statusCode).to.be(200);
-          expect(data.length).to.be.above(1);
-          });
-        done();
-      });
-    });
-    describe('listPaymentsAudit', function() {
-      it('should call listPaymentsAudit successfully', function(done) {
-        let defaultClient = VeloPayments.ApiClient.instance;
-        let OAuth2 = defaultClient.authentications['OAuth2'];
-        OAuth2.accessToken = process.env.APITOKEN;
-        defaultClient.basePath = process.env.APIURL;
-
-        let opts = {
-          'payeeId': null, // String | The UUID of the payee.
-          'payorId': process.env.PAYOR, // String | The account owner Payor Id. Required for external users.
-          'payorName': null, // String | The payor’s name. This filters via a case insensitive substring match.
-          'remoteId': null, // String | The remote id of the payees.
-          'status': null, // String | Payment Status
-          'sourceAccountName': null, // String | The source account name filter. This filters via a case insensitive substring match.
-          'sourceAmountFrom': null, // Number | The source amount from range filter. Filters for sourceAmount >= sourceAmountFrom
-          'sourceAmountTo': null, // Number | The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo
-          'sourceCurrency': null, // String | The source currency filter. Filters based on an exact match on the currency.
-          'paymentAmountFrom': null, // Number | The payment amount from range filter. Filters for paymentAmount >= paymentAmountFrom
-          'paymentAmountTo': null, // Number | The payment amount to range filter. Filters for paymentAmount ⇐ paymentAmountTo
-          'paymentCurrency': null, // String | The payment currency filter. Filters based on an exact match on the currency.
-          'submittedDateFrom': null, // new Date("2013-10-20"), // Date | The submitted date from range filter. Format is yyyy-MM-dd.
-          'submittedDateTo': null, // new Date("2013-10-20"), // Date | The submitted date to range filter. Format is yyyy-MM-dd.
-          'paymentMemo': null, // String | The payment memo filter. This filters via a case insensitive substring match.
-          'page': 1, // Number | Page number. Default is 1.
-          'pageSize': 25, // Number | The number of results to return in a page
-          'sort': "submittedDateTime:asc", // String | List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status 
-          'sensitive': true // Boolean | Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
-        };
-
-        instance.listPaymentsAudit(opts, (error, data, response) => {
-         if (error) throw error;
-         expect(response.statusCode).to.be(200);
-          });
-        done();
-      });
-    });
+    //     instance.listPaymentChangesV4(payorId, updatedSince, opts, (error, data, response) => {
+    //       if (error) throw error;
+    //       expect(response.statusCode).to.be(200);
+    //       expect(data.length).to.be.above(1);
+    //       });
+    //     done();
+    //   });
+    // });
+    
     describe('listPaymentsAuditV4', function() {
       it('should call listPaymentsAuditV4 successfully', function(done) {
         let defaultClient = VeloPayments.ApiClient.instance;

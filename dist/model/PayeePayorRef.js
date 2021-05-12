@@ -7,6 +7,10 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _InvitationStatus = _interopRequireDefault(require("./InvitationStatus"));
+
+var _PayableIssue = _interopRequireDefault(require("./PayableIssue2"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayeePayorRef model module.
  * @module model/PayeePayorRef
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PayeePayorRef = /*#__PURE__*/function () {
   /**
@@ -63,7 +67,23 @@ var PayeePayorRef = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('invitationStatus')) {
-          obj['invitationStatus'] = _ApiClient["default"].convertToType(data['invitationStatus'], 'String');
+          obj['invitationStatus'] = _InvitationStatus["default"].constructFromObject(data['invitationStatus']);
+        }
+
+        if (data.hasOwnProperty('invitationStatusTimestamp')) {
+          obj['invitationStatusTimestamp'] = _ApiClient["default"].convertToType(data['invitationStatusTimestamp'], 'Date');
+        }
+
+        if (data.hasOwnProperty('paymentChannelId')) {
+          obj['paymentChannelId'] = _ApiClient["default"].convertToType(data['paymentChannelId'], 'String');
+        }
+
+        if (data.hasOwnProperty('payableStatus')) {
+          obj['payableStatus'] = _ApiClient["default"].convertToType(data['payableStatus'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('payableIssues')) {
+          obj['payableIssues'] = _ApiClient["default"].convertToType(data['payableIssues'], [_PayableIssue["default"]]);
         }
       }
 
@@ -85,9 +105,32 @@ PayeePayorRef.prototype['payorId'] = undefined;
 
 PayeePayorRef.prototype['remoteId'] = undefined;
 /**
- * @member {String} invitationStatus
+ * @member {module:model/InvitationStatus} invitationStatus
  */
 
 PayeePayorRef.prototype['invitationStatus'] = undefined;
+/**
+ * The timestamp when the invitation status is updated
+ * @member {Date} invitationStatusTimestamp
+ */
+
+PayeePayorRef.prototype['invitationStatusTimestamp'] = undefined;
+/**
+ * @member {String} paymentChannelId
+ */
+
+PayeePayorRef.prototype['paymentChannelId'] = undefined;
+/**
+ * Indicates if the payee is payable for this payor
+ * @member {Boolean} payableStatus
+ */
+
+PayeePayorRef.prototype['payableStatus'] = undefined;
+/**
+ * Indicates any conditions which prevent the payee from being payable for this payor
+ * @member {Array.<module:model/PayableIssue2>} payableIssues
+ */
+
+PayeePayorRef.prototype['payableIssues'] = undefined;
 var _default = PayeePayorRef;
 exports["default"] = _default;

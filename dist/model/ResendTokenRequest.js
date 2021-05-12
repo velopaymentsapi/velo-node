@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ResendTokenRequest model module.
  * @module model/ResendTokenRequest
- * @version 2.23.78
+ * @version 2.26.127
  */
 var ResendTokenRequest = /*#__PURE__*/function () {
   /**

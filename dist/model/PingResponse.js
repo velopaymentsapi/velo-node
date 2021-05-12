@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PingResponse model module.
  * @module model/PingResponse
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PingResponse = /*#__PURE__*/function () {
   /**

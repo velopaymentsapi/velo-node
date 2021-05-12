@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayoutSummaryResponseV3 model module.
  * @module model/PayoutSummaryResponseV3
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PayoutSummaryResponseV3 = /*#__PURE__*/function () {
   /**

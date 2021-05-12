@@ -35,13 +35,13 @@ var PaymentAuditCurrencyV3 = /*#__PURE__*/function () {
 
   _createClass(PaymentAuditCurrencyV3, null, [{
     key: "constructFromObject",
-
+    value:
     /**
     * Returns a <code>PaymentAuditCurrencyV3</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/PaymentAuditCurrencyV3} The enum <code>PaymentAuditCurrencyV3</code> value.
     */
-    value: function constructFromObject(object) {
+    function constructFromObject(object) {
       return object;
     }
   }]);

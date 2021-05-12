@@ -38,7 +38,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * PayoutService service.
 * @module api/PayoutServiceApi
-* @version 2.23.78
+* @version 2.26.127
 */
 var PayoutServiceApi = /*#__PURE__*/function () {
   /**
@@ -108,6 +108,7 @@ var PayoutServiceApi = /*#__PURE__*/function () {
      * @param {String} opts.remoteId The remote id of the payees.
      * @param {String} opts.payorPaymentId Payor's Id of the Payment
      * @param {String} opts.sourceAccountName Physical Account Name
+     * @param {module:model/String} opts.transmissionType Transmission Type * ACH * SAME_DAY_ACH * WIRE 
      * @param {String} opts.paymentMemo Payment Memo of the Payment
      * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
      * @param {Number} opts.page Page number. Default is 1. (default to 1)
@@ -133,6 +134,7 @@ var PayoutServiceApi = /*#__PURE__*/function () {
         'remoteId': opts['remoteId'],
         'payorPaymentId': opts['payorPaymentId'],
         'sourceAccountName': opts['sourceAccountName'],
+        'transmissionType': opts['transmissionType'],
         'paymentMemo': opts['paymentMemo'],
         'pageSize': opts['pageSize'],
         'page': opts['page']

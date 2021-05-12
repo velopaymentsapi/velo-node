@@ -9,15 +9,11 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _GetFundingsResponse = _interopRequireDefault(require("../model/GetFundingsResponse"));
 
-var _GetPaymentsForPayoutResponseV = _interopRequireDefault(require("../model/GetPaymentsForPayoutResponseV3"));
-
-var _GetPaymentsForPayoutResponseV2 = _interopRequireDefault(require("../model/GetPaymentsForPayoutResponseV4"));
+var _GetPaymentsForPayoutResponseV = _interopRequireDefault(require("../model/GetPaymentsForPayoutResponseV4"));
 
 var _GetPayoutStatistics = _interopRequireDefault(require("../model/GetPayoutStatistics"));
 
-var _GetPayoutsResponseV = _interopRequireDefault(require("../model/GetPayoutsResponseV3"));
-
-var _GetPayoutsResponseV2 = _interopRequireDefault(require("../model/GetPayoutsResponseV4"));
+var _GetPayoutsResponse = _interopRequireDefault(require("../model/GetPayoutsResponse"));
 
 var _InlineResponse = _interopRequireDefault(require("../model/InlineResponse400"));
 
@@ -27,21 +23,13 @@ var _InlineResponse3 = _interopRequireDefault(require("../model/InlineResponse40
 
 var _InlineResponse4 = _interopRequireDefault(require("../model/InlineResponse404"));
 
-var _ListPaymentsResponseV = _interopRequireDefault(require("../model/ListPaymentsResponseV3"));
-
-var _ListPaymentsResponseV2 = _interopRequireDefault(require("../model/ListPaymentsResponseV4"));
+var _ListPaymentsResponseV = _interopRequireDefault(require("../model/ListPaymentsResponseV4"));
 
 var _PaymentDeltaResponse = _interopRequireDefault(require("../model/PaymentDeltaResponse"));
 
-var _PaymentDeltaResponseV = _interopRequireDefault(require("../model/PaymentDeltaResponseV4"));
+var _PaymentResponseV = _interopRequireDefault(require("../model/PaymentResponseV4"));
 
-var _PaymentResponseV = _interopRequireDefault(require("../model/PaymentResponseV3"));
-
-var _PaymentResponseV2 = _interopRequireDefault(require("../model/PaymentResponseV4"));
-
-var _PayorAmlTransactionV = _interopRequireDefault(require("../model/PayorAmlTransactionV3"));
-
-var _PayorAmlTransactionV2 = _interopRequireDefault(require("../model/PayorAmlTransactionV4"));
+var _PayorAmlTransaction = _interopRequireDefault(require("../model/PayorAmlTransaction"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -54,7 +42,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * PaymentAuditService service.
 * @module api/PaymentAuditServiceApi
-* @version 2.23.78
+* @version 2.26.127
 */
 var PaymentAuditServiceApi = /*#__PURE__*/function () {
   /**
@@ -70,10 +58,10 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
     this.apiClient = apiClient || _ApiClient["default"].instance;
   }
   /**
-   * Callback function to receive the result of the exportTransactionsCSVV3 operation.
-   * @callback module:api/PaymentAuditServiceApi~exportTransactionsCSVV3Callback
+   * Callback function to receive the result of the exportTransactionsCSVV4 operation.
+   * @callback module:api/PaymentAuditServiceApi~exportTransactionsCSVV4Callback
    * @param {String} error Error message, if any.
-   * @param {module:model/PayorAmlTransactionV3} data The data returned by the service call.
+   * @param {module:model/PayorAmlTransaction} data The data returned by the service call.
    * @param {String} response The complete HTTP response.
    */
 
@@ -81,54 +69,16 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
    * Export Transactions
    * Download a CSV file containing payments in a date range. Uses Transfer-Encoding - chunked to stream to the client. Date range is inclusive of both the start and end dates.
    * @param {Object} opts Optional parameters
-   * @param {String} opts.payorId The Payor ID for whom you wish to run the report. For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor. 
+   * @param {String} opts.payorId <p>The Payor ID for whom you wish to run the report.</p> <p>For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor.</p> 
    * @param {Date} opts.startDate Start date, inclusive. Format is YYYY-MM-DD
    * @param {Date} opts.endDate End date, inclusive. Format is YYYY-MM-DD
-   * @param {module:api/PaymentAuditServiceApi~exportTransactionsCSVV3Callback} callback The callback function, accepting three arguments: error, data, response
-   * data is of type: {@link module:model/PayorAmlTransactionV3}
+   * @param {module:model/String} opts.include <p>Mode to determine whether to include other Payor's data in the results.</p> <p>May only be used if payorId is specified.</p> <p>Can be omitted or set to 'payorOnly' or 'payorAndDescendants'.</p> <p>payorOnly: Only include results for the specified Payor. This is the default if 'include' is omitted.</p> <p>payorAndDescendants: Aggregate results for all descendant Payors of the specified Payor. Should only be used if the Payor with the specified payorId has at least one child Payor.</p> <p>Note when a Payor requests the report and include=payorAndDescendants is used, the following additional columns are included in the CSV: Payor Name, Payor Id</p> 
+   * @param {module:api/PaymentAuditServiceApi~exportTransactionsCSVV4Callback} callback The callback function, accepting three arguments: error, data, response
+   * data is of type: {@link module:model/PayorAmlTransaction}
    */
 
 
   _createClass(PaymentAuditServiceApi, [{
-    key: "exportTransactionsCSVV3",
-    value: function exportTransactionsCSVV3(opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-      var pathParams = {};
-      var queryParams = {
-        'payorId': opts['payorId'],
-        'startDate': opts['startDate'],
-        'endDate': opts['endDate']
-      };
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['OAuth2'];
-      var contentTypes = [];
-      var accepts = ['application/csv', 'application/json'];
-      var returnType = _PayorAmlTransactionV["default"];
-      return this.apiClient.callApi('/v3/paymentaudit/transactions', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
-    }
-    /**
-     * Callback function to receive the result of the exportTransactionsCSVV4 operation.
-     * @callback module:api/PaymentAuditServiceApi~exportTransactionsCSVV4Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PayorAmlTransactionV4} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Export Transactions
-     * Download a CSV file containing payments in a date range. Uses Transfer-Encoding - chunked to stream to the client. Date range is inclusive of both the start and end dates.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.payorId <p>The Payor ID for whom you wish to run the report.</p> <p>For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor.</p> 
-     * @param {Date} opts.startDate Start date, inclusive. Format is YYYY-MM-DD
-     * @param {Date} opts.endDate End date, inclusive. Format is YYYY-MM-DD
-     * @param {module:model/String} opts.include <p>Mode to determine whether to include other Payor's data in the results.</p> <p>May only be used if payorId is specified.</p> <p>Can be omitted or set to 'payorOnly' or 'payorAndDescendants'.</p> <p>payorOnly: Only include results for the specified Payor. This is the default if 'include' is omitted.</p> <p>payorAndDescendants: Aggregate results for all descendant Payors of the specified Payor. Should only be used if the Payor with the specified payorId has at least one child Payor.</p> <p>Note when a Payor requests the report and include=payorAndDescendants is used, the following additional columns are included in the CSV: Payor Name, Payor Id</p> 
-     * @param {module:api/PaymentAuditServiceApi~exportTransactionsCSVV4Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PayorAmlTransactionV4}
-     */
-
-  }, {
     key: "exportTransactionsCSVV4",
     value: function exportTransactionsCSVV4(opts, callback) {
       opts = opts || {};
@@ -145,53 +95,8 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
       var authNames = ['OAuth2'];
       var contentTypes = [];
       var accepts = ['application/csv'];
-      var returnType = _PayorAmlTransactionV2["default"];
+      var returnType = _PayorAmlTransaction["default"];
       return this.apiClient.callApi('/v4/paymentaudit/transactions', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
-    }
-    /**
-     * Callback function to receive the result of the getFundingsV1 operation.
-     * @callback module:api/PaymentAuditServiceApi~getFundingsV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GetFundingsResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get Fundings for Payor
-     * <p>Get a list of Fundings for a payor.</p> <p>Deprecated (use v4/paymentaudit/fundings)</p> 
-     * @param {String} payorId The account owner Payor ID
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
-     * @param {String} opts.sort List of sort fields. Example: ```?sort=destinationCurrency:asc,destinationAmount:asc``` Default is no sort. The supported sort fields are: dateTime and amount. 
-     * @param {module:api/PaymentAuditServiceApi~getFundingsV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GetFundingsResponse}
-     */
-
-  }, {
-    key: "getFundingsV1",
-    value: function getFundingsV1(payorId, opts, callback) {
-      opts = opts || {};
-      var postBody = null; // verify the required parameter 'payorId' is set
-
-      if (payorId === undefined || payorId === null) {
-        throw new Error("Missing the required parameter 'payorId' when calling getFundingsV1");
-      }
-
-      var pathParams = {};
-      var queryParams = {
-        'payorId': payorId,
-        'page': opts['page'],
-        'pageSize': opts['pageSize'],
-        'sort': opts['sort']
-      };
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['OAuth2'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _GetFundingsResponse["default"];
-      return this.apiClient.callApi('/v1/paymentaudit/fundings', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the getFundingsV4 operation.
@@ -239,48 +144,6 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
       return this.apiClient.callApi('/v4/paymentaudit/fundings', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
-     * Callback function to receive the result of the getPaymentDetails operation.
-     * @callback module:api/PaymentAuditServiceApi~getPaymentDetailsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PaymentResponseV3} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get Payment
-     * Get the payment with the given id. This contains the payment history. 
-     * @param {String} paymentId Payment Id
-     * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.sensitive Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
-     * @param {module:api/PaymentAuditServiceApi~getPaymentDetailsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaymentResponseV3}
-     */
-
-  }, {
-    key: "getPaymentDetails",
-    value: function getPaymentDetails(paymentId, opts, callback) {
-      opts = opts || {};
-      var postBody = null; // verify the required parameter 'paymentId' is set
-
-      if (paymentId === undefined || paymentId === null) {
-        throw new Error("Missing the required parameter 'paymentId' when calling getPaymentDetails");
-      }
-
-      var pathParams = {
-        'paymentId': paymentId
-      };
-      var queryParams = {
-        'sensitive': opts['sensitive']
-      };
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['OAuth2'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _PaymentResponseV["default"];
-      return this.apiClient.callApi('/v3/paymentaudit/payments/{paymentId}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
-    }
-    /**
      * Callback function to receive the result of the getPaymentDetailsV4 operation.
      * @callback module:api/PaymentAuditServiceApi~getPaymentDetailsV4Callback
      * @param {String} error Error message, if any.
@@ -319,72 +182,8 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
       var authNames = ['OAuth2'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _PaymentResponseV2["default"];
+      var returnType = _PaymentResponseV["default"];
       return this.apiClient.callApi('/v4/paymentaudit/payments/{paymentId}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
-    }
-    /**
-     * Callback function to receive the result of the getPaymentsForPayout operation.
-     * @callback module:api/PaymentAuditServiceApi~getPaymentsForPayoutCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GetPaymentsForPayoutResponseV3} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get Payments for Payout
-     * Get List of payments for Payout 
-     * @param {String} payoutId The id (UUID) of the payout.
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.remoteId The remote id of the payees.
-     * @param {module:model/String} opts.status Payment Status
-     * @param {Number} opts.sourceAmountFrom The source amount from range filter. Filters for sourceAmount >= sourceAmountFrom
-     * @param {Number} opts.sourceAmountTo The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo
-     * @param {Number} opts.paymentAmountFrom The payment amount from range filter. Filters for paymentAmount >= paymentAmountFrom
-     * @param {Number} opts.paymentAmountTo The payment amount to range filter. Filters for paymentAmount ⇐ paymentAmountTo
-     * @param {Date} opts.submittedDateFrom The submitted date from range filter. Format is yyyy-MM-dd.
-     * @param {Date} opts.submittedDateTo The submitted date to range filter. Format is yyyy-MM-dd.
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
-     * @param {String} opts.sort <p>List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId</p> <p>The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status</p> 
-     * @param {Boolean} opts.sensitive Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
-     * @param {module:api/PaymentAuditServiceApi~getPaymentsForPayoutCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GetPaymentsForPayoutResponseV3}
-     */
-
-  }, {
-    key: "getPaymentsForPayout",
-    value: function getPaymentsForPayout(payoutId, opts, callback) {
-      opts = opts || {};
-      var postBody = null; // verify the required parameter 'payoutId' is set
-
-      if (payoutId === undefined || payoutId === null) {
-        throw new Error("Missing the required parameter 'payoutId' when calling getPaymentsForPayout");
-      }
-
-      var pathParams = {
-        'payoutId': payoutId
-      };
-      var queryParams = {
-        'remoteId': opts['remoteId'],
-        'status': opts['status'],
-        'sourceAmountFrom': opts['sourceAmountFrom'],
-        'sourceAmountTo': opts['sourceAmountTo'],
-        'paymentAmountFrom': opts['paymentAmountFrom'],
-        'paymentAmountTo': opts['paymentAmountTo'],
-        'submittedDateFrom': opts['submittedDateFrom'],
-        'submittedDateTo': opts['submittedDateTo'],
-        'page': opts['page'],
-        'pageSize': opts['pageSize'],
-        'sort': opts['sort'],
-        'sensitive': opts['sensitive']
-      };
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['OAuth2'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _GetPaymentsForPayoutResponseV["default"];
-      return this.apiClient.callApi('/v3/paymentaudit/payouts/{payoutId}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the getPaymentsForPayoutV4 operation.
@@ -400,6 +199,7 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
      * @param {String} payoutId The id (UUID) of the payout.
      * @param {Object} opts Optional parameters
      * @param {String} opts.remoteId The remote id of the payees.
+     * @param {String} opts.remoteSystemId The id of the remote system that is orchestrating payments
      * @param {module:model/String} opts.status Payment Status
      * @param {Number} opts.sourceAmountFrom The source amount from range filter. Filters for sourceAmount >= sourceAmountFrom
      * @param {Number} opts.sourceAmountTo The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo
@@ -407,6 +207,7 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
      * @param {Number} opts.paymentAmountTo The payment amount to range filter. Filters for paymentAmount ⇐ paymentAmountTo
      * @param {Date} opts.submittedDateFrom The submitted date from range filter. Format is yyyy-MM-dd.
      * @param {Date} opts.submittedDateTo The submitted date to range filter. Format is yyyy-MM-dd.
+     * @param {module:model/String} opts.transmissionType Transmission Type * ACH * SAME_DAY_ACH * WIRE 
      * @param {Number} opts.page Page number. Default is 1. (default to 1)
      * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
      * @param {String} opts.sort List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status 
@@ -430,6 +231,7 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
       };
       var queryParams = {
         'remoteId': opts['remoteId'],
+        'remoteSystemId': opts['remoteSystemId'],
         'status': opts['status'],
         'sourceAmountFrom': opts['sourceAmountFrom'],
         'sourceAmountTo': opts['sourceAmountTo'],
@@ -437,6 +239,7 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
         'paymentAmountTo': opts['paymentAmountTo'],
         'submittedDateFrom': opts['submittedDateFrom'],
         'submittedDateTo': opts['submittedDateTo'],
+        'transmissionType': opts['transmissionType'],
         'page': opts['page'],
         'pageSize': opts['pageSize'],
         'sort': opts['sort'],
@@ -447,42 +250,8 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
       var authNames = ['OAuth2'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _GetPaymentsForPayoutResponseV2["default"];
+      var returnType = _GetPaymentsForPayoutResponseV["default"];
       return this.apiClient.callApi('/v4/paymentaudit/payouts/{payoutId}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
-    }
-    /**
-     * Callback function to receive the result of the getPayoutStatsV1 operation.
-     * @callback module:api/PaymentAuditServiceApi~getPayoutStatsV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GetPayoutStatistics} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get Payout Statistics
-     * <p>Get payout statistics for a payor.</p> <p>Deprecated (Use /v4/paymentaudit/payoutStatistics)</p> 
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.payorId The account owner Payor ID. Required for external users.
-     * @param {module:api/PaymentAuditServiceApi~getPayoutStatsV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GetPayoutStatistics}
-     */
-
-  }, {
-    key: "getPayoutStatsV1",
-    value: function getPayoutStatsV1(opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-      var pathParams = {};
-      var queryParams = {
-        'payorId': opts['payorId']
-      };
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['OAuth2'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _GetPayoutStatistics["default"];
-      return this.apiClient.callApi('/v1/paymentaudit/payoutStatistics', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the getPayoutStatsV4 operation.
@@ -519,63 +288,10 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
       return this.apiClient.callApi('/v4/paymentaudit/payoutStatistics', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
-     * Callback function to receive the result of the getPayoutsForPayorV3 operation.
-     * @callback module:api/PaymentAuditServiceApi~getPayoutsForPayorV3Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/GetPayoutsResponseV3} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get Payouts for Payor
-     * <p>Get List of payouts for payor</p> <p>Deprecated Use v4</p> 
-     * @param {String} payorId The account owner Payor ID
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.payoutMemo Payout Memo filter - case insensitive sub-string match
-     * @param {module:model/String} opts.status Payout Status
-     * @param {Date} opts.submittedDateFrom The submitted date from range filter. Format is yyyy-MM-dd.
-     * @param {Date} opts.submittedDateTo The submitted date to range filter. Format is yyyy-MM-dd.
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
-     * @param {String} opts.sort List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status. 
-     * @param {module:api/PaymentAuditServiceApi~getPayoutsForPayorV3Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GetPayoutsResponseV3}
-     */
-
-  }, {
-    key: "getPayoutsForPayorV3",
-    value: function getPayoutsForPayorV3(payorId, opts, callback) {
-      opts = opts || {};
-      var postBody = null; // verify the required parameter 'payorId' is set
-
-      if (payorId === undefined || payorId === null) {
-        throw new Error("Missing the required parameter 'payorId' when calling getPayoutsForPayorV3");
-      }
-
-      var pathParams = {};
-      var queryParams = {
-        'payorId': payorId,
-        'payoutMemo': opts['payoutMemo'],
-        'status': opts['status'],
-        'submittedDateFrom': opts['submittedDateFrom'],
-        'submittedDateTo': opts['submittedDateTo'],
-        'page': opts['page'],
-        'pageSize': opts['pageSize'],
-        'sort': opts['sort']
-      };
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['OAuth2'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _GetPayoutsResponseV["default"];
-      return this.apiClient.callApi('/v3/paymentaudit/payouts', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
-    }
-    /**
      * Callback function to receive the result of the getPayoutsForPayorV4 operation.
      * @callback module:api/PaymentAuditServiceApi~getPayoutsForPayorV4Callback
      * @param {String} error Error message, if any.
-     * @param {module:model/GetPayoutsResponseV4} data The data returned by the service call.
+     * @param {module:model/GetPayoutsResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -593,7 +309,7 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
      * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
      * @param {String} opts.sort List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments, payoutId 
      * @param {module:api/PaymentAuditServiceApi~getPayoutsForPayorV4Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/GetPayoutsResponseV4}
+     * data is of type: {@link module:model/GetPayoutsResponse}
      */
 
   }, {
@@ -618,12 +334,12 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
       var authNames = ['OAuth2'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _GetPayoutsResponseV2["default"];
+      var returnType = _GetPayoutsResponse["default"];
       return this.apiClient.callApi('/v4/paymentaudit/payouts', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
-     * Callback function to receive the result of the listPaymentChanges operation.
-     * @callback module:api/PaymentAuditServiceApi~listPaymentChangesCallback
+     * Callback function to receive the result of the listPaymentChangesV4 operation.
+     * @callback module:api/PaymentAuditServiceApi~listPaymentChangesV4Callback
      * @param {String} error Error message, if any.
      * @param {module:model/PaymentDeltaResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -637,58 +353,8 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.page Page number. Default is 1. (default to 1)
      * @param {Number} opts.pageSize The number of results to return in a page (default to 100)
-     * @param {module:api/PaymentAuditServiceApi~listPaymentChangesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaymentDeltaResponse}
-     */
-
-  }, {
-    key: "listPaymentChanges",
-    value: function listPaymentChanges(payorId, updatedSince, opts, callback) {
-      opts = opts || {};
-      var postBody = null; // verify the required parameter 'payorId' is set
-
-      if (payorId === undefined || payorId === null) {
-        throw new Error("Missing the required parameter 'payorId' when calling listPaymentChanges");
-      } // verify the required parameter 'updatedSince' is set
-
-
-      if (updatedSince === undefined || updatedSince === null) {
-        throw new Error("Missing the required parameter 'updatedSince' when calling listPaymentChanges");
-      }
-
-      var pathParams = {};
-      var queryParams = {
-        'payorId': payorId,
-        'updatedSince': updatedSince,
-        'page': opts['page'],
-        'pageSize': opts['pageSize']
-      };
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['OAuth2'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _PaymentDeltaResponse["default"];
-      return this.apiClient.callApi('/v1/deltas/payments', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
-    }
-    /**
-     * Callback function to receive the result of the listPaymentChangesV4 operation.
-     * @callback module:api/PaymentAuditServiceApi~listPaymentChangesV4Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PaymentDeltaResponseV4} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * List Payment Changes
-     * Get a paginated response listing payment changes.
-     * @param {String} payorId The Payor ID to find associated Payments
-     * @param {Date} updatedSince The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 100)
      * @param {module:api/PaymentAuditServiceApi~listPaymentChangesV4Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaymentDeltaResponseV4}
+     * data is of type: {@link module:model/PaymentDeltaResponse}
      */
 
   }, {
@@ -718,78 +384,8 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
       var authNames = ['OAuth2'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _PaymentDeltaResponseV["default"];
+      var returnType = _PaymentDeltaResponse["default"];
       return this.apiClient.callApi('/v4/payments/deltas', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
-    }
-    /**
-     * Callback function to receive the result of the listPaymentsAudit operation.
-     * @callback module:api/PaymentAuditServiceApi~listPaymentsAuditCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/ListPaymentsResponseV3} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get List of Payments
-     * Get payments for the given payor Id
-     * @param {Object} opts Optional parameters
-     * @param {String} opts.payeeId The UUID of the payee.
-     * @param {String} opts.payorId The account owner Payor Id. Required for external users.
-     * @param {String} opts.payorName The payor’s name. This filters via a case insensitive substring match.
-     * @param {String} opts.remoteId The remote id of the payees.
-     * @param {module:model/String} opts.status Payment Status
-     * @param {String} opts.sourceAccountName The source account name filter. This filters via a case insensitive substring match.
-     * @param {Number} opts.sourceAmountFrom The source amount from range filter. Filters for sourceAmount >= sourceAmountFrom
-     * @param {Number} opts.sourceAmountTo The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo
-     * @param {String} opts.sourceCurrency The source currency filter. Filters based on an exact match on the currency.
-     * @param {Number} opts.paymentAmountFrom The payment amount from range filter. Filters for paymentAmount >= paymentAmountFrom
-     * @param {Number} opts.paymentAmountTo The payment amount to range filter. Filters for paymentAmount ⇐ paymentAmountTo
-     * @param {String} opts.paymentCurrency The payment currency filter. Filters based on an exact match on the currency.
-     * @param {Date} opts.submittedDateFrom The submitted date from range filter. Format is yyyy-MM-dd.
-     * @param {Date} opts.submittedDateTo The submitted date to range filter. Format is yyyy-MM-dd.
-     * @param {String} opts.paymentMemo The payment memo filter. This filters via a case insensitive substring match.
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
-     * @param {String} opts.sort List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status 
-     * @param {Boolean} opts.sensitive Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
-     * @param {module:api/PaymentAuditServiceApi~listPaymentsAuditCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ListPaymentsResponseV3}
-     */
-
-  }, {
-    key: "listPaymentsAudit",
-    value: function listPaymentsAudit(opts, callback) {
-      opts = opts || {};
-      var postBody = null;
-      var pathParams = {};
-      var queryParams = {
-        'payeeId': opts['payeeId'],
-        'payorId': opts['payorId'],
-        'payorName': opts['payorName'],
-        'remoteId': opts['remoteId'],
-        'status': opts['status'],
-        'sourceAccountName': opts['sourceAccountName'],
-        'sourceAmountFrom': opts['sourceAmountFrom'],
-        'sourceAmountTo': opts['sourceAmountTo'],
-        'sourceCurrency': opts['sourceCurrency'],
-        'paymentAmountFrom': opts['paymentAmountFrom'],
-        'paymentAmountTo': opts['paymentAmountTo'],
-        'paymentCurrency': opts['paymentCurrency'],
-        'submittedDateFrom': opts['submittedDateFrom'],
-        'submittedDateTo': opts['submittedDateTo'],
-        'paymentMemo': opts['paymentMemo'],
-        'page': opts['page'],
-        'pageSize': opts['pageSize'],
-        'sort': opts['sort'],
-        'sensitive': opts['sensitive']
-      };
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['OAuth2'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _ListPaymentsResponseV["default"];
-      return this.apiClient.callApi('/v3/paymentaudit/payments', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the listPaymentsAuditV4 operation.
@@ -807,7 +403,9 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
      * @param {String} opts.payorId The account owner Payor Id. Required for external users.
      * @param {String} opts.payorName The payor’s name. This filters via a case insensitive substring match.
      * @param {String} opts.remoteId The remote id of the payees.
+     * @param {String} opts.remoteSystemId The id of the remote system that is orchestrating payments
      * @param {module:model/String} opts.status Payment Status
+     * @param {module:model/String} opts.transmissionType Transmission Type * ACH * SAME_DAY_ACH * WIRE 
      * @param {String} opts.sourceAccountName The source account name filter. This filters via a case insensitive substring match.
      * @param {Number} opts.sourceAmountFrom The source amount from range filter. Filters for sourceAmount >= sourceAmountFrom
      * @param {Number} opts.sourceAmountTo The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo
@@ -837,7 +435,9 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
         'payorId': opts['payorId'],
         'payorName': opts['payorName'],
         'remoteId': opts['remoteId'],
+        'remoteSystemId': opts['remoteSystemId'],
         'status': opts['status'],
+        'transmissionType': opts['transmissionType'],
         'sourceAccountName': opts['sourceAccountName'],
         'sourceAmountFrom': opts['sourceAmountFrom'],
         'sourceAmountTo': opts['sourceAmountTo'],
@@ -858,7 +458,7 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
       var authNames = ['OAuth2'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _ListPaymentsResponseV2["default"];
+      var returnType = _ListPaymentsResponseV["default"];
       return this.apiClient.callApi('/v4/paymentaudit/payments', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
   }]);

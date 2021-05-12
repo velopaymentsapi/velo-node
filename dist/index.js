@@ -45,6 +45,12 @@ Object.defineProperty(exports, "AutoTopUpConfig2", {
     return _AutoTopUpConfig2["default"];
   }
 });
+Object.defineProperty(exports, "Category", {
+  enumerable: true,
+  get: function get() {
+    return _Category["default"];
+  }
+});
 Object.defineProperty(exports, "Challenge", {
   enumerable: true,
   get: function get() {
@@ -69,18 +75,6 @@ Object.defineProperty(exports, "Company2", {
     return _Company2["default"];
   }
 });
-Object.defineProperty(exports, "CompanyResponse", {
-  enumerable: true,
-  get: function get() {
-    return _CompanyResponse["default"];
-  }
-});
-Object.defineProperty(exports, "CompanyV1", {
-  enumerable: true,
-  get: function get() {
-    return _CompanyV["default"];
-  }
-});
 Object.defineProperty(exports, "CreateFundingAccountRequestV2", {
   enumerable: true,
   get: function get() {
@@ -99,10 +93,10 @@ Object.defineProperty(exports, "CreateIndividual2", {
     return _CreateIndividual2["default"];
   }
 });
-Object.defineProperty(exports, "CreateIndividual2Name", {
+Object.defineProperty(exports, "CreateIndividualName", {
   enumerable: true,
   get: function get() {
-    return _CreateIndividual2Name["default"];
+    return _CreateIndividualName["default"];
   }
 });
 Object.defineProperty(exports, "CreatePayee", {
@@ -127,18 +121,6 @@ Object.defineProperty(exports, "CreatePayeeAddress2", {
   enumerable: true,
   get: function get() {
     return _CreatePayeeAddress2["default"];
-  }
-});
-Object.defineProperty(exports, "CreatePayeesCSVRequest", {
-  enumerable: true,
-  get: function get() {
-    return _CreatePayeesCSVRequest["default"];
-  }
-});
-Object.defineProperty(exports, "CreatePayeesCSVRequest2", {
-  enumerable: true,
-  get: function get() {
-    return _CreatePayeesCSVRequest2["default"];
   }
 });
 Object.defineProperty(exports, "CreatePayeesCSVResponse", {
@@ -201,16 +183,58 @@ Object.defineProperty(exports, "CreateWebhookRequest", {
     return _CreateWebhookRequest["default"];
   }
 });
+Object.defineProperty(exports, "DebitEvent", {
+  enumerable: true,
+  get: function get() {
+    return _DebitEvent["default"];
+  }
+});
+Object.defineProperty(exports, "DebitEventAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _DebitEventAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "DebitStatusChanged", {
+  enumerable: true,
+  get: function get() {
+    return _DebitStatusChanged["default"];
+  }
+});
+Object.defineProperty(exports, "DebitStatusChangedAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _DebitStatusChangedAllOf["default"];
+  }
+});
 Object.defineProperty(exports, "Error", {
   enumerable: true,
   get: function get() {
     return _Error["default"];
   }
 });
+Object.defineProperty(exports, "ErrorData", {
+  enumerable: true,
+  get: function get() {
+    return _ErrorData["default"];
+  }
+});
 Object.defineProperty(exports, "ErrorResponse", {
   enumerable: true,
   get: function get() {
     return _ErrorResponse["default"];
+  }
+});
+Object.defineProperty(exports, "FailedPayee", {
+  enumerable: true,
+  get: function get() {
+    return _FailedPayee["default"];
+  }
+});
+Object.defineProperty(exports, "FailedPayee2", {
+  enumerable: true,
+  get: function get() {
+    return _FailedPayee2["default"];
   }
 });
 Object.defineProperty(exports, "FailedSubmission", {
@@ -285,16 +309,16 @@ Object.defineProperty(exports, "FundingRequestV3", {
     return _FundingRequestV3["default"];
   }
 });
+Object.defineProperty(exports, "FxSummary", {
+  enumerable: true,
+  get: function get() {
+    return _FxSummary["default"];
+  }
+});
 Object.defineProperty(exports, "FxSummaryV3", {
   enumerable: true,
   get: function get() {
     return _FxSummaryV["default"];
-  }
-});
-Object.defineProperty(exports, "FxSummaryV4", {
-  enumerable: true,
-  get: function get() {
-    return _FxSummaryV2["default"];
   }
 });
 Object.defineProperty(exports, "GetFundingsResponse", {
@@ -315,16 +339,34 @@ Object.defineProperty(exports, "GetPayeeListResponse", {
     return _GetPayeeListResponse["default"];
   }
 });
+Object.defineProperty(exports, "GetPayeeListResponse2", {
+  enumerable: true,
+  get: function get() {
+    return _GetPayeeListResponse2["default"];
+  }
+});
 Object.defineProperty(exports, "GetPayeeListResponseCompany", {
   enumerable: true,
   get: function get() {
     return _GetPayeeListResponseCompany["default"];
   }
 });
+Object.defineProperty(exports, "GetPayeeListResponseCompany2", {
+  enumerable: true,
+  get: function get() {
+    return _GetPayeeListResponseCompany2["default"];
+  }
+});
 Object.defineProperty(exports, "GetPayeeListResponseIndividual", {
   enumerable: true,
   get: function get() {
     return _GetPayeeListResponseIndividual["default"];
+  }
+});
+Object.defineProperty(exports, "GetPayeeListResponseIndividual2", {
+  enumerable: true,
+  get: function get() {
+    return _GetPayeeListResponseIndividual2["default"];
   }
 });
 Object.defineProperty(exports, "GetPaymentsForPayoutResponseV3", {
@@ -363,6 +405,12 @@ Object.defineProperty(exports, "GetPayoutStatistics", {
     return _GetPayoutStatistics["default"];
   }
 });
+Object.defineProperty(exports, "GetPayoutsResponse", {
+  enumerable: true,
+  get: function get() {
+    return _GetPayoutsResponse["default"];
+  }
+});
 Object.defineProperty(exports, "GetPayoutsResponseV3", {
   enumerable: true,
   get: function get() {
@@ -381,12 +429,6 @@ Object.defineProperty(exports, "GetPayoutsResponseV3Page", {
     return _GetPayoutsResponseV3Page["default"];
   }
 });
-Object.defineProperty(exports, "GetPayoutsResponseV4", {
-  enumerable: true,
-  get: function get() {
-    return _GetPayoutsResponseV2["default"];
-  }
-});
 Object.defineProperty(exports, "Individual", {
   enumerable: true,
   get: function get() {
@@ -399,22 +441,10 @@ Object.defineProperty(exports, "Individual2", {
     return _Individual2["default"];
   }
 });
-Object.defineProperty(exports, "IndividualResponse", {
+Object.defineProperty(exports, "IndividualName", {
   enumerable: true,
   get: function get() {
-    return _IndividualResponse["default"];
-  }
-});
-Object.defineProperty(exports, "IndividualV1", {
-  enumerable: true,
-  get: function get() {
-    return _IndividualV["default"];
-  }
-});
-Object.defineProperty(exports, "IndividualV1Name", {
-  enumerable: true,
-  get: function get() {
-    return _IndividualV1Name["default"];
+    return _IndividualName["default"];
   }
 });
 Object.defineProperty(exports, "InlineResponse400", {
@@ -423,22 +453,10 @@ Object.defineProperty(exports, "InlineResponse400", {
     return _InlineResponse["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse400Errors", {
-  enumerable: true,
-  get: function get() {
-    return _InlineResponse400Errors["default"];
-  }
-});
 Object.defineProperty(exports, "InlineResponse401", {
   enumerable: true,
   get: function get() {
     return _InlineResponse2["default"];
-  }
-});
-Object.defineProperty(exports, "InlineResponse401Errors", {
-  enumerable: true,
-  get: function get() {
-    return _InlineResponse401Errors["default"];
   }
 });
 Object.defineProperty(exports, "InlineResponse403", {
@@ -447,22 +465,10 @@ Object.defineProperty(exports, "InlineResponse403", {
     return _InlineResponse3["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse403Errors", {
-  enumerable: true,
-  get: function get() {
-    return _InlineResponse403Errors["default"];
-  }
-});
 Object.defineProperty(exports, "InlineResponse404", {
   enumerable: true,
   get: function get() {
     return _InlineResponse4["default"];
-  }
-});
-Object.defineProperty(exports, "InlineResponse404Errors", {
-  enumerable: true,
-  get: function get() {
-    return _InlineResponse404Errors["default"];
   }
 });
 Object.defineProperty(exports, "InlineResponse409", {
@@ -471,22 +477,10 @@ Object.defineProperty(exports, "InlineResponse409", {
     return _InlineResponse5["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse409Errors", {
-  enumerable: true,
-  get: function get() {
-    return _InlineResponse409Errors["default"];
-  }
-});
 Object.defineProperty(exports, "InlineResponse412", {
   enumerable: true,
   get: function get() {
     return _InlineResponse6["default"];
-  }
-});
-Object.defineProperty(exports, "InlineResponse412Errors", {
-  enumerable: true,
-  get: function get() {
-    return _InlineResponse412Errors["default"];
   }
 });
 Object.defineProperty(exports, "InvitationStatus", {
@@ -499,12 +493,6 @@ Object.defineProperty(exports, "InvitationStatus2", {
   enumerable: true,
   get: function get() {
     return _InvitationStatus2["default"];
-  }
-});
-Object.defineProperty(exports, "InvitationStatusResponse", {
-  enumerable: true,
-  get: function get() {
-    return _InvitationStatusResponse["default"];
   }
 });
 Object.defineProperty(exports, "InvitePayeeRequest", {
@@ -529,18 +517,6 @@ Object.defineProperty(exports, "KycState", {
   enumerable: true,
   get: function get() {
     return _KycState["default"];
-  }
-});
-Object.defineProperty(exports, "Language", {
-  enumerable: true,
-  get: function get() {
-    return _Language["default"];
-  }
-});
-Object.defineProperty(exports, "Language2", {
-  enumerable: true,
-  get: function get() {
-    return _Language2["default"];
   }
 });
 Object.defineProperty(exports, "LinkForResponse", {
@@ -621,10 +597,10 @@ Object.defineProperty(exports, "ListSourceAccountResponseV3Links", {
     return _ListSourceAccountResponseV3Links["default"];
   }
 });
-Object.defineProperty(exports, "LocationType", {
+Object.defineProperty(exports, "LocalisationDetails", {
   enumerable: true,
   get: function get() {
-    return _LocationType["default"];
+    return _LocalisationDetails["default"];
   }
 });
 Object.defineProperty(exports, "MFADetails", {
@@ -639,16 +615,22 @@ Object.defineProperty(exports, "MFAType", {
     return _MFAType["default"];
   }
 });
-Object.defineProperty(exports, "MarketingOptIn", {
-  enumerable: true,
-  get: function get() {
-    return _MarketingOptIn["default"];
-  }
-});
 Object.defineProperty(exports, "Name", {
   enumerable: true,
   get: function get() {
     return _Name["default"];
+  }
+});
+Object.defineProperty(exports, "Name2", {
+  enumerable: true,
+  get: function get() {
+    return _Name2["default"];
+  }
+});
+Object.defineProperty(exports, "Notification", {
+  enumerable: true,
+  get: function get() {
+    return _Notification["default"];
   }
 });
 Object.defineProperty(exports, "Notifications", {
@@ -669,12 +651,6 @@ Object.defineProperty(exports, "OfacStatus", {
     return _OfacStatus["default"];
   }
 });
-Object.defineProperty(exports, "OfacStatus2", {
-  enumerable: true,
-  get: function get() {
-    return _OfacStatus2["default"];
-  }
-});
 Object.defineProperty(exports, "OnboardedStatus", {
   enumerable: true,
   get: function get() {
@@ -685,6 +661,12 @@ Object.defineProperty(exports, "OnboardedStatus2", {
   enumerable: true,
   get: function get() {
     return _OnboardedStatus2["default"];
+  }
+});
+Object.defineProperty(exports, "OnboardingStatusChanged", {
+  enumerable: true,
+  get: function get() {
+    return _OnboardingStatusChanged["default"];
   }
 });
 Object.defineProperty(exports, "PageForResponse", {
@@ -727,12 +709,6 @@ Object.defineProperty(exports, "PagedPayeeResponse2", {
   enumerable: true,
   get: function get() {
     return _PagedPayeeResponse2["default"];
-  }
-});
-Object.defineProperty(exports, "PagedPayeeResponse2Summary", {
-  enumerable: true,
-  get: function get() {
-    return _PagedPayeeResponse2Summary["default"];
   }
 });
 Object.defineProperty(exports, "PagedPayeeResponseLinks", {
@@ -783,16 +759,22 @@ Object.defineProperty(exports, "PasswordRequest", {
     return _PasswordRequest["default"];
   }
 });
-Object.defineProperty(exports, "Payee", {
+Object.defineProperty(exports, "PayableIssue", {
   enumerable: true,
   get: function get() {
-    return _Payee["default"];
+    return _PayableIssue["default"];
   }
 });
-Object.defineProperty(exports, "Payee2", {
+Object.defineProperty(exports, "PayableIssue2", {
   enumerable: true,
   get: function get() {
-    return _Payee2["default"];
+    return _PayableIssue2["default"];
+  }
+});
+Object.defineProperty(exports, "PayableStatusChanged", {
+  enumerable: true,
+  get: function get() {
+    return _PayableStatusChanged["default"];
   }
 });
 Object.defineProperty(exports, "PayeeAddress", {
@@ -861,10 +843,28 @@ Object.defineProperty(exports, "PayeeDetailResponse2", {
     return _PayeeDetailResponse2["default"];
   }
 });
-Object.defineProperty(exports, "PayeeInvitationStatus", {
+Object.defineProperty(exports, "PayeeDetailsChanged", {
   enumerable: true,
   get: function get() {
-    return _PayeeInvitationStatus["default"];
+    return _PayeeDetailsChanged["default"];
+  }
+});
+Object.defineProperty(exports, "PayeeEvent", {
+  enumerable: true,
+  get: function get() {
+    return _PayeeEvent["default"];
+  }
+});
+Object.defineProperty(exports, "PayeeEventAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _PayeeEventAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "PayeeEventAllOfReasons", {
+  enumerable: true,
+  get: function get() {
+    return _PayeeEventAllOfReasons["default"];
   }
 });
 Object.defineProperty(exports, "PayeeInvitationStatusResponse", {
@@ -879,52 +879,16 @@ Object.defineProperty(exports, "PayeeInvitationStatusResponse2", {
     return _PayeeInvitationStatusResponse2["default"];
   }
 });
-Object.defineProperty(exports, "PayeePaymentChannel", {
-  enumerable: true,
-  get: function get() {
-    return _PayeePaymentChannel["default"];
-  }
-});
-Object.defineProperty(exports, "PayeePaymentChannel2", {
-  enumerable: true,
-  get: function get() {
-    return _PayeePaymentChannel2["default"];
-  }
-});
 Object.defineProperty(exports, "PayeePayorRef", {
   enumerable: true,
   get: function get() {
     return _PayeePayorRef["default"];
   }
 });
-Object.defineProperty(exports, "PayeePayorRef2", {
-  enumerable: true,
-  get: function get() {
-    return _PayeePayorRef2["default"];
-  }
-});
-Object.defineProperty(exports, "PayeePayorRefV2", {
-  enumerable: true,
-  get: function get() {
-    return _PayeePayorRefV["default"];
-  }
-});
 Object.defineProperty(exports, "PayeePayorRefV3", {
   enumerable: true,
   get: function get() {
-    return _PayeePayorRefV2["default"];
-  }
-});
-Object.defineProperty(exports, "PayeeResponse", {
-  enumerable: true,
-  get: function get() {
-    return _PayeeResponse["default"];
-  }
-});
-Object.defineProperty(exports, "PayeeResponseV2", {
-  enumerable: true,
-  get: function get() {
-    return _PayeeResponseV["default"];
+    return _PayeePayorRefV["default"];
   }
 });
 Object.defineProperty(exports, "PayeeType", {
@@ -933,28 +897,22 @@ Object.defineProperty(exports, "PayeeType", {
     return _PayeeType["default"];
   }
 });
-Object.defineProperty(exports, "PayeeType2", {
-  enumerable: true,
-  get: function get() {
-    return _PayeeType2["default"];
-  }
-});
 Object.defineProperty(exports, "PayeeUserSelfUpdateRequest", {
   enumerable: true,
   get: function get() {
     return _PayeeUserSelfUpdateRequest["default"];
   }
 });
+Object.defineProperty(exports, "PaymentAuditCurrency", {
+  enumerable: true,
+  get: function get() {
+    return _PaymentAuditCurrency["default"];
+  }
+});
 Object.defineProperty(exports, "PaymentAuditCurrencyV3", {
   enumerable: true,
   get: function get() {
     return _PaymentAuditCurrencyV["default"];
-  }
-});
-Object.defineProperty(exports, "PaymentAuditCurrencyV4", {
-  enumerable: true,
-  get: function get() {
-    return _PaymentAuditCurrencyV2["default"];
   }
 });
 Object.defineProperty(exports, "PaymentChannelCountry", {
@@ -987,28 +945,40 @@ Object.defineProperty(exports, "PaymentDeltaResponse", {
     return _PaymentDeltaResponse["default"];
   }
 });
-Object.defineProperty(exports, "PaymentDeltaResponseV4", {
+Object.defineProperty(exports, "PaymentDeltaResponseV1", {
   enumerable: true,
   get: function get() {
     return _PaymentDeltaResponseV["default"];
   }
 });
-Object.defineProperty(exports, "PaymentDeltaV4", {
+Object.defineProperty(exports, "PaymentDeltaV1", {
   enumerable: true,
   get: function get() {
     return _PaymentDeltaV["default"];
+  }
+});
+Object.defineProperty(exports, "PaymentEvent", {
+  enumerable: true,
+  get: function get() {
+    return _PaymentEvent["default"];
+  }
+});
+Object.defineProperty(exports, "PaymentEventAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _PaymentEventAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "PaymentEventResponse", {
+  enumerable: true,
+  get: function get() {
+    return _PaymentEventResponse["default"];
   }
 });
 Object.defineProperty(exports, "PaymentEventResponseV3", {
   enumerable: true,
   get: function get() {
     return _PaymentEventResponseV["default"];
-  }
-});
-Object.defineProperty(exports, "PaymentEventResponseV4", {
-  enumerable: true,
-  get: function get() {
-    return _PaymentEventResponseV2["default"];
   }
 });
 Object.defineProperty(exports, "PaymentInstructionV3", {
@@ -1021,6 +991,18 @@ Object.defineProperty(exports, "PaymentRails", {
   enumerable: true,
   get: function get() {
     return _PaymentRails["default"];
+  }
+});
+Object.defineProperty(exports, "PaymentRejectedOrReturned", {
+  enumerable: true,
+  get: function get() {
+    return _PaymentRejectedOrReturned["default"];
+  }
+});
+Object.defineProperty(exports, "PaymentRejectedOrReturnedAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _PaymentRejectedOrReturnedAllOf["default"];
   }
 });
 Object.defineProperty(exports, "PaymentResponseV3", {
@@ -1041,6 +1023,18 @@ Object.defineProperty(exports, "PaymentResponseV4Payout", {
     return _PaymentResponseV4Payout["default"];
   }
 });
+Object.defineProperty(exports, "PaymentStatusChanged", {
+  enumerable: true,
+  get: function get() {
+    return _PaymentStatusChanged["default"];
+  }
+});
+Object.defineProperty(exports, "PaymentStatusChangedAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _PaymentStatusChangedAllOf["default"];
+  }
+});
 Object.defineProperty(exports, "PaymentV3", {
   enumerable: true,
   get: function get() {
@@ -1059,16 +1053,16 @@ Object.defineProperty(exports, "PayorAddressV2", {
     return _PayorAddressV["default"];
   }
 });
+Object.defineProperty(exports, "PayorAmlTransaction", {
+  enumerable: true,
+  get: function get() {
+    return _PayorAmlTransaction["default"];
+  }
+});
 Object.defineProperty(exports, "PayorAmlTransactionV3", {
   enumerable: true,
   get: function get() {
     return _PayorAmlTransactionV["default"];
-  }
-});
-Object.defineProperty(exports, "PayorAmlTransactionV4", {
-  enumerable: true,
-  get: function get() {
-    return _PayorAmlTransactionV2["default"];
   }
 });
 Object.defineProperty(exports, "PayorBrandingResponse", {
@@ -1119,12 +1113,6 @@ Object.defineProperty(exports, "PayorLinksResponsePayors", {
     return _PayorLinksResponsePayors["default"];
   }
 });
-Object.defineProperty(exports, "PayorLogoRequest", {
-  enumerable: true,
-  get: function get() {
-    return _PayorLogoRequest["default"];
-  }
-});
 Object.defineProperty(exports, "PayorV1", {
   enumerable: true,
   get: function get() {
@@ -1161,16 +1149,28 @@ Object.defineProperty(exports, "PayoutPayeeV3", {
     return _PayoutPayeeV["default"];
   }
 });
-Object.defineProperty(exports, "PayoutPayorV4", {
+Object.defineProperty(exports, "PayoutPayor", {
   enumerable: true,
   get: function get() {
-    return _PayoutPayorV["default"];
+    return _PayoutPayor["default"];
   }
 });
-Object.defineProperty(exports, "PayoutPrincipalV4", {
+Object.defineProperty(exports, "PayoutPayorIds", {
   enumerable: true,
   get: function get() {
-    return _PayoutPrincipalV["default"];
+    return _PayoutPayorIds["default"];
+  }
+});
+Object.defineProperty(exports, "PayoutPrincipal", {
+  enumerable: true,
+  get: function get() {
+    return _PayoutPrincipal["default"];
+  }
+});
+Object.defineProperty(exports, "PayoutStatus", {
+  enumerable: true,
+  get: function get() {
+    return _PayoutStatus["default"];
   }
 });
 Object.defineProperty(exports, "PayoutStatusV3", {
@@ -1179,10 +1179,10 @@ Object.defineProperty(exports, "PayoutStatusV3", {
     return _PayoutStatusV["default"];
   }
 });
-Object.defineProperty(exports, "PayoutStatusV4", {
+Object.defineProperty(exports, "PayoutSummaryAudit", {
   enumerable: true,
   get: function get() {
-    return _PayoutStatusV2["default"];
+    return _PayoutSummaryAudit["default"];
   }
 });
 Object.defineProperty(exports, "PayoutSummaryAuditV3", {
@@ -1191,22 +1191,22 @@ Object.defineProperty(exports, "PayoutSummaryAuditV3", {
     return _PayoutSummaryAuditV["default"];
   }
 });
-Object.defineProperty(exports, "PayoutSummaryAuditV4", {
-  enumerable: true,
-  get: function get() {
-    return _PayoutSummaryAuditV2["default"];
-  }
-});
 Object.defineProperty(exports, "PayoutSummaryResponseV3", {
   enumerable: true,
   get: function get() {
     return _PayoutSummaryResponseV["default"];
   }
 });
-Object.defineProperty(exports, "PayoutTypeV4", {
+Object.defineProperty(exports, "PayoutType", {
   enumerable: true,
   get: function get() {
-    return _PayoutTypeV["default"];
+    return _PayoutType["default"];
+  }
+});
+Object.defineProperty(exports, "Ping", {
+  enumerable: true,
+  get: function get() {
+    return _Ping["default"];
   }
 });
 Object.defineProperty(exports, "PingResponse", {
@@ -1317,16 +1317,16 @@ Object.defineProperty(exports, "SourceAccountResponseV3", {
     return _SourceAccountResponseV2["default"];
   }
 });
+Object.defineProperty(exports, "SourceAccountSummary", {
+  enumerable: true,
+  get: function get() {
+    return _SourceAccountSummary["default"];
+  }
+});
 Object.defineProperty(exports, "SourceAccountSummaryV3", {
   enumerable: true,
   get: function get() {
     return _SourceAccountSummaryV["default"];
-  }
-});
-Object.defineProperty(exports, "SourceAccountSummaryV4", {
-  enumerable: true,
-  get: function get() {
-    return _SourceAccountSummaryV2["default"];
   }
 });
 Object.defineProperty(exports, "SourceAccountType", {
@@ -1339,6 +1339,12 @@ Object.defineProperty(exports, "SourceAccountV3", {
   enumerable: true,
   get: function get() {
     return _SourceAccountV["default"];
+  }
+});
+Object.defineProperty(exports, "SourceEvent", {
+  enumerable: true,
+  get: function get() {
+    return _SourceEvent["default"];
   }
 });
 Object.defineProperty(exports, "SupportedCountriesResponse", {
@@ -1429,6 +1435,12 @@ Object.defineProperty(exports, "UpdateRemoteIdRequest", {
   enumerable: true,
   get: function get() {
     return _UpdateRemoteIdRequest["default"];
+  }
+});
+Object.defineProperty(exports, "UpdateRemoteIdRequest2", {
+  enumerable: true,
+  get: function get() {
+    return _UpdateRemoteIdRequest2["default"];
   }
 });
 Object.defineProperty(exports, "UpdateWebhookRequest", {
@@ -1557,6 +1569,12 @@ Object.defineProperty(exports, "PaymentAuditServiceApi", {
     return _PaymentAuditServiceApi["default"];
   }
 });
+Object.defineProperty(exports, "PaymentAuditServiceDeprecatedApi", {
+  enumerable: true,
+  get: function get() {
+    return _PaymentAuditServiceDeprecatedApi["default"];
+  }
+});
 Object.defineProperty(exports, "PayorsApi", {
   enumerable: true,
   get: function get() {
@@ -1608,6 +1626,8 @@ var _AutoTopUpConfig = _interopRequireDefault(require("./model/AutoTopUpConfig")
 
 var _AutoTopUpConfig2 = _interopRequireDefault(require("./model/AutoTopUpConfig2"));
 
+var _Category = _interopRequireDefault(require("./model/Category"));
+
 var _Challenge = _interopRequireDefault(require("./model/Challenge"));
 
 var _Challenge2 = _interopRequireDefault(require("./model/Challenge2"));
@@ -1616,17 +1636,13 @@ var _Company = _interopRequireDefault(require("./model/Company"));
 
 var _Company2 = _interopRequireDefault(require("./model/Company2"));
 
-var _CompanyResponse = _interopRequireDefault(require("./model/CompanyResponse"));
-
-var _CompanyV = _interopRequireDefault(require("./model/CompanyV1"));
-
 var _CreateFundingAccountRequestV = _interopRequireDefault(require("./model/CreateFundingAccountRequestV2"));
 
 var _CreateIndividual = _interopRequireDefault(require("./model/CreateIndividual"));
 
 var _CreateIndividual2 = _interopRequireDefault(require("./model/CreateIndividual2"));
 
-var _CreateIndividual2Name = _interopRequireDefault(require("./model/CreateIndividual2Name"));
+var _CreateIndividualName = _interopRequireDefault(require("./model/CreateIndividualName"));
 
 var _CreatePayee = _interopRequireDefault(require("./model/CreatePayee"));
 
@@ -1635,10 +1651,6 @@ var _CreatePayee2 = _interopRequireDefault(require("./model/CreatePayee2"));
 var _CreatePayeeAddress = _interopRequireDefault(require("./model/CreatePayeeAddress"));
 
 var _CreatePayeeAddress2 = _interopRequireDefault(require("./model/CreatePayeeAddress2"));
-
-var _CreatePayeesCSVRequest = _interopRequireDefault(require("./model/CreatePayeesCSVRequest"));
-
-var _CreatePayeesCSVRequest2 = _interopRequireDefault(require("./model/CreatePayeesCSVRequest2"));
 
 var _CreatePayeesCSVResponse = _interopRequireDefault(require("./model/CreatePayeesCSVResponse"));
 
@@ -1660,9 +1672,23 @@ var _CreatePayoutRequestV = _interopRequireDefault(require("./model/CreatePayout
 
 var _CreateWebhookRequest = _interopRequireDefault(require("./model/CreateWebhookRequest"));
 
+var _DebitEvent = _interopRequireDefault(require("./model/DebitEvent"));
+
+var _DebitEventAllOf = _interopRequireDefault(require("./model/DebitEventAllOf"));
+
+var _DebitStatusChanged = _interopRequireDefault(require("./model/DebitStatusChanged"));
+
+var _DebitStatusChangedAllOf = _interopRequireDefault(require("./model/DebitStatusChangedAllOf"));
+
 var _Error = _interopRequireDefault(require("./model/Error"));
 
+var _ErrorData = _interopRequireDefault(require("./model/ErrorData"));
+
 var _ErrorResponse = _interopRequireDefault(require("./model/ErrorResponse"));
+
+var _FailedPayee = _interopRequireDefault(require("./model/FailedPayee"));
+
+var _FailedPayee2 = _interopRequireDefault(require("./model/FailedPayee2"));
 
 var _FailedSubmission = _interopRequireDefault(require("./model/FailedSubmission"));
 
@@ -1688,9 +1714,9 @@ var _FundingRequestV2 = _interopRequireDefault(require("./model/FundingRequestV2
 
 var _FundingRequestV3 = _interopRequireDefault(require("./model/FundingRequestV3"));
 
-var _FxSummaryV = _interopRequireDefault(require("./model/FxSummaryV3"));
+var _FxSummary = _interopRequireDefault(require("./model/FxSummary"));
 
-var _FxSummaryV2 = _interopRequireDefault(require("./model/FxSummaryV4"));
+var _FxSummaryV = _interopRequireDefault(require("./model/FxSummaryV3"));
 
 var _GetFundingsResponse = _interopRequireDefault(require("./model/GetFundingsResponse"));
 
@@ -1698,9 +1724,15 @@ var _GetFundingsResponseLinks = _interopRequireDefault(require("./model/GetFundi
 
 var _GetPayeeListResponse = _interopRequireDefault(require("./model/GetPayeeListResponse"));
 
+var _GetPayeeListResponse2 = _interopRequireDefault(require("./model/GetPayeeListResponse2"));
+
 var _GetPayeeListResponseCompany = _interopRequireDefault(require("./model/GetPayeeListResponseCompany"));
 
+var _GetPayeeListResponseCompany2 = _interopRequireDefault(require("./model/GetPayeeListResponseCompany2"));
+
 var _GetPayeeListResponseIndividual = _interopRequireDefault(require("./model/GetPayeeListResponseIndividual"));
+
+var _GetPayeeListResponseIndividual2 = _interopRequireDefault(require("./model/GetPayeeListResponseIndividual2"));
 
 var _GetPaymentsForPayoutResponseV = _interopRequireDefault(require("./model/GetPaymentsForPayoutResponseV3"));
 
@@ -1714,53 +1746,35 @@ var _GetPaymentsForPayoutResponseV4Summary = _interopRequireDefault(require("./m
 
 var _GetPayoutStatistics = _interopRequireDefault(require("./model/GetPayoutStatistics"));
 
+var _GetPayoutsResponse = _interopRequireDefault(require("./model/GetPayoutsResponse"));
+
 var _GetPayoutsResponseV = _interopRequireDefault(require("./model/GetPayoutsResponseV3"));
 
 var _GetPayoutsResponseV3Links = _interopRequireDefault(require("./model/GetPayoutsResponseV3Links"));
 
 var _GetPayoutsResponseV3Page = _interopRequireDefault(require("./model/GetPayoutsResponseV3Page"));
 
-var _GetPayoutsResponseV2 = _interopRequireDefault(require("./model/GetPayoutsResponseV4"));
-
 var _Individual = _interopRequireDefault(require("./model/Individual"));
 
 var _Individual2 = _interopRequireDefault(require("./model/Individual2"));
 
-var _IndividualResponse = _interopRequireDefault(require("./model/IndividualResponse"));
-
-var _IndividualV = _interopRequireDefault(require("./model/IndividualV1"));
-
-var _IndividualV1Name = _interopRequireDefault(require("./model/IndividualV1Name"));
+var _IndividualName = _interopRequireDefault(require("./model/IndividualName"));
 
 var _InlineResponse = _interopRequireDefault(require("./model/InlineResponse400"));
 
-var _InlineResponse400Errors = _interopRequireDefault(require("./model/InlineResponse400Errors"));
-
 var _InlineResponse2 = _interopRequireDefault(require("./model/InlineResponse401"));
-
-var _InlineResponse401Errors = _interopRequireDefault(require("./model/InlineResponse401Errors"));
 
 var _InlineResponse3 = _interopRequireDefault(require("./model/InlineResponse403"));
 
-var _InlineResponse403Errors = _interopRequireDefault(require("./model/InlineResponse403Errors"));
-
 var _InlineResponse4 = _interopRequireDefault(require("./model/InlineResponse404"));
-
-var _InlineResponse404Errors = _interopRequireDefault(require("./model/InlineResponse404Errors"));
 
 var _InlineResponse5 = _interopRequireDefault(require("./model/InlineResponse409"));
 
-var _InlineResponse409Errors = _interopRequireDefault(require("./model/InlineResponse409Errors"));
-
 var _InlineResponse6 = _interopRequireDefault(require("./model/InlineResponse412"));
-
-var _InlineResponse412Errors = _interopRequireDefault(require("./model/InlineResponse412Errors"));
 
 var _InvitationStatus = _interopRequireDefault(require("./model/InvitationStatus"));
 
 var _InvitationStatus2 = _interopRequireDefault(require("./model/InvitationStatus2"));
-
-var _InvitationStatusResponse = _interopRequireDefault(require("./model/InvitationStatusResponse"));
 
 var _InvitePayeeRequest = _interopRequireDefault(require("./model/InvitePayeeRequest"));
 
@@ -1769,10 +1783,6 @@ var _InvitePayeeRequest2 = _interopRequireDefault(require("./model/InvitePayeeRe
 var _InviteUserRequest = _interopRequireDefault(require("./model/InviteUserRequest"));
 
 var _KycState = _interopRequireDefault(require("./model/KycState"));
-
-var _Language = _interopRequireDefault(require("./model/Language"));
-
-var _Language2 = _interopRequireDefault(require("./model/Language2"));
 
 var _LinkForResponse = _interopRequireDefault(require("./model/LinkForResponse"));
 
@@ -1800,15 +1810,17 @@ var _ListSourceAccountResponseV2 = _interopRequireDefault(require("./model/ListS
 
 var _ListSourceAccountResponseV3Links = _interopRequireDefault(require("./model/ListSourceAccountResponseV3Links"));
 
-var _LocationType = _interopRequireDefault(require("./model/LocationType"));
+var _LocalisationDetails = _interopRequireDefault(require("./model/LocalisationDetails"));
 
 var _MFADetails = _interopRequireDefault(require("./model/MFADetails"));
 
 var _MFAType = _interopRequireDefault(require("./model/MFAType"));
 
-var _MarketingOptIn = _interopRequireDefault(require("./model/MarketingOptIn"));
-
 var _Name = _interopRequireDefault(require("./model/Name"));
+
+var _Name2 = _interopRequireDefault(require("./model/Name2"));
+
+var _Notification = _interopRequireDefault(require("./model/Notification"));
 
 var _Notifications = _interopRequireDefault(require("./model/Notifications"));
 
@@ -1816,11 +1828,11 @@ var _Notifications2 = _interopRequireDefault(require("./model/Notifications2"));
 
 var _OfacStatus = _interopRequireDefault(require("./model/OfacStatus"));
 
-var _OfacStatus2 = _interopRequireDefault(require("./model/OfacStatus2"));
-
 var _OnboardedStatus = _interopRequireDefault(require("./model/OnboardedStatus"));
 
 var _OnboardedStatus2 = _interopRequireDefault(require("./model/OnboardedStatus2"));
+
+var _OnboardingStatusChanged = _interopRequireDefault(require("./model/OnboardingStatusChanged"));
 
 var _PageForResponse = _interopRequireDefault(require("./model/PageForResponse"));
 
@@ -1835,8 +1847,6 @@ var _PagedPayeeInvitationStatusResponsePage = _interopRequireDefault(require("./
 var _PagedPayeeResponse = _interopRequireDefault(require("./model/PagedPayeeResponse"));
 
 var _PagedPayeeResponse2 = _interopRequireDefault(require("./model/PagedPayeeResponse2"));
-
-var _PagedPayeeResponse2Summary = _interopRequireDefault(require("./model/PagedPayeeResponse2Summary"));
 
 var _PagedPayeeResponseLinks = _interopRequireDefault(require("./model/PagedPayeeResponseLinks"));
 
@@ -1854,9 +1864,11 @@ var _PagedUserResponsePage = _interopRequireDefault(require("./model/PagedUserRe
 
 var _PasswordRequest = _interopRequireDefault(require("./model/PasswordRequest"));
 
-var _Payee = _interopRequireDefault(require("./model/Payee"));
+var _PayableIssue = _interopRequireDefault(require("./model/PayableIssue"));
 
-var _Payee2 = _interopRequireDefault(require("./model/Payee2"));
+var _PayableIssue2 = _interopRequireDefault(require("./model/PayableIssue2"));
+
+var _PayableStatusChanged = _interopRequireDefault(require("./model/PayableStatusChanged"));
 
 var _PayeeAddress = _interopRequireDefault(require("./model/PayeeAddress"));
 
@@ -1880,37 +1892,29 @@ var _PayeeDetailResponse = _interopRequireDefault(require("./model/PayeeDetailRe
 
 var _PayeeDetailResponse2 = _interopRequireDefault(require("./model/PayeeDetailResponse2"));
 
-var _PayeeInvitationStatus = _interopRequireDefault(require("./model/PayeeInvitationStatus"));
+var _PayeeDetailsChanged = _interopRequireDefault(require("./model/PayeeDetailsChanged"));
+
+var _PayeeEvent = _interopRequireDefault(require("./model/PayeeEvent"));
+
+var _PayeeEventAllOf = _interopRequireDefault(require("./model/PayeeEventAllOf"));
+
+var _PayeeEventAllOfReasons = _interopRequireDefault(require("./model/PayeeEventAllOfReasons"));
 
 var _PayeeInvitationStatusResponse = _interopRequireDefault(require("./model/PayeeInvitationStatusResponse"));
 
 var _PayeeInvitationStatusResponse2 = _interopRequireDefault(require("./model/PayeeInvitationStatusResponse2"));
 
-var _PayeePaymentChannel = _interopRequireDefault(require("./model/PayeePaymentChannel"));
-
-var _PayeePaymentChannel2 = _interopRequireDefault(require("./model/PayeePaymentChannel2"));
-
 var _PayeePayorRef = _interopRequireDefault(require("./model/PayeePayorRef"));
 
-var _PayeePayorRef2 = _interopRequireDefault(require("./model/PayeePayorRef2"));
-
-var _PayeePayorRefV = _interopRequireDefault(require("./model/PayeePayorRefV2"));
-
-var _PayeePayorRefV2 = _interopRequireDefault(require("./model/PayeePayorRefV3"));
-
-var _PayeeResponse = _interopRequireDefault(require("./model/PayeeResponse"));
-
-var _PayeeResponseV = _interopRequireDefault(require("./model/PayeeResponseV2"));
+var _PayeePayorRefV = _interopRequireDefault(require("./model/PayeePayorRefV3"));
 
 var _PayeeType = _interopRequireDefault(require("./model/PayeeType"));
 
-var _PayeeType2 = _interopRequireDefault(require("./model/PayeeType2"));
-
 var _PayeeUserSelfUpdateRequest = _interopRequireDefault(require("./model/PayeeUserSelfUpdateRequest"));
 
-var _PaymentAuditCurrencyV = _interopRequireDefault(require("./model/PaymentAuditCurrencyV3"));
+var _PaymentAuditCurrency = _interopRequireDefault(require("./model/PaymentAuditCurrency"));
 
-var _PaymentAuditCurrencyV2 = _interopRequireDefault(require("./model/PaymentAuditCurrencyV4"));
+var _PaymentAuditCurrencyV = _interopRequireDefault(require("./model/PaymentAuditCurrencyV3"));
 
 var _PaymentChannelCountry = _interopRequireDefault(require("./model/PaymentChannelCountry"));
 
@@ -1922,17 +1926,25 @@ var _PaymentDelta = _interopRequireDefault(require("./model/PaymentDelta"));
 
 var _PaymentDeltaResponse = _interopRequireDefault(require("./model/PaymentDeltaResponse"));
 
-var _PaymentDeltaResponseV = _interopRequireDefault(require("./model/PaymentDeltaResponseV4"));
+var _PaymentDeltaResponseV = _interopRequireDefault(require("./model/PaymentDeltaResponseV1"));
 
-var _PaymentDeltaV = _interopRequireDefault(require("./model/PaymentDeltaV4"));
+var _PaymentDeltaV = _interopRequireDefault(require("./model/PaymentDeltaV1"));
+
+var _PaymentEvent = _interopRequireDefault(require("./model/PaymentEvent"));
+
+var _PaymentEventAllOf = _interopRequireDefault(require("./model/PaymentEventAllOf"));
+
+var _PaymentEventResponse = _interopRequireDefault(require("./model/PaymentEventResponse"));
 
 var _PaymentEventResponseV = _interopRequireDefault(require("./model/PaymentEventResponseV3"));
-
-var _PaymentEventResponseV2 = _interopRequireDefault(require("./model/PaymentEventResponseV4"));
 
 var _PaymentInstructionV = _interopRequireDefault(require("./model/PaymentInstructionV3"));
 
 var _PaymentRails = _interopRequireDefault(require("./model/PaymentRails"));
+
+var _PaymentRejectedOrReturned = _interopRequireDefault(require("./model/PaymentRejectedOrReturned"));
+
+var _PaymentRejectedOrReturnedAllOf = _interopRequireDefault(require("./model/PaymentRejectedOrReturnedAllOf"));
 
 var _PaymentResponseV = _interopRequireDefault(require("./model/PaymentResponseV3"));
 
@@ -1940,15 +1952,19 @@ var _PaymentResponseV2 = _interopRequireDefault(require("./model/PaymentResponse
 
 var _PaymentResponseV4Payout = _interopRequireDefault(require("./model/PaymentResponseV4Payout"));
 
+var _PaymentStatusChanged = _interopRequireDefault(require("./model/PaymentStatusChanged"));
+
+var _PaymentStatusChangedAllOf = _interopRequireDefault(require("./model/PaymentStatusChangedAllOf"));
+
 var _PaymentV = _interopRequireDefault(require("./model/PaymentV3"));
 
 var _PayorAddress = _interopRequireDefault(require("./model/PayorAddress"));
 
 var _PayorAddressV = _interopRequireDefault(require("./model/PayorAddressV2"));
 
-var _PayorAmlTransactionV = _interopRequireDefault(require("./model/PayorAmlTransactionV3"));
+var _PayorAmlTransaction = _interopRequireDefault(require("./model/PayorAmlTransaction"));
 
-var _PayorAmlTransactionV2 = _interopRequireDefault(require("./model/PayorAmlTransactionV4"));
+var _PayorAmlTransactionV = _interopRequireDefault(require("./model/PayorAmlTransactionV3"));
 
 var _PayorBrandingResponse = _interopRequireDefault(require("./model/PayorBrandingResponse"));
 
@@ -1966,8 +1982,6 @@ var _PayorLinksResponseLinks = _interopRequireDefault(require("./model/PayorLink
 
 var _PayorLinksResponsePayors = _interopRequireDefault(require("./model/PayorLinksResponsePayors"));
 
-var _PayorLogoRequest = _interopRequireDefault(require("./model/PayorLogoRequest"));
-
 var _PayorV = _interopRequireDefault(require("./model/PayorV1"));
 
 var _PayorV2 = _interopRequireDefault(require("./model/PayorV2"));
@@ -1980,21 +1994,25 @@ var _PayoutNameV = _interopRequireDefault(require("./model/PayoutNameV3"));
 
 var _PayoutPayeeV = _interopRequireDefault(require("./model/PayoutPayeeV3"));
 
-var _PayoutPayorV = _interopRequireDefault(require("./model/PayoutPayorV4"));
+var _PayoutPayor = _interopRequireDefault(require("./model/PayoutPayor"));
 
-var _PayoutPrincipalV = _interopRequireDefault(require("./model/PayoutPrincipalV4"));
+var _PayoutPayorIds = _interopRequireDefault(require("./model/PayoutPayorIds"));
+
+var _PayoutPrincipal = _interopRequireDefault(require("./model/PayoutPrincipal"));
+
+var _PayoutStatus = _interopRequireDefault(require("./model/PayoutStatus"));
 
 var _PayoutStatusV = _interopRequireDefault(require("./model/PayoutStatusV3"));
 
-var _PayoutStatusV2 = _interopRequireDefault(require("./model/PayoutStatusV4"));
+var _PayoutSummaryAudit = _interopRequireDefault(require("./model/PayoutSummaryAudit"));
 
 var _PayoutSummaryAuditV = _interopRequireDefault(require("./model/PayoutSummaryAuditV3"));
 
-var _PayoutSummaryAuditV2 = _interopRequireDefault(require("./model/PayoutSummaryAuditV4"));
-
 var _PayoutSummaryResponseV = _interopRequireDefault(require("./model/PayoutSummaryResponseV3"));
 
-var _PayoutTypeV = _interopRequireDefault(require("./model/PayoutTypeV4"));
+var _PayoutType = _interopRequireDefault(require("./model/PayoutType"));
+
+var _Ping = _interopRequireDefault(require("./model/Ping"));
 
 var _PingResponse = _interopRequireDefault(require("./model/PingResponse"));
 
@@ -2032,13 +2050,15 @@ var _SourceAccountResponseV = _interopRequireDefault(require("./model/SourceAcco
 
 var _SourceAccountResponseV2 = _interopRequireDefault(require("./model/SourceAccountResponseV3"));
 
-var _SourceAccountSummaryV = _interopRequireDefault(require("./model/SourceAccountSummaryV3"));
+var _SourceAccountSummary = _interopRequireDefault(require("./model/SourceAccountSummary"));
 
-var _SourceAccountSummaryV2 = _interopRequireDefault(require("./model/SourceAccountSummaryV4"));
+var _SourceAccountSummaryV = _interopRequireDefault(require("./model/SourceAccountSummaryV3"));
 
 var _SourceAccountType = _interopRequireDefault(require("./model/SourceAccountType"));
 
 var _SourceAccountV = _interopRequireDefault(require("./model/SourceAccountV3"));
+
+var _SourceEvent = _interopRequireDefault(require("./model/SourceEvent"));
 
 var _SupportedCountriesResponse = _interopRequireDefault(require("./model/SupportedCountriesResponse"));
 
@@ -2069,6 +2089,8 @@ var _UpdatePayeeDetailsRequest = _interopRequireDefault(require("./model/UpdateP
 var _UpdatePayeeDetailsRequest2 = _interopRequireDefault(require("./model/UpdatePayeeDetailsRequest2"));
 
 var _UpdateRemoteIdRequest = _interopRequireDefault(require("./model/UpdateRemoteIdRequest"));
+
+var _UpdateRemoteIdRequest2 = _interopRequireDefault(require("./model/UpdateRemoteIdRequest2"));
 
 var _UpdateWebhookRequest = _interopRequireDefault(require("./model/UpdateWebhookRequest"));
 
@@ -2111,6 +2133,8 @@ var _PayeeInvitationApi = _interopRequireDefault(require("./api/PayeeInvitationA
 var _PayeesApi = _interopRequireDefault(require("./api/PayeesApi"));
 
 var _PaymentAuditServiceApi = _interopRequireDefault(require("./api/PaymentAuditServiceApi"));
+
+var _PaymentAuditServiceDeprecatedApi = _interopRequireDefault(require("./api/PaymentAuditServiceDeprecatedApi"));
 
 var _PayorsApi = _interopRequireDefault(require("./api/PayorsApi"));
 

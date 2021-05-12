@@ -17,9 +17,7 @@ var _CreatePayeeAddress = _interopRequireDefault(require("./CreatePayeeAddress2"
 
 var _CreatePaymentChannel = _interopRequireDefault(require("./CreatePaymentChannel2"));
 
-var _Language = _interopRequireDefault(require("./Language2"));
-
-var _PayeePayorRefV = _interopRequireDefault(require("./PayeePayorRefV3"));
+var _PayeePayorRef = _interopRequireDefault(require("./PayeePayorRef"));
 
 var _PayeeType = _interopRequireDefault(require("./PayeeType"));
 
@@ -34,7 +32,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreatePayee2 model module.
  * @module model/CreatePayee2
- * @version 2.23.78
+ * @version 2.26.127
  */
 var CreatePayee2 = /*#__PURE__*/function () {
   /**
@@ -84,7 +82,7 @@ var CreatePayee2 = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('payorRefs')) {
-          obj['payorRefs'] = _ApiClient["default"].convertToType(data['payorRefs'], [_PayeePayorRefV["default"]]);
+          obj['payorRefs'] = _ApiClient["default"].convertToType(data['payorRefs'], [_PayeePayorRef["default"]]);
         }
 
         if (data.hasOwnProperty('email')) {
@@ -112,7 +110,7 @@ var CreatePayee2 = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('language')) {
-          obj['language'] = _Language["default"].constructFromObject(data['language']);
+          obj['language'] = _ApiClient["default"].convertToType(data['language'], 'String');
         }
 
         if (data.hasOwnProperty('company')) {
@@ -137,7 +135,7 @@ var CreatePayee2 = /*#__PURE__*/function () {
 
 CreatePayee2.prototype['payeeId'] = undefined;
 /**
- * @member {Array.<module:model/PayeePayorRefV3>} payorRefs
+ * @member {Array.<module:model/PayeePayorRef>} payorRefs
  */
 
 CreatePayee2.prototype['payorRefs'] = undefined;
@@ -172,7 +170,8 @@ CreatePayee2.prototype['paymentChannel'] = undefined;
 
 CreatePayee2.prototype['challenge'] = undefined;
 /**
- * @member {module:model/Language2} language
+ * An IETF BCP 47 language code which has been configured for use within this Velo environment.<BR> See the /v1/supportedLanguages endpoint to list the available codes for an environment. 
+ * @member {String} language
  */
 
 CreatePayee2.prototype['language'] = undefined;

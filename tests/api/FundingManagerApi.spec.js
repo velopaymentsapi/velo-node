@@ -138,7 +138,6 @@
           'sourceAccountId': null, // String | 
           'page': 1, // Number | Page number. Default is 1.
           'pageSize': 25, // Number | The number of results to return in a page
-          'sort': "'accountName:asc'", // String | List of sort fields (e.g. ?sort=accountName:asc,name:asc) Default is accountName:asc The supported sort fields are - accountName, name and currency.
           'sensitive': false // Boolean | 
         };
 
@@ -162,10 +161,8 @@
           'name': "name_example", // String | The descriptive funding account name
           'country': "US", // String | The 2 letter ISO 3166-1 country code (upper case)
           'currency': "USD", // String | The ISO 4217 currency code
-          'type': new VeloPayments.FundingAccountType(), // FundingAccountType | The type of funding account.
           'page': 1, // Number | Page number. Default is 1.
           'pageSize': 25, // Number | The number of results to return in a page
-          'sort': "'accountName:asc'", // String | List of sort fields (e.g. ?sort=accountName:asc,name:asc) Default is accountName:asc The supported sort fields are - accountName, name.
           'sensitive': false // Boolean | 
         };
 
@@ -221,7 +218,6 @@
           'payorId': process.env.PAYOR, // String | The account owner Payor ID
           'page': 1, // Number | Page number. Default is 1.
           'pageSize': 25, // Number | The number of results to return in a page
-          'sort': "'fundingRef:asc'" // String | List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef 
         };
 
         instance.getSourceAccounts(opts, (error, data, response) => {
@@ -245,7 +241,6 @@
           'fundingAccountId': null, // String | The funding account ID
           'page': 1, // Number | Page number. Default is 1.
           'pageSize': 25, // Number | The number of results to return in a page
-          'sort': "'fundingRef:asc'" // String | List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance 
         };
 
         instance.getSourceAccountsV2(opts, (error, data, response) => {
@@ -267,10 +262,9 @@
           'physicalAccountId': null, // String | The physical account ID
           'payorId': process.env.PAYOR, // String | The account owner Payor ID
           'fundingAccountId': null, // String | The funding account ID
-          'type': new VeloPayments.SourceAccountType(), // SourceAccountType | The type of source account.
+          // 'type': new VeloPayments.SourceAccountType(), // SourceAccountType | The type of source account.
           'page': 1, // Number | Page number. Default is 1.
           'pageSize': 25, // Number | The number of results to return in a page
-          'sort': "'fundingRef:asc'" // String | List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance 
         };
 
         instance.getSourceAccountsV3(opts, (error, data, response) => {

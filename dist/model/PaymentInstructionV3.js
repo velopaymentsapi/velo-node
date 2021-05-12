@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaymentInstructionV3 model module.
  * @module model/PaymentInstructionV3
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PaymentInstructionV3 = /*#__PURE__*/function () {
   /**
@@ -30,7 +30,7 @@ var PaymentInstructionV3 = /*#__PURE__*/function () {
    * @param remoteId {String} Your identifier for payee
    * @param currency {String} Valid ISO 4217 3 letter currency code. See the <a href=\"https://www.iso.org/iso-4217-currency-codes.html\" target=\"_blank\" a>ISO specification</a> for details.
    * @param amount {Number} <p>Amount to send to Payee</p> <p>The maximum payment amount is dependent on the currency</p> 
-   * @param sourceAccountName {String} 
+   * @param sourceAccountName {String} Must match a valid source account name belonging to the payor
    */
   function PaymentInstructionV3(remoteId, currency, amount, sourceAccountName) {
     _classCallCheck(this, PaymentInstructionV3);
@@ -93,6 +93,14 @@ var PaymentInstructionV3 = /*#__PURE__*/function () {
         if (data.hasOwnProperty('transmissionType')) {
           obj['transmissionType'] = _TransmissionType["default"].constructFromObject(data['transmissionType']);
         }
+
+        if (data.hasOwnProperty('remoteSystemId')) {
+          obj['remoteSystemId'] = _ApiClient["default"].convertToType(data['remoteSystemId'], 'String');
+        }
+
+        if (data.hasOwnProperty('paymentMetadata')) {
+          obj['paymentMetadata'] = _ApiClient["default"].convertToType(data['paymentMetadata'], 'String');
+        }
       }
 
       return obj;
@@ -121,16 +129,19 @@ PaymentInstructionV3.prototype['currency'] = undefined;
 
 PaymentInstructionV3.prototype['amount'] = undefined;
 /**
+ * <p>Any value here will override the memo value in the parent payout</p> <p>This should be the reference field on the statement seen by the payee (but not via ACH)</p> 
  * @member {String} paymentMemo
  */
 
 PaymentInstructionV3.prototype['paymentMemo'] = undefined;
 /**
+ * Must match a valid source account name belonging to the payor
  * @member {String} sourceAccountName
  */
 
 PaymentInstructionV3.prototype['sourceAccountName'] = undefined;
 /**
+ * A reference identifier for the payor for the given payee payment
  * @member {String} payorPaymentId
  */
 
@@ -140,5 +151,17 @@ PaymentInstructionV3.prototype['payorPaymentId'] = undefined;
  */
 
 PaymentInstructionV3.prototype['transmissionType'] = undefined;
+/**
+ * <p>The identifier for the remote payments system if not Velo</p> <p>Should only be used after consultation with Velo Payments</p> 
+ * @member {String} remoteSystemId
+ */
+
+PaymentInstructionV3.prototype['remoteSystemId'] = undefined;
+/**
+ * <p>Metadata about the payment that may be relevant to the specific rails or remote system making the payout</p> <p>The structure of the data will be dictated by the requirements of the payment rails</p> 
+ * @member {String} paymentMetadata
+ */
+
+PaymentInstructionV3.prototype['paymentMetadata'] = undefined;
 var _default = PaymentInstructionV3;
 exports["default"] = _default;

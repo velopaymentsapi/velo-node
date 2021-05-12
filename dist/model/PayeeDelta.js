@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _OnboardedStatus = _interopRequireDefault(require("./OnboardedStatus"));
+var _OnboardedStatus = _interopRequireDefault(require("./OnboardedStatus2"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayeeDelta model module.
  * @module model/PayeeDelta
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PayeeDelta = /*#__PURE__*/function () {
   /**
@@ -128,7 +128,7 @@ PayeeDelta.prototype['email'] = undefined;
 
 PayeeDelta.prototype['payeeCountry'] = undefined;
 /**
- * @member {module:model/OnboardedStatus} onboardedStatus
+ * @member {module:model/OnboardedStatus2} onboardedStatus
  */
 
 PayeeDelta.prototype['onboardedStatus'] = undefined;

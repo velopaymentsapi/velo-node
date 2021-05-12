@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InviteUserRequest model module.
  * @module model/InviteUserRequest
- * @version 2.23.78
+ * @version 2.26.127
  */
 var InviteUserRequest = /*#__PURE__*/function () {
   /**

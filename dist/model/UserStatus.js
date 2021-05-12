@@ -35,13 +35,13 @@ var UserStatus = /*#__PURE__*/function () {
 
   _createClass(UserStatus, null, [{
     key: "constructFromObject",
-
+    value:
     /**
     * Returns a <code>UserStatus</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/UserStatus} The enum <code>UserStatus</code> value.
     */
-    value: function constructFromObject(object) {
+    function constructFromObject(object) {
       return object;
     }
   }]);

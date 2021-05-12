@@ -1,4 +1,4 @@
-FROM node:10.15.1-alpine
+FROM node:15.8.0-buster
 
 WORKDIR /usr/src/app
 

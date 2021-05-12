@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ListSourceAccountResponseV3Links model module.
  * @module model/ListSourceAccountResponseV3Links
- * @version 2.23.78
+ * @version 2.26.127
  */
 var ListSourceAccountResponseV3Links = /*#__PURE__*/function () {
   /**

@@ -15,6 +15,10 @@ var _InlineResponse2 = _interopRequireDefault(require("../model/InlineResponse40
 
 var _InlineResponse3 = _interopRequireDefault(require("../model/InlineResponse403"));
 
+var _InlineResponse4 = _interopRequireDefault(require("../model/InlineResponse404"));
+
+var _InlineResponse5 = _interopRequireDefault(require("../model/InlineResponse409"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26,7 +30,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * FundingManagerPrivate service.
 * @module api/FundingManagerPrivateApi
-* @version 2.23.78
+* @version 2.26.127
 */
 var FundingManagerPrivateApi = /*#__PURE__*/function () {
   /**
@@ -72,6 +76,42 @@ var FundingManagerPrivateApi = /*#__PURE__*/function () {
       var accepts = ['application/json'];
       var returnType = null;
       return this.apiClient.callApi('/v2/fundingAccounts', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the deleteSourceAccountV3 operation.
+     * @callback module:api/FundingManagerPrivateApi~deleteSourceAccountV3Callback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a source account by ID
+     * Mark a source account as deleted by ID
+     * @param {String} sourceAccountId Source account id
+     * @param {module:api/FundingManagerPrivateApi~deleteSourceAccountV3Callback} callback The callback function, accepting three arguments: error, data, response
+     */
+
+  }, {
+    key: "deleteSourceAccountV3",
+    value: function deleteSourceAccountV3(sourceAccountId, callback) {
+      var postBody = null; // verify the required parameter 'sourceAccountId' is set
+
+      if (sourceAccountId === undefined || sourceAccountId === null) {
+        throw new Error("Missing the required parameter 'sourceAccountId' when calling deleteSourceAccountV3");
+      }
+
+      var pathParams = {
+        'sourceAccountId': sourceAccountId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['OAuth2'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+      return this.apiClient.callApi('/v3/sourceAccounts/{sourceAccountId}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
   }]);
 

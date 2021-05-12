@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ResetPasswordRequest model module.
  * @module model/ResetPasswordRequest
- * @version 2.23.78
+ * @version 2.26.127
  */
 var ResetPasswordRequest = /*#__PURE__*/function () {
   /**

@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payeeId** | **String** |  | [optional] [readonly] 
-**payorRefs** | [**[PayeePayorRef2]**](PayeePayorRef2.md) |  | [optional] [readonly] 
+**payorRefs** | [**[PayeePayorRef]**](PayeePayorRef.md) |  | [optional] [readonly] 
 **email** | **String** |  | [optional] 
-**onboardedStatus** | [**OnboardedStatus2**](OnboardedStatus2.md) |  | [optional] 
+**onboardedStatus** | [**OnboardedStatus**](OnboardedStatus.md) |  | [optional] 
 **watchlistStatus** | [**WatchlistStatus2**](WatchlistStatus2.md) |  | [optional] 
 **watchlistOverrideExpiresAtTimestamp** | **Date** |  | [optional] 
 **watchlistOverrideComment** | **String** |  | [optional] 
-**language** | [**Language2**](Language2.md) |  | [optional] 
+**language** | **String** | An IETF BCP 47 language code which has been configured for use within this Velo environment.&lt;BR&gt; See the /v1/supportedLanguages endpoint to list the available codes for an environment.  | [optional] 
 **created** | **Date** |  | [optional] 
 **country** | **String** |  | [optional] 
 **displayName** | **String** |  | [optional] 

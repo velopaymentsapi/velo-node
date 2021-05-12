@@ -87,6 +87,7 @@ let opts = {
   'remoteId': "remoteId_example", // String | The remote id of the payees.
   'payorPaymentId': "payorPaymentId_example", // String | Payor's Id of the Payment
   'sourceAccountName': "sourceAccountName_example", // String | Physical Account Name
+  'transmissionType': "transmissionType_example", // String | Transmission Type * ACH * SAME_DAY_ACH * WIRE 
   'paymentMemo': "paymentMemo_example", // String | Payment Memo of the Payment
   'pageSize': 25, // Number | The number of results to return in a page
   'page': 1 // Number | Page number. Default is 1.
@@ -110,6 +111,7 @@ Name | Type | Description  | Notes
  **remoteId** | **String**| The remote id of the payees. | [optional] 
  **payorPaymentId** | **String**| Payor&#39;s Id of the Payment | [optional] 
  **sourceAccountName** | **String**| Physical Account Name | [optional] 
+ **transmissionType** | **String**| Transmission Type * ACH * SAME_DAY_ACH * WIRE  | [optional] 
  **paymentMemo** | **String**| Payment Memo of the Payment | [optional] 
  **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]

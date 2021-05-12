@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Payee = _interopRequireDefault(require("./Payee2"));
+var _FailedPayee = _interopRequireDefault(require("./FailedPayee"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FailedSubmission model module.
  * @module model/FailedSubmission
- * @version 2.23.78
+ * @version 2.26.127
  */
 var FailedSubmission = /*#__PURE__*/function () {
   /**
@@ -57,7 +57,7 @@ var FailedSubmission = /*#__PURE__*/function () {
         obj = obj || new FailedSubmission();
 
         if (data.hasOwnProperty('failedSubmission')) {
-          obj['failedSubmission'] = _Payee["default"].constructFromObject(data['failedSubmission']);
+          obj['failedSubmission'] = _FailedPayee["default"].constructFromObject(data['failedSubmission']);
         }
 
         if (data.hasOwnProperty('failureMessage')) {
@@ -72,7 +72,7 @@ var FailedSubmission = /*#__PURE__*/function () {
   return FailedSubmission;
 }();
 /**
- * @member {module:model/Payee2} failedSubmission
+ * @member {module:model/FailedPayee} failedSubmission
  */
 
 

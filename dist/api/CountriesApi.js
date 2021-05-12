@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Countries service.
 * @module api/CountriesApi
-* @version 2.23.78
+* @version 2.26.127
 */
 var CountriesApi = /*#__PURE__*/function () {
   /**

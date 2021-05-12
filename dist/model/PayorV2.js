@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayorV2 model module.
  * @module model/PayorV2
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PayorV2 = /*#__PURE__*/function () {
   /**
@@ -153,6 +153,10 @@ var PayorV2 = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('transmissionTypes')) {
           obj['transmissionTypes'] = _TransmissionTypes["default"].constructFromObject(data['transmissionTypes']);
+        }
+
+        if (data.hasOwnProperty('remoteSystemIds')) {
+          obj['remoteSystemIds'] = _ApiClient["default"].convertToType(data['remoteSystemIds'], ['String']);
         }
       }
 
@@ -287,6 +291,12 @@ PayorV2.prototype['paymentRails'] = undefined;
  */
 
 PayorV2.prototype['transmissionTypes'] = undefined;
+/**
+ * The payor’s supported remote systems by id
+ * @member {Array.<String>} remoteSystemIds
+ */
+
+PayorV2.prototype['remoteSystemIds'] = undefined;
 /**
  * Allowed values for the <code>language</code> property.
  * @enum {String}

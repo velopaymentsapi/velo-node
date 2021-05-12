@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MFADetails model module.
  * @module model/MFADetails
- * @version 2.23.78
+ * @version 2.26.127
  */
 var MFADetails = /*#__PURE__*/function () {
   /**

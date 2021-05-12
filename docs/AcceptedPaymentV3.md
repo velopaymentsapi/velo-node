@@ -10,5 +10,7 @@ Name | Type | Description | Notes
 **sourceAccountName** | **String** |  | 
 **payorPaymentId** | **String** |  | 
 **paymentMemo** | **String** |  | [optional] 
+**remoteSystemId** | **String** |  | [optional] 
+**paymentMetadata** | **String** |  | [optional] 
 
 

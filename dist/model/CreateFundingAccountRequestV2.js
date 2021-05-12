@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateFundingAccountRequestV2 model module.
  * @module model/CreateFundingAccountRequestV2
- * @version 2.23.78
+ * @version 2.26.127
  */
 var CreateFundingAccountRequestV2 = /*#__PURE__*/function () {
   /**

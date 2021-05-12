@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ErrorResponse model module.
  * @module model/ErrorResponse
- * @version 2.23.78
+ * @version 2.26.127
  */
 var ErrorResponse = /*#__PURE__*/function () {
   /**
@@ -64,6 +64,10 @@ var ErrorResponse = /*#__PURE__*/function () {
         if (data.hasOwnProperty('correlationId')) {
           obj['correlationId'] = _ApiClient["default"].convertToType(data['correlationId'], 'String');
         }
+
+        if (data.hasOwnProperty('httpStatusCode')) {
+          obj['httpStatusCode'] = _ApiClient["default"].convertToType(data['httpStatusCode'], 'Number');
+        }
       }
 
       return obj;
@@ -85,5 +89,11 @@ ErrorResponse.prototype['errors'] = undefined;
  */
 
 ErrorResponse.prototype['correlationId'] = undefined;
+/**
+ * this will mirror the Status-Code part of the Status-Line http response header and is included for extra clarity
+ * @member {Number} httpStatusCode
+ */
+
+ErrorResponse.prototype['httpStatusCode'] = undefined;
 var _default = ErrorResponse;
 exports["default"] = _default;

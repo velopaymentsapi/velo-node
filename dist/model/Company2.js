@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Company2 model module.
  * @module model/Company2
- * @version 2.23.78
+ * @version 2.26.127
  */
 var Company2 = /*#__PURE__*/function () {
   /**

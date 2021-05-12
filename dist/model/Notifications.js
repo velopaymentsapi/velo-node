@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Notifications model module.
  * @module model/Notifications
- * @version 2.23.78
+ * @version 2.26.127
  */
 var Notifications = /*#__PURE__*/function () {
   /**

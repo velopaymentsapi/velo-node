@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _Category = _interopRequireDefault(require("./Category"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18,15 +20,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateWebhookRequest model module.
  * @module model/CreateWebhookRequest
- * @version 2.23.78
+ * @version 2.26.127
  */
 var CreateWebhookRequest = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CreateWebhookRequest</code>.
    * @alias module:model/CreateWebhookRequest
    * @param payorId {String} 
-   * @param webhookUrl {String} 
-   * @param enabled {Boolean} 
+   * @param webhookUrl {String} the webhook URL to use.
+   * @param enabled {Boolean} whether the webhook is enabled.
    */
   function CreateWebhookRequest(payorId, webhookUrl, enabled) {
     _classCallCheck(this, CreateWebhookRequest);
@@ -76,6 +78,10 @@ var CreateWebhookRequest = /*#__PURE__*/function () {
         if (data.hasOwnProperty('enabled')) {
           obj['enabled'] = _ApiClient["default"].convertToType(data['enabled'], 'Boolean');
         }
+
+        if (data.hasOwnProperty('categories')) {
+          obj['categories'] = _ApiClient["default"].convertToType(data['categories'], [_Category["default"]]);
+        }
       }
 
       return obj;
@@ -91,19 +97,28 @@ var CreateWebhookRequest = /*#__PURE__*/function () {
 
 CreateWebhookRequest.prototype['payorId'] = undefined;
 /**
+ * the webhook URL to use.
  * @member {String} webhookUrl
  */
 
 CreateWebhookRequest.prototype['webhookUrl'] = undefined;
 /**
+ * the authorization header to include with the notification.
  * @member {String} authorizationHeader
  */
 
 CreateWebhookRequest.prototype['authorizationHeader'] = undefined;
 /**
+ * whether the webhook is enabled.
  * @member {Boolean} enabled
  */
 
 CreateWebhookRequest.prototype['enabled'] = undefined;
+/**
+ * the categories to enable.
+ * @member {Array.<module:model/Category>} categories
+ */
+
+CreateWebhookRequest.prototype['categories'] = undefined;
 var _default = CreateWebhookRequest;
 exports["default"] = _default;

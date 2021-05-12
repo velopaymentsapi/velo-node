@@ -39,13 +39,13 @@ var WatchlistStatus = /*#__PURE__*/function () {
 
   _createClass(WatchlistStatus, null, [{
     key: "constructFromObject",
-
+    value:
     /**
     * Returns a <code>WatchlistStatus</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/WatchlistStatus} The enum <code>WatchlistStatus</code> value.
     */
-    value: function constructFromObject(object) {
+    function constructFromObject(object) {
       return object;
     }
   }]);

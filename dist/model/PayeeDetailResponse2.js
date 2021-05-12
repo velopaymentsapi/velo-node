@@ -13,13 +13,11 @@ var _Company = _interopRequireDefault(require("./Company2"));
 
 var _Individual = _interopRequireDefault(require("./Individual2"));
 
-var _Language = _interopRequireDefault(require("./Language2"));
-
-var _OnboardedStatus = _interopRequireDefault(require("./OnboardedStatus2"));
+var _OnboardedStatus = _interopRequireDefault(require("./OnboardedStatus"));
 
 var _PayeeAddress = _interopRequireDefault(require("./PayeeAddress2"));
 
-var _PayeePayorRef = _interopRequireDefault(require("./PayeePayorRef2"));
+var _PayeePayorRef = _interopRequireDefault(require("./PayeePayorRef"));
 
 var _PayeeType = _interopRequireDefault(require("./PayeeType"));
 
@@ -36,7 +34,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayeeDetailResponse2 model module.
  * @module model/PayeeDetailResponse2
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PayeeDetailResponse2 = /*#__PURE__*/function () {
   /**
@@ -101,7 +99,7 @@ var PayeeDetailResponse2 = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('language')) {
-          obj['language'] = _Language["default"].constructFromObject(data['language']);
+          obj['language'] = _ApiClient["default"].convertToType(data['language'], 'String');
         }
 
         if (data.hasOwnProperty('created')) {
@@ -202,7 +200,7 @@ var PayeeDetailResponse2 = /*#__PURE__*/function () {
 
 PayeeDetailResponse2.prototype['payeeId'] = undefined;
 /**
- * @member {Array.<module:model/PayeePayorRef2>} payorRefs
+ * @member {Array.<module:model/PayeePayorRef>} payorRefs
  */
 
 PayeeDetailResponse2.prototype['payorRefs'] = undefined;
@@ -212,7 +210,7 @@ PayeeDetailResponse2.prototype['payorRefs'] = undefined;
 
 PayeeDetailResponse2.prototype['email'] = undefined;
 /**
- * @member {module:model/OnboardedStatus2} onboardedStatus
+ * @member {module:model/OnboardedStatus} onboardedStatus
  */
 
 PayeeDetailResponse2.prototype['onboardedStatus'] = undefined;
@@ -232,7 +230,8 @@ PayeeDetailResponse2.prototype['watchlistOverrideExpiresAtTimestamp'] = undefine
 
 PayeeDetailResponse2.prototype['watchlistOverrideComment'] = undefined;
 /**
- * @member {module:model/Language2} language
+ * An IETF BCP 47 language code which has been configured for use within this Velo environment.<BR> See the /v1/supportedLanguages endpoint to list the available codes for an environment. 
+ * @member {String} language
  */
 
 PayeeDetailResponse2.prototype['language'] = undefined;

@@ -35,13 +35,13 @@ var UserType2 = /*#__PURE__*/function () {
 
   _createClass(UserType2, null, [{
     key: "constructFromObject",
-
+    value:
     /**
     * Returns a <code>UserType2</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/UserType2} The enum <code>UserType2</code> value.
     */
-    value: function constructFromObject(object) {
+    function constructFromObject(object) {
       return object;
     }
   }]);

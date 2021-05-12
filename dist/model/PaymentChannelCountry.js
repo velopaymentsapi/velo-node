@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaymentChannelCountry model module.
  * @module model/PaymentChannelCountry
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PaymentChannelCountry = /*#__PURE__*/function () {
   /**

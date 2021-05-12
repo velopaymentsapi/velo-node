@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UserDetailsUpdateRequest model module.
  * @module model/UserDetailsUpdateRequest
- * @version 2.23.78
+ * @version 2.26.127
  */
 var UserDetailsUpdateRequest = /*#__PURE__*/function () {
   /**

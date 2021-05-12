@@ -73,7 +73,7 @@
   describe('CurrenciesApi', function() {
     describe('listSupportedCurrenciesV2', function() {
       it('should call listSupportedCurrenciesV2 successfully', function(done) {
-        instance.listSupportedCurrenciesV2(function(error) {
+        instance.listSupportedCurrenciesV2(function(error, data, response) {
          if (error) throw error;
          expect(response.statusCode).to.be(200);
         });

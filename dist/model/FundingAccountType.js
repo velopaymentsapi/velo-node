@@ -33,13 +33,13 @@ var FundingAccountType = /*#__PURE__*/function () {
 
   _createClass(FundingAccountType, null, [{
     key: "constructFromObject",
-
+    value:
     /**
     * Returns a <code>FundingAccountType</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
     * @return {module:model/FundingAccountType} The enum <code>FundingAccountType</code> value.
     */
-    value: function constructFromObject(object) {
+    function constructFromObject(object) {
       return object;
     }
   }]);

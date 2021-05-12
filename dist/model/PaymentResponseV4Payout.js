@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _PayoutPayorV = _interopRequireDefault(require("./PayoutPayorV4"));
+var _PayoutPayor = _interopRequireDefault(require("./PayoutPayor"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaymentResponseV4Payout model module.
  * @module model/PaymentResponseV4Payout
- * @version 2.23.78
+ * @version 2.26.127
  */
 var PaymentResponseV4Payout = /*#__PURE__*/function () {
   /**
@@ -61,11 +61,11 @@ var PaymentResponseV4Payout = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('payoutFrom')) {
-          obj['payoutFrom'] = _PayoutPayorV["default"].constructFromObject(data['payoutFrom']);
+          obj['payoutFrom'] = _PayoutPayor["default"].constructFromObject(data['payoutFrom']);
         }
 
         if (data.hasOwnProperty('payoutTo')) {
-          obj['payoutTo'] = _PayoutPayorV["default"].constructFromObject(data['payoutTo']);
+          obj['payoutTo'] = _PayoutPayor["default"].constructFromObject(data['payoutTo']);
         }
       }
 
@@ -82,12 +82,12 @@ var PaymentResponseV4Payout = /*#__PURE__*/function () {
 
 PaymentResponseV4Payout.prototype['payoutId'] = undefined;
 /**
- * @member {module:model/PayoutPayorV4} payoutFrom
+ * @member {module:model/PayoutPayor} payoutFrom
  */
 
 PaymentResponseV4Payout.prototype['payoutFrom'] = undefined;
 /**
- * @member {module:model/PayoutPayorV4} payoutTo
+ * @member {module:model/PayoutPayor} payoutTo
  */
 
 PaymentResponseV4Payout.prototype['payoutTo'] = undefined;
