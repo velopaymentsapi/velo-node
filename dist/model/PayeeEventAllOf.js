@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayeeEventAllOf model module.
  * @module model/PayeeEventAllOf
- * @version 2.26.127
+ * @version 2.26.124
  */
 var PayeeEventAllOf = /*#__PURE__*/function () {
   /**

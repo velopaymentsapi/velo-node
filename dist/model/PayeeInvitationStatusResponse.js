@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayeeInvitationStatusResponse model module.
  * @module model/PayeeInvitationStatusResponse
- * @version 2.26.127
+ * @version 2.26.124
  */
 var PayeeInvitationStatusResponse = /*#__PURE__*/function () {
   /**

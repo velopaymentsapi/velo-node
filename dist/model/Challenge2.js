@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Challenge2 model module.
  * @module model/Challenge2
- * @version 2.26.127
+ * @version 2.26.124
  */
 var Challenge2 = /*#__PURE__*/function () {
   /**

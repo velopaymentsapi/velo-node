@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DebitStatusChanged model module.
  * @module model/DebitStatusChanged
- * @version 2.26.127
+ * @version 2.26.124
  */
 var DebitStatusChanged = /*#__PURE__*/function () {
   /**

@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * PayorsPrivate service.
 * @module api/PayorsPrivateApi
-* @version 2.26.127
+* @version 2.26.124
 */
 var PayorsPrivateApi = /*#__PURE__*/function () {
   /**

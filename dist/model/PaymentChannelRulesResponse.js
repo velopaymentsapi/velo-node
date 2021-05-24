@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaymentChannelRulesResponse model module.
  * @module model/PaymentChannelRulesResponse
- * @version 2.26.127
+ * @version 2.26.124
  */
 var PaymentChannelRulesResponse = /*#__PURE__*/function () {
   /**

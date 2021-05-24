@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaymentRejectedOrReturned model module.
  * @module model/PaymentRejectedOrReturned
- * @version 2.26.127
+ * @version 2.26.124
  */
 var PaymentRejectedOrReturned = /*#__PURE__*/function () {
   /**

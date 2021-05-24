@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SupportedCountry model module.
  * @module model/SupportedCountry
- * @version 2.26.127
+ * @version 2.26.124
  */
 var SupportedCountry = /*#__PURE__*/function () {
   /**

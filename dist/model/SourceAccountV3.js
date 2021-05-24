@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SourceAccountV3 model module.
  * @module model/SourceAccountV3
- * @version 2.26.127
+ * @version 2.26.124
  */
 var SourceAccountV3 = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateIndividualName model module.
  * @module model/CreateIndividualName
- * @version 2.26.127
+ * @version 2.26.124
  */
 var CreateIndividualName = /*#__PURE__*/function () {
   /**

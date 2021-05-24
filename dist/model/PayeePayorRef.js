@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayeePayorRef model module.
  * @module model/PayeePayorRef
- * @version 2.26.127
+ * @version 2.26.124
  */
 var PayeePayorRef = /*#__PURE__*/function () {
   /**

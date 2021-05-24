@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayoutCompanyV3 model module.
  * @module model/PayoutCompanyV3
- * @version 2.26.127
+ * @version 2.26.124
  */
 var PayoutCompanyV3 = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The QuoteFxSummaryV3 model module.
  * @module model/QuoteFxSummaryV3
- * @version 2.26.127
+ * @version 2.26.124
  */
 var QuoteFxSummaryV3 = /*#__PURE__*/function () {
   /**

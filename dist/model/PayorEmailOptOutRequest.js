@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayorEmailOptOutRequest model module.
  * @module model/PayorEmailOptOutRequest
- * @version 2.26.127
+ * @version 2.26.124
  */
 var PayorEmailOptOutRequest = /*#__PURE__*/function () {
   /**

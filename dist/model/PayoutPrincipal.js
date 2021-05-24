@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayoutPrincipal model module.
  * @module model/PayoutPrincipal
- * @version 2.26.127
+ * @version 2.26.124
  */
 var PayoutPrincipal = /*#__PURE__*/function () {
   /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreatePayoutRequestV3 model module.
  * @module model/CreatePayoutRequestV3
- * @version 2.26.127
+ * @version 2.26.124
  */
 var CreatePayoutRequestV3 = /*#__PURE__*/function () {
   /**

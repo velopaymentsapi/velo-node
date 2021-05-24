@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SourceEvent model module.
  * @module model/SourceEvent
- * @version 2.26.127
+ * @version 2.26.124
  */
 var SourceEvent = /*#__PURE__*/function () {
   /**

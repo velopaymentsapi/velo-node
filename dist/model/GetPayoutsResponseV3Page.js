@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetPayoutsResponseV3Page model module.
  * @module model/GetPayoutsResponseV3Page
- * @version 2.26.127
+ * @version 2.26.124
  */
 var GetPayoutsResponseV3Page = /*#__PURE__*/function () {
   /**

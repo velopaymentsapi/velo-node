@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaymentStatusChangedAllOf model module.
  * @module model/PaymentStatusChangedAllOf
- * @version 2.26.127
+ * @version 2.26.124
  */
 var PaymentStatusChangedAllOf = /*#__PURE__*/function () {
   /**

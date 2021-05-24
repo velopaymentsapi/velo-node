@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateIndividual model module.
  * @module model/CreateIndividual
- * @version 2.26.127
+ * @version 2.26.124
  */
 var CreateIndividual = /*#__PURE__*/function () {
   /**

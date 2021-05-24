@@ -1209,12 +1209,6 @@ Object.defineProperty(exports, "Ping", {
     return _Ping["default"];
   }
 });
-Object.defineProperty(exports, "PingResponse", {
-  enumerable: true,
-  get: function get() {
-    return _PingResponse["default"];
-  }
-});
 Object.defineProperty(exports, "QueryBatchResponse", {
   enumerable: true,
   get: function get() {
@@ -2013,8 +2007,6 @@ var _PayoutSummaryResponseV = _interopRequireDefault(require("./model/PayoutSumm
 var _PayoutType = _interopRequireDefault(require("./model/PayoutType"));
 
 var _Ping = _interopRequireDefault(require("./model/Ping"));
-
-var _PingResponse = _interopRequireDefault(require("./model/PingResponse"));
 
 var _QueryBatchResponse = _interopRequireDefault(require("./model/QueryBatchResponse"));
 

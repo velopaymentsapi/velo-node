@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ListPaymentsResponseV4 model module.
  * @module model/ListPaymentsResponseV4
- * @version 2.26.127
+ * @version 2.26.124
  */
 var ListPaymentsResponseV4 = /*#__PURE__*/function () {
   /**

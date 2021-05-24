@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayoutSummaryAudit model module.
  * @module model/PayoutSummaryAudit
- * @version 2.26.127
+ * @version 2.26.124
  */
 var PayoutSummaryAudit = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DebitEventAllOf model module.
  * @module model/DebitEventAllOf
- * @version 2.26.127
+ * @version 2.26.124
  */
 var DebitEventAllOf = /*#__PURE__*/function () {
   /**

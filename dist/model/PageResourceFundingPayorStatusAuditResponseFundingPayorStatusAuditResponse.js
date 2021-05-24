@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse model module.
  * @module model/PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse
- * @version 2.26.127
+ * @version 2.26.124
  */
 var PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse = /*#__PURE__*/function () {
   /**

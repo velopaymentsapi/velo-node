@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UserInfo model module.
  * @module model/UserInfo
- * @version 2.26.127
+ * @version 2.26.124
  */
 var UserInfo = /*#__PURE__*/function () {
   /**

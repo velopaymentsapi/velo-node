@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**createWebhookV1**](WebhooksApi.md#createWebhookV1) | **POST** /v1/webhooks | Create Webhook
 [**getWebhookV1**](WebhooksApi.md#getWebhookV1) | **GET** /v1/webhooks/{webhookId} | Get details about the given webhook.
 [**listWebhooksV1**](WebhooksApi.md#listWebhooksV1) | **GET** /v1/webhooks | List the details about the webhooks for the given payor.
-[**pingWebhookV1**](WebhooksApi.md#pingWebhookV1) | **POST** /v1/webhooks/{webhookId}/ping | 
 [**updateWebhookV1**](WebhooksApi.md#updateWebhookV1) | **POST** /v1/webhooks/{webhookId} | Update Webhook
 
 
@@ -156,53 +155,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WebhooksResponse**](WebhooksResponse.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## pingWebhookV1
-
-> PingResponse pingWebhookV1(webhookId)
-
-
-
-### Example
-
-```javascript
-import VeloPayments from 'velo-payments';
-let defaultClient = VeloPayments.ApiClient.instance;
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new VeloPayments.WebhooksApi();
-let webhookId = null; // String | Webhook id
-apiInstance.pingWebhookV1(webhookId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **webhookId** | [**String**](.md)| Webhook id | 
-
-### Return type
-
-[**PingResponse**](PingResponse.md)
 
 ### Authorization
 

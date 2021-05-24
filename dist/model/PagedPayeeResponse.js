@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PagedPayeeResponse model module.
  * @module model/PagedPayeeResponse
- * @version 2.26.127
+ * @version 2.26.124
  */
 var PagedPayeeResponse = /*#__PURE__*/function () {
   /**

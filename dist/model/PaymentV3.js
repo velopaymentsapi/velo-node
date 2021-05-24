@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaymentV3 model module.
  * @module model/PaymentV3
- * @version 2.26.127
+ * @version 2.26.124
  */
 var PaymentV3 = /*#__PURE__*/function () {
   /**

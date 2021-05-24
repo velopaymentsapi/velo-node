@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreatePayeesCSVResponse model module.
  * @module model/CreatePayeesCSVResponse
- * @version 2.26.127
+ * @version 2.26.124
  */
 var CreatePayeesCSVResponse = /*#__PURE__*/function () {
   /**

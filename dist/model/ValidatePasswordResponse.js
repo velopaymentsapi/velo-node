@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ValidatePasswordResponse model module.
  * @module model/ValidatePasswordResponse
- * @version 2.26.127
+ * @version 2.26.124
  */
 var ValidatePasswordResponse = /*#__PURE__*/function () {
   /**

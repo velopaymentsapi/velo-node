@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PagedUserResponseLinks model module.
  * @module model/PagedUserResponseLinks
- * @version 2.26.127
+ * @version 2.26.124
  */
 var PagedUserResponseLinks = /*#__PURE__*/function () {
   /**

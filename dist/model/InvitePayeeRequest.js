@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InvitePayeeRequest model module.
  * @module model/InvitePayeeRequest
- * @version 2.26.127
+ * @version 2.26.124
  */
 var InvitePayeeRequest = /*#__PURE__*/function () {
   /**

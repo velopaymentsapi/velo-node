@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Currencies service.
 * @module api/CurrenciesApi
-* @version 2.26.127
+* @version 2.26.124
 */
 var CurrenciesApi = /*#__PURE__*/function () {
   /**

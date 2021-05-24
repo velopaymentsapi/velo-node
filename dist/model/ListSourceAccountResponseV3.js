@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ListSourceAccountResponseV3 model module.
  * @module model/ListSourceAccountResponseV3
- * @version 2.26.127
+ * @version 2.26.124
  */
 var ListSourceAccountResponseV3 = /*#__PURE__*/function () {
   /**

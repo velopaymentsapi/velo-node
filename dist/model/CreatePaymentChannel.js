@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreatePaymentChannel model module.
  * @module model/CreatePaymentChannel
- * @version 2.26.127
+ * @version 2.26.124
  */
 var CreatePaymentChannel = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UnregisterMFARequest model module.
  * @module model/UnregisterMFARequest
- * @version 2.26.127
+ * @version 2.26.124
  */
 var UnregisterMFARequest = /*#__PURE__*/function () {
   /**

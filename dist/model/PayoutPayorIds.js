@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayoutPayorIds model module.
  * @module model/PayoutPayorIds
- * @version 2.26.127
+ * @version 2.26.124
  */
 var PayoutPayorIds = /*#__PURE__*/function () {
   /**

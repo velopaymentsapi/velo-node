@@ -17,8 +17,6 @@ var _InlineResponse3 = _interopRequireDefault(require("../model/InlineResponse40
 
 var _InlineResponse4 = _interopRequireDefault(require("../model/InlineResponse404"));
 
-var _PingResponse = _interopRequireDefault(require("../model/PingResponse"));
-
 var _UpdateWebhookRequest = _interopRequireDefault(require("../model/UpdateWebhookRequest"));
 
 var _WebhookResponse = _interopRequireDefault(require("../model/WebhookResponse"));
@@ -36,7 +34,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Webhooks service.
 * @module api/WebhooksApi
-* @version 2.26.127
+* @version 2.26.124
 */
 var WebhooksApi = /*#__PURE__*/function () {
   /**
@@ -162,41 +160,6 @@ var WebhooksApi = /*#__PURE__*/function () {
       var accepts = ['application/json'];
       var returnType = _WebhooksResponse["default"];
       return this.apiClient.callApi('/v1/webhooks', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
-    }
-    /**
-     * Callback function to receive the result of the pingWebhookV1 operation.
-     * @callback module:api/WebhooksApi~pingWebhookV1Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PingResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * @param {String} webhookId Webhook id
-     * @param {module:api/WebhooksApi~pingWebhookV1Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PingResponse}
-     */
-
-  }, {
-    key: "pingWebhookV1",
-    value: function pingWebhookV1(webhookId, callback) {
-      var postBody = null; // verify the required parameter 'webhookId' is set
-
-      if (webhookId === undefined || webhookId === null) {
-        throw new Error("Missing the required parameter 'webhookId' when calling pingWebhookV1");
-      }
-
-      var pathParams = {
-        'webhookId': webhookId
-      };
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['OAuth2'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _PingResponse["default"];
-      return this.apiClient.callApi('/v1/webhooks/{webhookId}/ping', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the updateWebhookV1 operation.

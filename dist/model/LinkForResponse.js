@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LinkForResponse model module.
  * @module model/LinkForResponse
- * @version 2.26.127
+ * @version 2.26.124
  */
 var LinkForResponse = /*#__PURE__*/function () {
   /**

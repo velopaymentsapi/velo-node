@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The QueryBatchResponse2 model module.
  * @module model/QueryBatchResponse2
- * @version 2.26.127
+ * @version 2.26.124
  */
 var QueryBatchResponse2 = /*#__PURE__*/function () {
   /**

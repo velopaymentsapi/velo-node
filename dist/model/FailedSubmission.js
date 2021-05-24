@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FailedSubmission model module.
  * @module model/FailedSubmission
- * @version 2.26.127
+ * @version 2.26.124
  */
 var FailedSubmission = /*#__PURE__*/function () {
   /**

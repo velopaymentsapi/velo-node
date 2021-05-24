@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AuthResponse model module.
  * @module model/AuthResponse
- * @version 2.26.127
+ * @version 2.26.124
  */
 var AuthResponse = /*#__PURE__*/function () {
   /**

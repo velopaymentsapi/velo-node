@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TransmissionTypes model module.
  * @module model/TransmissionTypes
- * @version 2.26.127
+ * @version 2.26.124
  */
 var TransmissionTypes = /*#__PURE__*/function () {
   /**

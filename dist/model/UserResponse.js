@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UserResponse model module.
  * @module model/UserResponse
- * @version 2.26.127
+ * @version 2.26.124
  */
 var UserResponse = /*#__PURE__*/function () {
   /**

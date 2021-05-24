@@ -28,7 +28,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UpdatePayeeDetailsRequest model module.
  * @module model/UpdatePayeeDetailsRequest
- * @version 2.26.127
+ * @version 2.26.124
  */
 var UpdatePayeeDetailsRequest = /*#__PURE__*/function () {
   /**

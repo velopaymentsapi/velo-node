@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaymentResponseV4 model module.
  * @module model/PaymentResponseV4
- * @version 2.26.127
+ * @version 2.26.124
  */
 var PaymentResponseV4 = /*#__PURE__*/function () {
   /**

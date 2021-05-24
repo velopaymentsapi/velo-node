@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ListFundingAccountsResponse model module.
  * @module model/ListFundingAccountsResponse
- * @version 2.26.127
+ * @version 2.26.124
  */
 var ListFundingAccountsResponse = /*#__PURE__*/function () {
   /**

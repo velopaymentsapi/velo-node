@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Ping model module.
  * @module model/Ping
- * @version 2.26.127
+ * @version 2.26.124
  */
 var Ping = /*#__PURE__*/function () {
   /**
