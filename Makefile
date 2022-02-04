@@ -1,22 +1,29 @@
 .PHONY: tests
 
-help:
+.DEFAULT_GOAL := help
+
+.PHONY: help
+help: ## Display this help section
 	@echo ""
 	@echo "\033[0;34m    Velo Payments - Node Client (\033[1;34mvelo-payments\033[0;34m) \033[0m"
 	@echo ""
-	@echo "    To dynamically generate the node client based on a spec issue the following command."
+	@echo "    To dynamically generate the NodeJS client based on a spec issue the following command."
 	@echo "    You can specify the spec by replacing the url parameter"
 	@echo ""
-	@echo "\033[92m    make WORKING_SPEC=https://raw.githubusercontent.com/velopaymentsapi/VeloOpenApi/master/spec/openapi.yaml client \033[0m"
+	@echo "\033[92m    make client WORKING_SPEC=https://raw.githubusercontent.com/velopaymentsapi/VeloOpenApi/master/spec/openapi.yaml \033[0m"
+	@echo ""
+	@echo "     *** Available Targets ***"
+	@echo ""
+	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z0-9_-]+:.*?## / {printf "    \033[36m%-38s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 	@echo ""
 
-version:
+version: ## Parse (via docker) spec file passed in WORKING_SPEC variable to print the version
 	@docker run -i --rm mikefarah/yq:3 sh -c "apk -q add curl && curl -s $$WORKING_SPEC -o /tmp/oa3.yaml;  yq r /tmp/oa3.yaml info.version" 2>&1
 
-oa3config:
+oa3config: ## Set version on the openapi generator config to value of the VERSION variable
 	sed -i.bak 's/"projectVersion": ".*"/"projectVersion": "${VERSION}"/g' oa3-config.json && rm oa3-config.json.bak
 
-clean:
+clean: ## Remove files & directories that are auto created by generator cli
 	rm -Rf dist
 	rm -Rf docs
 	rm -Rf src
@@ -28,20 +35,21 @@ clean:
 	rm -f package.json
 	rm -f README.md
 
-generate:
+generate: ## Run (via docker) generator cli against a spec file passed in WORKING_SPEC variable to create files
 	docker run --rm -v ${PWD}:/local openapitools/openapi-generator-cli generate \
 		-i $$WORKING_SPEC \
 		-g javascript \
 		-o /local \
+		--global-property=skipFormModel=false \
 		-c /local/oa3-config.json
 
-trim:
+trim: ## Remove unused files that are auto geneated
 	- rm -Rf .openapi-generator
 	- rm .openapi-generator-ignore
 	- rm .travis.yml
 	- rm git_push.sh
 
-info:
+info: ## Update the auto generated README.md with Velo info
 	echo "import ApiClient from '../ApiClient';" >> OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged.js
 	echo "export default class OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged {" >> OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged.js
 	echo "	static constructFromObject(object) {" >> OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged.js
@@ -64,31 +72,29 @@ info:
 	sed -i.bak '25,64d' README.md && rm README.md.bak
 	sed -i.bak '12,17d' README.md && rm README.md.bak
 
-build_client:
+build_client: ## Post generate client processing (optional per sdk)
 	npm i
 	npm run build
 	rm -Rf node_modules
 
-client: clean generate trim info build_client
+client: clean generate trim info build_client ## Generate sdk via cli
 
-tests:
-	# TODO: test/model since generated model tests are empty remove for now
+tests: ## Run (via docker) tests using supplied variables KEY, SECRET, PAYOR, APIURL
 	rm -Rf test/model
-	# overwrite the generated test stubs
 	cp tests/api/* test/api/
-	docker build -t=client-node-tests .
-	docker run -t -e KEY=${KEY} -e SECRET=${SECRET} -e PAYOR=${PAYOR} -e APIURL=${APIURL} -e APITOKEN="" client-node-tests npm test 
+	docker build -t=velo-sdk-node-tests .
+	docker run -t -e KEY=${KEY} -e SECRET=${SECRET} -e PAYOR=${PAYOR} -e APIURL=${APIURL} -e APITOKEN="" velo-sdk-node-tests npm test 
 
-commit:
+commit: ## Commit & Push generated client to git repo
 	sed -i.bak 's/"version": ".*"/"version": "${VERSION}"/g' package.json && rm package.json.bak
 	git add --all
 	git commit -am 'bump version to ${VERSION}'
 	git push --set-upstream origin master
 
-build:
+build: ## Build compiled package (optional per sdk)
 	@echo "Client lib already built in the /dist dir."
 
-publish:
+publish: ## Tag & Push git ref, (optional per sdk) publish to 3rd party registry
 	git tag $(VERSION)
 	git push origin tag $(VERSION)
 	npm i
