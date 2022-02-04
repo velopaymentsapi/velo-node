@@ -33,7 +33,7 @@ var _PayeeDetailResponse = _interopRequireDefault(require("../model/PayeeDetailR
 
 var _PayeeDetailResponse2 = _interopRequireDefault(require("../model/PayeeDetailResponse2"));
 
-var _PayeeType = _interopRequireDefault(require("../model/PayeeType"));
+var _PayeeType = _interopRequireDefault(require("../model/PayeeType2"));
 
 var _UpdatePayeeDetailsRequest = _interopRequireDefault(require("../model/UpdatePayeeDetailsRequest"));
 
@@ -51,12 +51,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
 * Payees service.
 * @module api/PayeesApi
-* @version 2.26.124
+* @version 2.29.130
 */
 var PayeesApi = /*#__PURE__*/function () {
   /**
@@ -347,7 +347,7 @@ var PayeesApi = /*#__PURE__*/function () {
      * @param {String} opts.email Email address
      * @param {String} opts.displayName The display name of the payees.
      * @param {String} opts.remoteId The remote id of the payees.
-     * @param {module:model/PayeeType} opts.payeeType The onboarded status of the payees.
+     * @param {module:model/PayeeType2} opts.payeeType The onboarded status of the payees.
      * @param {String} opts.payeeCountry The country of the payee - 2 letter ISO 3166-1 country code (upper case)
      * @param {Number} opts.page Page number. Default is 1. (default to 1)
      * @param {Number} opts.pageSize Page size. Default is 25. Max allowable is 100. (default to 25)
@@ -408,7 +408,7 @@ var PayeesApi = /*#__PURE__*/function () {
      * @param {String} opts.email Email address
      * @param {String} opts.displayName The display name of the payees.
      * @param {String} opts.remoteId The remote id of the payees.
-     * @param {module:model/PayeeType} opts.payeeType The onboarded status of the payees.
+     * @param {module:model/PayeeType2} opts.payeeType The onboarded status of the payees.
      * @param {String} opts.payeeCountry The country of the payee - 2 letter ISO 3166-1 country code (upper case)
      * @param {module:model/OfacStatus} opts.ofacStatus The ofacStatus of the payees.
      * @param {Number} opts.page Page number. Default is 1. (default to 1)
@@ -504,7 +504,7 @@ var PayeesApi = /*#__PURE__*/function () {
 
     /**
      * Update Payee Details
-     * <p>Update payee details for the given Payee Id.<p> 
+     * <p>Update payee details for the given Payee Id.</p> <p>Payors may only update the payee details if the payee has not yet onboarded</p> 
      * @param {String} payeeId The UUID of the payee.
      * @param {module:model/UpdatePayeeDetailsRequest2} updatePayeeDetailsRequest2 Request to update payee details
      * @param {module:api/PayeesApi~payeeDetailsUpdateV4Callback} callback The callback function, accepting three arguments: error, data, response

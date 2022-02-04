@@ -13,19 +13,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
  * The PayorCreateApiKeyRequest model module.
  * @module model/PayorCreateApiKeyRequest
- * @version 2.26.124
+ * @version 2.29.130
  */
 var PayorCreateApiKeyRequest = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PayorCreateApiKeyRequest</code>.
    * @alias module:model/PayorCreateApiKeyRequest
    * @param name {String} A name for the key.
-   * @param roles {Array.<module:model/PayorCreateApiKeyRequest.RolesEnum>} A list of roles to assign to the key.
+   * @param roles {Array.<module:model/PayorCreateApiKeyRequest.RolesEnum>} <p>A list of roles to assign to the key.</p> <p>Only the first role name will be used</p> <p>A later version will change this from a list to string</p> 
    */
   function PayorCreateApiKeyRequest(name, roles) {
     _classCallCheck(this, PayorCreateApiKeyRequest);
@@ -92,7 +92,7 @@ PayorCreateApiKeyRequest.prototype['name'] = undefined;
 
 PayorCreateApiKeyRequest.prototype['description'] = undefined;
 /**
- * A list of roles to assign to the key.
+ * <p>A list of roles to assign to the key.</p> <p>Only the first role name will be used</p> <p>A later version will change this from a list to string</p> 
  * @member {Array.<module:model/PayorCreateApiKeyRequest.RolesEnum>} roles
  */
 

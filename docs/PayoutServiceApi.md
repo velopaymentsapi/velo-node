@@ -5,9 +5,11 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createQuoteForPayoutV3**](PayoutServiceApi.md#createQuoteForPayoutV3) | **POST** /v3/payouts/{payoutId}/quote | Create a quote for the payout
+[**deschedulePayout**](PayoutServiceApi.md#deschedulePayout) | **DELETE** /v3/payouts/{payoutId}/schedule | Deschedule a payout
 [**getPaymentsForPayoutV3**](PayoutServiceApi.md#getPaymentsForPayoutV3) | **GET** /v3/payouts/{payoutId}/payments | Retrieve payments for a payout
 [**getPayoutSummaryV3**](PayoutServiceApi.md#getPayoutSummaryV3) | **GET** /v3/payouts/{payoutId} | Get Payout Summary
 [**instructPayoutV3**](PayoutServiceApi.md#instructPayoutV3) | **POST** /v3/payouts/{payoutId} | Instruct Payout
+[**scheduleForPayout**](PayoutServiceApi.md#scheduleForPayout) | **POST** /v3/payouts/{payoutId}/schedule | Schedule a payout
 [**submitPayoutV3**](PayoutServiceApi.md#submitPayoutV3) | **POST** /v3/payouts | Submit Payout
 [**withdrawPayment**](PayoutServiceApi.md#withdrawPayment) | **POST** /v1/payments/{paymentId}/withdraw | Withdraw a Payment
 [**withdrawPayoutV3**](PayoutServiceApi.md#withdrawPayoutV3) | **DELETE** /v3/payouts/{payoutId} | Withdraw Payout
@@ -32,7 +34,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayoutServiceApi();
-let payoutId = null; // String | Id of the payout
+let payoutId = "payoutId_example"; // String | Id of the payout
 apiInstance.createQuoteForPayoutV3(payoutId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -47,11 +49,60 @@ apiInstance.createQuoteForPayoutV3(payoutId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payoutId** | [**String**](.md)| Id of the payout | 
+ **payoutId** | **String**| Id of the payout | 
 
 ### Return type
 
 [**QuoteResponseV3**](QuoteResponseV3.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## deschedulePayout
+
+> deschedulePayout(payoutId)
+
+Deschedule a payout
+
+Remove the schedule for a scheduled payout
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.PayoutServiceApi();
+let payoutId = "payoutId_example"; // String | Id of the payout
+apiInstance.deschedulePayout(payoutId, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payoutId** | **String**| Id of the payout | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 
@@ -81,7 +132,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayoutServiceApi();
-let payoutId = null; // String | Id of the payout
+let payoutId = "payoutId_example"; // String | Id of the payout
 let opts = {
   'status': "status_example", // String | Payment Status * ACCEPTED: any payment which was accepted at submission time (status may have changed since) * REJECTED: any payment rejected by initial submission processing * WITHDRAWN: any payment which has been withdrawn * WITHDRAWABLE: any payment eligible for withdrawal 
   'remoteId': "remoteId_example", // String | The remote id of the payees.
@@ -106,7 +157,7 @@ apiInstance.getPaymentsForPayoutV3(payoutId, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payoutId** | [**String**](.md)| Id of the payout | 
+ **payoutId** | **String**| Id of the payout | 
  **status** | **String**| Payment Status * ACCEPTED: any payment which was accepted at submission time (status may have changed since) * REJECTED: any payment rejected by initial submission processing * WITHDRAWN: any payment which has been withdrawn * WITHDRAWABLE: any payment eligible for withdrawal  | [optional] 
  **remoteId** | **String**| The remote id of the payees. | [optional] 
  **payorPaymentId** | **String**| Payor&#39;s Id of the Payment | [optional] 
@@ -148,7 +199,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayoutServiceApi();
-let payoutId = null; // String | Id of the payout
+let payoutId = "payoutId_example"; // String | Id of the payout
 apiInstance.getPayoutSummaryV3(payoutId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -163,7 +214,7 @@ apiInstance.getPayoutSummaryV3(payoutId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payoutId** | [**String**](.md)| Id of the payout | 
+ **payoutId** | **String**| Id of the payout | 
 
 ### Return type
 
@@ -181,7 +232,7 @@ Name | Type | Description  | Notes
 
 ## instructPayoutV3
 
-> instructPayoutV3(payoutId)
+> instructPayoutV3(payoutId, opts)
 
 Instruct Payout
 
@@ -197,8 +248,11 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayoutServiceApi();
-let payoutId = null; // String | Id of the payout
-apiInstance.instructPayoutV3(payoutId, (error, data, response) => {
+let payoutId = "payoutId_example"; // String | Id of the payout
+let opts = {
+  'instructPayoutRequest': new VeloPayments.InstructPayoutRequest() // InstructPayoutRequest | Additional instruct payout parameters
+};
+apiInstance.instructPayoutV3(payoutId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -212,7 +266,8 @@ apiInstance.instructPayoutV3(payoutId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payoutId** | [**String**](.md)| Id of the payout | 
+ **payoutId** | **String**| Id of the payout | 
+ **instructPayoutRequest** | [**InstructPayoutRequest**](InstructPayoutRequest.md)| Additional instruct payout parameters | [optional] 
 
 ### Return type
 
@@ -224,7 +279,60 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## scheduleForPayout
+
+> scheduleForPayout(payoutId, opts)
+
+Schedule a payout
+
+&lt;p&gt;Schedule a payout for auto-instruction in the future or update existing payout schedule if the payout has been scheduled before.&lt;/p&gt; 
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.PayoutServiceApi();
+let payoutId = "payoutId_example"; // String | Id of the payout
+let opts = {
+  'schedulePayoutRequest': new VeloPayments.SchedulePayoutRequest() // SchedulePayoutRequest | schedule payout parameters
+};
+apiInstance.scheduleForPayout(payoutId, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payoutId** | **String**| Id of the payout | 
+ **schedulePayoutRequest** | [**SchedulePayoutRequest**](SchedulePayoutRequest.md)| schedule payout parameters | [optional] 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -295,7 +403,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayoutServiceApi();
-let paymentId = null; // String | Id of the Payment
+let paymentId = "paymentId_example"; // String | Id of the Payment
 let withdrawPaymentRequest = new VeloPayments.WithdrawPaymentRequest(); // WithdrawPaymentRequest | details for withdrawal
 apiInstance.withdrawPayment(paymentId, withdrawPaymentRequest, (error, data, response) => {
   if (error) {
@@ -311,7 +419,7 @@ apiInstance.withdrawPayment(paymentId, withdrawPaymentRequest, (error, data, res
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **paymentId** | [**String**](.md)| Id of the Payment | 
+ **paymentId** | **String**| Id of the Payment | 
  **withdrawPaymentRequest** | [**WithdrawPaymentRequest**](WithdrawPaymentRequest.md)| details for withdrawal | 
 
 ### Return type
@@ -334,7 +442,7 @@ null (empty response body)
 
 Withdraw Payout
 
-Withdraw Payout will delete payout details from payout service and rails services but will just move the status of the payout to WITHDRAWN in payment audit.
+Withdraw Payout will remove the payout details from the rails but the payout will still be accessible in payout service in WITHDRAWN status.
 
 ### Example
 
@@ -346,7 +454,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayoutServiceApi();
-let payoutId = null; // String | Id of the payout
+let payoutId = "payoutId_example"; // String | Id of the payout
 apiInstance.withdrawPayoutV3(payoutId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -361,7 +469,7 @@ apiInstance.withdrawPayoutV3(payoutId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payoutId** | [**String**](.md)| Id of the payout | 
+ **payoutId** | **String**| Id of the payout | 
 
 ### Return type
 

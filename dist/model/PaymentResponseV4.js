@@ -13,18 +13,20 @@ var _PaymentEventResponse = _interopRequireDefault(require("./PaymentEventRespon
 
 var _PaymentResponseV4Payout = _interopRequireDefault(require("./PaymentResponseV4Payout"));
 
+var _PayoutSchedule = _interopRequireDefault(require("./PayoutSchedule"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
  * The PaymentResponseV4 model module.
  * @module model/PaymentResponseV4
- * @version 2.26.124
+ * @version 2.29.130
  */
 var PaymentResponseV4 = /*#__PURE__*/function () {
   /**
@@ -247,6 +249,10 @@ var PaymentResponseV4 = /*#__PURE__*/function () {
           obj['withdrawable'] = _ApiClient["default"].convertToType(data['withdrawable'], 'Boolean');
         }
 
+        if (data.hasOwnProperty('autoWithdrawnReasonCode')) {
+          obj['autoWithdrawnReasonCode'] = _ApiClient["default"].convertToType(data['autoWithdrawnReasonCode'], 'String');
+        }
+
         if (data.hasOwnProperty('transmissionType')) {
           obj['transmissionType'] = _ApiClient["default"].convertToType(data['transmissionType'], 'String');
         }
@@ -257,6 +263,10 @@ var PaymentResponseV4 = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('paymentMetadata')) {
           obj['paymentMetadata'] = _ApiClient["default"].convertToType(data['paymentMetadata'], 'String');
+        }
+
+        if (data.hasOwnProperty('schedule')) {
+          obj['schedule'] = _PayoutSchedule["default"].constructFromObject(data['schedule']);
         }
 
         if (data.hasOwnProperty('payout')) {
@@ -503,6 +513,12 @@ PaymentResponseV4.prototype['withdrawnReason'] = undefined;
 
 PaymentResponseV4.prototype['withdrawable'] = undefined;
 /**
+ * Populated with rejection reason code if the payment was withdrawn automatically at instruct time
+ * @member {String} autoWithdrawnReasonCode
+ */
+
+PaymentResponseV4.prototype['autoWithdrawnReasonCode'] = undefined;
+/**
  * The transmission type of the payment, e.g. ACH, SAME_DAY_ACH, WIRE
  * @member {String} transmissionType
  */
@@ -519,6 +535,11 @@ PaymentResponseV4.prototype['paymentTrackingReference'] = undefined;
  */
 
 PaymentResponseV4.prototype['paymentMetadata'] = undefined;
+/**
+ * @member {module:model/PayoutSchedule} schedule
+ */
+
+PaymentResponseV4.prototype['schedule'] = undefined;
 /**
  * @member {module:model/PaymentResponseV4Payout} payout
  */

@@ -13,12 +13,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
  * The InviteUserRequest model module.
  * @module model/InviteUserRequest
- * @version 2.26.124
+ * @version 2.29.130
  */
 var InviteUserRequest = /*#__PURE__*/function () {
   /**
@@ -28,7 +28,7 @@ var InviteUserRequest = /*#__PURE__*/function () {
    * @param mfaType {module:model/InviteUserRequest.MfaTypeEnum} <p>The MFA type that the user will use</p> <p>The type may be conditional on the role(s) the user has</p> 
    * @param smsNumber {String} The phone number of a device that the user can receive sms messages on 
    * @param primaryContactNumber {String} The main contact number for the user 
-   * @param roles {Array.<String>} The role(s) for the user The role must exist The role can be a custom role or a system role but the invoker must have the permissions to assign the role System roles are: backoffice.admin, payor.master_admin, payor.admin, payor.support 
+   * @param roles {Array.<String>} The role(s) for the user The role must exist The role can be a custom role or a system role but the invoker must have the permissions to assign the role System roles are: velo.backoffice.admin, velo.payor.master_admin, velo.payor.admin, velo.payor.support, velo.payee.admin, velo.payee.support 
    */
   function InviteUserRequest(email, mfaType, smsNumber, primaryContactNumber, roles) {
     _classCallCheck(this, InviteUserRequest);
@@ -101,6 +101,10 @@ var InviteUserRequest = /*#__PURE__*/function () {
           obj['entityId'] = _ApiClient["default"].convertToType(data['entityId'], 'String');
         }
 
+        if (data.hasOwnProperty('userType')) {
+          obj['userType'] = _ApiClient["default"].convertToType(data['userType'], 'String');
+        }
+
         if (data.hasOwnProperty('verificationCode')) {
           obj['verificationCode'] = _ApiClient["default"].convertToType(data['verificationCode'], 'String');
         }
@@ -144,7 +148,7 @@ InviteUserRequest.prototype['primaryContactNumber'] = undefined;
 
 InviteUserRequest.prototype['secondaryContactNumber'] = undefined;
 /**
- * The role(s) for the user The role must exist The role can be a custom role or a system role but the invoker must have the permissions to assign the role System roles are: backoffice.admin, payor.master_admin, payor.admin, payor.support 
+ * The role(s) for the user The role must exist The role can be a custom role or a system role but the invoker must have the permissions to assign the role System roles are: velo.backoffice.admin, velo.payor.master_admin, velo.payor.admin, velo.payor.support, velo.payee.admin, velo.payee.support 
  * @member {Array.<String>} roles
  */
 
@@ -160,11 +164,17 @@ InviteUserRequest.prototype['firstName'] = undefined;
 
 InviteUserRequest.prototype['lastName'] = undefined;
 /**
- * The payorId or null if the user is not a payor user 
+ * The payorId or payeeId or null if the user is a backoffice admin 
  * @member {String} entityId
  */
 
 InviteUserRequest.prototype['entityId'] = undefined;
+/**
+ * Will default to PAYOR if not provided but entityId is provided
+ * @member {module:model/InviteUserRequest.UserTypeEnum} userType
+ */
+
+InviteUserRequest.prototype['userType'] = undefined;
 /**
  * Optional property that MUST be suppied when manually verifying a user The user's smsNumber is registered via a separate endpoint and an OTP sent to them 
  * @member {String} verificationCode
@@ -195,6 +205,31 @@ InviteUserRequest['MfaTypeEnum'] = {
    * @const
    */
   "TOTP": "TOTP"
+};
+/**
+ * Allowed values for the <code>userType</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+InviteUserRequest['UserTypeEnum'] = {
+  /**
+   * value: "BACKOFFICE"
+   * @const
+   */
+  "BACKOFFICE": "BACKOFFICE",
+
+  /**
+   * value: "PAYOR"
+   * @const
+   */
+  "PAYOR": "PAYOR",
+
+  /**
+   * value: "PAYEE"
+   * @const
+   */
+  "PAYEE": "PAYEE"
 };
 var _default = InviteUserRequest;
 exports["default"] = _default;

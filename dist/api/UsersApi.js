@@ -25,6 +25,8 @@ var _PagedUserResponse = _interopRequireDefault(require("../model/PagedUserRespo
 
 var _PasswordRequest = _interopRequireDefault(require("../model/PasswordRequest"));
 
+var _PayeeType = _interopRequireDefault(require("../model/PayeeType"));
+
 var _PayeeUserSelfUpdateRequest = _interopRequireDefault(require("../model/PayeeUserSelfUpdateRequest"));
 
 var _RegisterSmsRequest = _interopRequireDefault(require("../model/RegisterSmsRequest"));
@@ -55,12 +57,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
 * Users service.
 * @module api/UsersApi
-* @version 2.26.124
+* @version 2.29.130
 */
 var UsersApi = /*#__PURE__*/function () {
   /**
@@ -299,6 +301,7 @@ var UsersApi = /*#__PURE__*/function () {
      * @param {module:model/UserType} opts.type The Type of the User.
      * @param {module:model/UserStatus} opts.status The status of the User.
      * @param {String} opts.entityId The entityId of the User.
+     * @param {module:model/PayeeType} opts.payeeType The Type of the Payee entity. Either COMPANY or INDIVIDUAL.
      * @param {Number} opts.page Page number. Default is 1. (default to 1)
      * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
      * @param {String} opts.sort List of sort fields (e.g. ?sort=email:asc,lastName:asc) Default is email:asc 'name' The supported sort fields are - email, lastNmae.  (default to 'email:asc')
@@ -316,6 +319,7 @@ var UsersApi = /*#__PURE__*/function () {
         'type': opts['type'],
         'status': opts['status'],
         'entityId': opts['entityId'],
+        'payeeType': opts['payeeType'],
         'page': opts['page'],
         'pageSize': opts['pageSize'],
         'sort': opts['sort']

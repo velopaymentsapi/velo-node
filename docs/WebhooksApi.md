@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**createWebhookV1**](WebhooksApi.md#createWebhookV1) | **POST** /v1/webhooks | Create Webhook
 [**getWebhookV1**](WebhooksApi.md#getWebhookV1) | **GET** /v1/webhooks/{webhookId} | Get details about the given webhook.
 [**listWebhooksV1**](WebhooksApi.md#listWebhooksV1) | **GET** /v1/webhooks | List the details about the webhooks for the given payor.
+[**pingWebhookV1**](WebhooksApi.md#pingWebhookV1) | **POST** /v1/webhooks/{webhookId}/ping | 
 [**updateWebhookV1**](WebhooksApi.md#updateWebhookV1) | **POST** /v1/webhooks/{webhookId} | Update Webhook
 
 
@@ -80,7 +81,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.WebhooksApi();
-let webhookId = null; // String | Webhook id
+let webhookId = "webhookId_example"; // String | Webhook id
 apiInstance.getWebhookV1(webhookId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -95,7 +96,7 @@ apiInstance.getWebhookV1(webhookId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookId** | [**String**](.md)| Webhook id | 
+ **webhookId** | **String**| Webhook id | 
 
 ### Return type
 
@@ -129,7 +130,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.WebhooksApi();
-let payorId = null; // String | The Payor ID
+let payorId = "payorId_example"; // String | The Payor ID
 let opts = {
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25 // Number | The number of results to return in a page
@@ -148,13 +149,60 @@ apiInstance.listWebhooksV1(payorId, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The Payor ID | 
+ **payorId** | **String**| The Payor ID | 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
 
 ### Return type
 
 [**WebhooksResponse**](WebhooksResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## pingWebhookV1
+
+> PingResponse pingWebhookV1(webhookId)
+
+
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.WebhooksApi();
+let webhookId = "webhookId_example"; // String | Webhook id
+apiInstance.pingWebhookV1(webhookId, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **webhookId** | **String**| Webhook id | 
+
+### Return type
+
+[**PingResponse**](PingResponse.md)
 
 ### Authorization
 
@@ -184,7 +232,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.WebhooksApi();
-let webhookId = null; // String | Webhook id
+let webhookId = "webhookId_example"; // String | Webhook id
 let opts = {
   'updateWebhookRequest': new VeloPayments.UpdateWebhookRequest() // UpdateWebhookRequest | 
 };
@@ -202,7 +250,7 @@ apiInstance.updateWebhookV1(webhookId, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookId** | [**String**](.md)| Webhook id | 
+ **webhookId** | **String**| Webhook id | 
  **updateWebhookRequest** | [**UpdateWebhookRequest**](UpdateWebhookRequest.md)|  | [optional] 
 
 ### Return type

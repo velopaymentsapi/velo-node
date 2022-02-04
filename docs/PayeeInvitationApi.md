@@ -54,8 +54,8 @@ apiInstance.getPayeesInvitationStatusV3(payorId, opts, (error, data, response) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The account owner Payor ID | 
- **payeeId** | [**String**](.md)| The UUID of the payee. | [optional] 
+ **payorId** | **String**| The account owner Payor ID | 
+ **payeeId** | **String**| The UUID of the payee. | [optional] 
  **invitationStatus** | [**InvitationStatus**](.md)| The invitation status of the payees. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
@@ -113,8 +113,8 @@ apiInstance.getPayeesInvitationStatusV4(payorId, opts, (error, data, response) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The account owner Payor ID | 
- **payeeId** | [**String**](.md)| The UUID of the payee. | [optional] 
+ **payorId** | **String**| The account owner Payor ID | 
+ **payeeId** | **String**| The UUID of the payee. | [optional] 
  **invitationStatus** | [**InvitationStatus**](.md)| The invitation status of the payees. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
@@ -151,7 +151,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayeeInvitationApi();
-let batchId = null; // String | Batch Id
+let batchId = "batchId_example"; // String | Batch Id
 apiInstance.queryBatchStatusV3(batchId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -166,7 +166,7 @@ apiInstance.queryBatchStatusV3(batchId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **batchId** | [**String**](.md)| Batch Id | 
+ **batchId** | **String**| Batch Id | 
 
 ### Return type
 
@@ -200,7 +200,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayeeInvitationApi();
-let batchId = null; // String | Batch Id
+let batchId = "batchId_example"; // String | Batch Id
 apiInstance.queryBatchStatusV4(batchId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -215,7 +215,7 @@ apiInstance.queryBatchStatusV4(batchId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **batchId** | [**String**](.md)| Batch Id | 
+ **batchId** | **String**| Batch Id | 
 
 ### Return type
 
@@ -265,7 +265,7 @@ apiInstance.resendPayeeInviteV3(payeeId, invitePayeeRequest, (error, data, respo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payeeId** | [**String**](.md)| The UUID of the payee. | 
+ **payeeId** | **String**| The UUID of the payee. | 
  **invitePayeeRequest** | [**InvitePayeeRequest**](InvitePayeeRequest.md)| Provide Payor Id in body of request | 
 
 ### Return type
@@ -316,7 +316,7 @@ apiInstance.resendPayeeInviteV4(payeeId, invitePayeeRequest2, (error, data, resp
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payeeId** | [**String**](.md)| The UUID of the payee. | 
+ **payeeId** | **String**| The UUID of the payee. | 
  **invitePayeeRequest2** | [**InvitePayeeRequest2**](InvitePayeeRequest2.md)| Provide Payor Id in body of request | 
 
 ### Return type

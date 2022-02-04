@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **created** | **Date** |  | [optional] 
 **country** | **String** |  | [optional] 
 **displayName** | **String** |  | [optional] 
-**payeeType** | [**PayeeType**](PayeeType.md) |  | [optional] 
+**payeeType** | [**PayeeType2**](PayeeType2.md) |  | [optional] 
 **disabled** | **Boolean** |  | [optional] 
 **disabledComment** | **String** |  | [optional] 
 **disabledUpdatedTimestamp** | **Date** |  | [optional] 

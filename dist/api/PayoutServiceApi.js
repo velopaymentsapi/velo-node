@@ -19,11 +19,17 @@ var _InlineResponse4 = _interopRequireDefault(require("../model/InlineResponse40
 
 var _InlineResponse5 = _interopRequireDefault(require("../model/InlineResponse409"));
 
+var _InstructPayoutRequest = _interopRequireDefault(require("../model/InstructPayoutRequest"));
+
 var _PagedPaymentsResponseV = _interopRequireDefault(require("../model/PagedPaymentsResponseV3"));
+
+var _PaymentInstructionV = _interopRequireDefault(require("../model/PaymentInstructionV3"));
 
 var _PayoutSummaryResponseV = _interopRequireDefault(require("../model/PayoutSummaryResponseV3"));
 
 var _QuoteResponseV = _interopRequireDefault(require("../model/QuoteResponseV3"));
+
+var _SchedulePayoutRequest = _interopRequireDefault(require("../model/SchedulePayoutRequest"));
 
 var _WithdrawPaymentRequest = _interopRequireDefault(require("../model/WithdrawPaymentRequest"));
 
@@ -33,12 +39,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
 * PayoutService service.
 * @module api/PayoutServiceApi
-* @version 2.26.124
+* @version 2.29.130
 */
 var PayoutServiceApi = /*#__PURE__*/function () {
   /**
@@ -90,6 +96,42 @@ var PayoutServiceApi = /*#__PURE__*/function () {
       var accepts = ['application/json'];
       var returnType = _QuoteResponseV["default"];
       return this.apiClient.callApi('/v3/payouts/{payoutId}/quote', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the deschedulePayout operation.
+     * @callback module:api/PayoutServiceApi~deschedulePayoutCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Deschedule a payout
+     * Remove the schedule for a scheduled payout
+     * @param {String} payoutId Id of the payout
+     * @param {module:api/PayoutServiceApi~deschedulePayoutCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+
+  }, {
+    key: "deschedulePayout",
+    value: function deschedulePayout(payoutId, callback) {
+      var postBody = null; // verify the required parameter 'payoutId' is set
+
+      if (payoutId === undefined || payoutId === null) {
+        throw new Error("Missing the required parameter 'payoutId' when calling deschedulePayout");
+      }
+
+      var pathParams = {
+        'payoutId': payoutId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['OAuth2'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+      return this.apiClient.callApi('/v3/payouts/{payoutId}/schedule', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the getPaymentsForPayoutV3 operation.
@@ -196,13 +238,16 @@ var PayoutServiceApi = /*#__PURE__*/function () {
      * Instruct Payout
      * Instruct a payout to be made for the specified payoutId.
      * @param {String} payoutId Id of the payout
+     * @param {Object} opts Optional parameters
+     * @param {module:model/InstructPayoutRequest} opts.instructPayoutRequest Additional instruct payout parameters
      * @param {module:api/PayoutServiceApi~instructPayoutV3Callback} callback The callback function, accepting three arguments: error, data, response
      */
 
   }, {
     key: "instructPayoutV3",
-    value: function instructPayoutV3(payoutId, callback) {
-      var postBody = null; // verify the required parameter 'payoutId' is set
+    value: function instructPayoutV3(payoutId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['instructPayoutRequest']; // verify the required parameter 'payoutId' is set
 
       if (payoutId === undefined || payoutId === null) {
         throw new Error("Missing the required parameter 'payoutId' when calling instructPayoutV3");
@@ -215,10 +260,49 @@ var PayoutServiceApi = /*#__PURE__*/function () {
       var headerParams = {};
       var formParams = {};
       var authNames = ['OAuth2'];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = null;
       return this.apiClient.callApi('/v3/payouts/{payoutId}', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the scheduleForPayout operation.
+     * @callback module:api/PayoutServiceApi~scheduleForPayoutCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Schedule a payout
+     * <p>Schedule a payout for auto-instruction in the future or update existing payout schedule if the payout has been scheduled before.</p> 
+     * @param {String} payoutId Id of the payout
+     * @param {Object} opts Optional parameters
+     * @param {module:model/SchedulePayoutRequest} opts.schedulePayoutRequest schedule payout parameters
+     * @param {module:api/PayoutServiceApi~scheduleForPayoutCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+
+  }, {
+    key: "scheduleForPayout",
+    value: function scheduleForPayout(payoutId, opts, callback) {
+      opts = opts || {};
+      var postBody = opts['schedulePayoutRequest']; // verify the required parameter 'payoutId' is set
+
+      if (payoutId === undefined || payoutId === null) {
+        throw new Error("Missing the required parameter 'payoutId' when calling scheduleForPayout");
+      }
+
+      var pathParams = {
+        'payoutId': payoutId
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['OAuth2'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+      return this.apiClient.callApi('/v3/payouts/{payoutId}/schedule', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the submitPayoutV3 operation.
@@ -306,7 +390,7 @@ var PayoutServiceApi = /*#__PURE__*/function () {
 
     /**
      * Withdraw Payout
-     * Withdraw Payout will delete payout details from payout service and rails services but will just move the status of the payout to WITHDRAWN in payment audit.
+     * Withdraw Payout will remove the payout details from the rails but the payout will still be accessible in payout service in WITHDRAWN status.
      * @param {String} payoutId Id of the payout
      * @param {module:api/PayoutServiceApi~withdrawPayoutV3Callback} callback The callback function, accepting three arguments: error, data, response
      */

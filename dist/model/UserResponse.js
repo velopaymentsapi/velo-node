@@ -15,12 +15,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
  * The UserResponse model module.
  * @module model/UserResponse
- * @version 2.26.124
+ * @version 2.29.130
  */
 var UserResponse = /*#__PURE__*/function () {
   /**
@@ -92,8 +92,16 @@ var UserResponse = /*#__PURE__*/function () {
           obj['entityId'] = _ApiClient["default"].convertToType(data['entityId'], 'String');
         }
 
+        if (data.hasOwnProperty('companyName')) {
+          obj['companyName'] = _ApiClient["default"].convertToType(data['companyName'], 'String');
+        }
+
         if (data.hasOwnProperty('roles')) {
           obj['roles'] = _ApiClient["default"].convertToType(data['roles'], [_Role["default"]]);
+        }
+
+        if (data.hasOwnProperty('userType')) {
+          obj['userType'] = _ApiClient["default"].convertToType(data['userType'], 'String');
         }
 
         if (data.hasOwnProperty('mfaType')) {
@@ -173,11 +181,23 @@ UserResponse.prototype['lastName'] = undefined;
 
 UserResponse.prototype['entityId'] = undefined;
 /**
+ * The payor or payee company name or null if the user is not a payor or payee user 
+ * @member {String} companyName
+ */
+
+UserResponse.prototype['companyName'] = undefined;
+/**
  * The role(s) for the user 
  * @member {Array.<module:model/Role>} roles
  */
 
 UserResponse.prototype['roles'] = undefined;
+/**
+ * Indicates the type of user. Could be BACKOFFICE, PAYOR or PAYEE.
+ * @member {module:model/UserResponse.UserTypeEnum} userType
+ */
+
+UserResponse.prototype['userType'] = undefined;
 /**
  * The type of the MFA device
  * @member {module:model/UserResponse.MfaTypeEnum} mfaType
@@ -226,6 +246,31 @@ UserResponse['StatusEnum'] = {
    * @const
    */
   "PENDING": "PENDING"
+};
+/**
+ * Allowed values for the <code>userType</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+UserResponse['UserTypeEnum'] = {
+  /**
+   * value: "BACKOFFICE"
+   * @const
+   */
+  "BACKOFFICE": "BACKOFFICE",
+
+  /**
+   * value: "PAYOR"
+   * @const
+   */
+  "PAYOR": "PAYOR",
+
+  /**
+   * value: "PAYEE"
+   * @const
+   */
+  "PAYEE": "PAYEE"
 };
 /**
  * Allowed values for the <code>mfaType</code> property.

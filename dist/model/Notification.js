@@ -7,7 +7,19 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged = _interopRequireDefault(require("./OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged"));
+var _DebitStatusChanged = _interopRequireDefault(require("./DebitStatusChanged"));
+
+var _OnboardingStatusChanged = _interopRequireDefault(require("./OnboardingStatusChanged"));
+
+var _PayableStatusChanged = _interopRequireDefault(require("./PayableStatusChanged"));
+
+var _PayeeDetailsChanged = _interopRequireDefault(require("./PayeeDetailsChanged"));
+
+var _PaymentRejectedOrReturned = _interopRequireDefault(require("./PaymentRejectedOrReturned"));
+
+var _PaymentStatusChanged = _interopRequireDefault(require("./PaymentStatusChanged"));
+
+var _Ping = _interopRequireDefault(require("./Ping"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -15,12 +27,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
  * The Notification model module.
  * @module model/Notification
- * @version 2.26.124
+ * @version 2.29.130
  */
 var Notification = /*#__PURE__*/function () {
   /**
@@ -82,7 +94,7 @@ var Notification = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('source')) {
-          obj['source'] = _ApiClient["default"].convertToType(data['source'], _OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged["default"]);
+          obj['source'] = _ApiClient["default"].convertToType(data['source'], OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged);
         }
       }
 

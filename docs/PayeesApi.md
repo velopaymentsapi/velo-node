@@ -52,7 +52,7 @@ apiInstance.deletePayeeByIdV3(payeeId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payeeId** | [**String**](.md)| The UUID of the payee. | 
+ **payeeId** | **String**| The UUID of the payee. | 
 
 ### Return type
 
@@ -101,7 +101,7 @@ apiInstance.deletePayeeByIdV4(payeeId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payeeId** | [**String**](.md)| The UUID of the payee. | 
+ **payeeId** | **String**| The UUID of the payee. | 
 
 ### Return type
 
@@ -153,7 +153,7 @@ apiInstance.getPayeeByIdV3(payeeId, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payeeId** | [**String**](.md)| The UUID of the payee. | 
+ **payeeId** | **String**| The UUID of the payee. | 
  **sensitive** | **Boolean**| Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values.  | [optional] 
 
 ### Return type
@@ -206,7 +206,7 @@ apiInstance.getPayeeByIdV4(payeeId, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payeeId** | [**String**](.md)| The UUID of the payee. | 
+ **payeeId** | **String**| The UUID of the payee. | 
  **sensitive** | **Boolean**| Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values.  | [optional] 
 
 ### Return type
@@ -241,7 +241,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayeesApi();
-let payorId = null; // String | The Payor ID to find associated Payees
+let payorId = "payorId_example"; // String | The Payor ID to find associated Payees
 let updatedSince = new Date("2013-10-20T19:20:30+01:00"); // Date | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
 let opts = {
   'page': 1, // Number | Page number. Default is 1.
@@ -261,7 +261,7 @@ apiInstance.listPayeeChangesV3(payorId, updatedSince, opts, (error, data, respon
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The Payor ID to find associated Payees | 
+ **payorId** | **String**| The Payor ID to find associated Payees | 
  **updatedSince** | **Date**| The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm | 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| Page size. Default is 100. Max allowable is 1000. | [optional] [default to 100]
@@ -298,7 +298,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayeesApi();
-let payorId = null; // String | The Payor ID to find associated Payees
+let payorId = "payorId_example"; // String | The Payor ID to find associated Payees
 let updatedSince = new Date("2013-10-20T19:20:30+01:00"); // Date | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
 let opts = {
   'page': 1, // Number | Page number. Default is 1.
@@ -318,7 +318,7 @@ apiInstance.listPayeeChangesV4(payorId, updatedSince, opts, (error, data, respon
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The Payor ID to find associated Payees | 
+ **payorId** | **String**| The Payor ID to find associated Payees | 
  **updatedSince** | **Date**| The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm | 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| Page size. Default is 100. Max allowable is 1000. | [optional] [default to 100]
@@ -355,7 +355,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayeesApi();
-let payorId = null; // String | The account owner Payor ID
+let payorId = "payorId_example"; // String | The account owner Payor ID
 let opts = {
   'watchlistStatus': new VeloPayments.WatchlistStatus(), // WatchlistStatus | The watchlistStatus of the payees.
   'disabled': true, // Boolean | Payee disabled
@@ -363,7 +363,7 @@ let opts = {
   'email': bob@example.com, // String | Email address
   'displayName': Bob Smith, // String | The display name of the payees.
   'remoteId': remoteId123, // String | The remote id of the payees.
-  'payeeType': new VeloPayments.PayeeType(), // PayeeType | The onboarded status of the payees.
+  'payeeType': new VeloPayments.PayeeType2(), // PayeeType2 | The onboarded status of the payees.
   'payeeCountry': US, // String | The country of the payee - 2 letter ISO 3166-1 country code (upper case)
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
@@ -383,14 +383,14 @@ apiInstance.listPayeesV3(payorId, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The account owner Payor ID | 
+ **payorId** | **String**| The account owner Payor ID | 
  **watchlistStatus** | [**WatchlistStatus**](.md)| The watchlistStatus of the payees. | [optional] 
  **disabled** | **Boolean**| Payee disabled | [optional] 
  **onboardedStatus** | [**OnboardedStatus**](.md)| The onboarded status of the payees. | [optional] 
- **email** | [**String**](.md)| Email address | [optional] 
+ **email** | **String**| Email address | [optional] 
  **displayName** | **String**| The display name of the payees. | [optional] 
  **remoteId** | **String**| The remote id of the payees. | [optional] 
- **payeeType** | [**PayeeType**](.md)| The onboarded status of the payees. | [optional] 
+ **payeeType** | [**PayeeType2**](.md)| The onboarded status of the payees. | [optional] 
  **payeeCountry** | **String**| The country of the payee - 2 letter ISO 3166-1 country code (upper case) | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
@@ -428,7 +428,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayeesApi();
-let payorId = null; // String | The account owner Payor ID
+let payorId = "payorId_example"; // String | The account owner Payor ID
 let opts = {
   'watchlistStatus': new VeloPayments.WatchlistStatus(), // WatchlistStatus | The watchlistStatus of the payees.
   'disabled': true, // Boolean | Payee disabled
@@ -436,7 +436,7 @@ let opts = {
   'email': bob@example.com, // String | Email address
   'displayName': Bob Smith, // String | The display name of the payees.
   'remoteId': remoteId123, // String | The remote id of the payees.
-  'payeeType': new VeloPayments.PayeeType(), // PayeeType | The onboarded status of the payees.
+  'payeeType': new VeloPayments.PayeeType2(), // PayeeType2 | The onboarded status of the payees.
   'payeeCountry': US, // String | The country of the payee - 2 letter ISO 3166-1 country code (upper case)
   'ofacStatus': new VeloPayments.OfacStatus(), // OfacStatus | The ofacStatus of the payees.
   'page': 1, // Number | Page number. Default is 1.
@@ -457,14 +457,14 @@ apiInstance.listPayeesV4(payorId, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The account owner Payor ID | 
+ **payorId** | **String**| The account owner Payor ID | 
  **watchlistStatus** | [**WatchlistStatus**](.md)| The watchlistStatus of the payees. | [optional] 
  **disabled** | **Boolean**| Payee disabled | [optional] 
  **onboardedStatus** | [**OnboardedStatus**](.md)| The onboarded status of the payees. | [optional] 
- **email** | [**String**](.md)| Email address | [optional] 
+ **email** | **String**| Email address | [optional] 
  **displayName** | **String**| The display name of the payees. | [optional] 
  **remoteId** | **String**| The remote id of the payees. | [optional] 
- **payeeType** | [**PayeeType**](.md)| The onboarded status of the payees. | [optional] 
+ **payeeType** | [**PayeeType2**](.md)| The onboarded status of the payees. | [optional] 
  **payeeCountry** | **String**| The country of the payee - 2 letter ISO 3166-1 country code (upper case) | [optional] 
  **ofacStatus** | [**OfacStatus**](.md)| The ofacStatus of the payees. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
@@ -519,7 +519,7 @@ apiInstance.payeeDetailsUpdateV3(payeeId, updatePayeeDetailsRequest, (error, dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payeeId** | [**String**](.md)| The UUID of the payee. | 
+ **payeeId** | **String**| The UUID of the payee. | 
  **updatePayeeDetailsRequest** | [**UpdatePayeeDetailsRequest**](UpdatePayeeDetailsRequest.md)| Request to update payee details | 
 
 ### Return type
@@ -542,7 +542,7 @@ null (empty response body)
 
 Update Payee Details
 
-&lt;p&gt;Update payee details for the given Payee Id.&lt;p&gt; 
+&lt;p&gt;Update payee details for the given Payee Id.&lt;/p&gt; &lt;p&gt;Payors may only update the payee details if the payee has not yet onboarded&lt;/p&gt; 
 
 ### Example
 
@@ -570,7 +570,7 @@ apiInstance.payeeDetailsUpdateV4(payeeId, updatePayeeDetailsRequest2, (error, da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payeeId** | [**String**](.md)| The UUID of the payee. | 
+ **payeeId** | **String**| The UUID of the payee. | 
  **updatePayeeDetailsRequest2** | [**UpdatePayeeDetailsRequest2**](UpdatePayeeDetailsRequest2.md)| Request to update payee details | 
 
 ### Return type
@@ -621,7 +621,7 @@ apiInstance.v3PayeesPayeeIdRemoteIdUpdatePost(payeeId, updateRemoteIdRequest, (e
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payeeId** | [**String**](.md)| The UUID of the payee. | 
+ **payeeId** | **String**| The UUID of the payee. | 
  **updateRemoteIdRequest** | [**UpdateRemoteIdRequest**](UpdateRemoteIdRequest.md)| Request to update payee remote id v3 | 
 
 ### Return type
@@ -672,7 +672,7 @@ apiInstance.v4PayeesPayeeIdRemoteIdUpdatePost(payeeId, updateRemoteIdRequest2, (
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payeeId** | [**String**](.md)| The UUID of the payee. | 
+ **payeeId** | **String**| The UUID of the payee. | 
  **updateRemoteIdRequest2** | [**UpdateRemoteIdRequest2**](UpdateRemoteIdRequest2.md)| Request to update payee remote id v4 | 
 
 ### Return type

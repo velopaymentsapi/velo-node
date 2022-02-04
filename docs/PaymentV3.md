@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **transmissionType** | [**TransmissionType**](TransmissionType.md) |  | [optional] 
 **remoteSystemId** | **String** |  | [optional] 
 **paymentMetadata** | **String** |  | [optional] 
+**autoWithdrawnReasonCode** | **String** | Populated only if the payment was automatically withdrawn during instruction for being invalid | [optional] 
 
 
 

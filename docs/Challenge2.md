@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **String** |  | 
+**value** | **String** | The value that the user will be asked to verify when they onboard | 
 **description** | **String** |  | 
 
 

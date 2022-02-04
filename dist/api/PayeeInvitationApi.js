@@ -7,6 +7,10 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _CreatePayeesCSVRequest = _interopRequireDefault(require("../model/CreatePayeesCSVRequest"));
+
+var _CreatePayeesCSVRequest2 = _interopRequireDefault(require("../model/CreatePayeesCSVRequest2"));
+
 var _CreatePayeesCSVResponse = _interopRequireDefault(require("../model/CreatePayeesCSVResponse"));
 
 var _CreatePayeesCSVResponse2 = _interopRequireDefault(require("../model/CreatePayeesCSVResponse2"));
@@ -45,12 +49,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
 * PayeeInvitation service.
 * @module api/PayeeInvitationApi
-* @version 2.26.124
+* @version 2.29.130
 */
 var PayeeInvitationApi = /*#__PURE__*/function () {
   /**

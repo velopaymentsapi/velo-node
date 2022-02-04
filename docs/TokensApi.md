@@ -26,7 +26,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.TokensApi();
-let userId = null; // String | The UUID of the User.
+let userId = "userId_example"; // String | The UUID of the User.
 let resendTokenRequest = new VeloPayments.ResendTokenRequest(); // ResendTokenRequest | The type of token to resend
 apiInstance.resendToken(userId, resendTokenRequest, (error, data, response) => {
   if (error) {
@@ -42,7 +42,7 @@ apiInstance.resendToken(userId, resendTokenRequest, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | [**String**](.md)| The UUID of the User. | 
+ **userId** | **String**| The UUID of the User. | 
  **resendTokenRequest** | [**ResendTokenRequest**](ResendTokenRequest.md)| The type of token to resend | 
 
 ### Return type

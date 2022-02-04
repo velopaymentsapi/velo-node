@@ -13,18 +13,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
  * The Challenge2 model module.
  * @module model/Challenge2
- * @version 2.26.124
+ * @version 2.29.130
  */
 var Challenge2 = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Challenge2</code>.
+   * &lt;p&gt;Used to override the default challenge presented to the payee when they onboard&lt;/p&gt; &lt;p&gt;Not used after the payee has onboarded&lt;/p&gt; 
    * @alias module:model/Challenge2
-   * @param value {String} 
+   * @param value {String} The value that the user will be asked to verify when they onboard
    * @param description {String} 
    */
   function Challenge2(value, description) {
@@ -75,6 +76,7 @@ var Challenge2 = /*#__PURE__*/function () {
   return Challenge2;
 }();
 /**
+ * The value that the user will be asked to verify when they onboard
  * @member {String} value
  */
 

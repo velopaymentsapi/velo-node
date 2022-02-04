@@ -9,6 +9,8 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _FxSummary = _interopRequireDefault(require("./FxSummary"));
 
+var _PayoutSchedule = _interopRequireDefault(require("./PayoutSchedule"));
+
 var _PayoutStatus = _interopRequireDefault(require("./PayoutStatus"));
 
 var _PayoutType = _interopRequireDefault(require("./PayoutType"));
@@ -21,12 +23,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
  * The PayoutSummaryAudit model module.
  * @module model/PayoutSummaryAudit
- * @version 2.26.124
+ * @version 2.29.130
  */
 var PayoutSummaryAudit = /*#__PURE__*/function () {
   /**
@@ -134,6 +136,10 @@ var PayoutSummaryAudit = /*#__PURE__*/function () {
         if (data.hasOwnProperty('payorName')) {
           obj['payorName'] = _ApiClient["default"].convertToType(data['payorName'], 'String');
         }
+
+        if (data.hasOwnProperty('schedule')) {
+          obj['schedule'] = _PayoutSchedule["default"].constructFromObject(data['schedule']);
+        }
       }
 
       return obj;
@@ -223,5 +229,10 @@ PayoutSummaryAudit.prototype['payoutType'] = undefined;
  */
 
 PayoutSummaryAudit.prototype['payorName'] = undefined;
+/**
+ * @member {module:model/PayoutSchedule} schedule
+ */
+
+PayoutSummaryAudit.prototype['schedule'] = undefined;
 var _default = PayoutSummaryAudit;
 exports["default"] = _default;

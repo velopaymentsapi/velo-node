@@ -21,12 +21,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
  * The PayorV2 model module.
  * @module model/PayorV2
- * @version 2.26.124
+ * @version 2.29.130
  */
 var PayorV2 = /*#__PURE__*/function () {
   /**
@@ -79,6 +79,10 @@ var PayorV2 = /*#__PURE__*/function () {
           obj['payorXid'] = _ApiClient["default"].convertToType(data['payorXid'], 'String');
         }
 
+        if (data.hasOwnProperty('provider')) {
+          obj['provider'] = _ApiClient["default"].convertToType(data['provider'], 'String');
+        }
+
         if (data.hasOwnProperty('address')) {
           obj['address'] = _PayorAddressV["default"].constructFromObject(data['address']);
         }
@@ -101,6 +105,10 @@ var PayorV2 = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('manualLockout')) {
           obj['manualLockout'] = _ApiClient["default"].convertToType(data['manualLockout'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('openBankingEnabled')) {
+          obj['openBankingEnabled'] = _ApiClient["default"].convertToType(data['openBankingEnabled'], 'Boolean');
         }
 
         if (data.hasOwnProperty('payeeGracePeriodProcessingEnabled')) {
@@ -185,6 +193,12 @@ PayorV2.prototype['payorName'] = undefined;
 
 PayorV2.prototype['payorXid'] = undefined;
 /**
+ * The source of the payorXid, default is null which means Velo
+ * @member {String} provider
+ */
+
+PayorV2.prototype['provider'] = undefined;
+/**
  * @member {module:model/PayorAddressV2} address
  */
 
@@ -218,6 +232,12 @@ PayorV2.prototype['kycState'] = undefined;
  */
 
 PayorV2.prototype['manualLockout'] = undefined;
+/**
+ * Is Open Banking supported for this payor
+ * @member {Boolean} openBankingEnabled
+ */
+
+PayorV2.prototype['openBankingEnabled'] = undefined;
 /**
  * Whether grace period processing is enabled.
  * @member {Boolean} payeeGracePeriodProcessingEnabled

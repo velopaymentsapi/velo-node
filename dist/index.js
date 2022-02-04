@@ -3,12 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "ApiClient", {
-  enumerable: true,
-  get: function get() {
-    return _ApiClient["default"];
-  }
-});
 Object.defineProperty(exports, "AcceptedPaymentV3", {
   enumerable: true,
   get: function get() {
@@ -25,6 +19,12 @@ Object.defineProperty(exports, "AccessTokenValidationRequest", {
   enumerable: true,
   get: function get() {
     return _AccessTokenValidationRequest["default"];
+  }
+});
+Object.defineProperty(exports, "ApiClient", {
+  enumerable: true,
+  get: function get() {
+    return _ApiClient["default"];
   }
 });
 Object.defineProperty(exports, "AuthResponse", {
@@ -75,6 +75,12 @@ Object.defineProperty(exports, "Company2", {
     return _Company2["default"];
   }
 });
+Object.defineProperty(exports, "CountriesApi", {
+  enumerable: true,
+  get: function get() {
+    return _CountriesApi["default"];
+  }
+});
 Object.defineProperty(exports, "CreateFundingAccountRequestV2", {
   enumerable: true,
   get: function get() {
@@ -121,6 +127,18 @@ Object.defineProperty(exports, "CreatePayeeAddress2", {
   enumerable: true,
   get: function get() {
     return _CreatePayeeAddress2["default"];
+  }
+});
+Object.defineProperty(exports, "CreatePayeesCSVRequest", {
+  enumerable: true,
+  get: function get() {
+    return _CreatePayeesCSVRequest["default"];
+  }
+});
+Object.defineProperty(exports, "CreatePayeesCSVRequest2", {
+  enumerable: true,
+  get: function get() {
+    return _CreatePayeesCSVRequest2["default"];
   }
 });
 Object.defineProperty(exports, "CreatePayeesCSVResponse", {
@@ -181,6 +199,12 @@ Object.defineProperty(exports, "CreateWebhookRequest", {
   enumerable: true,
   get: function get() {
     return _CreateWebhookRequest["default"];
+  }
+});
+Object.defineProperty(exports, "CurrenciesApi", {
+  enumerable: true,
+  get: function get() {
+    return _CurrenciesApi["default"];
   }
 });
 Object.defineProperty(exports, "DebitEvent", {
@@ -283,6 +307,18 @@ Object.defineProperty(exports, "FundingEventType", {
   enumerable: true,
   get: function get() {
     return _FundingEventType["default"];
+  }
+});
+Object.defineProperty(exports, "FundingManagerApi", {
+  enumerable: true,
+  get: function get() {
+    return _FundingManagerApi["default"];
+  }
+});
+Object.defineProperty(exports, "FundingManagerPrivateApi", {
+  enumerable: true,
+  get: function get() {
+    return _FundingManagerPrivateApi["default"];
   }
 });
 Object.defineProperty(exports, "FundingPayorStatusAuditResponse", {
@@ -483,6 +519,12 @@ Object.defineProperty(exports, "InlineResponse412", {
     return _InlineResponse6["default"];
   }
 });
+Object.defineProperty(exports, "InstructPayoutRequest", {
+  enumerable: true,
+  get: function get() {
+    return _InstructPayoutRequest["default"];
+  }
+});
 Object.defineProperty(exports, "InvitationStatus", {
   enumerable: true,
   get: function get() {
@@ -601,6 +643,12 @@ Object.defineProperty(exports, "LocalisationDetails", {
   enumerable: true,
   get: function get() {
     return _LocalisationDetails["default"];
+  }
+});
+Object.defineProperty(exports, "LoginApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoginApi["default"];
   }
 });
 Object.defineProperty(exports, "MFADetails", {
@@ -867,6 +915,12 @@ Object.defineProperty(exports, "PayeeEventAllOfReasons", {
     return _PayeeEventAllOfReasons["default"];
   }
 });
+Object.defineProperty(exports, "PayeeInvitationApi", {
+  enumerable: true,
+  get: function get() {
+    return _PayeeInvitationApi["default"];
+  }
+});
 Object.defineProperty(exports, "PayeeInvitationStatusResponse", {
   enumerable: true,
   get: function get() {
@@ -897,10 +951,22 @@ Object.defineProperty(exports, "PayeeType", {
     return _PayeeType["default"];
   }
 });
+Object.defineProperty(exports, "PayeeType2", {
+  enumerable: true,
+  get: function get() {
+    return _PayeeType2["default"];
+  }
+});
 Object.defineProperty(exports, "PayeeUserSelfUpdateRequest", {
   enumerable: true,
   get: function get() {
     return _PayeeUserSelfUpdateRequest["default"];
+  }
+});
+Object.defineProperty(exports, "PayeesApi", {
+  enumerable: true,
+  get: function get() {
+    return _PayeesApi["default"];
   }
 });
 Object.defineProperty(exports, "PaymentAuditCurrency", {
@@ -913,6 +979,18 @@ Object.defineProperty(exports, "PaymentAuditCurrencyV3", {
   enumerable: true,
   get: function get() {
     return _PaymentAuditCurrencyV["default"];
+  }
+});
+Object.defineProperty(exports, "PaymentAuditServiceApi", {
+  enumerable: true,
+  get: function get() {
+    return _PaymentAuditServiceApi["default"];
+  }
+});
+Object.defineProperty(exports, "PaymentAuditServiceDeprecatedApi", {
+  enumerable: true,
+  get: function get() {
+    return _PaymentAuditServiceDeprecatedApi["default"];
   }
 });
 Object.defineProperty(exports, "PaymentChannelCountry", {
@@ -1113,6 +1191,12 @@ Object.defineProperty(exports, "PayorLinksResponsePayors", {
     return _PayorLinksResponsePayors["default"];
   }
 });
+Object.defineProperty(exports, "PayorLogoRequest", {
+  enumerable: true,
+  get: function get() {
+    return _PayorLogoRequest["default"];
+  }
+});
 Object.defineProperty(exports, "PayorV1", {
   enumerable: true,
   get: function get() {
@@ -1123,6 +1207,18 @@ Object.defineProperty(exports, "PayorV2", {
   enumerable: true,
   get: function get() {
     return _PayorV2["default"];
+  }
+});
+Object.defineProperty(exports, "PayorsApi", {
+  enumerable: true,
+  get: function get() {
+    return _PayorsApi["default"];
+  }
+});
+Object.defineProperty(exports, "PayorsPrivateApi", {
+  enumerable: true,
+  get: function get() {
+    return _PayorsPrivateApi["default"];
   }
 });
 Object.defineProperty(exports, "PayoutCompanyV3", {
@@ -1167,6 +1263,24 @@ Object.defineProperty(exports, "PayoutPrincipal", {
     return _PayoutPrincipal["default"];
   }
 });
+Object.defineProperty(exports, "PayoutSchedule", {
+  enumerable: true,
+  get: function get() {
+    return _PayoutSchedule["default"];
+  }
+});
+Object.defineProperty(exports, "PayoutSchedule2", {
+  enumerable: true,
+  get: function get() {
+    return _PayoutSchedule2["default"];
+  }
+});
+Object.defineProperty(exports, "PayoutServiceApi", {
+  enumerable: true,
+  get: function get() {
+    return _PayoutServiceApi["default"];
+  }
+});
 Object.defineProperty(exports, "PayoutStatus", {
   enumerable: true,
   get: function get() {
@@ -1207,6 +1321,12 @@ Object.defineProperty(exports, "Ping", {
   enumerable: true,
   get: function get() {
     return _Ping["default"];
+  }
+});
+Object.defineProperty(exports, "PingResponse", {
+  enumerable: true,
+  get: function get() {
+    return _PingResponse["default"];
   }
 });
 Object.defineProperty(exports, "QueryBatchResponse", {
@@ -1273,6 +1393,24 @@ Object.defineProperty(exports, "RoleUpdateRequest", {
   enumerable: true,
   get: function get() {
     return _RoleUpdateRequest["default"];
+  }
+});
+Object.defineProperty(exports, "SchedulePayoutRequest", {
+  enumerable: true,
+  get: function get() {
+    return _SchedulePayoutRequest["default"];
+  }
+});
+Object.defineProperty(exports, "ScheduleStatus", {
+  enumerable: true,
+  get: function get() {
+    return _ScheduleStatus["default"];
+  }
+});
+Object.defineProperty(exports, "ScheduleStatus2", {
+  enumerable: true,
+  get: function get() {
+    return _ScheduleStatus2["default"];
   }
 });
 Object.defineProperty(exports, "SelfMFATypeUnregisterRequest", {
@@ -1377,6 +1515,12 @@ Object.defineProperty(exports, "SupportedCurrencyV2", {
     return _SupportedCurrencyV["default"];
   }
 });
+Object.defineProperty(exports, "TokensApi", {
+  enumerable: true,
+  get: function get() {
+    return _TokensApi["default"];
+  }
+});
 Object.defineProperty(exports, "TransferRequest", {
   enumerable: true,
   get: function get() {
@@ -1479,6 +1623,12 @@ Object.defineProperty(exports, "UserType2", {
     return _UserType2["default"];
   }
 });
+Object.defineProperty(exports, "UsersApi", {
+  enumerable: true,
+  get: function get() {
+    return _UsersApi["default"];
+  }
+});
 Object.defineProperty(exports, "ValidatePasswordResponse", {
   enumerable: true,
   get: function get() {
@@ -1503,6 +1653,12 @@ Object.defineProperty(exports, "WebhookResponse", {
     return _WebhookResponse["default"];
   }
 });
+Object.defineProperty(exports, "WebhooksApi", {
+  enumerable: true,
+  get: function get() {
+    return _WebhooksApi["default"];
+  }
+});
 Object.defineProperty(exports, "WebhooksResponse", {
   enumerable: true,
   get: function get() {
@@ -1513,96 +1669,6 @@ Object.defineProperty(exports, "WithdrawPaymentRequest", {
   enumerable: true,
   get: function get() {
     return _WithdrawPaymentRequest["default"];
-  }
-});
-Object.defineProperty(exports, "CountriesApi", {
-  enumerable: true,
-  get: function get() {
-    return _CountriesApi["default"];
-  }
-});
-Object.defineProperty(exports, "CurrenciesApi", {
-  enumerable: true,
-  get: function get() {
-    return _CurrenciesApi["default"];
-  }
-});
-Object.defineProperty(exports, "FundingManagerApi", {
-  enumerable: true,
-  get: function get() {
-    return _FundingManagerApi["default"];
-  }
-});
-Object.defineProperty(exports, "FundingManagerPrivateApi", {
-  enumerable: true,
-  get: function get() {
-    return _FundingManagerPrivateApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoginApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoginApi["default"];
-  }
-});
-Object.defineProperty(exports, "PayeeInvitationApi", {
-  enumerable: true,
-  get: function get() {
-    return _PayeeInvitationApi["default"];
-  }
-});
-Object.defineProperty(exports, "PayeesApi", {
-  enumerable: true,
-  get: function get() {
-    return _PayeesApi["default"];
-  }
-});
-Object.defineProperty(exports, "PaymentAuditServiceApi", {
-  enumerable: true,
-  get: function get() {
-    return _PaymentAuditServiceApi["default"];
-  }
-});
-Object.defineProperty(exports, "PaymentAuditServiceDeprecatedApi", {
-  enumerable: true,
-  get: function get() {
-    return _PaymentAuditServiceDeprecatedApi["default"];
-  }
-});
-Object.defineProperty(exports, "PayorsApi", {
-  enumerable: true,
-  get: function get() {
-    return _PayorsApi["default"];
-  }
-});
-Object.defineProperty(exports, "PayorsPrivateApi", {
-  enumerable: true,
-  get: function get() {
-    return _PayorsPrivateApi["default"];
-  }
-});
-Object.defineProperty(exports, "PayoutServiceApi", {
-  enumerable: true,
-  get: function get() {
-    return _PayoutServiceApi["default"];
-  }
-});
-Object.defineProperty(exports, "TokensApi", {
-  enumerable: true,
-  get: function get() {
-    return _TokensApi["default"];
-  }
-});
-Object.defineProperty(exports, "UsersApi", {
-  enumerable: true,
-  get: function get() {
-    return _UsersApi["default"];
-  }
-});
-Object.defineProperty(exports, "WebhooksApi", {
-  enumerable: true,
-  get: function get() {
-    return _WebhooksApi["default"];
   }
 });
 
@@ -1645,6 +1711,10 @@ var _CreatePayee2 = _interopRequireDefault(require("./model/CreatePayee2"));
 var _CreatePayeeAddress = _interopRequireDefault(require("./model/CreatePayeeAddress"));
 
 var _CreatePayeeAddress2 = _interopRequireDefault(require("./model/CreatePayeeAddress2"));
+
+var _CreatePayeesCSVRequest = _interopRequireDefault(require("./model/CreatePayeesCSVRequest"));
+
+var _CreatePayeesCSVRequest2 = _interopRequireDefault(require("./model/CreatePayeesCSVRequest2"));
 
 var _CreatePayeesCSVResponse = _interopRequireDefault(require("./model/CreatePayeesCSVResponse"));
 
@@ -1765,6 +1835,8 @@ var _InlineResponse4 = _interopRequireDefault(require("./model/InlineResponse404
 var _InlineResponse5 = _interopRequireDefault(require("./model/InlineResponse409"));
 
 var _InlineResponse6 = _interopRequireDefault(require("./model/InlineResponse412"));
+
+var _InstructPayoutRequest = _interopRequireDefault(require("./model/InstructPayoutRequest"));
 
 var _InvitationStatus = _interopRequireDefault(require("./model/InvitationStatus"));
 
@@ -1904,6 +1976,8 @@ var _PayeePayorRefV = _interopRequireDefault(require("./model/PayeePayorRefV3"))
 
 var _PayeeType = _interopRequireDefault(require("./model/PayeeType"));
 
+var _PayeeType2 = _interopRequireDefault(require("./model/PayeeType2"));
+
 var _PayeeUserSelfUpdateRequest = _interopRequireDefault(require("./model/PayeeUserSelfUpdateRequest"));
 
 var _PaymentAuditCurrency = _interopRequireDefault(require("./model/PaymentAuditCurrency"));
@@ -1976,6 +2050,8 @@ var _PayorLinksResponseLinks = _interopRequireDefault(require("./model/PayorLink
 
 var _PayorLinksResponsePayors = _interopRequireDefault(require("./model/PayorLinksResponsePayors"));
 
+var _PayorLogoRequest = _interopRequireDefault(require("./model/PayorLogoRequest"));
+
 var _PayorV = _interopRequireDefault(require("./model/PayorV1"));
 
 var _PayorV2 = _interopRequireDefault(require("./model/PayorV2"));
@@ -1994,6 +2070,10 @@ var _PayoutPayorIds = _interopRequireDefault(require("./model/PayoutPayorIds"));
 
 var _PayoutPrincipal = _interopRequireDefault(require("./model/PayoutPrincipal"));
 
+var _PayoutSchedule = _interopRequireDefault(require("./model/PayoutSchedule"));
+
+var _PayoutSchedule2 = _interopRequireDefault(require("./model/PayoutSchedule2"));
+
 var _PayoutStatus = _interopRequireDefault(require("./model/PayoutStatus"));
 
 var _PayoutStatusV = _interopRequireDefault(require("./model/PayoutStatusV3"));
@@ -2007,6 +2087,8 @@ var _PayoutSummaryResponseV = _interopRequireDefault(require("./model/PayoutSumm
 var _PayoutType = _interopRequireDefault(require("./model/PayoutType"));
 
 var _Ping = _interopRequireDefault(require("./model/Ping"));
+
+var _PingResponse = _interopRequireDefault(require("./model/PingResponse"));
 
 var _QueryBatchResponse = _interopRequireDefault(require("./model/QueryBatchResponse"));
 
@@ -2029,6 +2111,12 @@ var _ResetPasswordRequest = _interopRequireDefault(require("./model/ResetPasswor
 var _Role = _interopRequireDefault(require("./model/Role"));
 
 var _RoleUpdateRequest = _interopRequireDefault(require("./model/RoleUpdateRequest"));
+
+var _SchedulePayoutRequest = _interopRequireDefault(require("./model/SchedulePayoutRequest"));
+
+var _ScheduleStatus = _interopRequireDefault(require("./model/ScheduleStatus"));
+
+var _ScheduleStatus2 = _interopRequireDefault(require("./model/ScheduleStatus2"));
 
 var _SelfMFATypeUnregisterRequest = _interopRequireDefault(require("./model/SelfMFATypeUnregisterRequest"));
 

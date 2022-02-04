@@ -42,7 +42,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.UsersApi();
-let userId = null; // String | The UUID of the User.
+let userId = "userId_example"; // String | The UUID of the User.
 apiInstance.deleteUserByIdV2(userId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -57,7 +57,7 @@ apiInstance.deleteUserByIdV2(userId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | [**String**](.md)| The UUID of the User. | 
+ **userId** | **String**| The UUID of the User. | 
 
 ### Return type
 
@@ -91,7 +91,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.UsersApi();
-let userId = null; // String | The UUID of the User.
+let userId = "userId_example"; // String | The UUID of the User.
 apiInstance.disableUserV2(userId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -106,7 +106,7 @@ apiInstance.disableUserV2(userId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | [**String**](.md)| The UUID of the User. | 
+ **userId** | **String**| The UUID of the User. | 
 
 ### Return type
 
@@ -140,7 +140,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.UsersApi();
-let userId = null; // String | The UUID of the User.
+let userId = "userId_example"; // String | The UUID of the User.
 apiInstance.enableUserV2(userId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -155,7 +155,7 @@ apiInstance.enableUserV2(userId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | [**String**](.md)| The UUID of the User. | 
+ **userId** | **String**| The UUID of the User. | 
 
 ### Return type
 
@@ -234,7 +234,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.UsersApi();
-let userId = null; // String | The UUID of the User.
+let userId = "userId_example"; // String | The UUID of the User.
 apiInstance.getUserByIdV2(userId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -249,7 +249,7 @@ apiInstance.getUserByIdV2(userId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | [**String**](.md)| The UUID of the User. | 
+ **userId** | **String**| The UUID of the User. | 
 
 ### Return type
 
@@ -335,7 +335,8 @@ let apiInstance = new VeloPayments.UsersApi();
 let opts = {
   'type': new VeloPayments.UserType(), // UserType | The Type of the User.
   'status': new VeloPayments.UserStatus(), // UserStatus | The status of the User.
-  'entityId': null, // String | The entityId of the User.
+  'entityId': "entityId_example", // String | The entityId of the User.
+  'payeeType': new VeloPayments.PayeeType(), // PayeeType | The Type of the Payee entity. Either COMPANY or INDIVIDUAL.
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | The number of results to return in a page
   'sort': "'email:asc'" // String | List of sort fields (e.g. ?sort=email:asc,lastName:asc) Default is email:asc 'name' The supported sort fields are - email, lastNmae. 
@@ -356,7 +357,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | [**UserType**](.md)| The Type of the User. | [optional] 
  **status** | [**UserStatus**](.md)| The status of the User. | [optional] 
- **entityId** | [**String**](.md)| The entityId of the User. | [optional] 
+ **entityId** | **String**| The entityId of the User. | [optional] 
+ **payeeType** | [**PayeeType**](.md)| The Type of the Payee entity. Either COMPANY or INDIVIDUAL. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;email:asc,lastName:asc) Default is email:asc &#39;name&#39; The supported sort fields are - email, lastNmae.  | [optional] [default to &#39;email:asc&#39;]
@@ -442,7 +444,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.UsersApi();
-let userId = null; // String | The UUID of the User.
+let userId = "userId_example"; // String | The UUID of the User.
 let resendTokenRequest = new VeloPayments.ResendTokenRequest(); // ResendTokenRequest | The type of token to resend
 apiInstance.resendToken(userId, resendTokenRequest, (error, data, response) => {
   if (error) {
@@ -458,7 +460,7 @@ apiInstance.resendToken(userId, resendTokenRequest, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | [**String**](.md)| The UUID of the User. | 
+ **userId** | **String**| The UUID of the User. | 
  **resendTokenRequest** | [**ResendTokenRequest**](ResendTokenRequest.md)| The type of token to resend | 
 
 ### Return type
@@ -493,7 +495,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.UsersApi();
-let userId = null; // String | The UUID of the User.
+let userId = "userId_example"; // String | The UUID of the User.
 let roleUpdateRequest = new VeloPayments.RoleUpdateRequest(); // RoleUpdateRequest | The Role to change to
 apiInstance.roleUpdate(userId, roleUpdateRequest, (error, data, response) => {
   if (error) {
@@ -509,7 +511,7 @@ apiInstance.roleUpdate(userId, roleUpdateRequest, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | [**String**](.md)| The UUID of the User. | 
+ **userId** | **String**| The UUID of the User. | 
  **roleUpdateRequest** | [**RoleUpdateRequest**](RoleUpdateRequest.md)| The Role to change to | 
 
 ### Return type
@@ -544,7 +546,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.UsersApi();
-let userId = null; // String | The UUID of the User.
+let userId = "userId_example"; // String | The UUID of the User.
 apiInstance.unlockUserV2(userId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -559,7 +561,7 @@ apiInstance.unlockUserV2(userId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | [**String**](.md)| The UUID of the User. | 
+ **userId** | **String**| The UUID of the User. | 
 
 ### Return type
 
@@ -593,7 +595,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.UsersApi();
-let userId = null; // String | The UUID of the User.
+let userId = "userId_example"; // String | The UUID of the User.
 let unregisterMFARequest = new VeloPayments.UnregisterMFARequest(); // UnregisterMFARequest | The MFA Type to unregister
 apiInstance.unregisterMFA(userId, unregisterMFARequest, (error, data, response) => {
   if (error) {
@@ -609,7 +611,7 @@ apiInstance.unregisterMFA(userId, unregisterMFARequest, (error, data, response) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | [**String**](.md)| The UUID of the User. | 
+ **userId** | **String**| The UUID of the User. | 
  **unregisterMFARequest** | [**UnregisterMFARequest**](UnregisterMFARequest.md)| The MFA Type to unregister | 
 
 ### Return type
@@ -746,7 +748,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.UsersApi();
-let userId = null; // String | The UUID of the User.
+let userId = "userId_example"; // String | The UUID of the User.
 let userDetailsUpdateRequest = new VeloPayments.UserDetailsUpdateRequest(); // UserDetailsUpdateRequest | The details of the user to update
 apiInstance.userDetailsUpdate(userId, userDetailsUpdateRequest, (error, data, response) => {
   if (error) {
@@ -762,7 +764,7 @@ apiInstance.userDetailsUpdate(userId, userDetailsUpdateRequest, (error, data, re
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | [**String**](.md)| The UUID of the User. | 
+ **userId** | **String**| The UUID of the User. | 
  **userDetailsUpdateRequest** | [**UserDetailsUpdateRequest**](UserDetailsUpdateRequest.md)| The details of the user to update | 
 
 ### Return type

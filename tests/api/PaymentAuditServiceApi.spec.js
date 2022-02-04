@@ -95,7 +95,7 @@
     });
     
     describe('getFundingsV4', function() {
-      it('should call getFundingsV4 successfully', function(done) {
+      it.skip('should call getFundingsV4 successfully', function(done) {
         let defaultClient = VeloPayments.ApiClient.instance;
         let OAuth2 = defaultClient.authentications['OAuth2'];
         OAuth2.accessToken = process.env.APITOKEN;

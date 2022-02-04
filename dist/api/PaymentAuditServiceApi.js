@@ -37,12 +37,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
 * PaymentAuditService service.
 * @module api/PaymentAuditServiceApi
-* @version 2.26.124
+* @version 2.29.130
 */
 var PaymentAuditServiceApi = /*#__PURE__*/function () {
   /**
@@ -305,9 +305,12 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
      * @param {Date} opts.submittedDateFrom The submitted date from range filter. Format is yyyy-MM-dd.
      * @param {Date} opts.submittedDateTo The submitted date to range filter. Format is yyyy-MM-dd.
      * @param {String} opts.fromPayorName The name of the payor whose payees are being paid. This filters via a case insensitive substring match.
+     * @param {Date} opts.scheduledForDateFrom Filter payouts scheduled to run on or after the given date. Format is yyyy-MM-dd.
+     * @param {Date} opts.scheduledForDateTo Filter payouts scheduled to run on or before the given date. Format is yyyy-MM-dd.
+     * @param {module:model/String} opts.scheduleStatus Payout Schedule Status
      * @param {Number} opts.page Page number. Default is 1. (default to 1)
      * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
-     * @param {String} opts.sort List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments, payoutId 
+     * @param {String} opts.sort List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments, payoutId, scheduledFor 
      * @param {module:api/PaymentAuditServiceApi~getPayoutsForPayorV4Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetPayoutsResponse}
      */
@@ -325,6 +328,9 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
         'submittedDateFrom': opts['submittedDateFrom'],
         'submittedDateTo': opts['submittedDateTo'],
         'fromPayorName': opts['fromPayorName'],
+        'scheduledForDateFrom': opts['scheduledForDateFrom'],
+        'scheduledForDateTo': opts['scheduledForDateTo'],
+        'scheduleStatus': opts['scheduleStatus'],
         'page': opts['page'],
         'pageSize': opts['pageSize'],
         'sort': opts['sort']
@@ -416,6 +422,9 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
      * @param {Date} opts.submittedDateFrom The submitted date from range filter. Format is yyyy-MM-dd.
      * @param {Date} opts.submittedDateTo The submitted date to range filter. Format is yyyy-MM-dd.
      * @param {String} opts.paymentMemo The payment memo filter. This filters via a case insensitive substring match.
+     * @param {Date} opts.scheduledForDateFrom Filter payouts scheduled to run on or after the given date. Format is yyyy-MM-dd.
+     * @param {Date} opts.scheduledForDateTo Filter payouts scheduled to run on or before the given date. Format is yyyy-MM-dd.
+     * @param {module:model/String} opts.scheduleStatus Payout Schedule Status
      * @param {Number} opts.page Page number. Default is 1. (default to 1)
      * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
      * @param {String} opts.sort List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by submittedDateTime:desc,paymentId:asc The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime, status and paymentId 
@@ -448,6 +457,9 @@ var PaymentAuditServiceApi = /*#__PURE__*/function () {
         'submittedDateFrom': opts['submittedDateFrom'],
         'submittedDateTo': opts['submittedDateTo'],
         'paymentMemo': opts['paymentMemo'],
+        'scheduledForDateFrom': opts['scheduledForDateFrom'],
+        'scheduledForDateTo': opts['scheduledForDateTo'],
+        'scheduleStatus': opts['scheduleStatus'],
         'page': opts['page'],
         'pageSize': opts['pageSize'],
         'sort': opts['sort'],

@@ -11,6 +11,8 @@ var _PayoutPayor = _interopRequireDefault(require("./PayoutPayor"));
 
 var _PayoutPrincipal = _interopRequireDefault(require("./PayoutPrincipal"));
 
+var _PayoutSchedule = _interopRequireDefault(require("./PayoutSchedule"));
+
 var _PayoutStatus = _interopRequireDefault(require("./PayoutStatus"));
 
 var _PayoutType = _interopRequireDefault(require("./PayoutType"));
@@ -21,12 +23,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
  * The GetPaymentsForPayoutResponseV4Summary model module.
  * @module model/GetPaymentsForPayoutResponseV4Summary
- * @version 2.26.124
+ * @version 2.29.130
  */
 var GetPaymentsForPayoutResponseV4Summary = /*#__PURE__*/function () {
   /**
@@ -136,6 +138,10 @@ var GetPaymentsForPayoutResponseV4Summary = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('withdrawn')) {
           obj['withdrawn'] = _PayoutPrincipal["default"].constructFromObject(data['withdrawn']);
+        }
+
+        if (data.hasOwnProperty('schedule')) {
+          obj['schedule'] = _PayoutSchedule["default"].constructFromObject(data['schedule']);
         }
       }
 
@@ -251,5 +257,10 @@ GetPaymentsForPayoutResponseV4Summary.prototype['instructed'] = undefined;
  */
 
 GetPaymentsForPayoutResponseV4Summary.prototype['withdrawn'] = undefined;
+/**
+ * @member {module:model/PayoutSchedule} schedule
+ */
+
+GetPaymentsForPayoutResponseV4Summary.prototype['schedule'] = undefined;
 var _default = GetPaymentsForPayoutResponseV4Summary;
 exports["default"] = _default;

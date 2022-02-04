@@ -3,8 +3,8 @@
 ## Enum
 
 
-* `Individual` (value: `"Individual"`)
+* `COMPANY` (value: `"COMPANY"`)
 
-* `Company` (value: `"Company"`)
+* `INDIVIDUAL` (value: `"INDIVIDUAL"`)
 
 

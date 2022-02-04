@@ -19,7 +19,7 @@ var _CreatePaymentChannel = _interopRequireDefault(require("./CreatePaymentChann
 
 var _PayeePayorRef = _interopRequireDefault(require("./PayeePayorRef"));
 
-var _PayeeType = _interopRequireDefault(require("./PayeeType"));
+var _PayeeType = _interopRequireDefault(require("./PayeeType2"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -27,12 +27,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 /**
  * The CreatePayee2 model module.
  * @module model/CreatePayee2
- * @version 2.26.124
+ * @version 2.29.130
  */
 var CreatePayee2 = /*#__PURE__*/function () {
   /**
@@ -40,7 +40,7 @@ var CreatePayee2 = /*#__PURE__*/function () {
    * @alias module:model/CreatePayee2
    * @param email {String} 
    * @param remoteId {String} 
-   * @param type {module:model/PayeeType} 
+   * @param type {module:model/PayeeType2} 
    * @param address {module:model/CreatePayeeAddress2} 
    */
   function CreatePayee2(email, remoteId, type, address) {
@@ -150,7 +150,7 @@ CreatePayee2.prototype['email'] = undefined;
 
 CreatePayee2.prototype['remoteId'] = undefined;
 /**
- * @member {module:model/PayeeType} type
+ * @member {module:model/PayeeType2} type
  */
 
 CreatePayee2.prototype['type'] = undefined;
