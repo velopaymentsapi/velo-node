@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The QuoteFxSummaryV3 model module.
  * @module model/QuoteFxSummaryV3
- * @version 2.29.130
+ * @version 2.29.128
  */
 class QuoteFxSummaryV3 {
     /**

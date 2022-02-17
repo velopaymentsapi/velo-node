@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PayorCreateApiKeyResponse model module.
  * @module model/PayorCreateApiKeyResponse
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PayorCreateApiKeyResponse {
     /**

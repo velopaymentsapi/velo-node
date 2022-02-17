@@ -17,7 +17,7 @@ import PayoutPayorIds from './PayoutPayorIds';
 /**
  * The PaymentEventAllOf model module.
  * @module model/PaymentEventAllOf
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PaymentEventAllOf {
     /**

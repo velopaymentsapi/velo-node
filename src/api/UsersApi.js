@@ -39,7 +39,7 @@ import ValidatePasswordResponse from '../model/ValidatePasswordResponse';
 /**
 * Users service.
 * @module api/UsersApi
-* @version 2.29.130
+* @version 2.29.128
 */
 export default class UsersApi {
 

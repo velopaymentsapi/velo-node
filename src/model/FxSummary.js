@@ -17,7 +17,7 @@ import PaymentAuditCurrency from './PaymentAuditCurrency';
 /**
  * The FxSummary model module.
  * @module model/FxSummary
- * @version 2.29.130
+ * @version 2.29.128
  */
 class FxSummary {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayoutSchedule2 model module.
  * @module model/PayoutSchedule2
- * @version 2.29.130
+ * @version 2.29.128
  */
 var PayoutSchedule2 = /*#__PURE__*/function () {
   /**

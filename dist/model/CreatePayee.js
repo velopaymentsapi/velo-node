@@ -32,7 +32,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreatePayee model module.
  * @module model/CreatePayee
- * @version 2.29.130
+ * @version 2.29.128
  */
 var CreatePayee = /*#__PURE__*/function () {
   /**

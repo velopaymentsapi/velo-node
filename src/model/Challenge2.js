@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Challenge2 model module.
  * @module model/Challenge2
- * @version 2.29.130
+ * @version 2.29.128
  */
 class Challenge2 {
     /**

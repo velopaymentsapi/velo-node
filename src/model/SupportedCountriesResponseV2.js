@@ -17,7 +17,7 @@ import SupportedCountryV2 from './SupportedCountryV2';
 /**
  * The SupportedCountriesResponseV2 model module.
  * @module model/SupportedCountriesResponseV2
- * @version 2.29.130
+ * @version 2.29.128
  */
 class SupportedCountriesResponseV2 {
     /**

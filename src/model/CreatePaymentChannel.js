@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePaymentChannel model module.
  * @module model/CreatePaymentChannel
- * @version 2.29.130
+ * @version 2.29.128
  */
 class CreatePaymentChannel {
     /**

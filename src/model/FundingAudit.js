@@ -17,7 +17,7 @@ import FundingEvent from './FundingEvent';
 /**
  * The FundingAudit model module.
  * @module model/FundingAudit
- * @version 2.29.130
+ * @version 2.29.128
  */
 class FundingAudit {
     /**

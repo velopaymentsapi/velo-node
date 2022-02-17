@@ -19,7 +19,7 @@ import ListSourceAccountResponsePage from './ListSourceAccountResponsePage';
 /**
  * The ListFundingAccountsResponse model module.
  * @module model/ListFundingAccountsResponse
- * @version 2.29.130
+ * @version 2.29.128
  */
 class ListFundingAccountsResponse {
     /**

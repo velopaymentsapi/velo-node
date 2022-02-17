@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ErrorResponse model module.
  * @module model/ErrorResponse
- * @version 2.29.130
+ * @version 2.29.128
  */
 var ErrorResponse = /*#__PURE__*/function () {
   /**

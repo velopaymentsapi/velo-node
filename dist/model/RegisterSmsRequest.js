@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RegisterSmsRequest model module.
  * @module model/RegisterSmsRequest
- * @version 2.29.130
+ * @version 2.29.128
  */
 var RegisterSmsRequest = /*#__PURE__*/function () {
   /**

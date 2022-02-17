@@ -17,7 +17,7 @@ import FailedPayee from './FailedPayee';
 /**
  * The FailedSubmission model module.
  * @module model/FailedSubmission
- * @version 2.29.130
+ * @version 2.29.128
  */
 class FailedSubmission {
     /**

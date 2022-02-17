@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SourceAccountSummaryV3 model module.
  * @module model/SourceAccountSummaryV3
- * @version 2.29.130
+ * @version 2.29.128
  */
 var SourceAccountSummaryV3 = /*#__PURE__*/function () {
   /**

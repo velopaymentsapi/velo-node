@@ -28,7 +28,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetPaymentsForPayoutResponseV4Summary model module.
  * @module model/GetPaymentsForPayoutResponseV4Summary
- * @version 2.29.130
+ * @version 2.29.128
  */
 var GetPaymentsForPayoutResponseV4Summary = /*#__PURE__*/function () {
   /**

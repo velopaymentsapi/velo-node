@@ -42,7 +42,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * PaymentAuditServiceDeprecated service.
 * @module api/PaymentAuditServiceDeprecatedApi
-* @version 2.29.130
+* @version 2.29.128
 */
 var PaymentAuditServiceDeprecatedApi = /*#__PURE__*/function () {
   /**

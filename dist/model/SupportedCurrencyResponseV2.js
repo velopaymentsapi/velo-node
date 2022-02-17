@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SupportedCurrencyResponseV2 model module.
  * @module model/SupportedCurrencyResponseV2
- * @version 2.29.130
+ * @version 2.29.128
  */
 var SupportedCurrencyResponseV2 = /*#__PURE__*/function () {
   /**

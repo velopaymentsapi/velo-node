@@ -19,7 +19,7 @@ import PagedUserResponsePage from './PagedUserResponsePage';
 /**
  * The GetFundingsResponse model module.
  * @module model/GetFundingsResponse
- * @version 2.29.130
+ * @version 2.29.128
  */
 class GetFundingsResponse {
     /**

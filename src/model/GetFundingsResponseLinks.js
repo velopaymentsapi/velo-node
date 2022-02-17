@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetFundingsResponseLinks model module.
  * @module model/GetFundingsResponseLinks
- * @version 2.29.130
+ * @version 2.29.128
  */
 class GetFundingsResponseLinks {
     /**

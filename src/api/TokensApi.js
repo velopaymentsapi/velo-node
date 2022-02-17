@@ -21,7 +21,7 @@ import ResendTokenRequest from '../model/ResendTokenRequest';
 /**
 * Tokens service.
 * @module api/TokensApi
-* @version 2.29.130
+* @version 2.29.128
 */
 export default class TokensApi {
 

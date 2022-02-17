@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SelfMFATypeUnregisterRequest model module.
  * @module model/SelfMFATypeUnregisterRequest
- * @version 2.29.130
+ * @version 2.29.128
  */
 var SelfMFATypeUnregisterRequest = /*#__PURE__*/function () {
   /**

@@ -17,7 +17,7 @@ import PayeeType2 from './PayeeType2';
 /**
  * The CreatePayeesCSVRequest model module.
  * @module model/CreatePayeesCSVRequest
- * @version 2.29.130
+ * @version 2.29.128
  */
 class CreatePayeesCSVRequest {
     /**

@@ -19,7 +19,7 @@ import SourceEvent from './SourceEvent';
 /**
  * The PaymentEvent model module.
  * @module model/PaymentEvent
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PaymentEvent {
     /**

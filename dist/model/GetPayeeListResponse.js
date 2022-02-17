@@ -30,7 +30,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetPayeeListResponse model module.
  * @module model/GetPayeeListResponse
- * @version 2.29.130
+ * @version 2.29.128
  */
 var GetPayeeListResponse = /*#__PURE__*/function () {
   /**

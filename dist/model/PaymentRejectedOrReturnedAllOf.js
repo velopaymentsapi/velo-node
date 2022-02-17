@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaymentRejectedOrReturnedAllOf model module.
  * @module model/PaymentRejectedOrReturnedAllOf
- * @version 2.29.130
+ * @version 2.29.128
  */
 var PaymentRejectedOrReturnedAllOf = /*#__PURE__*/function () {
   /**

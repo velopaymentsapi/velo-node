@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayableStatusChanged model module.
  * @module model/PayableStatusChanged
- * @version 2.29.130
+ * @version 2.29.128
  */
 var PayableStatusChanged = /*#__PURE__*/function () {
   /**

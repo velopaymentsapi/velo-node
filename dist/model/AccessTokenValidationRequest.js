@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AccessTokenValidationRequest model module.
  * @module model/AccessTokenValidationRequest
- * @version 2.29.130
+ * @version 2.29.128
  */
 var AccessTokenValidationRequest = /*#__PURE__*/function () {
   /**

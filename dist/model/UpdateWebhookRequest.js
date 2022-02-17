@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UpdateWebhookRequest model module.
  * @module model/UpdateWebhookRequest
- * @version 2.29.130
+ * @version 2.29.128
  */
 var UpdateWebhookRequest = /*#__PURE__*/function () {
   /**

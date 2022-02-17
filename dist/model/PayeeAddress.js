@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayeeAddress model module.
  * @module model/PayeeAddress
- * @version 2.29.130
+ * @version 2.29.128
  */
 var PayeeAddress = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InstructPayoutRequest model module.
  * @module model/InstructPayoutRequest
- * @version 2.29.130
+ * @version 2.29.128
  */
 var InstructPayoutRequest = /*#__PURE__*/function () {
   /**

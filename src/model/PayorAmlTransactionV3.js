@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PayorAmlTransactionV3 model module.
  * @module model/PayorAmlTransactionV3
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PayorAmlTransactionV3 {
     /**

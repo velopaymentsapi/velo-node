@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePayeesCSVResponseRejectedCsvRows model module.
  * @module model/CreatePayeesCSVResponseRejectedCsvRows
- * @version 2.29.130
+ * @version 2.29.128
  */
 class CreatePayeesCSVResponseRejectedCsvRows {
     /**

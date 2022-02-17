@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayeeUserSelfUpdateRequest model module.
  * @module model/PayeeUserSelfUpdateRequest
- * @version 2.29.130
+ * @version 2.29.128
  */
 var PayeeUserSelfUpdateRequest = /*#__PURE__*/function () {
   /**

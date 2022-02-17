@@ -17,7 +17,7 @@ import CreatePayee2 from './CreatePayee2';
 /**
  * The CreatePayeesRequest2 model module.
  * @module model/CreatePayeesRequest2
- * @version 2.29.130
+ * @version 2.29.128
  */
 class CreatePayeesRequest2 {
     /**

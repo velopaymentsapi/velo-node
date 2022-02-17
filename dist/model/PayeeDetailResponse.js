@@ -34,7 +34,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayeeDetailResponse model module.
  * @module model/PayeeDetailResponse
- * @version 2.29.130
+ * @version 2.29.128
  */
 var PayeeDetailResponse = /*#__PURE__*/function () {
   /**

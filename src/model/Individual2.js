@@ -17,7 +17,7 @@ import IndividualName from './IndividualName';
 /**
  * The Individual2 model module.
  * @module model/Individual2
- * @version 2.29.130
+ * @version 2.29.128
  */
 class Individual2 {
     /**

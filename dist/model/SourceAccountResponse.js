@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SourceAccountResponse model module.
  * @module model/SourceAccountResponse
- * @version 2.29.130
+ * @version 2.29.128
  */
 var SourceAccountResponse = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ import TransmissionType from './TransmissionType';
 /**
  * The PaymentV3 model module.
  * @module model/PaymentV3
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PaymentV3 {
     /**

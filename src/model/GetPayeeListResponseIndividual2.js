@@ -17,7 +17,7 @@ import Name2 from './Name2';
 /**
  * The GetPayeeListResponseIndividual2 model module.
  * @module model/GetPayeeListResponseIndividual2
- * @version 2.29.130
+ * @version 2.29.128
  */
 class GetPayeeListResponseIndividual2 {
     /**

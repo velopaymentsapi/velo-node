@@ -23,7 +23,7 @@ import Ping from './Ping';
 /**
  * The Notification model module.
  * @module model/Notification
- * @version 2.29.130
+ * @version 2.29.128
  */
 class Notification {
     /**

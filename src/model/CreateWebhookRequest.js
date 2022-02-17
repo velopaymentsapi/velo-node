@@ -17,7 +17,7 @@ import Category from './Category';
 /**
  * The CreateWebhookRequest model module.
  * @module model/CreateWebhookRequest
- * @version 2.29.130
+ * @version 2.29.128
  */
 class CreateWebhookRequest {
     /**

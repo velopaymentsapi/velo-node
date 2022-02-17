@@ -42,7 +42,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * PaymentAuditService service.
 * @module api/PaymentAuditServiceApi
-* @version 2.29.130
+* @version 2.29.128
 */
 var PaymentAuditServiceApi = /*#__PURE__*/function () {
   /**

@@ -17,7 +17,7 @@ import PaymentInstructionV3 from './PaymentInstructionV3';
 /**
  * The CreatePayoutRequestV3 model module.
  * @module model/CreatePayoutRequestV3
- * @version 2.29.130
+ * @version 2.29.128
  */
 class CreatePayoutRequestV3 {
     /**

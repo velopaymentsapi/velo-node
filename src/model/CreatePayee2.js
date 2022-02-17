@@ -23,7 +23,7 @@ import PayeeType2 from './PayeeType2';
 /**
  * The CreatePayee2 model module.
  * @module model/CreatePayee2
- * @version 2.29.130
+ * @version 2.29.128
  */
 class CreatePayee2 {
     /**

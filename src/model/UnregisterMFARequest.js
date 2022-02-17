@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UnregisterMFARequest model module.
  * @module model/UnregisterMFARequest
- * @version 2.29.130
+ * @version 2.29.128
  */
 class UnregisterMFARequest {
     /**

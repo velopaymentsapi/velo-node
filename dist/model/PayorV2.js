@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayorV2 model module.
  * @module model/PayorV2
- * @version 2.29.130
+ * @version 2.29.128
  */
 var PayorV2 = /*#__PURE__*/function () {
   /**

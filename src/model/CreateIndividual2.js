@@ -17,7 +17,7 @@ import CreateIndividualName from './CreateIndividualName';
 /**
  * The CreateIndividual2 model module.
  * @module model/CreateIndividual2
- * @version 2.29.130
+ * @version 2.29.128
  */
 class CreateIndividual2 {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ErrorData model module.
  * @module model/ErrorData
- * @version 2.29.130
+ * @version 2.29.128
  */
 class ErrorData {
     /**

@@ -19,7 +19,7 @@ import PaymentResponseV4 from './PaymentResponseV4';
 /**
  * The ListPaymentsResponseV4 model module.
  * @module model/ListPaymentsResponseV4
- * @version 2.29.130
+ * @version 2.29.128
  */
 class ListPaymentsResponseV4 {
     /**

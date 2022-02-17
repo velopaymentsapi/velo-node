@@ -30,7 +30,7 @@ import WithdrawPaymentRequest from '../model/WithdrawPaymentRequest';
 /**
 * PayoutService service.
 * @module api/PayoutServiceApi
-* @version 2.29.130
+* @version 2.29.128
 */
 export default class PayoutServiceApi {
 

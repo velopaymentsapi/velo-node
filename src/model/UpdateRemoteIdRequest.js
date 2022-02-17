@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateRemoteIdRequest model module.
  * @module model/UpdateRemoteIdRequest
- * @version 2.29.130
+ * @version 2.29.128
  */
 class UpdateRemoteIdRequest {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetPayeeListResponseCompany2 model module.
  * @module model/GetPayeeListResponseCompany2
- * @version 2.29.130
+ * @version 2.29.128
  */
 class GetPayeeListResponseCompany2 {
     /**

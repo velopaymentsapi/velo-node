@@ -18,7 +18,7 @@ import PayableIssue2 from './PayableIssue2';
 /**
  * The PayeePayorRef model module.
  * @module model/PayeePayorRef
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PayeePayorRef {
     /**

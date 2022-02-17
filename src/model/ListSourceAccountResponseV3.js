@@ -19,7 +19,7 @@ import SourceAccountResponseV3 from './SourceAccountResponseV3';
 /**
  * The ListSourceAccountResponseV3 model module.
  * @module model/ListSourceAccountResponseV3
- * @version 2.29.130
+ * @version 2.29.128
  */
 class ListSourceAccountResponseV3 {
     /**

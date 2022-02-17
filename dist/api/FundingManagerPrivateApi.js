@@ -30,7 +30,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * FundingManagerPrivate service.
 * @module api/FundingManagerPrivateApi
-* @version 2.29.130
+* @version 2.29.128
 */
 var FundingManagerPrivateApi = /*#__PURE__*/function () {
   /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SourceAccountResponse model module.
  * @module model/SourceAccountResponse
- * @version 2.29.130
+ * @version 2.29.128
  */
 class SourceAccountResponse {
     /**

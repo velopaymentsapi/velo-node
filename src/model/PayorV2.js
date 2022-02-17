@@ -20,7 +20,7 @@ import TransmissionTypes2 from './TransmissionTypes2';
 /**
  * The PayorV2 model module.
  * @module model/PayorV2
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PayorV2 {
     /**

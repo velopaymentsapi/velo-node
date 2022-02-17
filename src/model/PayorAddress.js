@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PayorAddress model module.
  * @module model/PayorAddress
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PayorAddress {
     /**

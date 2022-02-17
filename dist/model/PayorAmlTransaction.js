@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayorAmlTransaction model module.
  * @module model/PayorAmlTransaction
- * @version 2.29.130
+ * @version 2.29.128
  */
 var PayorAmlTransaction = /*#__PURE__*/function () {
   /**

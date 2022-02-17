@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetPaymentsForPayoutResponseV3Page model module.
  * @module model/GetPaymentsForPayoutResponseV3Page
- * @version 2.29.130
+ * @version 2.29.128
  */
 class GetPaymentsForPayoutResponseV3Page {
     /**

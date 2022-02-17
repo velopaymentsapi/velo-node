@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FundingRequestV1 model module.
  * @module model/FundingRequestV1
- * @version 2.29.130
+ * @version 2.29.128
  */
 class FundingRequestV1 {
     /**

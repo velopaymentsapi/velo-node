@@ -30,7 +30,7 @@ import PayorV2 from '../model/PayorV2';
 /**
 * Payors service.
 * @module api/PayorsApi
-* @version 2.29.130
+* @version 2.29.128
 */
 export default class PayorsApi {
 

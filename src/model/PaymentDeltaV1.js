@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PaymentDeltaV1 model module.
  * @module model/PaymentDeltaV1
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PaymentDeltaV1 {
     /**

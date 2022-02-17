@@ -17,7 +17,7 @@ import QuoteFxSummaryV3 from './QuoteFxSummaryV3';
 /**
  * The QuoteResponseV3 model module.
  * @module model/QuoteResponseV3
- * @version 2.29.130
+ * @version 2.29.128
  */
 class QuoteResponseV3 {
     /**

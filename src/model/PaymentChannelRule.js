@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PaymentChannelRule model module.
  * @module model/PaymentChannelRule
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PaymentChannelRule {
     /**

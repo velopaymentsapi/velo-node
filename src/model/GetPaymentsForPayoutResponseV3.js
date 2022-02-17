@@ -20,7 +20,7 @@ import PaymentResponseV3 from './PaymentResponseV3';
 /**
  * The GetPaymentsForPayoutResponseV3 model module.
  * @module model/GetPaymentsForPayoutResponseV3
- * @version 2.29.130
+ * @version 2.29.128
  */
 class GetPaymentsForPayoutResponseV3 {
     /**

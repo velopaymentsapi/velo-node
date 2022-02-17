@@ -17,7 +17,7 @@ import PaymentChannelRule from './PaymentChannelRule';
 /**
  * The PaymentChannelCountry model module.
  * @module model/PaymentChannelCountry
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PaymentChannelCountry {
     /**

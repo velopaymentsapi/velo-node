@@ -56,7 +56,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Payees service.
 * @module api/PayeesApi
-* @version 2.29.130
+* @version 2.29.128
 */
 var PayeesApi = /*#__PURE__*/function () {
   /**

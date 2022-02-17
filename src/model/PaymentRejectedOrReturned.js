@@ -19,7 +19,7 @@ import PayoutPayorIds from './PayoutPayorIds';
 /**
  * The PaymentRejectedOrReturned model module.
  * @module model/PaymentRejectedOrReturned
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PaymentRejectedOrReturned {
     /**

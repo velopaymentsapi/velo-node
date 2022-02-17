@@ -17,7 +17,7 @@ import PayoutPayor from './PayoutPayor';
 /**
  * The PaymentResponseV4Payout model module.
  * @module model/PaymentResponseV4Payout
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PaymentResponseV4Payout {
     /**

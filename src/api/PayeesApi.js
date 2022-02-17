@@ -36,7 +36,7 @@ import WatchlistStatus from '../model/WatchlistStatus';
 /**
 * Payees service.
 * @module api/PayeesApi
-* @version 2.29.130
+* @version 2.29.128
 */
 export default class PayeesApi {
 

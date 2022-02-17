@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FxSummary model module.
  * @module model/FxSummary
- * @version 2.29.130
+ * @version 2.29.128
  */
 var FxSummary = /*#__PURE__*/function () {
   /**

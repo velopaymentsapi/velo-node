@@ -21,7 +21,7 @@ import SourceAccountSummary from './SourceAccountSummary';
 /**
  * The PayoutSummaryAudit model module.
  * @module model/PayoutSummaryAudit
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PayoutSummaryAudit {
     /**

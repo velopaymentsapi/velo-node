@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PagedUserResponsePage model module.
  * @module model/PagedUserResponsePage
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PagedUserResponsePage {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePayeeAddress2 model module.
  * @module model/CreatePayeeAddress2
- * @version 2.29.130
+ * @version 2.29.128
  */
 class CreatePayeeAddress2 {
     /**

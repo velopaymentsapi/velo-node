@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LinkForResponse model module.
  * @module model/LinkForResponse
- * @version 2.29.130
+ * @version 2.29.128
  */
 class LinkForResponse {
     /**

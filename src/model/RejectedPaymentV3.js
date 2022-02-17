@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RejectedPaymentV3 model module.
  * @module model/RejectedPaymentV3
- * @version 2.29.130
+ * @version 2.29.128
  */
 class RejectedPaymentV3 {
     /**

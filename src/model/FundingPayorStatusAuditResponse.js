@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FundingPayorStatusAuditResponse model module.
  * @module model/FundingPayorStatusAuditResponse
- * @version 2.29.130
+ * @version 2.29.128
  */
 class FundingPayorStatusAuditResponse {
     /**

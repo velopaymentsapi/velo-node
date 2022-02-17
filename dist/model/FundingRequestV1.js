@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FundingRequestV1 model module.
  * @module model/FundingRequestV1
- * @version 2.29.130
+ * @version 2.29.128
  */
 var FundingRequestV1 = /*#__PURE__*/function () {
   /**

@@ -29,7 +29,7 @@ import PayorAmlTransaction from '../model/PayorAmlTransaction';
 /**
 * PaymentAuditService service.
 * @module api/PaymentAuditServiceApi
-* @version 2.29.130
+* @version 2.29.128
 */
 export default class PaymentAuditServiceApi {
 

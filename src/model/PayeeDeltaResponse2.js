@@ -19,7 +19,7 @@ import PayeeDeltaResponsePage from './PayeeDeltaResponsePage';
 /**
  * The PayeeDeltaResponse2 model module.
  * @module model/PayeeDeltaResponse2
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PayeeDeltaResponse2 {
     /**

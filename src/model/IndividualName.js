@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IndividualName model module.
  * @module model/IndividualName
- * @version 2.29.130
+ * @version 2.29.128
  */
 class IndividualName {
     /**

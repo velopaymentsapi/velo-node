@@ -17,7 +17,7 @@ import PaymentAuditCurrencyV3 from './PaymentAuditCurrencyV3';
 /**
  * The PaymentEventResponseV3 model module.
  * @module model/PaymentEventResponseV3
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PaymentEventResponseV3 {
     /**

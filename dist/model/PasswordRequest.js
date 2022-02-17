@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PasswordRequest model module.
  * @module model/PasswordRequest
- * @version 2.29.130
+ * @version 2.29.128
  */
 var PasswordRequest = /*#__PURE__*/function () {
   /**

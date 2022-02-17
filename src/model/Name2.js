@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Name2 model module.
  * @module model/Name2
- * @version 2.29.130
+ * @version 2.29.128
  */
 class Name2 {
     /**

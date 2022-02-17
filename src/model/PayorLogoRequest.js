@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PayorLogoRequest model module.
  * @module model/PayorLogoRequest
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PayorLogoRequest {
     /**

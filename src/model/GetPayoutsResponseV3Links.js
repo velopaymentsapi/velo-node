@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetPayoutsResponseV3Links model module.
  * @module model/GetPayoutsResponseV3Links
- * @version 2.29.130
+ * @version 2.29.128
  */
 class GetPayoutsResponseV3Links {
     /**

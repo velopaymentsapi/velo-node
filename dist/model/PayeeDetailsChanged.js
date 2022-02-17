@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayeeDetailsChanged model module.
  * @module model/PayeeDetailsChanged
- * @version 2.29.130
+ * @version 2.29.128
  */
 var PayeeDetailsChanged = /*#__PURE__*/function () {
   /**

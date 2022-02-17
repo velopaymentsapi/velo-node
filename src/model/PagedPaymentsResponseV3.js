@@ -19,7 +19,7 @@ import PaymentV3 from './PaymentV3';
 /**
  * The PagedPaymentsResponseV3 model module.
  * @module model/PagedPaymentsResponseV3
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PagedPaymentsResponseV3 {
     /**

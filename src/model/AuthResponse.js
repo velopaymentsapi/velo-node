@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthResponse model module.
  * @module model/AuthResponse
- * @version 2.29.130
+ * @version 2.29.128
  */
 class AuthResponse {
     /**

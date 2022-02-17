@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayeeDeltaResponse2 model module.
  * @module model/PayeeDeltaResponse2
- * @version 2.29.130
+ * @version 2.29.128
  */
 var PayeeDeltaResponse2 = /*#__PURE__*/function () {
   /**

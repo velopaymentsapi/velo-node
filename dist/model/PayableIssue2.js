@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayableIssue2 model module.
  * @module model/PayableIssue2
- * @version 2.29.130
+ * @version 2.29.128
  */
 var PayableIssue2 = /*#__PURE__*/function () {
   /**

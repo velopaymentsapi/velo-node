@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PagedPayeeInvitationStatusResponsePage model module.
  * @module model/PagedPayeeInvitationStatusResponsePage
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PagedPayeeInvitationStatusResponsePage {
     /**

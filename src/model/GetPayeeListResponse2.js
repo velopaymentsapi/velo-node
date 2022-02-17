@@ -22,7 +22,7 @@ import WatchlistStatus2 from './WatchlistStatus2';
 /**
  * The GetPayeeListResponse2 model module.
  * @module model/GetPayeeListResponse2
- * @version 2.29.130
+ * @version 2.29.128
  */
 class GetPayeeListResponse2 {
     /**

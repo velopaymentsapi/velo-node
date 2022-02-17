@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AutoTopUpConfig2 model module.
  * @module model/AutoTopUpConfig2
- * @version 2.29.130
+ * @version 2.29.128
  */
 var AutoTopUpConfig2 = /*#__PURE__*/function () {
   /**

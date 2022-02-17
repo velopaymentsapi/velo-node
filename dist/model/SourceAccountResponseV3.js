@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SourceAccountResponseV3 model module.
  * @module model/SourceAccountResponseV3
- * @version 2.29.130
+ * @version 2.29.128
  */
 var SourceAccountResponseV3 = /*#__PURE__*/function () {
   /**

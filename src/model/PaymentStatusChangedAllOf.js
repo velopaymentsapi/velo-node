@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PaymentStatusChangedAllOf model module.
  * @module model/PaymentStatusChangedAllOf
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PaymentStatusChangedAllOf {
     /**

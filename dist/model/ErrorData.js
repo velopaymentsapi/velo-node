@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ErrorData model module.
  * @module model/ErrorData
- * @version 2.29.130
+ * @version 2.29.128
  */
 var ErrorData = /*#__PURE__*/function () {
   /**

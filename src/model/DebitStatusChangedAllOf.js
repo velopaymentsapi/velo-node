@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DebitStatusChangedAllOf model module.
  * @module model/DebitStatusChangedAllOf
- * @version 2.29.130
+ * @version 2.29.128
  */
 class DebitStatusChangedAllOf {
     /**

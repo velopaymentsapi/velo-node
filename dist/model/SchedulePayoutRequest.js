@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SchedulePayoutRequest model module.
  * @module model/SchedulePayoutRequest
- * @version 2.29.130
+ * @version 2.29.128
  */
 var SchedulePayoutRequest = /*#__PURE__*/function () {
   /**

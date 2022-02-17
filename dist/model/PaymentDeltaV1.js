@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaymentDeltaV1 model module.
  * @module model/PaymentDeltaV1
- * @version 2.29.130
+ * @version 2.29.128
  */
 var PaymentDeltaV1 = /*#__PURE__*/function () {
   /**

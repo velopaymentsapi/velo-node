@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PayeeUserSelfUpdateRequest model module.
  * @module model/PayeeUserSelfUpdateRequest
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PayeeUserSelfUpdateRequest {
     /**

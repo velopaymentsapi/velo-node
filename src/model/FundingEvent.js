@@ -17,7 +17,7 @@ import FundingEventType from './FundingEventType';
 /**
  * The FundingEvent model module.
  * @module model/FundingEvent
- * @version 2.29.130
+ * @version 2.29.128
  */
 class FundingEvent {
     /**

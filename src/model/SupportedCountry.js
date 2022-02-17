@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SupportedCountry model module.
  * @module model/SupportedCountry
- * @version 2.29.130
+ * @version 2.29.128
  */
 class SupportedCountry {
     /**

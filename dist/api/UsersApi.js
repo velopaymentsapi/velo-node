@@ -62,7 +62,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Users service.
 * @module api/UsersApi
-* @version 2.29.130
+* @version 2.29.128
 */
 var UsersApi = /*#__PURE__*/function () {
   /**

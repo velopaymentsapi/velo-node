@@ -24,7 +24,7 @@ import WatchlistStatus2 from './WatchlistStatus2';
 /**
  * The PayeeDetailResponse2 model module.
  * @module model/PayeeDetailResponse2
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PayeeDetailResponse2 {
     /**

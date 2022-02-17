@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AccessTokenResponse model module.
  * @module model/AccessTokenResponse
- * @version 2.29.130
+ * @version 2.29.128
  */
 var AccessTokenResponse = /*#__PURE__*/function () {
   /**

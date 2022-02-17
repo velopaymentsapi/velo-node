@@ -17,7 +17,7 @@ import Name from './Name';
 /**
  * The GetPayeeListResponseIndividual model module.
  * @module model/GetPayeeListResponseIndividual
- * @version 2.29.130
+ * @version 2.29.128
  */
 class GetPayeeListResponseIndividual {
     /**

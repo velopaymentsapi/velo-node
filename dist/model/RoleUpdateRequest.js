@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RoleUpdateRequest model module.
  * @module model/RoleUpdateRequest
- * @version 2.29.130
+ * @version 2.29.128
  */
 var RoleUpdateRequest = /*#__PURE__*/function () {
   /**

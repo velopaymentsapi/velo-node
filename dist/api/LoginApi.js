@@ -32,7 +32,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Login service.
 * @module api/LoginApi
-* @version 2.29.130
+* @version 2.29.128
 */
 var LoginApi = /*#__PURE__*/function () {
   /**

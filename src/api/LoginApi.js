@@ -24,7 +24,7 @@ import ResetPasswordRequest from '../model/ResetPasswordRequest';
 /**
 * Login service.
 * @module api/LoginApi
-* @version 2.29.130
+* @version 2.29.128
 */
 export default class LoginApi {
 

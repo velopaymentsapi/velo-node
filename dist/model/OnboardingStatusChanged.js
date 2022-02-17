@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The OnboardingStatusChanged model module.
  * @module model/OnboardingStatusChanged
- * @version 2.29.130
+ * @version 2.29.128
  */
 var OnboardingStatusChanged = /*#__PURE__*/function () {
   /**

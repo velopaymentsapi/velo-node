@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Notifications2 model module.
  * @module model/Notifications2
- * @version 2.29.130
+ * @version 2.29.128
  */
 class Notifications2 {
     /**

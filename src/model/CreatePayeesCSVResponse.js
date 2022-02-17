@@ -17,7 +17,7 @@ import CreatePayeesCSVResponseRejectedCsvRows from './CreatePayeesCSVResponseRej
 /**
  * The CreatePayeesCSVResponse model module.
  * @module model/CreatePayeesCSVResponse
- * @version 2.29.130
+ * @version 2.29.128
  */
 class CreatePayeesCSVResponse {
     /**

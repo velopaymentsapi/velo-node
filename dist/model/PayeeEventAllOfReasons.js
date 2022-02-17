@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayeeEventAllOfReasons model module.
  * @module model/PayeeEventAllOfReasons
- * @version 2.29.130
+ * @version 2.29.128
  */
 var PayeeEventAllOfReasons = /*#__PURE__*/function () {
   /**

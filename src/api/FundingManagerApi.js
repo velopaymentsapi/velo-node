@@ -40,7 +40,7 @@ import TransferRequest2 from '../model/TransferRequest2';
 /**
 * FundingManager service.
 * @module api/FundingManagerApi
-* @version 2.29.130
+* @version 2.29.128
 */
 export default class FundingManagerApi {
 

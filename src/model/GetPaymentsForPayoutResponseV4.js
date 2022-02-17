@@ -20,7 +20,7 @@ import PaymentResponseV4 from './PaymentResponseV4';
 /**
  * The GetPaymentsForPayoutResponseV4 model module.
  * @module model/GetPaymentsForPayoutResponseV4
- * @version 2.29.130
+ * @version 2.29.128
  */
 class GetPaymentsForPayoutResponseV4 {
     /**

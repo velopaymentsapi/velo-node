@@ -18,7 +18,7 @@ import Notifications2 from './Notifications2';
 /**
  * The SourceAccountResponseV3 model module.
  * @module model/SourceAccountResponseV3
- * @version 2.29.130
+ * @version 2.29.128
  */
 class SourceAccountResponseV3 {
     /**

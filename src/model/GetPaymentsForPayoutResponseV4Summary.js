@@ -21,7 +21,7 @@ import PayoutType from './PayoutType';
 /**
  * The GetPaymentsForPayoutResponseV4Summary model module.
  * @module model/GetPaymentsForPayoutResponseV4Summary
- * @version 2.29.130
+ * @version 2.29.128
  */
 class GetPaymentsForPayoutResponseV4Summary {
     /**

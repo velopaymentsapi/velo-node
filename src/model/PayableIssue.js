@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PayableIssue model module.
  * @module model/PayableIssue
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PayableIssue {
     /**

@@ -21,7 +21,7 @@ import PayeeType2 from './PayeeType2';
 /**
  * The UpdatePayeeDetailsRequest model module.
  * @module model/UpdatePayeeDetailsRequest
- * @version 2.29.130
+ * @version 2.29.128
  */
 class UpdatePayeeDetailsRequest {
     /**

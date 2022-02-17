@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetFundingsResponseLinks model module.
  * @module model/GetFundingsResponseLinks
- * @version 2.29.130
+ * @version 2.29.128
  */
 var GetFundingsResponseLinks = /*#__PURE__*/function () {
   /**

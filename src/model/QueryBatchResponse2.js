@@ -17,7 +17,7 @@ import FailedSubmission2 from './FailedSubmission2';
 /**
  * The QueryBatchResponse2 model module.
  * @module model/QueryBatchResponse2
- * @version 2.29.130
+ * @version 2.29.128
  */
 class QueryBatchResponse2 {
     /**

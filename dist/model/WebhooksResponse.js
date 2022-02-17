@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The WebhooksResponse model module.
  * @module model/WebhooksResponse
- * @version 2.29.130
+ * @version 2.29.128
  */
 var WebhooksResponse = /*#__PURE__*/function () {
   /**

@@ -17,7 +17,7 @@ import RegionV2 from './RegionV2';
 /**
  * The SupportedCountryV2 model module.
  * @module model/SupportedCountryV2
- * @version 2.29.130
+ * @version 2.29.128
  */
 class SupportedCountryV2 {
     /**

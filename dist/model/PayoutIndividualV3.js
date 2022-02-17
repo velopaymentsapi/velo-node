@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PayoutIndividualV3 model module.
  * @module model/PayoutIndividualV3
- * @version 2.29.130
+ * @version 2.29.128
  */
 var PayoutIndividualV3 = /*#__PURE__*/function () {
   /**

@@ -17,7 +17,7 @@ import Role from './Role';
 /**
  * The UserResponse model module.
  * @module model/UserResponse
- * @version 2.29.130
+ * @version 2.29.128
  */
 class UserResponse {
     /**

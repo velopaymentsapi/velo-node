@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DebitEvent model module.
  * @module model/DebitEvent
- * @version 2.29.130
+ * @version 2.29.128
  */
 var DebitEvent = /*#__PURE__*/function () {
   /**

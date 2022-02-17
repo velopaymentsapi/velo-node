@@ -17,7 +17,7 @@ import OnboardedStatus2 from './OnboardedStatus2';
 /**
  * The PayeeDelta model module.
  * @module model/PayeeDelta
- * @version 2.29.130
+ * @version 2.29.128
  */
 class PayeeDelta {
     /**

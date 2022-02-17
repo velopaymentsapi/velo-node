@@ -36,7 +36,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Webhooks service.
 * @module api/WebhooksApi
-* @version 2.29.130
+* @version 2.29.128
 */
 var WebhooksApi = /*#__PURE__*/function () {
   /**

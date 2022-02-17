@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FundingEvent model module.
  * @module model/FundingEvent
- * @version 2.29.130
+ * @version 2.29.128
  */
 var FundingEvent = /*#__PURE__*/function () {
   /**

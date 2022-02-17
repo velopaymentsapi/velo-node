@@ -18,7 +18,7 @@ import LocalisationDetails from './LocalisationDetails';
 /**
  * The Error model module.
  * @module model/Error
- * @version 2.29.130
+ * @version 2.29.128
  */
 class Error {
     /**

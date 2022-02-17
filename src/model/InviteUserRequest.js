@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InviteUserRequest model module.
  * @module model/InviteUserRequest
- * @version 2.29.130
+ * @version 2.29.128
  */
 class InviteUserRequest {
     /**
