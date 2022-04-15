@@ -1,5 +1,5 @@
 # JavaScript client for Velo
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![npm version](https://badge.fury.io/js/velo-payments.svg)](https://badge.fury.io/js/velo-payments) [![CircleCI](https://circleci.com/gh/velopaymentsapi/velo-node.svg?style=svg)](https://circleci.com/gh/velopaymentsapi/velo-node)\
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![npm version](https://badge.fury.io/js/velo-payments.svg)](https://badge.fury.io/js/velo-payments)\
 This library provides a JavaScript client that simplifies interactions with the Velo Payments API. For full details covering the API visit our docs at [Velo Payments APIs](https://apidocs.velopayments.com). Note: some of the Velo API calls which require authorization via an access token, see the full docs on how to configure.
 
 Throughout this document and the Velo platform the following terms are used:
