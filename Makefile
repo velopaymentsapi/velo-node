@@ -49,7 +49,7 @@ trim: ## Remove unused files that are auto geneated
 	- rm .travis.yml
 	- rm git_push.sh
 
-info: ## Update the auto generated README.md with Velo info
+adjustments: ## Update the auto generated README.md with Velo info
 	echo "import ApiClient from '../ApiClient';" >> OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged.js
 	echo "export default class OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged {" >> OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged.js
 	echo "	static constructFromObject(object) {" >> OneOfPingPaymentStatusChangedPaymentRejectedOrReturnedOnboardingStatusChangedPayableStatusChangedPayeeDetailsChangedDebitStatusChanged.js
@@ -60,10 +60,11 @@ info: ## Update the auto generated README.md with Velo info
 
 	# adjust package.json
 	sed -i.bak 's/"main": "src\/index.js"/"main": "dist\/index.js", "repository": {"type": "git","url": "git+ssh:\/\/git@github.com\/velopaymentsapi\/velo-node.git"}/' package.json && rm package.json.bak
-	sed -i.bak 's/"test": "mocha/"clean": "rm \-rf dist \&\& mkdir dist", "build": "npm run clean \&\& babel src \-\-out\-dir dist", "test": "mocha/' package.json && rm package.json.bak
+	sed -i.bak 's/"prepare": "npm run build",/"prepare": "npm run build", "clean": "rm \-rf dist \&\& mkdir dist",/' package.json && rm package.json.bak
 	sed -i.bak 's/mocha --require/nyc --reporter=text mocha --require/' package.json && rm package.json.bak
 	sed -i.bak 's/"devDependencies": {/"devDependencies": { "nyc": "^15.0.0",/' package.json && rm package.json.bak
-	
+	sed -i.bak 's/babel src -d dist/npm run clean \&\& babel src --out-dir dist/' package.json && rm package.json.bak
+
 	# adjust README.md
 	sed -i.bak '1s/.*/# JavaScript client for Velo/' README.md && rm README.md.bak
 	sed -i.bak '2s/.*/[![License](https:\/\/img.shields.io\/badge\/License-Apache%202.0-blue.svg)](https:\/\/opensource.org\/licenses\/Apache-2.0) [![npm version](https:\/\/badge.fury.io\/js\/velo-payments.svg)](https:\/\/badge.fury.io\/js\/velo-payments) [![CircleCI](https:\/\/circleci.com\/gh\/velopaymentsapi\/velo-node.svg?style=svg)](https:\/\/circleci.com\/gh\/velopaymentsapi\/velo-node)\\/' README.md && rm README.md.bak
@@ -72,31 +73,14 @@ info: ## Update the auto generated README.md with Velo info
 	sed -i.bak '25,64d' README.md && rm README.md.bak
 	sed -i.bak '12,17d' README.md && rm README.md.bak
 
-build_client: ## Post generate client processing (optional per sdk)
-	npm i
-	npm run build
-	rm -Rf node_modules
+rcnaming: ## 
+	$(eval RC_REVISION="$(shell make WORKING_SPEC=${WORKING_SPEC} version)")
+	@echo "${RC_REVISION}-beta.${RC_BUILD}"
 
-client: clean generate trim info build_client ## Generate sdk via cli
+client: clean generate trim adjustments ## Generate sdk via cli
 
 tests: ## Run (via docker) tests using supplied variables KEY, SECRET, PAYOR, APIURL
 	rm -Rf test/model
 	cp tests/api/* test/api/
 	docker build -t=velo-sdk-node-tests .
 	docker run -t -e KEY=${KEY} -e SECRET=${SECRET} -e PAYOR=${PAYOR} -e APIURL=${APIURL} -e APITOKEN="" velo-sdk-node-tests npm test 
-
-commit: ## Commit & Push generated client to git repo
-	sed -i.bak 's/"version": ".*"/"version": "${VERSION}"/g' package.json && rm package.json.bak
-	git add --all
-	git commit -am 'bump version to ${VERSION}'
-	git push --set-upstream origin master
-
-build: ## Build compiled package (optional per sdk)
-	@echo "Client lib already built in the /dist dir."
-
-publish: ## Tag & Push git ref, (optional per sdk) publish to 3rd party registry
-	git tag $(VERSION)
-	git push origin tag $(VERSION)
-	npm i
-	npm publish
-	rm -Rf node_modules

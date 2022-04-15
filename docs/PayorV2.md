@@ -29,6 +29,8 @@ Name | Type | Description | Notes
 **paymentRails** | [**PaymentRails**](PaymentRails.md) |  | [optional] 
 **transmissionTypes** | [**TransmissionTypes2**](TransmissionTypes2.md) |  | [optional] 
 **remoteSystemIds** | **[String]** | The payor’s supported remote systems by id | [optional] 
+**usdTxnValueReportingThreshold** | **Number** | USD in minor units | [optional] 
+**managingPayees** | **Boolean** |  | [optional] 
 
 
 

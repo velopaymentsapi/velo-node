@@ -16,6 +16,9 @@ Name | Type | Description | Notes
 **iban** | **String** |  | [optional] 
 **accountName** | **String** |  | [optional] 
 **principal** | **String** |  | [optional] 
+**scheduledAt** | **Date** |  | [optional] 
+**scheduledFor** | **Date** |  | [optional] 
+**scheduledBy** | **String** | Optional display name as a hint for who scheduled the payout. Not populated if payout was scheduled by an application. | [optional] 
 
 
 

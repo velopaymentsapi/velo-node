@@ -4,20 +4,71 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**createPayeeV3**](PayeeInvitationApi.md#createPayeeV3) | **POST** /v3/payees | Initiate Payee Creation
 [**getPayeesInvitationStatusV3**](PayeeInvitationApi.md#getPayeesInvitationStatusV3) | **GET** /v3/payees/payors/{payorId}/invitationStatus | Get Payee Invitation Status
 [**getPayeesInvitationStatusV4**](PayeeInvitationApi.md#getPayeesInvitationStatusV4) | **GET** /v4/payees/payors/{payorId}/invitationStatus | Get Payee Invitation Status
 [**queryBatchStatusV3**](PayeeInvitationApi.md#queryBatchStatusV3) | **GET** /v3/payees/batch/{batchId} | Query Batch Status
 [**queryBatchStatusV4**](PayeeInvitationApi.md#queryBatchStatusV4) | **GET** /v4/payees/batch/{batchId} | Query Batch Status
 [**resendPayeeInviteV3**](PayeeInvitationApi.md#resendPayeeInviteV3) | **POST** /v3/payees/{payeeId}/invite | Resend Payee Invite
 [**resendPayeeInviteV4**](PayeeInvitationApi.md#resendPayeeInviteV4) | **POST** /v4/payees/{payeeId}/invite | Resend Payee Invite
-[**v3CreatePayee**](PayeeInvitationApi.md#v3CreatePayee) | **POST** /v3/payees | Initiate Payee Creation
 [**v4CreatePayee**](PayeeInvitationApi.md#v4CreatePayee) | **POST** /v4/payees | Initiate Payee Creation
 
 
 
+## createPayeeV3
+
+> CreatePayeesCSVResponseV3 createPayeeV3(opts)
+
+Initiate Payee Creation
+
+&lt;p&gt;Use v4 instead&lt;/p&gt; Initiate the process of creating 1 to 2000 payees in a batch Use the response location header to query for status (201 - Created, 400 - invalid request body. In addition to standard semantic validations, a 400 will also result if there is a duplicate remote id within the batch / if there is a duplicate email within the batch, i.e. if there is a conflict between the data provided for one payee within the batch and that provided for another payee within the same batch). The validation at this stage is intra-batch only. Validation against payees who have already been invited occurs subsequently during processing of the batch. 
+
+### Example
+
+```javascript
+import VeloPayments from 'velo-payments';
+let defaultClient = VeloPayments.ApiClient.instance;
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new VeloPayments.PayeeInvitationApi();
+let opts = {
+  'createPayeesRequestV3': new VeloPayments.CreatePayeesRequestV3() // CreatePayeesRequestV3 | Post payees to create.
+};
+apiInstance.createPayeeV3(opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createPayeesRequestV3** | [**CreatePayeesRequestV3**](CreatePayeesRequestV3.md)| Post payees to create. | [optional] 
+
+### Return type
+
+[**CreatePayeesCSVResponseV3**](CreatePayeesCSVResponseV3.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+
 ## getPayeesInvitationStatusV3
 
-> PagedPayeeInvitationStatusResponse getPayeesInvitationStatusV3(payorId, opts)
+> PagedPayeeInvitationStatusResponseV3 getPayeesInvitationStatusV3(payorId, opts)
 
 Get Payee Invitation Status
 
@@ -36,7 +87,7 @@ let apiInstance = new VeloPayments.PayeeInvitationApi();
 let payorId = 9ac75325-5dcd-42d5-b992-175d7e0a035e; // String | The account owner Payor ID
 let opts = {
   'payeeId': 2aa5d7e0-2ecb-403f-8494-1865ed0454e9, // String | The UUID of the payee.
-  'invitationStatus': new VeloPayments.InvitationStatus(), // InvitationStatus | The invitation status of the payees.
+  'invitationStatus': new VeloPayments.InvitationStatusV4(), // InvitationStatusV4 | The invitation status of the payees.
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25 // Number | Page size. Default is 25. Max allowable is 100.
 };
@@ -56,13 +107,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payorId** | **String**| The account owner Payor ID | 
  **payeeId** | **String**| The UUID of the payee. | [optional] 
- **invitationStatus** | [**InvitationStatus**](.md)| The invitation status of the payees. | [optional] 
+ **invitationStatus** | [**InvitationStatusV4**](.md)| The invitation status of the payees. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
 
 ### Return type
 
-[**PagedPayeeInvitationStatusResponse**](PagedPayeeInvitationStatusResponse.md)
+[**PagedPayeeInvitationStatusResponseV3**](PagedPayeeInvitationStatusResponseV3.md)
 
 ### Authorization
 
@@ -76,7 +127,7 @@ Name | Type | Description  | Notes
 
 ## getPayeesInvitationStatusV4
 
-> PagedPayeeInvitationStatusResponse2 getPayeesInvitationStatusV4(payorId, opts)
+> PagedPayeeInvitationStatusResponseV4 getPayeesInvitationStatusV4(payorId, opts)
 
 Get Payee Invitation Status
 
@@ -95,7 +146,7 @@ let apiInstance = new VeloPayments.PayeeInvitationApi();
 let payorId = 9ac75325-5dcd-42d5-b992-175d7e0a035e; // String | The account owner Payor ID
 let opts = {
   'payeeId': 2aa5d7e0-2ecb-403f-8494-1865ed0454e9, // String | The UUID of the payee.
-  'invitationStatus': new VeloPayments.InvitationStatus(), // InvitationStatus | The invitation status of the payees.
+  'invitationStatus': new VeloPayments.InvitationStatusV4(), // InvitationStatusV4 | The invitation status of the payees.
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25 // Number | Page size. Default is 25. Max allowable is 100.
 };
@@ -115,13 +166,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payorId** | **String**| The account owner Payor ID | 
  **payeeId** | **String**| The UUID of the payee. | [optional] 
- **invitationStatus** | [**InvitationStatus**](.md)| The invitation status of the payees. | [optional] 
+ **invitationStatus** | [**InvitationStatusV4**](.md)| The invitation status of the payees. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
 
 ### Return type
 
-[**PagedPayeeInvitationStatusResponse2**](PagedPayeeInvitationStatusResponse2.md)
+[**PagedPayeeInvitationStatusResponseV4**](PagedPayeeInvitationStatusResponseV4.md)
 
 ### Authorization
 
@@ -135,7 +186,7 @@ Name | Type | Description  | Notes
 
 ## queryBatchStatusV3
 
-> QueryBatchResponse queryBatchStatusV3(batchId)
+> QueryBatchResponseV3 queryBatchStatusV3(batchId)
 
 Query Batch Status
 
@@ -170,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**QueryBatchResponse**](QueryBatchResponse.md)
+[**QueryBatchResponseV3**](QueryBatchResponseV3.md)
 
 ### Authorization
 
@@ -184,7 +235,7 @@ Name | Type | Description  | Notes
 
 ## queryBatchStatusV4
 
-> QueryBatchResponse2 queryBatchStatusV4(batchId)
+> QueryBatchResponseV4 queryBatchStatusV4(batchId)
 
 Query Batch Status
 
@@ -219,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**QueryBatchResponse2**](QueryBatchResponse2.md)
+[**QueryBatchResponseV4**](QueryBatchResponseV4.md)
 
 ### Authorization
 
@@ -233,7 +284,7 @@ Name | Type | Description  | Notes
 
 ## resendPayeeInviteV3
 
-> resendPayeeInviteV3(payeeId, invitePayeeRequest)
+> resendPayeeInviteV3(payeeId, invitePayeeRequestV3)
 
 Resend Payee Invite
 
@@ -250,8 +301,8 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayeeInvitationApi();
 let payeeId = 2aa5d7e0-2ecb-403f-8494-1865ed0454e9; // String | The UUID of the payee.
-let invitePayeeRequest = new VeloPayments.InvitePayeeRequest(); // InvitePayeeRequest | Provide Payor Id in body of request
-apiInstance.resendPayeeInviteV3(payeeId, invitePayeeRequest, (error, data, response) => {
+let invitePayeeRequestV3 = new VeloPayments.InvitePayeeRequestV3(); // InvitePayeeRequestV3 | Provide Payor Id in body of request
+apiInstance.resendPayeeInviteV3(payeeId, invitePayeeRequestV3, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -266,7 +317,7 @@ apiInstance.resendPayeeInviteV3(payeeId, invitePayeeRequest, (error, data, respo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payeeId** | **String**| The UUID of the payee. | 
- **invitePayeeRequest** | [**InvitePayeeRequest**](InvitePayeeRequest.md)| Provide Payor Id in body of request | 
+ **invitePayeeRequestV3** | [**InvitePayeeRequestV3**](InvitePayeeRequestV3.md)| Provide Payor Id in body of request | 
 
 ### Return type
 
@@ -284,7 +335,7 @@ null (empty response body)
 
 ## resendPayeeInviteV4
 
-> resendPayeeInviteV4(payeeId, invitePayeeRequest2)
+> resendPayeeInviteV4(payeeId, invitePayeeRequestV4)
 
 Resend Payee Invite
 
@@ -301,8 +352,8 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayeeInvitationApi();
 let payeeId = 2aa5d7e0-2ecb-403f-8494-1865ed0454e9; // String | The UUID of the payee.
-let invitePayeeRequest2 = new VeloPayments.InvitePayeeRequest2(); // InvitePayeeRequest2 | Provide Payor Id in body of request
-apiInstance.resendPayeeInviteV4(payeeId, invitePayeeRequest2, (error, data, response) => {
+let invitePayeeRequestV4 = new VeloPayments.InvitePayeeRequestV4(); // InvitePayeeRequestV4 | Provide Payor Id in body of request
+apiInstance.resendPayeeInviteV4(payeeId, invitePayeeRequestV4, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -317,7 +368,7 @@ apiInstance.resendPayeeInviteV4(payeeId, invitePayeeRequest2, (error, data, resp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payeeId** | **String**| The UUID of the payee. | 
- **invitePayeeRequest2** | [**InvitePayeeRequest2**](InvitePayeeRequest2.md)| Provide Payor Id in body of request | 
+ **invitePayeeRequestV4** | [**InvitePayeeRequestV4**](InvitePayeeRequestV4.md)| Provide Payor Id in body of request | 
 
 ### Return type
 
@@ -333,60 +384,9 @@ null (empty response body)
 - **Accept**: application/json
 
 
-## v3CreatePayee
-
-> CreatePayeesCSVResponse v3CreatePayee(opts)
-
-Initiate Payee Creation
-
-&lt;p&gt;Use v4 instead&lt;/p&gt; Initiate the process of creating 1 to 2000 payees in a batch Use the response location header to query for status (201 - Created, 400 - invalid request body. In addition to standard semantic validations, a 400 will also result if there is a duplicate remote id within the batch / if there is a duplicate email within the batch, i.e. if there is a conflict between the data provided for one payee within the batch and that provided for another payee within the same batch). The validation at this stage is intra-batch only. Validation against payees who have already been invited occurs subsequently during processing of the batch. 
-
-### Example
-
-```javascript
-import VeloPayments from 'velo-payments';
-let defaultClient = VeloPayments.ApiClient.instance;
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new VeloPayments.PayeeInvitationApi();
-let opts = {
-  'createPayeesRequest': new VeloPayments.CreatePayeesRequest() // CreatePayeesRequest | Post payees to create.
-};
-apiInstance.v3CreatePayee(opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **createPayeesRequest** | [**CreatePayeesRequest**](CreatePayeesRequest.md)| Post payees to create. | [optional] 
-
-### Return type
-
-[**CreatePayeesCSVResponse**](CreatePayeesCSVResponse.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
-- **Content-Type**: application/json, multipart/form-data
-- **Accept**: application/json
-
-
 ## v4CreatePayee
 
-> CreatePayeesCSVResponse2 v4CreatePayee(opts)
+> CreatePayeesCSVResponseV4 v4CreatePayee(opts)
 
 Initiate Payee Creation
 
@@ -403,7 +403,7 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayeeInvitationApi();
 let opts = {
-  'createPayeesRequest2': new VeloPayments.CreatePayeesRequest2() // CreatePayeesRequest2 | Post payees to create.
+  'createPayeesRequestV4': new VeloPayments.CreatePayeesRequestV4() // CreatePayeesRequestV4 | Post payees to create.
 };
 apiInstance.v4CreatePayee(opts, (error, data, response) => {
   if (error) {
@@ -419,11 +419,11 @@ apiInstance.v4CreatePayee(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createPayeesRequest2** | [**CreatePayeesRequest2**](CreatePayeesRequest2.md)| Post payees to create. | [optional] 
+ **createPayeesRequestV4** | [**CreatePayeesRequestV4**](CreatePayeesRequestV4.md)| Post payees to create. | [optional] 
 
 ### Return type
 
-[**CreatePayeesCSVResponse2**](CreatePayeesCSVResponse2.md)
+[**CreatePayeesCSVResponseV4**](CreatePayeesCSVResponseV4.md)
 
 ### Authorization
 
