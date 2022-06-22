@@ -20,5 +20,6 @@ Name | Type | Description | Notes
 **payoutMemo** | **String** |  | [optional] 
 **payoutType** | [**PayoutType**](PayoutType.md) |  | 
 **payorName** | **String** |  | 
+**schedule** | [**PayoutSchedule**](PayoutSchedule.md) |  | [optional] 
 
 

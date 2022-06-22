@@ -42,7 +42,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.FundingManagerApi();
-let sourceAccountId = null; // String | Source account id
+let sourceAccountId = "sourceAccountId_example"; // String | Source account id
 let fundingRequestV1 = new VeloPayments.FundingRequestV1(); // FundingRequestV1 | Body to included amount to be funded
 apiInstance.createAchFundingRequest(sourceAccountId, fundingRequestV1, (error, data, response) => {
   if (error) {
@@ -58,7 +58,7 @@ apiInstance.createAchFundingRequest(sourceAccountId, fundingRequestV1, (error, d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sourceAccountId** | [**String**](.md)| Source account id | 
+ **sourceAccountId** | **String**| Source account id | 
  **fundingRequestV1** | [**FundingRequestV1**](FundingRequestV1.md)| Body to included amount to be funded | 
 
 ### Return type
@@ -93,7 +93,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.FundingManagerApi();
-let sourceAccountId = null; // String | Source account id
+let sourceAccountId = "sourceAccountId_example"; // String | Source account id
 let fundingRequestV2 = new VeloPayments.FundingRequestV2(); // FundingRequestV2 | Body to included amount to be funded
 apiInstance.createFundingRequest(sourceAccountId, fundingRequestV2, (error, data, response) => {
   if (error) {
@@ -109,7 +109,7 @@ apiInstance.createFundingRequest(sourceAccountId, fundingRequestV2, (error, data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sourceAccountId** | [**String**](.md)| Source account id | 
+ **sourceAccountId** | **String**| Source account id | 
  **fundingRequestV2** | [**FundingRequestV2**](FundingRequestV2.md)| Body to included amount to be funded | 
 
 ### Return type
@@ -144,7 +144,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.FundingManagerApi();
-let sourceAccountId = null; // String | Source account id
+let sourceAccountId = "sourceAccountId_example"; // String | Source account id
 let fundingRequestV3 = new VeloPayments.FundingRequestV3(); // FundingRequestV3 | Body to included amount to be funded
 apiInstance.createFundingRequestV3(sourceAccountId, fundingRequestV3, (error, data, response) => {
   if (error) {
@@ -160,7 +160,7 @@ apiInstance.createFundingRequestV3(sourceAccountId, fundingRequestV3, (error, da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sourceAccountId** | [**String**](.md)| Source account id | 
+ **sourceAccountId** | **String**| Source account id | 
  **fundingRequestV3** | [**FundingRequestV3**](FundingRequestV3.md)| Body to included amount to be funded | 
 
 ### Return type
@@ -195,7 +195,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.FundingManagerApi();
-let fundingAccountId = null; // String | 
+let fundingAccountId = "fundingAccountId_example"; // String | 
 let opts = {
   'sensitive': false // Boolean | 
 };
@@ -213,7 +213,7 @@ apiInstance.getFundingAccount(fundingAccountId, opts, (error, data, response) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fundingAccountId** | [**String**](.md)|  | 
+ **fundingAccountId** | **String**|  | 
  **sensitive** | **Boolean**|  | [optional] [default to false]
 
 ### Return type
@@ -248,7 +248,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.FundingManagerApi();
-let fundingAccountId = null; // String | 
+let fundingAccountId = "fundingAccountId_example"; // String | 
 let opts = {
   'sensitive': false // Boolean | 
 };
@@ -266,7 +266,7 @@ apiInstance.getFundingAccountV2(fundingAccountId, opts, (error, data, response) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fundingAccountId** | [**String**](.md)|  | 
+ **fundingAccountId** | **String**|  | 
  **sensitive** | **Boolean**|  | [optional] [default to false]
 
 ### Return type
@@ -302,8 +302,8 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.FundingManagerApi();
 let opts = {
-  'payorId': null, // String | 
-  'sourceAccountId': null, // String | 
+  'payorId': "payorId_example", // String | 
+  'sourceAccountId': "sourceAccountId_example", // String | 
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | The number of results to return in a page
   'sort': "'accountName:asc'", // String | List of sort fields (e.g. ?sort=accountName:asc,name:asc) Default is accountName:asc The supported sort fields are - accountName, name and currency.
@@ -323,8 +323,8 @@ apiInstance.getFundingAccounts(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)|  | [optional] 
- **sourceAccountId** | [**String**](.md)|  | [optional] 
+ **payorId** | **String**|  | [optional] 
+ **sourceAccountId** | **String**|  | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;accountName:asc,name:asc) Default is accountName:asc The supported sort fields are - accountName, name and currency. | [optional] [default to &#39;accountName:asc&#39;]
@@ -363,7 +363,7 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.FundingManagerApi();
 let opts = {
-  'payorId': null, // String | 
+  'payorId': "payorId_example", // String | 
   'name': "name_example", // String | The descriptive funding account name
   'country': US, // String | The 2 letter ISO 3166-1 country code (upper case)
   'currency': USD, // String | The ISO 4217 currency code
@@ -387,7 +387,7 @@ apiInstance.getFundingAccountsV2(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)|  | [optional] 
+ **payorId** | **String**|  | [optional] 
  **name** | **String**| The descriptive funding account name | [optional] 
  **country** | **String**| The 2 letter ISO 3166-1 country code (upper case) | [optional] 
  **currency** | **String**| The ISO 4217 currency code | [optional] 
@@ -429,7 +429,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.FundingManagerApi();
-let sourceAccountId = null; // String | Source account id
+let sourceAccountId = "sourceAccountId_example"; // String | Source account id
 apiInstance.getSourceAccount(sourceAccountId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -444,7 +444,7 @@ apiInstance.getSourceAccount(sourceAccountId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sourceAccountId** | [**String**](.md)| Source account id | 
+ **sourceAccountId** | **String**| Source account id | 
 
 ### Return type
 
@@ -478,7 +478,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.FundingManagerApi();
-let sourceAccountId = null; // String | Source account id
+let sourceAccountId = "sourceAccountId_example"; // String | Source account id
 apiInstance.getSourceAccountV2(sourceAccountId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -493,7 +493,7 @@ apiInstance.getSourceAccountV2(sourceAccountId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sourceAccountId** | [**String**](.md)| Source account id | 
+ **sourceAccountId** | **String**| Source account id | 
 
 ### Return type
 
@@ -527,7 +527,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.FundingManagerApi();
-let sourceAccountId = null; // String | Source account id
+let sourceAccountId = "sourceAccountId_example"; // String | Source account id
 apiInstance.getSourceAccountV3(sourceAccountId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -542,7 +542,7 @@ apiInstance.getSourceAccountV3(sourceAccountId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sourceAccountId** | [**String**](.md)| Source account id | 
+ **sourceAccountId** | **String**| Source account id | 
 
 ### Return type
 
@@ -578,7 +578,7 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new VeloPayments.FundingManagerApi();
 let opts = {
   'physicalAccountName': "physicalAccountName_example", // String | Physical Account Name
-  'payorId': null, // String | The account owner Payor ID
+  'payorId': "payorId_example", // String | The account owner Payor ID
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | The number of results to return in a page
   'sort': "'fundingRef:asc'" // String | List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef 
@@ -598,7 +598,7 @@ apiInstance.getSourceAccounts(opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **physicalAccountName** | **String**| Physical Account Name | [optional] 
- **payorId** | [**String**](.md)| The account owner Payor ID | [optional] 
+ **payorId** | **String**| The account owner Payor ID | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields e.g. ?sort&#x3D;name:asc Default is name:asc The supported sort fields are - fundingRef  | [optional] [default to &#39;fundingRef:asc&#39;]
@@ -637,9 +637,9 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new VeloPayments.FundingManagerApi();
 let opts = {
   'physicalAccountName': "physicalAccountName_example", // String | Physical Account Name
-  'physicalAccountId': null, // String | The physical account ID
-  'payorId': null, // String | The account owner Payor ID
-  'fundingAccountId': null, // String | The funding account ID
+  'physicalAccountId': "physicalAccountId_example", // String | The physical account ID
+  'payorId': "payorId_example", // String | The account owner Payor ID
+  'fundingAccountId': "fundingAccountId_example", // String | The funding account ID
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | The number of results to return in a page
   'sort': "'fundingRef:asc'" // String | List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance 
@@ -659,9 +659,9 @@ apiInstance.getSourceAccountsV2(opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **physicalAccountName** | **String**| Physical Account Name | [optional] 
- **physicalAccountId** | [**String**](.md)| The physical account ID | [optional] 
- **payorId** | [**String**](.md)| The account owner Payor ID | [optional] 
- **fundingAccountId** | [**String**](.md)| The funding account ID | [optional] 
+ **physicalAccountId** | **String**| The physical account ID | [optional] 
+ **payorId** | **String**| The account owner Payor ID | [optional] 
+ **fundingAccountId** | **String**| The funding account ID | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields e.g. ?sort&#x3D;name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance  | [optional] [default to &#39;fundingRef:asc&#39;]
@@ -700,9 +700,9 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new VeloPayments.FundingManagerApi();
 let opts = {
   'physicalAccountName': "physicalAccountName_example", // String | Physical Account Name
-  'physicalAccountId': null, // String | The physical account ID
-  'payorId': null, // String | The account owner Payor ID
-  'fundingAccountId': null, // String | The funding account ID
+  'physicalAccountId': "physicalAccountId_example", // String | The physical account ID
+  'payorId': "payorId_example", // String | The account owner Payor ID
+  'fundingAccountId': "fundingAccountId_example", // String | The funding account ID
   'includeUserDeleted': "includeUserDeleted_example", // Boolean | A filter for retrieving both active accounts and user deleted ones
   'type': new VeloPayments.SourceAccountType(), // SourceAccountType | The type of source account.
   'page': 1, // Number | Page number. Default is 1.
@@ -724,9 +724,9 @@ apiInstance.getSourceAccountsV3(opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **physicalAccountName** | **String**| Physical Account Name | [optional] 
- **physicalAccountId** | [**String**](.md)| The physical account ID | [optional] 
- **payorId** | [**String**](.md)| The account owner Payor ID | [optional] 
- **fundingAccountId** | [**String**](.md)| The funding account ID | [optional] 
+ **physicalAccountId** | **String**| The physical account ID | [optional] 
+ **payorId** | **String**| The account owner Payor ID | [optional] 
+ **fundingAccountId** | **String**| The funding account ID | [optional] 
  **includeUserDeleted** | **Boolean**| A filter for retrieving both active accounts and user deleted ones | [optional] 
  **type** | [**SourceAccountType**](.md)| The type of source account. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
@@ -765,7 +765,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.FundingManagerApi();
-let payorId = null; // String | 
+let payorId = "payorId_example"; // String | 
 let updatedSince = new Date("2013-10-20T19:20:30+01:00"); // Date | 
 let opts = {
   'page': 1, // Number | Page number. Default is 1.
@@ -785,7 +785,7 @@ apiInstance.listFundingAuditDeltas(payorId, updatedSince, opts, (error, data, re
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)|  | 
+ **payorId** | **String**|  | 
  **updatedSince** | **Date**|  | 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
@@ -822,7 +822,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.FundingManagerApi();
-let sourceAccountId = null; // String | Source account id
+let sourceAccountId = "sourceAccountId_example"; // String | Source account id
 let setNotificationsRequest = new VeloPayments.SetNotificationsRequest(); // SetNotificationsRequest | Body to included minimum balance to set
 apiInstance.setNotificationsRequest(sourceAccountId, setNotificationsRequest, (error, data, response) => {
   if (error) {
@@ -838,7 +838,7 @@ apiInstance.setNotificationsRequest(sourceAccountId, setNotificationsRequest, (e
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sourceAccountId** | [**String**](.md)| Source account id | 
+ **sourceAccountId** | **String**| Source account id | 
  **setNotificationsRequest** | [**SetNotificationsRequest**](SetNotificationsRequest.md)| Body to included minimum balance to set | 
 
 ### Return type
@@ -873,7 +873,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.FundingManagerApi();
-let sourceAccountId = null; // String | The 'from' source account id, which will be debited
+let sourceAccountId = "sourceAccountId_example"; // String | The 'from' source account id, which will be debited
 let transferRequest = new VeloPayments.TransferRequest(); // TransferRequest | Body
 apiInstance.transferFunds(sourceAccountId, transferRequest, (error, data, response) => {
   if (error) {
@@ -889,7 +889,7 @@ apiInstance.transferFunds(sourceAccountId, transferRequest, (error, data, respon
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sourceAccountId** | [**String**](.md)| The &#39;from&#39; source account id, which will be debited | 
+ **sourceAccountId** | **String**| The &#39;from&#39; source account id, which will be debited | 
  **transferRequest** | [**TransferRequest**](TransferRequest.md)| Body | 
 
 ### Return type
@@ -924,7 +924,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.FundingManagerApi();
-let sourceAccountId = null; // String | The 'from' source account id, which will be debited
+let sourceAccountId = "sourceAccountId_example"; // String | The 'from' source account id, which will be debited
 let transferRequest2 = new VeloPayments.TransferRequest2(); // TransferRequest2 | Body
 apiInstance.transferFundsV3(sourceAccountId, transferRequest2, (error, data, response) => {
   if (error) {
@@ -940,7 +940,7 @@ apiInstance.transferFundsV3(sourceAccountId, transferRequest2, (error, data, res
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sourceAccountId** | [**String**](.md)| The &#39;from&#39; source account id, which will be debited | 
+ **sourceAccountId** | **String**| The &#39;from&#39; source account id, which will be debited | 
  **transferRequest2** | [**TransferRequest2**](TransferRequest2.md)| Body | 
 
 ### Return type

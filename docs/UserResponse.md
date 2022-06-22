@@ -13,7 +13,9 @@ Name | Type | Description | Notes
 **firstName** | **String** |  | [optional] 
 **lastName** | **String** |  | [optional] 
 **entityId** | **String** | The payorId or payeeId or null if the user is not a payor or payee user  | [optional] 
+**companyName** | **String** | The payor or payee company name or null if the user is not a payor or payee user  | [optional] 
 **roles** | [**[Role]**](Role.md) | The role(s) for the user  | [optional] 
+**userType** | **String** | Indicates the type of user. Could be BACKOFFICE, PAYOR or PAYEE. | [optional] 
 **mfaType** | **String** | The type of the MFA device | [optional] 
 **mfaStatus** | **String** | The status of the MFA device | [optional] 
 **lockedOut** | **Boolean** | If true the user is currently locked out and unable to log in | [optional] 
@@ -29,6 +31,19 @@ Name | Type | Description | Notes
 * `DISABLED` (value: `"DISABLED"`)
 
 * `PENDING` (value: `"PENDING"`)
+
+
+
+
+
+## Enum: UserTypeEnum
+
+
+* `BACKOFFICE` (value: `"BACKOFFICE"`)
+
+* `PAYOR` (value: `"PAYOR"`)
+
+* `PAYEE` (value: `"PAYEE"`)
 
 
 

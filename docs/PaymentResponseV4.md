@@ -45,9 +45,11 @@ Name | Type | Description | Notes
 **rejectionReason** | **String** |  | [optional] 
 **withdrawnReason** | **String** |  | [optional] 
 **withdrawable** | **Boolean** |  | [optional] 
+**autoWithdrawnReasonCode** | **String** | Populated with rejection reason code if the payment was withdrawn automatically at instruct time | [optional] 
 **transmissionType** | **String** | The transmission type of the payment, e.g. ACH, SAME_DAY_ACH, WIRE | [optional] 
 **paymentTrackingReference** | **String** |  | [optional] 
 **paymentMetadata** | **String** | Metadata for the payment | [optional] 
+**schedule** | [**PayoutSchedule**](PayoutSchedule.md) |  | [optional] 
 **payout** | [**PaymentResponseV4Payout**](PaymentResponseV4Payout.md) |  | [optional] 
 
 

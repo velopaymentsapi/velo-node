@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **accounts** | [**[SourceAccountV3]**](SourceAccountV3.md) |  | 
 **acceptedPayments** | [**[AcceptedPaymentV3]**](AcceptedPaymentV3.md) |  | 
 **rejectedPayments** | [**[RejectedPaymentV3]**](RejectedPaymentV3.md) |  | 
+**schedule** | [**PayoutSchedule2**](PayoutSchedule2.md) |  | [optional] 
 
 

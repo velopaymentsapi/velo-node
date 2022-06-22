@@ -34,7 +34,7 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceApi();
 let opts = {
-  'payorId': null, // String | <p>The Payor ID for whom you wish to run the report.</p> <p>For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor.</p> 
+  'payorId': "payorId_example", // String | <p>The Payor ID for whom you wish to run the report.</p> <p>For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor.</p> 
   'startDate': new Date("2013-10-20"), // Date | Start date, inclusive. Format is YYYY-MM-DD
   'endDate': new Date("2013-10-20"), // Date | End date, inclusive. Format is YYYY-MM-DD
   'include': "include_example" // String | <p>Mode to determine whether to include other Payor's data in the results.</p> <p>May only be used if payorId is specified.</p> <p>Can be omitted or set to 'payorOnly' or 'payorAndDescendants'.</p> <p>payorOnly: Only include results for the specified Payor. This is the default if 'include' is omitted.</p> <p>payorAndDescendants: Aggregate results for all descendant Payors of the specified Payor. Should only be used if the Payor with the specified payorId has at least one child Payor.</p> <p>Note when a Payor requests the report and include=payorAndDescendants is used, the following additional columns are included in the CSV: Payor Name, Payor Id</p> 
@@ -53,7 +53,7 @@ apiInstance.exportTransactionsCSVV4(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| &lt;p&gt;The Payor ID for whom you wish to run the report.&lt;/p&gt; &lt;p&gt;For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor.&lt;/p&gt;  | [optional] 
+ **payorId** | **String**| &lt;p&gt;The Payor ID for whom you wish to run the report.&lt;/p&gt; &lt;p&gt;For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor.&lt;/p&gt;  | [optional] 
  **startDate** | **Date**| Start date, inclusive. Format is YYYY-MM-DD | [optional] 
  **endDate** | **Date**| End date, inclusive. Format is YYYY-MM-DD | [optional] 
  **include** | **String**| &lt;p&gt;Mode to determine whether to include other Payor&#39;s data in the results.&lt;/p&gt; &lt;p&gt;May only be used if payorId is specified.&lt;/p&gt; &lt;p&gt;Can be omitted or set to &#39;payorOnly&#39; or &#39;payorAndDescendants&#39;.&lt;/p&gt; &lt;p&gt;payorOnly: Only include results for the specified Payor. This is the default if &#39;include&#39; is omitted.&lt;/p&gt; &lt;p&gt;payorAndDescendants: Aggregate results for all descendant Payors of the specified Payor. Should only be used if the Payor with the specified payorId has at least one child Payor.&lt;/p&gt; &lt;p&gt;Note when a Payor requests the report and include&#x3D;payorAndDescendants is used, the following additional columns are included in the CSV: Payor Name, Payor Id&lt;/p&gt;  | [optional] 
@@ -90,7 +90,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceApi();
-let payorId = null; // String | The account owner Payor ID
+let payorId = "payorId_example"; // String | The account owner Payor ID
 let opts = {
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | The number of results to return in a page
@@ -110,7 +110,7 @@ apiInstance.getFundingsV4(payorId, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The account owner Payor ID | 
+ **payorId** | **String**| The account owner Payor ID | 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields. Example: &#x60;&#x60;&#x60;?sort&#x3D;destinationCurrency:asc,destinationAmount:asc&#x60;&#x60;&#x60; Default is no sort. The supported sort fields are: dateTime and amount.  | [optional] 
@@ -147,7 +147,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceApi();
-let paymentId = null; // String | Payment Id
+let paymentId = "paymentId_example"; // String | Payment Id
 let opts = {
   'sensitive': true // Boolean | Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
 };
@@ -165,7 +165,7 @@ apiInstance.getPaymentDetailsV4(paymentId, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **paymentId** | [**String**](.md)| Payment Id | 
+ **paymentId** | **String**| Payment Id | 
  **sensitive** | **Boolean**| Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values.  | [optional] 
 
 ### Return type
@@ -200,7 +200,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceApi();
-let payoutId = null; // String | The id (UUID) of the payout.
+let payoutId = "payoutId_example"; // String | The id (UUID) of the payout.
 let opts = {
   'remoteId': "remoteId_example", // String | The remote id of the payees.
   'remoteSystemId': "remoteSystemId_example", // String | The id of the remote system that is orchestrating payments
@@ -231,7 +231,7 @@ apiInstance.getPaymentsForPayoutV4(payoutId, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payoutId** | [**String**](.md)| The id (UUID) of the payout. | 
+ **payoutId** | **String**| The id (UUID) of the payout. | 
  **remoteId** | **String**| The remote id of the payees. | [optional] 
  **remoteSystemId** | **String**| The id of the remote system that is orchestrating payments | [optional] 
  **status** | **String**| Payment Status | [optional] 
@@ -280,7 +280,7 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceApi();
 let opts = {
-  'payorId': null // String | The account owner Payor ID. Required for external users.
+  'payorId': "payorId_example" // String | The account owner Payor ID. Required for external users.
 };
 apiInstance.getPayoutStatsV4(opts, (error, data, response) => {
   if (error) {
@@ -296,7 +296,7 @@ apiInstance.getPayoutStatsV4(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The account owner Payor ID. Required for external users. | [optional] 
+ **payorId** | **String**| The account owner Payor ID. Required for external users. | [optional] 
 
 ### Return type
 
@@ -331,15 +331,18 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceApi();
 let opts = {
-  'payorId': null, // String | The id (UUID) of the payor funding the payout or the payor whose payees are being paid.
+  'payorId': "payorId_example", // String | The id (UUID) of the payor funding the payout or the payor whose payees are being paid.
   'payoutMemo': "payoutMemo_example", // String | Payout Memo filter - case insensitive sub-string match
   'status': "status_example", // String | Payout Status
   'submittedDateFrom': new Date("2013-10-20"), // Date | The submitted date from range filter. Format is yyyy-MM-dd.
   'submittedDateTo': new Date("2013-10-20"), // Date | The submitted date to range filter. Format is yyyy-MM-dd.
   'fromPayorName': "fromPayorName_example", // String | The name of the payor whose payees are being paid. This filters via a case insensitive substring match.
+  'scheduledForDateFrom': new Date("2013-10-20"), // Date | Filter payouts scheduled to run on or after the given date. Format is yyyy-MM-dd.
+  'scheduledForDateTo': new Date("2013-10-20"), // Date | Filter payouts scheduled to run on or before the given date. Format is yyyy-MM-dd.
+  'scheduleStatus': "scheduleStatus_example", // String | Payout Schedule Status
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | The number of results to return in a page
-  'sort': "sort_example" // String | List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments, payoutId 
+  'sort': "sort_example" // String | List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments, payoutId, scheduledFor 
 };
 apiInstance.getPayoutsForPayorV4(opts, (error, data, response) => {
   if (error) {
@@ -355,15 +358,18 @@ apiInstance.getPayoutsForPayorV4(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The id (UUID) of the payor funding the payout or the payor whose payees are being paid. | [optional] 
+ **payorId** | **String**| The id (UUID) of the payor funding the payout or the payor whose payees are being paid. | [optional] 
  **payoutMemo** | **String**| Payout Memo filter - case insensitive sub-string match | [optional] 
  **status** | **String**| Payout Status | [optional] 
  **submittedDateFrom** | **Date**| The submitted date from range filter. Format is yyyy-MM-dd. | [optional] 
  **submittedDateTo** | **Date**| The submitted date to range filter. Format is yyyy-MM-dd. | [optional] 
  **fromPayorName** | **String**| The name of the payor whose payees are being paid. This filters via a case insensitive substring match. | [optional] 
+ **scheduledForDateFrom** | **Date**| Filter payouts scheduled to run on or after the given date. Format is yyyy-MM-dd. | [optional] 
+ **scheduledForDateTo** | **Date**| Filter payouts scheduled to run on or before the given date. Format is yyyy-MM-dd. | [optional] 
+ **scheduleStatus** | **String**| Payout Schedule Status | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
- **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments, payoutId  | [optional] 
+ **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments, payoutId, scheduledFor  | [optional] 
 
 ### Return type
 
@@ -397,7 +403,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceApi();
-let payorId = null; // String | The Payor ID to find associated Payments
+let payorId = "payorId_example"; // String | The Payor ID to find associated Payments
 let updatedSince = new Date("2013-10-20T19:20:30+01:00"); // Date | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
 let opts = {
   'page': 1, // Number | Page number. Default is 1.
@@ -417,7 +423,7 @@ apiInstance.listPaymentChangesV4(payorId, updatedSince, opts, (error, data, resp
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The Payor ID to find associated Payments | 
+ **payorId** | **String**| The Payor ID to find associated Payments | 
  **updatedSince** | **Date**| The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm | 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 100]
@@ -455,8 +461,8 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceApi();
 let opts = {
-  'payeeId': null, // String | The UUID of the payee.
-  'payorId': null, // String | The account owner Payor Id. Required for external users.
+  'payeeId': "payeeId_example", // String | The UUID of the payee.
+  'payorId': "payorId_example", // String | The account owner Payor Id. Required for external users.
   'payorName': "payorName_example", // String | The payor’s name. This filters via a case insensitive substring match.
   'remoteId': "remoteId_example", // String | The remote id of the payees.
   'remoteSystemId': "remoteSystemId_example", // String | The id of the remote system that is orchestrating payments
@@ -472,6 +478,9 @@ let opts = {
   'submittedDateFrom': new Date("2013-10-20"), // Date | The submitted date from range filter. Format is yyyy-MM-dd.
   'submittedDateTo': new Date("2013-10-20"), // Date | The submitted date to range filter. Format is yyyy-MM-dd.
   'paymentMemo': "paymentMemo_example", // String | The payment memo filter. This filters via a case insensitive substring match.
+  'scheduledForDateFrom': new Date("2013-10-20"), // Date | Filter payouts scheduled to run on or after the given date. Format is yyyy-MM-dd.
+  'scheduledForDateTo': new Date("2013-10-20"), // Date | Filter payouts scheduled to run on or before the given date. Format is yyyy-MM-dd.
+  'scheduleStatus': "scheduleStatus_example", // String | Payout Schedule Status
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | The number of results to return in a page
   'sort': "sort_example", // String | List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by submittedDateTime:desc,paymentId:asc The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime, status and paymentId 
@@ -491,8 +500,8 @@ apiInstance.listPaymentsAuditV4(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payeeId** | [**String**](.md)| The UUID of the payee. | [optional] 
- **payorId** | [**String**](.md)| The account owner Payor Id. Required for external users. | [optional] 
+ **payeeId** | **String**| The UUID of the payee. | [optional] 
+ **payorId** | **String**| The account owner Payor Id. Required for external users. | [optional] 
  **payorName** | **String**| The payor’s name. This filters via a case insensitive substring match. | [optional] 
  **remoteId** | **String**| The remote id of the payees. | [optional] 
  **remoteSystemId** | **String**| The id of the remote system that is orchestrating payments | [optional] 
@@ -508,6 +517,9 @@ Name | Type | Description  | Notes
  **submittedDateFrom** | **Date**| The submitted date from range filter. Format is yyyy-MM-dd. | [optional] 
  **submittedDateTo** | **Date**| The submitted date to range filter. Format is yyyy-MM-dd. | [optional] 
  **paymentMemo** | **String**| The payment memo filter. This filters via a case insensitive substring match. | [optional] 
+ **scheduledForDateFrom** | **Date**| Filter payouts scheduled to run on or after the given date. Format is yyyy-MM-dd. | [optional] 
+ **scheduledForDateTo** | **Date**| Filter payouts scheduled to run on or before the given date. Format is yyyy-MM-dd. | [optional] 
+ **scheduleStatus** | **String**| Payout Schedule Status | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,status:asc). Default is sort by submittedDateTime:desc,paymentId:asc The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime, status and paymentId  | [optional] 

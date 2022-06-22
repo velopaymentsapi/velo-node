@@ -78,7 +78,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.FundingManagerPrivateApi();
-let sourceAccountId = null; // String | Source account id
+let sourceAccountId = "sourceAccountId_example"; // String | Source account id
 apiInstance.deleteSourceAccountV3(sourceAccountId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -93,7 +93,7 @@ apiInstance.deleteSourceAccountV3(sourceAccountId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sourceAccountId** | [**String**](.md)| Source account id | 
+ **sourceAccountId** | **String**| Source account id | 
 
 ### Return type
 

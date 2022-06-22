@@ -34,7 +34,7 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceDeprecatedApi();
 let opts = {
-  'payorId': null, // String | The Payor ID for whom you wish to run the report. For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor. 
+  'payorId': "payorId_example", // String | The Payor ID for whom you wish to run the report. For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor. 
   'startDate': new Date("2013-10-20"), // Date | Start date, inclusive. Format is YYYY-MM-DD
   'endDate': new Date("2013-10-20") // Date | End date, inclusive. Format is YYYY-MM-DD
 };
@@ -52,7 +52,7 @@ apiInstance.exportTransactionsCSVV3(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The Payor ID for whom you wish to run the report. For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor.  | [optional] 
+ **payorId** | **String**| The Payor ID for whom you wish to run the report. For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor.  | [optional] 
  **startDate** | **Date**| Start date, inclusive. Format is YYYY-MM-DD | [optional] 
  **endDate** | **Date**| End date, inclusive. Format is YYYY-MM-DD | [optional] 
 
@@ -88,7 +88,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceDeprecatedApi();
-let payorId = null; // String | The account owner Payor ID
+let payorId = "payorId_example"; // String | The account owner Payor ID
 let opts = {
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | The number of results to return in a page
@@ -108,7 +108,7 @@ apiInstance.getFundingsV1(payorId, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The account owner Payor ID | 
+ **payorId** | **String**| The account owner Payor ID | 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields. Example: &#x60;&#x60;&#x60;?sort&#x3D;destinationCurrency:asc,destinationAmount:asc&#x60;&#x60;&#x60; Default is no sort. The supported sort fields are: dateTime and amount.  | [optional] 
@@ -145,7 +145,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceDeprecatedApi();
-let paymentId = null; // String | Payment Id
+let paymentId = "paymentId_example"; // String | Payment Id
 let opts = {
   'sensitive': true // Boolean | Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
 };
@@ -163,7 +163,7 @@ apiInstance.getPaymentDetailsV3(paymentId, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **paymentId** | [**String**](.md)| Payment Id | 
+ **paymentId** | **String**| Payment Id | 
  **sensitive** | **Boolean**| Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values.  | [optional] 
 
 ### Return type
@@ -198,7 +198,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceDeprecatedApi();
-let payoutId = null; // String | The id (UUID) of the payout.
+let payoutId = "payoutId_example"; // String | The id (UUID) of the payout.
 let opts = {
   'remoteId': "remoteId_example", // String | The remote id of the payees.
   'status': "status_example", // String | Payment Status
@@ -227,7 +227,7 @@ apiInstance.getPaymentsForPayoutPAV3(payoutId, opts, (error, data, response) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payoutId** | [**String**](.md)| The id (UUID) of the payout. | 
+ **payoutId** | **String**| The id (UUID) of the payout. | 
  **remoteId** | **String**| The remote id of the payees. | [optional] 
  **status** | **String**| Payment Status | [optional] 
  **sourceAmountFrom** | **Number**| The source amount from range filter. Filters for sourceAmount &gt;&#x3D; sourceAmountFrom | [optional] 
@@ -274,7 +274,7 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceDeprecatedApi();
 let opts = {
-  'payorId': null // String | The account owner Payor ID. Required for external users.
+  'payorId': "payorId_example" // String | The account owner Payor ID. Required for external users.
 };
 apiInstance.getPayoutStatsV1(opts, (error, data, response) => {
   if (error) {
@@ -290,7 +290,7 @@ apiInstance.getPayoutStatsV1(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The account owner Payor ID. Required for external users. | [optional] 
+ **payorId** | **String**| The account owner Payor ID. Required for external users. | [optional] 
 
 ### Return type
 
@@ -324,7 +324,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceDeprecatedApi();
-let payorId = null; // String | The account owner Payor ID
+let payorId = "payorId_example"; // String | The account owner Payor ID
 let opts = {
   'payoutMemo': "payoutMemo_example", // String | Payout Memo filter - case insensitive sub-string match
   'status': "status_example", // String | Payout Status
@@ -348,7 +348,7 @@ apiInstance.getPayoutsForPayorV3(payorId, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The account owner Payor ID | 
+ **payorId** | **String**| The account owner Payor ID | 
  **payoutMemo** | **String**| Payout Memo filter - case insensitive sub-string match | [optional] 
  **status** | **String**| Payout Status | [optional] 
  **submittedDateFrom** | **Date**| The submitted date from range filter. Format is yyyy-MM-dd. | [optional] 
@@ -389,7 +389,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceDeprecatedApi();
-let payorId = null; // String | The Payor ID to find associated Payments
+let payorId = "payorId_example"; // String | The Payor ID to find associated Payments
 let updatedSince = new Date("2013-10-20T19:20:30+01:00"); // Date | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
 let opts = {
   'page': 1, // Number | Page number. Default is 1.
@@ -409,7 +409,7 @@ apiInstance.listPaymentChanges(payorId, updatedSince, opts, (error, data, respon
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The Payor ID to find associated Payments | 
+ **payorId** | **String**| The Payor ID to find associated Payments | 
  **updatedSince** | **Date**| The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm | 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 100]
@@ -447,8 +447,8 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PaymentAuditServiceDeprecatedApi();
 let opts = {
-  'payeeId': null, // String | The UUID of the payee.
-  'payorId': null, // String | The account owner Payor Id. Required for external users.
+  'payeeId': "payeeId_example", // String | The UUID of the payee.
+  'payorId': "payorId_example", // String | The account owner Payor Id. Required for external users.
   'payorName': "payorName_example", // String | The payor’s name. This filters via a case insensitive substring match.
   'remoteId': "remoteId_example", // String | The remote id of the payees.
   'status': "status_example", // String | Payment Status
@@ -481,8 +481,8 @@ apiInstance.listPaymentsAuditV3(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payeeId** | [**String**](.md)| The UUID of the payee. | [optional] 
- **payorId** | [**String**](.md)| The account owner Payor Id. Required for external users. | [optional] 
+ **payeeId** | **String**| The UUID of the payee. | [optional] 
+ **payorId** | **String**| The account owner Payor Id. Required for external users. | [optional] 
  **payorName** | **String**| The payor’s name. This filters via a case insensitive substring match. | [optional] 
  **remoteId** | **String**| The remote id of the payees. | [optional] 
  **status** | **String**| Payment Status | [optional] 

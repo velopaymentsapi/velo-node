@@ -23,5 +23,6 @@ Name | Type | Description | Notes
 **quoted** | [**PayoutPrincipal**](PayoutPrincipal.md) |  | [optional] 
 **instructed** | [**PayoutPrincipal**](PayoutPrincipal.md) |  | [optional] 
 **withdrawn** | [**PayoutPrincipal**](PayoutPrincipal.md) |  | [optional] 
+**schedule** | [**PayoutSchedule**](PayoutSchedule.md) |  | [optional] 
 
 

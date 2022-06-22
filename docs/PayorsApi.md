@@ -33,7 +33,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayorsApi();
-let payorId = null; // String | The Payor Id
+let payorId = "payorId_example"; // String | The Payor Id
 apiInstance.getPayorById(payorId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -48,7 +48,7 @@ apiInstance.getPayorById(payorId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The Payor Id | 
+ **payorId** | **String**| The Payor Id | 
 
 ### Return type
 
@@ -82,7 +82,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayorsApi();
-let payorId = null; // String | The Payor Id
+let payorId = "payorId_example"; // String | The Payor Id
 apiInstance.getPayorByIdV2(payorId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -97,7 +97,7 @@ apiInstance.getPayorByIdV2(payorId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The Payor Id | 
+ **payorId** | **String**| The Payor Id | 
 
 ### Return type
 
@@ -131,7 +131,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayorsApi();
-let payorId = null; // String | The Payor Id
+let payorId = "payorId_example"; // String | The Payor Id
 let opts = {
   'logo': "/path/to/file" // File | 
 };
@@ -149,7 +149,7 @@ apiInstance.payorAddPayorLogo(payorId, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The Payor Id | 
+ **payorId** | **String**| The Payor Id | 
  **logo** | **File**|  | [optional] 
 
 ### Return type
@@ -184,8 +184,8 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayorsApi();
-let payorId = null; // String | The Payor Id
-let applicationId = null; // String | Application ID
+let payorId = "payorId_example"; // String | The Payor Id
+let applicationId = "applicationId_example"; // String | Application ID
 let payorCreateApiKeyRequest = new VeloPayments.PayorCreateApiKeyRequest(); // PayorCreateApiKeyRequest | Details of application API key to create
 apiInstance.payorCreateApiKeyRequest(payorId, applicationId, payorCreateApiKeyRequest, (error, data, response) => {
   if (error) {
@@ -201,8 +201,8 @@ apiInstance.payorCreateApiKeyRequest(payorId, applicationId, payorCreateApiKeyRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The Payor Id | 
- **applicationId** | [**String**](.md)| Application ID | 
+ **payorId** | **String**| The Payor Id | 
+ **applicationId** | **String**| Application ID | 
  **payorCreateApiKeyRequest** | [**PayorCreateApiKeyRequest**](PayorCreateApiKeyRequest.md)| Details of application API key to create | 
 
 ### Return type
@@ -237,7 +237,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayorsApi();
-let payorId = null; // String | The Payor Id
+let payorId = "payorId_example"; // String | The Payor Id
 let payorCreateApplicationRequest = new VeloPayments.PayorCreateApplicationRequest(); // PayorCreateApplicationRequest | Details of application to create
 apiInstance.payorCreateApplicationRequest(payorId, payorCreateApplicationRequest, (error, data, response) => {
   if (error) {
@@ -253,7 +253,7 @@ apiInstance.payorCreateApplicationRequest(payorId, payorCreateApplicationRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The Payor Id | 
+ **payorId** | **String**| The Payor Id | 
  **payorCreateApplicationRequest** | [**PayorCreateApplicationRequest**](PayorCreateApplicationRequest.md)| Details of application to create | 
 
 ### Return type
@@ -288,7 +288,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayorsApi();
-let payorId = null; // String | The Payor Id
+let payorId = "payorId_example"; // String | The Payor Id
 let payorEmailOptOutRequest = new VeloPayments.PayorEmailOptOutRequest(); // PayorEmailOptOutRequest | Reminder Emails Opt-Out Request
 apiInstance.payorEmailOptOut(payorId, payorEmailOptOutRequest, (error, data, response) => {
   if (error) {
@@ -304,7 +304,7 @@ apiInstance.payorEmailOptOut(payorId, payorEmailOptOutRequest, (error, data, res
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The Payor Id | 
+ **payorId** | **String**| The Payor Id | 
  **payorEmailOptOutRequest** | [**PayorEmailOptOutRequest**](PayorEmailOptOutRequest.md)| Reminder Emails Opt-Out Request | 
 
 ### Return type
@@ -339,7 +339,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayorsApi();
-let payorId = null; // String | The Payor Id
+let payorId = "payorId_example"; // String | The Payor Id
 apiInstance.payorGetBranding(payorId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -354,7 +354,7 @@ apiInstance.payorGetBranding(payorId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | [**String**](.md)| The Payor Id | 
+ **payorId** | **String**| The Payor Id | 
 
 ### Return type
 
@@ -389,8 +389,8 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayorsApi();
 let opts = {
-  'descendantsOfPayor': null, // String | The Payor ID from which to start the query to show all descendants
-  'parentOfPayor': null, // String | Look for the parent payor details for this payor id
+  'descendantsOfPayor': "descendantsOfPayor_example", // String | The Payor ID from which to start the query to show all descendants
+  'parentOfPayor': "parentOfPayor_example", // String | Look for the parent payor details for this payor id
   'fields': "fields_example" // String | List of additional Payor fields to include in the response for each Payor. The values of payorId and payorName and always included for each Payor - 'fields' allows you to add to this. Example: ```fields=primaryContactEmail,kycState``` - will include payorId+payorName+primaryContactEmail+kycState for each Payor Default if not specified is to include only payorId and payorName. The supported fields are any combination of: primaryContactEmail,kycState 
 };
 apiInstance.payorLinks(opts, (error, data, response) => {
@@ -407,8 +407,8 @@ apiInstance.payorLinks(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **descendantsOfPayor** | [**String**](.md)| The Payor ID from which to start the query to show all descendants | [optional] 
- **parentOfPayor** | [**String**](.md)| Look for the parent payor details for this payor id | [optional] 
+ **descendantsOfPayor** | **String**| The Payor ID from which to start the query to show all descendants | [optional] 
+ **parentOfPayor** | **String**| Look for the parent payor details for this payor id | [optional] 
  **fields** | **String**| List of additional Payor fields to include in the response for each Payor. The values of payorId and payorName and always included for each Payor - &#39;fields&#39; allows you to add to this. Example: &#x60;&#x60;&#x60;fields&#x3D;primaryContactEmail,kycState&#x60;&#x60;&#x60; - will include payorId+payorName+primaryContactEmail+kycState for each Payor Default if not specified is to include only payorId and payorName. The supported fields are any combination of: primaryContactEmail,kycState  | [optional] 
 
 ### Return type
