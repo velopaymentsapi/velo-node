@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PayorCreateApplicationRequest model module.
  * @module model/PayorCreateApplicationRequest
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PayorCreateApplicationRequest {
     /**

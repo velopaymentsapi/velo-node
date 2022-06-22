@@ -21,7 +21,7 @@ import InlineResponse404 from '../model/InlineResponse404';
 /**
 * PayorsPrivate service.
 * @module api/PayorsPrivateApi
-* @version 2.30.53-beta.1
+* @version 2.30.53
 */
 export default class PayorsPrivateApi {
 

@@ -17,7 +17,7 @@ import Error from './Error';
 /**
  * The ErrorResponse model module.
  * @module model/ErrorResponse
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class ErrorResponse {
     /**

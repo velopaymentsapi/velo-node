@@ -17,7 +17,7 @@ import Category from './Category';
 /**
  * The UpdateWebhookRequest model module.
  * @module model/UpdateWebhookRequest
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class UpdateWebhookRequest {
     /**

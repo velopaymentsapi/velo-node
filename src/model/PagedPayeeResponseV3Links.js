@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PagedPayeeResponseV3Links model module.
  * @module model/PagedPayeeResponseV3Links
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PagedPayeeResponseV3Links {
     /**

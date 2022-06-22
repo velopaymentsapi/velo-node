@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RegionV2 model module.
  * @module model/RegionV2
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class RegionV2 {
     /**

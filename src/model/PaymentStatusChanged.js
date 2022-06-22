@@ -19,7 +19,7 @@ import PayoutPayorIds from './PayoutPayorIds';
 /**
  * The PaymentStatusChanged model module.
  * @module model/PaymentStatusChanged
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PaymentStatusChanged {
     /**

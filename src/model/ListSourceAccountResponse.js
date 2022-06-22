@@ -19,7 +19,7 @@ import SourceAccountResponse from './SourceAccountResponse';
 /**
  * The ListSourceAccountResponse model module.
  * @module model/ListSourceAccountResponse
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class ListSourceAccountResponse {
     /**

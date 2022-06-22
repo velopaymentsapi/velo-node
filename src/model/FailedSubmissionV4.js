@@ -17,7 +17,7 @@ import FailedPayeeV4 from './FailedPayeeV4';
 /**
  * The FailedSubmissionV4 model module.
  * @module model/FailedSubmissionV4
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class FailedSubmissionV4 {
     /**

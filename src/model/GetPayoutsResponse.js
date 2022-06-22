@@ -19,7 +19,7 @@ import PayoutSummaryAudit from './PayoutSummaryAudit';
 /**
  * The GetPayoutsResponse model module.
  * @module model/GetPayoutsResponse
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class GetPayoutsResponse {
     /**

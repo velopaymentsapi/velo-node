@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AutoTopUpConfig model module.
  * @module model/AutoTopUpConfig
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class AutoTopUpConfig {
     /**

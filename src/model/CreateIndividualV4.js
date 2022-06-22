@@ -17,7 +17,7 @@ import CreateIndividualV3Name from './CreateIndividualV3Name';
 /**
  * The CreateIndividualV4 model module.
  * @module model/CreateIndividualV4
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class CreateIndividualV4 {
     /**

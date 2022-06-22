@@ -18,7 +18,7 @@ import PaymentEventResponseV3 from './PaymentEventResponseV3';
 /**
  * The PaymentResponseV3 model module.
  * @module model/PaymentResponseV3
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PaymentResponseV3 {
     /**

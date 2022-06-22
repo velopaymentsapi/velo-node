@@ -26,7 +26,7 @@ import WebhooksResponse from '../model/WebhooksResponse';
 /**
 * Webhooks service.
 * @module api/WebhooksApi
-* @version 2.30.53-beta.1
+* @version 2.30.53
 */
 export default class WebhooksApi {
 

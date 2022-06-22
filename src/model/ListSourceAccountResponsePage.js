@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListSourceAccountResponsePage model module.
  * @module model/ListSourceAccountResponsePage
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class ListSourceAccountResponsePage {
     /**

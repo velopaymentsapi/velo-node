@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ResendTokenRequest model module.
  * @module model/ResendTokenRequest
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class ResendTokenRequest {
     /**

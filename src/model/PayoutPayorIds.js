@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PayoutPayorIds model module.
  * @module model/PayoutPayorIds
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PayoutPayorIds {
     /**

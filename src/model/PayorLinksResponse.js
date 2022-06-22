@@ -18,7 +18,7 @@ import PayorLinksResponsePayors from './PayorLinksResponsePayors';
 /**
  * The PayorLinksResponse model module.
  * @module model/PayorLinksResponse
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PayorLinksResponse {
     /**

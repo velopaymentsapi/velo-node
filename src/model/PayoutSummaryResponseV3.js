@@ -21,7 +21,7 @@ import SourceAccountV3 from './SourceAccountV3';
 /**
  * The PayoutSummaryResponseV3 model module.
  * @module model/PayoutSummaryResponseV3
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PayoutSummaryResponseV3 {
     /**

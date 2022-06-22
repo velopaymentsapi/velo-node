@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetPayoutStatistics model module.
  * @module model/GetPayoutStatistics
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class GetPayoutStatistics {
     /**

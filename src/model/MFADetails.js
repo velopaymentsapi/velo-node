@@ -17,7 +17,7 @@ import MFAType from './MFAType';
 /**
  * The MFADetails model module.
  * @module model/MFADetails
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class MFADetails {
     /**

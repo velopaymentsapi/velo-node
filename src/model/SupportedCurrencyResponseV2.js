@@ -17,7 +17,7 @@ import SupportedCurrencyV2 from './SupportedCurrencyV2';
 /**
  * The SupportedCurrencyResponseV2 model module.
  * @module model/SupportedCurrencyResponseV2
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class SupportedCurrencyResponseV2 {
     /**

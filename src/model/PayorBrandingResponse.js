@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PayorBrandingResponse model module.
  * @module model/PayorBrandingResponse
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PayorBrandingResponse {
     /**

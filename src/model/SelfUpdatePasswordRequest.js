@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SelfUpdatePasswordRequest model module.
  * @module model/SelfUpdatePasswordRequest
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class SelfUpdatePasswordRequest {
     /**

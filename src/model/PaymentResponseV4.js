@@ -20,7 +20,7 @@ import PayoutSchedule from './PayoutSchedule';
 /**
  * The PaymentResponseV4 model module.
  * @module model/PaymentResponseV4
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PaymentResponseV4 {
     /**

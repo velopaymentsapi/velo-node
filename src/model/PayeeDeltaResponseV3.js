@@ -19,7 +19,7 @@ import PayeeDeltaV3 from './PayeeDeltaV3';
 /**
  * The PayeeDeltaResponseV3 model module.
  * @module model/PayeeDeltaResponseV3
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PayeeDeltaResponseV3 {
     /**

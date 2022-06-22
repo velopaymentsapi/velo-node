@@ -19,7 +19,7 @@ import PayeeInvitationStatusResponseV3 from './PayeeInvitationStatusResponseV3';
 /**
  * The PagedPayeeInvitationStatusResponseV3 model module.
  * @module model/PagedPayeeInvitationStatusResponseV3
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PagedPayeeInvitationStatusResponseV3 {
     /**

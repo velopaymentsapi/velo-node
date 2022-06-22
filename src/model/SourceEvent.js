@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SourceEvent model module.
  * @module model/SourceEvent
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class SourceEvent {
     /**

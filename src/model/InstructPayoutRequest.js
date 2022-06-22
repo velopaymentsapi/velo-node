@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InstructPayoutRequest model module.
  * @module model/InstructPayoutRequest
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class InstructPayoutRequest {
     /**

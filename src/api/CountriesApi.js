@@ -21,7 +21,7 @@ import SupportedCountriesResponseV2 from '../model/SupportedCountriesResponseV2'
 /**
 * Countries service.
 * @module api/CountriesApi
-* @version 2.30.53-beta.1
+* @version 2.30.53
 */
 export default class CountriesApi {
 

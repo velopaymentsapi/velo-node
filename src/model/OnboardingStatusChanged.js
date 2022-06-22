@@ -18,7 +18,7 @@ import PayeeEventAllOfReasons from './PayeeEventAllOfReasons';
 /**
  * The OnboardingStatusChanged model module.
  * @module model/OnboardingStatusChanged
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class OnboardingStatusChanged {
     /**

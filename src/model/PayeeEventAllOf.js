@@ -17,7 +17,7 @@ import PayeeEventAllOfReasons from './PayeeEventAllOfReasons';
 /**
  * The PayeeEventAllOf model module.
  * @module model/PayeeEventAllOf
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PayeeEventAllOf {
     /**

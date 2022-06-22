@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PaymentRejectedOrReturnedAllOf model module.
  * @module model/PaymentRejectedOrReturnedAllOf
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PaymentRejectedOrReturnedAllOf {
     /**

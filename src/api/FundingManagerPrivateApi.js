@@ -23,7 +23,7 @@ import InlineResponse409 from '../model/InlineResponse409';
 /**
 * FundingManagerPrivate service.
 * @module api/FundingManagerPrivateApi
-* @version 2.30.53-beta.1
+* @version 2.30.53
 */
 export default class FundingManagerPrivateApi {
 

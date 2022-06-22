@@ -20,7 +20,7 @@ import PagedPayeeResponseV3Summary from './PagedPayeeResponseV3Summary';
 /**
  * The PagedPayeeResponseV4 model module.
  * @module model/PagedPayeeResponseV4
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PagedPayeeResponseV4 {
     /**

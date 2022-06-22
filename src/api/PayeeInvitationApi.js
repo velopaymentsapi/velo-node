@@ -35,7 +35,7 @@ import QueryBatchResponseV4 from '../model/QueryBatchResponseV4';
 /**
 * PayeeInvitation service.
 * @module api/PayeeInvitationApi
-* @version 2.30.53-beta.1
+* @version 2.30.53
 */
 export default class PayeeInvitationApi {
 

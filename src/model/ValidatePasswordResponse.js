@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValidatePasswordResponse model module.
  * @module model/ValidatePasswordResponse
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class ValidatePasswordResponse {
     /**

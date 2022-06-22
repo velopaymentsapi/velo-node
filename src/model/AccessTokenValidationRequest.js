@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccessTokenValidationRequest model module.
  * @module model/AccessTokenValidationRequest
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class AccessTokenValidationRequest {
     /**

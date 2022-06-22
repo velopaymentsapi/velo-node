@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WithdrawPaymentRequest model module.
  * @module model/WithdrawPaymentRequest
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class WithdrawPaymentRequest {
     /**

@@ -17,7 +17,7 @@ import PayoutNameV3 from './PayoutNameV3';
 /**
  * The PayoutIndividualV3 model module.
  * @module model/PayoutIndividualV3
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PayoutIndividualV3 {
     /**

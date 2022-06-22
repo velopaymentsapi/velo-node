@@ -17,7 +17,7 @@ import OnboardedStatusV32 from './OnboardedStatusV32';
 /**
  * The PayeeDeltaV3 model module.
  * @module model/PayeeDeltaV3
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PayeeDeltaV3 {
     /**

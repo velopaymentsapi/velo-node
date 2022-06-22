@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SchedulePayoutRequest model module.
  * @module model/SchedulePayoutRequest
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class SchedulePayoutRequest {
     /**

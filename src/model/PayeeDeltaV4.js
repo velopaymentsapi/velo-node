@@ -17,7 +17,7 @@ import OnboardedStatusV42 from './OnboardedStatusV42';
 /**
  * The PayeeDeltaV4 model module.
  * @module model/PayeeDeltaV4
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PayeeDeltaV4 {
     /**

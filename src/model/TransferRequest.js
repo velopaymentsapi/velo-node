@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TransferRequest model module.
  * @module model/TransferRequest
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class TransferRequest {
     /**

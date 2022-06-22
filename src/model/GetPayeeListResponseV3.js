@@ -22,7 +22,7 @@ import WatchlistStatusV3 from './WatchlistStatusV3';
 /**
  * The GetPayeeListResponseV3 model module.
  * @module model/GetPayeeListResponseV3
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class GetPayeeListResponseV3 {
     /**

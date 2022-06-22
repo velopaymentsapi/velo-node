@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PayorLinksResponseLinks model module.
  * @module model/PayorLinksResponseLinks
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PayorLinksResponseLinks {
     /**

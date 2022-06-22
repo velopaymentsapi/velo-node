@@ -17,7 +17,7 @@ import PaymentAuditCurrency from './PaymentAuditCurrency';
 /**
  * The SourceAccountSummary model module.
  * @module model/SourceAccountSummary
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class SourceAccountSummary {
     /**

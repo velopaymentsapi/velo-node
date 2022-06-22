@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePayorLinkRequest model module.
  * @module model/CreatePayorLinkRequest
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class CreatePayorLinkRequest {
     /**

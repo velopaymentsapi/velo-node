@@ -29,7 +29,7 @@ import PayorAmlTransactionV3 from '../model/PayorAmlTransactionV3';
 /**
 * PaymentAuditServiceDeprecated service.
 * @module api/PaymentAuditServiceDeprecatedApi
-* @version 2.30.53-beta.1
+* @version 2.30.53
 */
 export default class PaymentAuditServiceDeprecatedApi {
 

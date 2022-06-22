@@ -18,7 +18,7 @@ import SupportedCurrencyResponseV2 from '../model/SupportedCurrencyResponseV2';
 /**
 * Currencies service.
 * @module api/CurrenciesApi
-* @version 2.30.53-beta.1
+* @version 2.30.53
 */
 export default class CurrenciesApi {
 

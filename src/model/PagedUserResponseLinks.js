@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PagedUserResponseLinks model module.
  * @module model/PagedUserResponseLinks
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PagedUserResponseLinks {
     /**

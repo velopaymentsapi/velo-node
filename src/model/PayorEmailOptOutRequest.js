@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PayorEmailOptOutRequest model module.
  * @module model/PayorEmailOptOutRequest
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PayorEmailOptOutRequest {
     /**

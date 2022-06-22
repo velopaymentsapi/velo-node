@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DebitEventAllOf model module.
  * @module model/DebitEventAllOf
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class DebitEventAllOf {
     /**

@@ -17,7 +17,7 @@ import ScheduleStatus2 from './ScheduleStatus2';
 /**
  * The PayoutSchedule2 model module.
  * @module model/PayoutSchedule2
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PayoutSchedule2 {
     /**

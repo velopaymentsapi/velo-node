@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PayableIssueV3 model module.
  * @module model/PayableIssueV3
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PayableIssueV3 {
     /**

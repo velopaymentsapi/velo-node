@@ -323,7 +323,7 @@ import WebhooksApi from './api/WebhooksApi';
 * </pre>
 * </p>
 * @module index
-* @version 2.30.53-beta.1
+* @version 2.30.53
 */
 export {
     /**

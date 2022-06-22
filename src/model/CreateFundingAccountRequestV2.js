@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateFundingAccountRequestV2 model module.
  * @module model/CreateFundingAccountRequestV2
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class CreateFundingAccountRequestV2 {
     /**

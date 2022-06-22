@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PayeeEventAllOfReasons model module.
  * @module model/PayeeEventAllOfReasons
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PayeeEventAllOfReasons {
     /**

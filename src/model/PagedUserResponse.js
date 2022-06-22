@@ -19,7 +19,7 @@ import UserResponse from './UserResponse';
 /**
  * The PagedUserResponse model module.
  * @module model/PagedUserResponse
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PagedUserResponse {
     /**

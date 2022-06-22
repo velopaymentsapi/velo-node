@@ -23,7 +23,7 @@ import PayeeType2 from './PayeeType2';
 /**
  * The FailedPayeeV3 model module.
  * @module model/FailedPayeeV3
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class FailedPayeeV3 {
     /**

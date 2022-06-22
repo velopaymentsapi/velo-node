@@ -17,7 +17,7 @@ import Error from './Error';
 /**
  * The InlineResponse412 model module.
  * @module model/InlineResponse412
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class InlineResponse412 {
     /**

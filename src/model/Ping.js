@@ -17,7 +17,7 @@ import SourceEvent from './SourceEvent';
 /**
  * The Ping model module.
  * @module model/Ping
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class Ping {
     /**

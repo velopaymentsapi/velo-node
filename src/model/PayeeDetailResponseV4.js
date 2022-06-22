@@ -24,7 +24,7 @@ import WatchlistStatusV4 from './WatchlistStatusV4';
 /**
  * The PayeeDetailResponseV4 model module.
  * @module model/PayeeDetailResponseV4
- * @version 2.30.53-beta.1
+ * @version 2.30.53
  */
 class PayeeDetailResponseV4 {
     /**
