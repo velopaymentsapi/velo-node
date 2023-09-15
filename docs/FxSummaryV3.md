@@ -10,37 +10,9 @@ Name | Type | Description | Notes
 **invertedRate** | **Number** |  | 
 **totalCost** | **Number** |  | 
 **totalPaymentAmount** | **Number** |  | 
-**sourceCurrency** | [**PaymentAuditCurrencyV3**](PaymentAuditCurrencyV3.md) |  | [optional] 
-**paymentCurrency** | [**PaymentAuditCurrencyV3**](PaymentAuditCurrencyV3.md) |  | [optional] 
-**status** | **String** |  | 
-**fundingStatus** | **String** |  | 
-
-
-
-## Enum: StatusEnum
-
-
-* `UNQUOTED` (value: `"UNQUOTED"`)
-
-* `QUOTED` (value: `"QUOTED"`)
-
-* `EXPIRED` (value: `"EXPIRED"`)
-
-* `EXECUTED` (value: `"EXECUTED"`)
-
-
-
-
-
-## Enum: FundingStatusEnum
-
-
-* `FUNDED` (value: `"FUNDED"`)
-
-* `INSTRUCTED` (value: `"INSTRUCTED"`)
-
-* `UNFUNDED` (value: `"UNFUNDED"`)
-
-
+**sourceCurrency** | **String** | ISO 3 character currency code | [optional] 
+**paymentCurrency** | **String** | ISO 3 character currency code | [optional] 
+**status** | **String** | Current status of the FX Summary. One of the following values: UNQUOTED, QUOTED, EXPIRED, EXECUTED | 
+**fundingStatus** | **String** | Current status of the funding. One of the following values: FUNDED, INSTRUCTED, UNFUNDED | 
 
 

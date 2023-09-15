@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**PayeeType2**](PayeeType2.md) |  | 
+**type** | [**PayeeTypeEnum**](PayeeTypeEnum.md) |  | 
 **remoteId** | **String** |  | 
 **email** | **String** |  | 
 **addressLine1** | **String** |  | 
@@ -33,18 +33,5 @@ Name | Type | Description | Notes
 **challengeDescription** | **String** |  | [optional] 
 **challengeValue** | **String** |  | [optional] 
 **payeeLanguage** | **String** | An IETF BCP 47 language code which has been configured for use within this Velo environment.&lt;BR&gt; See the /v1/supportedLanguages endpoint to list the available codes for an environment.  | [optional] 
-
-
-
-## Enum: PaymentChannelCurrencyEnum
-
-
-* `USD` (value: `"USD"`)
-
-* `GBP` (value: `"GBP"`)
-
-* `EUR` (value: `"EUR"`)
-
-
 
 

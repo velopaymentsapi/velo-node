@@ -16,18 +16,9 @@ Name | Type | Description | Notes
 **balanceVisible** | **Boolean** |  | 
 **customerId** | **String** |  | [optional] 
 **physicalAccountId** | **String** |  | [optional] 
-**notifications** | [**Notifications**](Notifications.md) |  | [optional] 
+**notifications** | [**NotificationsV2**](NotificationsV2.md) |  | [optional] 
 **fundingAccountId** | **String** |  | [optional] 
-**autoTopUpConfig** | [**AutoTopUpConfig**](AutoTopUpConfig.md) |  | [optional] 
+**autoTopUpConfig** | [**AutoTopUpConfigV2**](AutoTopUpConfigV2.md) |  | [optional] 
 **accountType** | **String** |  | 
-
-
-
-## Enum: CurrencyEnum
-
-
-* `USD` (value: `"USD"`)
-
-
 
 

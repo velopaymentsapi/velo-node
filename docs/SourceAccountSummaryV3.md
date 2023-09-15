@@ -6,6 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sourceAccountId** | **String** |  | 
 **totalCost** | **Number** |  | 
-**currency** | [**PaymentAuditCurrencyV3**](PaymentAuditCurrencyV3.md) |  | [optional] 
+**currency** | **String** | ISO 3 character currency code | [optional] 
 
 

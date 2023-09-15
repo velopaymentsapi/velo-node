@@ -87,7 +87,7 @@ let apiInstance = new VeloPayments.PayeeInvitationApi();
 let payorId = 9ac75325-5dcd-42d5-b992-175d7e0a035e; // String | The account owner Payor ID
 let opts = {
   'payeeId': 2aa5d7e0-2ecb-403f-8494-1865ed0454e9, // String | The UUID of the payee.
-  'invitationStatus': new VeloPayments.InvitationStatusV4(), // InvitationStatusV4 | The invitation status of the payees.
+  'invitationStatus': "invitationStatus_example", // String | The invitation status of the payees.
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25 // Number | Page size. Default is 25. Max allowable is 100.
 };
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payorId** | **String**| The account owner Payor ID | 
  **payeeId** | **String**| The UUID of the payee. | [optional] 
- **invitationStatus** | [**InvitationStatusV4**](.md)| The invitation status of the payees. | [optional] 
+ **invitationStatus** | **String**| The invitation status of the payees. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
 
@@ -146,7 +146,7 @@ let apiInstance = new VeloPayments.PayeeInvitationApi();
 let payorId = 9ac75325-5dcd-42d5-b992-175d7e0a035e; // String | The account owner Payor ID
 let opts = {
   'payeeId': 2aa5d7e0-2ecb-403f-8494-1865ed0454e9, // String | The UUID of the payee.
-  'invitationStatus': new VeloPayments.InvitationStatusV4(), // InvitationStatusV4 | The invitation status of the payees.
+  'invitationStatus': "invitationStatus_example", // String | The invitation status of the payees.
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25 // Number | Page size. Default is 25. Max allowable is 100.
 };
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payorId** | **String**| The account owner Payor ID | 
  **payeeId** | **String**| The UUID of the payee. | [optional] 
- **invitationStatus** | [**InvitationStatusV4**](.md)| The invitation status of the payees. | [optional] 
+ **invitationStatus** | **String**| The invitation status of the payees. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
 
@@ -390,7 +390,7 @@ null (empty response body)
 
 Initiate Payee Creation
 
-Initiate the process of creating 1 to 2000 payees in a batch Use the response location header to query for status (201 - Created, 400 - invalid request body. In addition to standard semantic validations, a 400 will also result if there is a duplicate remote id within the batch / if there is a duplicate email within the batch, i.e. if there is a conflict between the data provided for one payee within the batch and that provided for another payee within the same batch). The validation at this stage is intra-batch only. Validation against payees who have already been invited occurs subsequently during processing of the batch. 
+&lt;p&gt;Initiate the process of creating 1 to 2000 payees in a batch&lt;/p&gt; &lt;p&gt;Use the batchId in the response to query for status.&lt;/p&gt; &lt;p&gt;In addition to standard semantic validations, a 400 will also result if: &lt;/p&gt; &lt;ul&gt; &lt;li&gt;there is a duplicate remote id within the batch&lt;/li&gt; &lt;li&gt;there is a duplicate email within the batch, i.e. if there is a conflict between the data provided for one payee within the batch and that provided for another payee within the same batch).&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The validation at this stage is intra-batch only.&lt;/p&gt; &lt;p&gt;Validation against payees who have already been invited occurs subsequently during processing of the batch.&lt;/p&gt; 
 
 ### Example
 

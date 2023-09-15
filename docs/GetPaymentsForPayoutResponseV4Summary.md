@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payoutStatus** | [**PayoutStatus**](PayoutStatus.md) |  | [optional] 
+**payoutStatus** | **String** | Current status of the Payout. One of the following values: ACCEPTED, REJECTED, SUBMITTED, QUOTED, INSTRUCTED, COMPLETED, INCOMPLETE, CONFIRMED, WITHDRAWN | [optional] 
 **submittedDateTime** | **Date** | The date/time at which the payout was submitted. | [optional] 
 **instructedDateTime** | **Date** | The date/time at which the payout was instructed. | [optional] 
 **withdrawnDateTime** | **Date** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **incompletePayments** | **Number** | The count of payments within the payout which are incomplete. | [optional] 
 **returnedPayments** | **Number** | The count of payments within the payout which have been returned. | [optional] 
 **withdrawnPayments** | **Number** | The count of payments within the payout which have been withdrawn. | [optional] 
-**payoutType** | [**PayoutType**](PayoutType.md) |  | [optional] 
+**payoutType** | **String** | The type of payout. One of the following values: STANDARD, AS, ON_BEHALF_OF | [optional] 
 **submitting** | [**PayoutPayor**](PayoutPayor.md) |  | [optional] 
 **payoutFrom** | [**PayoutPayor**](PayoutPayor.md) |  | [optional] 
 **payoutTo** | [**PayoutPayor**](PayoutPayor.md) |  | [optional] 

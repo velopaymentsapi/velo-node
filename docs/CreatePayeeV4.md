@@ -4,11 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payeeId** | **String** |  | [optional] [readonly] 
-**payorRefs** | [**[PayeePayorRefV4]**](PayeePayorRefV4.md) |  | [optional] [readonly] 
 **email** | **String** |  | 
 **remoteId** | **String** |  | 
-**type** | [**PayeeType2**](PayeeType2.md) |  | 
+**type** | [**PayeeTypeEnum**](PayeeTypeEnum.md) |  | 
 **address** | [**CreatePayeeAddressV4**](CreatePayeeAddressV4.md) |  | 
 **paymentChannel** | [**CreatePaymentChannelV4**](CreatePaymentChannelV4.md) |  | [optional] 
 **challenge** | [**ChallengeV4**](ChallengeV4.md) |  | [optional] 

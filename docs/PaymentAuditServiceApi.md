@@ -92,6 +92,7 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new VeloPayments.PaymentAuditServiceApi();
 let payorId = "payorId_example"; // String | The account owner Payor ID
 let opts = {
+  'sourceAccountName': "sourceAccountName_example", // String | The source account name
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | The number of results to return in a page
   'sort': "sort_example" // String | List of sort fields. Example: ```?sort=destinationCurrency:asc,destinationAmount:asc``` Default is no sort. The supported sort fields are: dateTime and amount. 
@@ -111,6 +112,7 @@ apiInstance.getFundingsV4(payorId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payorId** | **String**| The account owner Payor ID | 
+ **sourceAccountName** | **String**| The source account name | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields. Example: &#x60;&#x60;&#x60;?sort&#x3D;destinationCurrency:asc,destinationAmount:asc&#x60;&#x60;&#x60; Default is no sort. The supported sort fields are: dateTime and amount.  | [optional] 
@@ -202,6 +204,7 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new VeloPayments.PaymentAuditServiceApi();
 let payoutId = "payoutId_example"; // String | The id (UUID) of the payout.
 let opts = {
+  'railsId': "railsId_example", // String | Payout Rails ID filter - case insensitive match. Any value is allowed, but you should use one of the supported railsId values. To get this list of values, you should call the 'Get Supported Rails' endpoint. 
   'remoteId': "remoteId_example", // String | The remote id of the payees.
   'remoteSystemId': "remoteSystemId_example", // String | The id of the remote system that is orchestrating payments
   'status': "status_example", // String | Payment Status
@@ -211,7 +214,7 @@ let opts = {
   'paymentAmountTo': 56, // Number | The payment amount to range filter. Filters for paymentAmount ⇐ paymentAmountTo
   'submittedDateFrom': new Date("2013-10-20"), // Date | The submitted date from range filter. Format is yyyy-MM-dd.
   'submittedDateTo': new Date("2013-10-20"), // Date | The submitted date to range filter. Format is yyyy-MM-dd.
-  'transmissionType': "transmissionType_example", // String | Transmission Type * ACH * SAME_DAY_ACH * WIRE 
+  'transmissionType': "transmissionType_example", // String | Transmission Type * ACH * SAME_DAY_ACH * WIRE * GACHO 
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | The number of results to return in a page
   'sort': "sort_example", // String | List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status 
@@ -232,6 +235,7 @@ apiInstance.getPaymentsForPayoutV4(payoutId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payoutId** | **String**| The id (UUID) of the payout. | 
+ **railsId** | **String**| Payout Rails ID filter - case insensitive match. Any value is allowed, but you should use one of the supported railsId values. To get this list of values, you should call the &#39;Get Supported Rails&#39; endpoint.  | [optional] 
  **remoteId** | **String**| The remote id of the payees. | [optional] 
  **remoteSystemId** | **String**| The id of the remote system that is orchestrating payments | [optional] 
  **status** | **String**| Payment Status | [optional] 
@@ -241,7 +245,7 @@ Name | Type | Description  | Notes
  **paymentAmountTo** | **Number**| The payment amount to range filter. Filters for paymentAmount ⇐ paymentAmountTo | [optional] 
  **submittedDateFrom** | **Date**| The submitted date from range filter. Format is yyyy-MM-dd. | [optional] 
  **submittedDateTo** | **Date**| The submitted date to range filter. Format is yyyy-MM-dd. | [optional] 
- **transmissionType** | **String**| Transmission Type * ACH * SAME_DAY_ACH * WIRE  | [optional] 
+ **transmissionType** | **String**| Transmission Type * ACH * SAME_DAY_ACH * WIRE * GACHO  | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status  | [optional] 
@@ -467,7 +471,7 @@ let opts = {
   'remoteId': "remoteId_example", // String | The remote id of the payees.
   'remoteSystemId': "remoteSystemId_example", // String | The id of the remote system that is orchestrating payments
   'status': "status_example", // String | Payment Status
-  'transmissionType': "transmissionType_example", // String | Transmission Type * ACH * SAME_DAY_ACH * WIRE 
+  'transmissionType': "transmissionType_example", // String | Transmission Type * ACH * SAME_DAY_ACH * WIRE * GACHO 
   'sourceAccountName': "sourceAccountName_example", // String | The source account name filter. This filters via a case insensitive substring match.
   'sourceAmountFrom': 56, // Number | The source amount from range filter. Filters for sourceAmount >= sourceAmountFrom
   'sourceAmountTo': 56, // Number | The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo
@@ -478,9 +482,11 @@ let opts = {
   'submittedDateFrom': new Date("2013-10-20"), // Date | The submitted date from range filter. Format is yyyy-MM-dd.
   'submittedDateTo': new Date("2013-10-20"), // Date | The submitted date to range filter. Format is yyyy-MM-dd.
   'paymentMemo': "paymentMemo_example", // String | The payment memo filter. This filters via a case insensitive substring match.
+  'railsId': "railsId_example", // String | Payout Rails ID filter - case insensitive match. Any value is allowed, but you should use one of the supported railsId values. To get this list of values, you should call the 'Get Supported Rails' endpoint. 
   'scheduledForDateFrom': new Date("2013-10-20"), // Date | Filter payouts scheduled to run on or after the given date. Format is yyyy-MM-dd.
   'scheduledForDateTo': new Date("2013-10-20"), // Date | Filter payouts scheduled to run on or before the given date. Format is yyyy-MM-dd.
   'scheduleStatus': "scheduleStatus_example", // String | Payout Schedule Status
+  'postInstructFxStatus': "postInstructFxStatus_example", // String | The status of the post instruct FX step if one was required for the payment
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | The number of results to return in a page
   'sort': "sort_example", // String | List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by submittedDateTime:desc,paymentId:asc The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime, status and paymentId 
@@ -506,7 +512,7 @@ Name | Type | Description  | Notes
  **remoteId** | **String**| The remote id of the payees. | [optional] 
  **remoteSystemId** | **String**| The id of the remote system that is orchestrating payments | [optional] 
  **status** | **String**| Payment Status | [optional] 
- **transmissionType** | **String**| Transmission Type * ACH * SAME_DAY_ACH * WIRE  | [optional] 
+ **transmissionType** | **String**| Transmission Type * ACH * SAME_DAY_ACH * WIRE * GACHO  | [optional] 
  **sourceAccountName** | **String**| The source account name filter. This filters via a case insensitive substring match. | [optional] 
  **sourceAmountFrom** | **Number**| The source amount from range filter. Filters for sourceAmount &gt;&#x3D; sourceAmountFrom | [optional] 
  **sourceAmountTo** | **Number**| The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo | [optional] 
@@ -517,9 +523,11 @@ Name | Type | Description  | Notes
  **submittedDateFrom** | **Date**| The submitted date from range filter. Format is yyyy-MM-dd. | [optional] 
  **submittedDateTo** | **Date**| The submitted date to range filter. Format is yyyy-MM-dd. | [optional] 
  **paymentMemo** | **String**| The payment memo filter. This filters via a case insensitive substring match. | [optional] 
+ **railsId** | **String**| Payout Rails ID filter - case insensitive match. Any value is allowed, but you should use one of the supported railsId values. To get this list of values, you should call the &#39;Get Supported Rails&#39; endpoint.  | [optional] 
  **scheduledForDateFrom** | **Date**| Filter payouts scheduled to run on or after the given date. Format is yyyy-MM-dd. | [optional] 
  **scheduledForDateTo** | **Date**| Filter payouts scheduled to run on or before the given date. Format is yyyy-MM-dd. | [optional] 
  **scheduleStatus** | **String**| Payout Schedule Status | [optional] 
+ **postInstructFxStatus** | **String**| The status of the post instruct FX step if one was required for the payment | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,status:asc). Default is sort by submittedDateTime:desc,paymentId:asc The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime, status and paymentId  | [optional] 

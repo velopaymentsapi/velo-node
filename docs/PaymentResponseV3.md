@@ -13,14 +13,14 @@ Name | Type | Description | Notes
 **sourceAccountName** | **String** | The name of the source account from which the payment was taken | [optional] 
 **remoteId** | **String** | The remote id by which the payor refers to the payee. Only populated once payment is confirmed | [optional] 
 **sourceAmount** | **Number** | The source amount for the payment (amount debited to make the payment) | [optional] 
-**sourceCurrency** | [**PaymentAuditCurrencyV3**](PaymentAuditCurrencyV3.md) |  | [optional] 
+**sourceCurrency** | **String** | ISO 3 character currency code | [optional] 
 **paymentAmount** | **Number** | The amount which the payee will receive | 
-**paymentCurrency** | [**PaymentAuditCurrencyV3**](PaymentAuditCurrencyV3.md) |  | [optional] 
+**paymentCurrency** | **String** | ISO 3 character currency code | [optional] 
 **rate** | **Number** | The FX rate for the payment, if FX was involved. **Note** that (depending on the role of the caller) this information may not be displayed | [optional] 
 **invertedRate** | **Number** | The inverted FX rate for the payment, if FX was involved. **Note** that (depending on the role of the caller) this information may not be displayed | [optional] 
 **submittedDateTime** | **Date** |  | 
-**status** | **String** |  | 
-**fundingStatus** | **String** | The funding status of the payment | 
+**status** | **String** | Current status of the payment. One of the following values: ACCEPTED, AWAITING_FUNDS, FUNDED, UNFUNDED, BANK_PAYMENT_REQUESTED, REJECTED, ACCEPTED_BY_RAILS, CONFIRMED, FAILED, WITHDRAWN | 
+**fundingStatus** | **String** | The funding status of the payment. One of the following values: [FUNDED, INSTRUCTED, UNFUNDED | 
 **routingNumber** | **String** | The routing number for the payment. | [optional] 
 **accountNumber** | **String** | The account number for the account which will receive the payment. | [optional] 
 **iban** | **String** | The iban for the payment. | [optional] 
@@ -39,46 +39,7 @@ Name | Type | Description | Notes
 **returnReason** | **String** |  | [optional] 
 **railsPaymentId** | **String** |  | [optional] 
 **railsBatchId** | **String** |  | [optional] 
+**paymentScheme** | **String** |  | [optional] 
 **rejectionReason** | **String** |  | [optional] 
-
-
-
-## Enum: StatusEnum
-
-
-* `ACCEPTED` (value: `"ACCEPTED"`)
-
-* `AWAITING_FUNDS` (value: `"AWAITING_FUNDS"`)
-
-* `FUNDED` (value: `"FUNDED"`)
-
-* `UNFUNDED` (value: `"UNFUNDED"`)
-
-* `BANK_PAYMENT_REQUESTED` (value: `"BANK_PAYMENT_REQUESTED"`)
-
-* `REJECTED` (value: `"REJECTED"`)
-
-* `ACCEPTED_BY_RAILS` (value: `"ACCEPTED_BY_RAILS"`)
-
-* `CONFIRMED` (value: `"CONFIRMED"`)
-
-* `FAILED` (value: `"FAILED"`)
-
-* `WITHDRAWN` (value: `"WITHDRAWN"`)
-
-
-
-
-
-## Enum: FundingStatusEnum
-
-
-* `FUNDED` (value: `"FUNDED"`)
-
-* `INSTRUCTED` (value: `"INSTRUCTED"`)
-
-* `UNFUNDED` (value: `"UNFUNDED"`)
-
-
 
 

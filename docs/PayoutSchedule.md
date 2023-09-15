@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**scheduleStatus** | [**ScheduleStatus**](ScheduleStatus.md) |  | 
+**scheduleStatus** | **String** | Current status of the payout schedule. One of the following values: SCHEDULED, EXECUTED, FAILED | 
 **scheduledAt** | **Date** |  | 
 **scheduledFor** | **Date** |  | 
 **scheduledByPrincipalId** | **String** | ID of the user or application that scheduled the payout | 

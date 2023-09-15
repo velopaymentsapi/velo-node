@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payorId** | **String** |  | [optional] 
 **remoteId** | **String** |  | [optional] 
-**invitationStatus** | [**InvitationStatusV3**](InvitationStatusV3.md) |  | [optional] 
+**invitationStatus** | **String** |  | [optional] 
 **invitationStatusTimestamp** | **Date** | The timestamp when the invitation status is updated | [optional] 
 **paymentChannelId** | **String** |  | [optional] 
 **payableStatus** | **Boolean** | Indicates if the payee is payable for this payor | [optional] 

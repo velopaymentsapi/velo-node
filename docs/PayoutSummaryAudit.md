@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payoutId** | **String** |  | [optional] 
 **payorId** | **String** |  | [optional] 
-**status** | [**PayoutStatus**](PayoutStatus.md) |  | 
+**status** | **String** | Current status of the Payout. One of the following values: ACCEPTED, REJECTED, SUBMITTED, QUOTED, INSTRUCTED, COMPLETED, INCOMPLETE, CONFIRMED, WITHDRAWN | 
 **dateTime** | **Date** |  | [optional] 
 **submittedDateTime** | **String** |  | 
 **instructedDateTime** | **String** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **sourceAccountSummary** | [**[SourceAccountSummary]**](SourceAccountSummary.md) |  | [optional] 
 **fxSummaries** | [**[FxSummary]**](FxSummary.md) |  | [optional] 
 **payoutMemo** | **String** |  | [optional] 
-**payoutType** | [**PayoutType**](PayoutType.md) |  | 
+**payoutType** | **String** | The type of payout. One of the following values: STANDARD, AS, ON_BEHALF_OF | 
 **payorName** | **String** |  | 
 **schedule** | [**PayoutSchedule**](PayoutSchedule.md) |  | [optional] 
 

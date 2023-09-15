@@ -357,13 +357,13 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new VeloPayments.PayeesApi();
 let payorId = "payorId_example"; // String | The account owner Payor ID
 let opts = {
-  'watchlistStatus': new VeloPayments.WatchlistStatusV3(), // WatchlistStatusV3 | The watchlistStatus of the payees.
+  'watchlistStatus': "watchlistStatus_example", // String | The watchlistStatus of the payees.
   'disabled': true, // Boolean | Payee disabled
-  'onboardedStatus': new VeloPayments.OnboardedStatusV4(), // OnboardedStatusV4 | The onboarded status of the payees.
+  'onboardedStatus': "onboardedStatus_example", // String | The onboarded status of the payees.
   'email': bob@example.com, // String | Email address
   'displayName': Bob Smith, // String | The display name of the payees.
   'remoteId': remoteId123, // String | The remote id of the payees.
-  'payeeType': new VeloPayments.PayeeType2(), // PayeeType2 | The onboarded status of the payees.
+  'payeeType': "payeeType_example", // String | The onboarded status of the payees.
   'payeeCountry': US, // String | The country of the payee - 2 letter ISO 3166-1 country code (upper case)
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
@@ -384,13 +384,13 @@ apiInstance.listPayeesV3(payorId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payorId** | **String**| The account owner Payor ID | 
- **watchlistStatus** | [**WatchlistStatusV3**](.md)| The watchlistStatus of the payees. | [optional] 
+ **watchlistStatus** | **String**| The watchlistStatus of the payees. | [optional] 
  **disabled** | **Boolean**| Payee disabled | [optional] 
- **onboardedStatus** | [**OnboardedStatusV4**](.md)| The onboarded status of the payees. | [optional] 
+ **onboardedStatus** | **String**| The onboarded status of the payees. | [optional] 
  **email** | **String**| Email address | [optional] 
  **displayName** | **String**| The display name of the payees. | [optional] 
  **remoteId** | **String**| The remote id of the payees. | [optional] 
- **payeeType** | [**PayeeType2**](.md)| The onboarded status of the payees. | [optional] 
+ **payeeType** | **String**| The onboarded status of the payees. | [optional] 
  **payeeCountry** | **String**| The country of the payee - 2 letter ISO 3166-1 country code (upper case) | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
@@ -430,15 +430,15 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new VeloPayments.PayeesApi();
 let payorId = "payorId_example"; // String | The account owner Payor ID
 let opts = {
-  'watchlistStatus': new VeloPayments.WatchlistStatusV3(), // WatchlistStatusV3 | The watchlistStatus of the payees.
+  'watchlistStatus': "watchlistStatus_example", // String | The watchlistStatus of the payees.
   'disabled': true, // Boolean | Payee disabled
-  'onboardedStatus': new VeloPayments.OnboardedStatusV4(), // OnboardedStatusV4 | The onboarded status of the payees.
+  'onboardedStatus': "onboardedStatus_example", // String | The onboarded status of the payees.
   'email': bob@example.com, // String | Email address
   'displayName': Bob Smith, // String | The display name of the payees.
   'remoteId': remoteId123, // String | The remote id of the payees.
-  'payeeType': new VeloPayments.PayeeType2(), // PayeeType2 | The onboarded status of the payees.
+  'payeeType': "payeeType_example", // String | The onboarded status of the payees.
   'payeeCountry': US, // String | The country of the payee - 2 letter ISO 3166-1 country code (upper case)
-  'ofacStatus': new VeloPayments.OfacStatusV4(), // OfacStatusV4 | The ofacStatus of the payees.
+  'ofacStatus': "ofacStatus_example", // String | The ofacStatus of the payees.
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | Page size. Default is 25. Max allowable is 100.
   'sort': displayName:asc // String | List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
@@ -458,15 +458,15 @@ apiInstance.listPayeesV4(payorId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payorId** | **String**| The account owner Payor ID | 
- **watchlistStatus** | [**WatchlistStatusV3**](.md)| The watchlistStatus of the payees. | [optional] 
+ **watchlistStatus** | **String**| The watchlistStatus of the payees. | [optional] 
  **disabled** | **Boolean**| Payee disabled | [optional] 
- **onboardedStatus** | [**OnboardedStatusV4**](.md)| The onboarded status of the payees. | [optional] 
+ **onboardedStatus** | **String**| The onboarded status of the payees. | [optional] 
  **email** | **String**| Email address | [optional] 
  **displayName** | **String**| The display name of the payees. | [optional] 
  **remoteId** | **String**| The remote id of the payees. | [optional] 
- **payeeType** | [**PayeeType2**](.md)| The onboarded status of the payees. | [optional] 
+ **payeeType** | **String**| The onboarded status of the payees. | [optional] 
  **payeeCountry** | **String**| The country of the payee - 2 letter ISO 3166-1 country code (upper case) | [optional] 
- **ofacStatus** | [**OfacStatusV4**](.md)| The ofacStatus of the payees. | [optional] 
+ **ofacStatus** | **String**| The ofacStatus of the payees. | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
  **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;onboardedStatus:asc,name:asc) Default is name:asc &#39;name&#39; is treated as company name for companies - last name + &#39;,&#39; + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus.  | [optional] [default to &#39;displayName:asc&#39;]

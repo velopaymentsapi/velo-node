@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payoutStatus** | **String** | The current status of the payout. | [optional] 
+**payoutStatus** | **String** | The current status of the payout. One of the following values: ACCEPTED, REJECTED, SUBMITTED, QUOTED, INSTRUCTED, COMPLETED, INCOMPLETE, CONFIRMED, WITHDRAWN | [optional] 
 **submittedDateTime** | **Date** | The date/time at which the payout was submitted. | [optional] 
 **instructedDateTime** | **Date** | The date/time at which the payout was instructed. | [optional] 
 **withdrawnDateTime** | **Date** | The date/time at which the payout was withdrawn. | [optional] 
@@ -14,30 +14,5 @@ Name | Type | Description | Notes
 **releasedPayments** | **Number** | The count of payments within the payout which have been released. | [optional] 
 **incompletePayments** | **Number** | The count of payments within the payout which are incomplete. | [optional] 
 **failedPayments** | **Number** | The count of payments within the payout which have failed or been returned. | [optional] 
-
-
-
-## Enum: PayoutStatusEnum
-
-
-* `ACCEPTED` (value: `"ACCEPTED"`)
-
-* `REJECTED` (value: `"REJECTED"`)
-
-* `SUBMITTED` (value: `"SUBMITTED"`)
-
-* `QUOTED` (value: `"QUOTED"`)
-
-* `INSTRUCTED` (value: `"INSTRUCTED"`)
-
-* `COMPLETED` (value: `"COMPLETED"`)
-
-* `INCOMPLETE` (value: `"INCOMPLETE"`)
-
-* `CONFIRMED` (value: `"CONFIRMED"`)
-
-* `WITHDRAWN` (value: `"WITHDRAWN"`)
-
-
 
 

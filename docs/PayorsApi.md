@@ -4,24 +4,23 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPayorById**](PayorsApi.md#getPayorById) | **GET** /v1/payors/{payorId} | Get Payor
+[**getPayorByIdV1**](PayorsApi.md#getPayorByIdV1) | **GET** /v1/payors/{payorId} | Get Payor
 [**getPayorByIdV2**](PayorsApi.md#getPayorByIdV2) | **GET** /v2/payors/{payorId} | Get Payor
-[**payorAddPayorLogo**](PayorsApi.md#payorAddPayorLogo) | **POST** /v1/payors/{payorId}/branding/logos | Add Logo
-[**payorCreateApiKeyRequest**](PayorsApi.md#payorCreateApiKeyRequest) | **POST** /v1/payors/{payorId}/applications/{applicationId}/keys | Create API Key
-[**payorCreateApplicationRequest**](PayorsApi.md#payorCreateApplicationRequest) | **POST** /v1/payors/{payorId}/applications | Create Application
+[**payorAddPayorLogoV1**](PayorsApi.md#payorAddPayorLogoV1) | **POST** /v1/payors/{payorId}/branding/logos | Add Logo
+[**payorCreateApiKeyV1**](PayorsApi.md#payorCreateApiKeyV1) | **POST** /v1/payors/{payorId}/applications/{applicationId}/keys | Create API Key
+[**payorCreateApplicationV1**](PayorsApi.md#payorCreateApplicationV1) | **POST** /v1/payors/{payorId}/applications | Create Application
 [**payorEmailOptOut**](PayorsApi.md#payorEmailOptOut) | **POST** /v1/payors/{payorId}/reminderEmailsUpdate | Reminder Email Opt-Out
 [**payorGetBranding**](PayorsApi.md#payorGetBranding) | **GET** /v1/payors/{payorId}/branding | Get Branding
-[**payorLinks**](PayorsApi.md#payorLinks) | **GET** /v1/payorLinks | List Payor Links
 
 
 
-## getPayorById
+## getPayorByIdV1
 
-> PayorV1 getPayorById(payorId)
+> PayorV1 getPayorByIdV1(payorId)
 
 Get Payor
 
-Get a Single Payor by Id. 
+&lt;p&gt;Get a Single Payor by Id.&lt;/p&gt; &lt;p&gt;deprecated since v2.10 - Use /v2/payors 
 
 ### Example
 
@@ -34,7 +33,7 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayorsApi();
 let payorId = "payorId_example"; // String | The Payor Id
-apiInstance.getPayorById(payorId, (error, data, response) => {
+apiInstance.getPayorByIdV1(payorId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -113,13 +112,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## payorAddPayorLogo
+## payorAddPayorLogoV1
 
-> payorAddPayorLogo(payorId, opts)
+> payorAddPayorLogoV1(payorId, opts)
 
 Add Logo
 
-Add Payor Logo. Logo file is used in your branding, and emails sent to payees.
+&lt;p&gt;Add Payor Logo&lt;/p&gt; &lt;p&gt;Logo file is used in your branding and emails sent to payees&lt;/p&gt; 
 
 ### Example
 
@@ -135,7 +134,7 @@ let payorId = "payorId_example"; // String | The Payor Id
 let opts = {
   'logo': "/path/to/file" // File | 
 };
-apiInstance.payorAddPayorLogo(payorId, opts, (error, data, response) => {
+apiInstance.payorAddPayorLogoV1(payorId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -166,13 +165,13 @@ null (empty response body)
 - **Accept**: application/json
 
 
-## payorCreateApiKeyRequest
+## payorCreateApiKeyV1
 
-> PayorCreateApiKeyResponse payorCreateApiKeyRequest(payorId, applicationId, payorCreateApiKeyRequest)
+> PayorCreateApiKeyResponse payorCreateApiKeyV1(payorId, applicationId, payorCreateApiKeyRequest)
 
 Create API Key
 
-Create an an API key for the given payor Id and application Id
+&lt;p&gt;Create an an API key for the given payor Id and application Id&lt;/p&gt; &lt;p&gt;You can create multiple API Keys for a given application&lt;/p&gt; &lt;p&gt;API Keys are programmatic users for integrating your application with the Velo platform&lt;/p&gt; 
 
 ### Example
 
@@ -187,7 +186,7 @@ let apiInstance = new VeloPayments.PayorsApi();
 let payorId = "payorId_example"; // String | The Payor Id
 let applicationId = "applicationId_example"; // String | Application ID
 let payorCreateApiKeyRequest = new VeloPayments.PayorCreateApiKeyRequest(); // PayorCreateApiKeyRequest | Details of application API key to create
-apiInstance.payorCreateApiKeyRequest(payorId, applicationId, payorCreateApiKeyRequest, (error, data, response) => {
+apiInstance.payorCreateApiKeyV1(payorId, applicationId, payorCreateApiKeyRequest, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -219,13 +218,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## payorCreateApplicationRequest
+## payorCreateApplicationV1
 
-> payorCreateApplicationRequest(payorId, payorCreateApplicationRequest)
+> payorCreateApplicationV1(payorId, payorCreateApplicationRequest)
 
 Create Application
 
-Create an application for the given Payor ID. Applications are programatic users which can be assigned unique keys.
+&lt;p&gt;Create an application for the given Payor ID.&lt;/p&gt; &lt;p&gt;Applications provide a means to group your API Keys&lt;/p&gt; &lt;p&gt;For example you might have an SAP application that you wish to integrate with Velo&lt;/p&gt; &lt;p&gt;You can create an application and then create one or more API keys for the application&lt;/p&gt; 
 
 ### Example
 
@@ -239,7 +238,7 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new VeloPayments.PayorsApi();
 let payorId = "payorId_example"; // String | The Payor Id
 let payorCreateApplicationRequest = new VeloPayments.PayorCreateApplicationRequest(); // PayorCreateApplicationRequest | Details of application to create
-apiInstance.payorCreateApplicationRequest(payorId, payorCreateApplicationRequest, (error, data, response) => {
+apiInstance.payorCreateApplicationV1(payorId, payorCreateApplicationRequest, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -359,61 +358,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PayorBrandingResponse**](PayorBrandingResponse.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## payorLinks
-
-> PayorLinksResponse payorLinks(opts)
-
-List Payor Links
-
-This endpoint allows you to list payor links
-
-### Example
-
-```javascript
-import VeloPayments from 'velo-payments';
-let defaultClient = VeloPayments.ApiClient.instance;
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new VeloPayments.PayorsApi();
-let opts = {
-  'descendantsOfPayor': "descendantsOfPayor_example", // String | The Payor ID from which to start the query to show all descendants
-  'parentOfPayor': "parentOfPayor_example", // String | Look for the parent payor details for this payor id
-  'fields': "fields_example" // String | List of additional Payor fields to include in the response for each Payor. The values of payorId and payorName and always included for each Payor - 'fields' allows you to add to this. Example: ```fields=primaryContactEmail,kycState``` - will include payorId+payorName+primaryContactEmail+kycState for each Payor Default if not specified is to include only payorId and payorName. The supported fields are any combination of: primaryContactEmail,kycState 
-};
-apiInstance.payorLinks(opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **descendantsOfPayor** | **String**| The Payor ID from which to start the query to show all descendants | [optional] 
- **parentOfPayor** | **String**| Look for the parent payor details for this payor id | [optional] 
- **fields** | **String**| List of additional Payor fields to include in the response for each Payor. The values of payorId and payorName and always included for each Payor - &#39;fields&#39; allows you to add to this. Example: &#x60;&#x60;&#x60;fields&#x3D;primaryContactEmail,kycState&#x60;&#x60;&#x60; - will include payorId+payorName+primaryContactEmail+kycState for each Payor Default if not specified is to include only payorId and payorName. The supported fields are any combination of: primaryContactEmail,kycState  | [optional] 
-
-### Return type
-
-[**PayorLinksResponse**](PayorLinksResponse.md)
 
 ### Authorization
 

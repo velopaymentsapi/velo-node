@@ -6,16 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **linkId** | **String** |  | 
 **fromPayorId** | **String** |  | 
-**linkType** | **String** |  | 
+**linkType** | **String** | The type of the link. One of the following values: PARENT_OF | 
 **toPayorId** | **String** |  | 
-
-
-
-## Enum: LinkTypeEnum
-
-
-* `PARENT_OF` (value: `"PARENT_OF"`)
-
-
 
 

@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **maxLength** | **Number** | maximum length of the element data | [optional] 
 **validation** | **String** | a regex to validate the element data | 
 **displayOrder** | **Number** |  | [optional] 
+**description** | **String** | An optional description, or hint, as to how the user should enter the field value. | [optional] 
 
 

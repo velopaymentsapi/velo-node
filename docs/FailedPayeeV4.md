@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **payorRefs** | [**[PayeePayorRefV4]**](PayeePayorRefV4.md) |  | [optional] [readonly] 
 **email** | **String** |  | [optional] 
 **remoteId** | **String** |  | [optional] 
-**type** | [**PayeeType2**](PayeeType2.md) |  | [optional] 
+**type** | **String** | Type of Payee. One of the following values: Individual, Company | [optional] 
 **address** | [**CreatePayeeAddressV4**](CreatePayeeAddressV4.md) |  | [optional] 
 **paymentChannel** | [**CreatePaymentChannelV4**](CreatePaymentChannelV4.md) |  | [optional] 
 **challenge** | [**ChallengeV4**](ChallengeV4.md) |  | [optional] 
