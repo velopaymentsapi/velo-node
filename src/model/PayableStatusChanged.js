@@ -18,7 +18,7 @@ import PayeeEventAllOfReasons from './PayeeEventAllOfReasons';
 /**
  * The PayableStatusChanged model module.
  * @module model/PayableStatusChanged
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class PayableStatusChanged {
     /**

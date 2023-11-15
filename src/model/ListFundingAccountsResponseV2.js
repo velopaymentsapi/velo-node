@@ -19,7 +19,7 @@ import ListFundingAccountsResponseV2Page from './ListFundingAccountsResponseV2Pa
 /**
  * The ListFundingAccountsResponseV2 model module.
  * @module model/ListFundingAccountsResponseV2
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class ListFundingAccountsResponseV2 {
     /**

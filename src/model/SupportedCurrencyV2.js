@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SupportedCurrencyV2 model module.
  * @module model/SupportedCurrencyV2
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class SupportedCurrencyV2 {
     /**

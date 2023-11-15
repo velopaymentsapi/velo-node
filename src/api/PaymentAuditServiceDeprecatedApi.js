@@ -29,7 +29,7 @@ import PayorAmlTransactionV3 from '../model/PayorAmlTransactionV3';
 /**
 * PaymentAuditServiceDeprecated service.
 * @module api/PaymentAuditServiceDeprecatedApi
-* @version 2.35.58-beta.1
+* @version 2.35.58
 */
 export default class PaymentAuditServiceDeprecatedApi {
 
@@ -57,9 +57,9 @@ export default class PaymentAuditServiceDeprecatedApi {
      * V3 Export Transactions
      * Deprecated (use /v4/paymentaudit/transactions instead)
      * @param {Object} opts Optional parameters
-     * @param {String} opts.payorId The Payor ID for whom you wish to run the report. For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor. 
-     * @param {Date} opts.startDate Start date, inclusive. Format is YYYY-MM-DD
-     * @param {Date} opts.endDate End date, inclusive. Format is YYYY-MM-DD
+     * @param {String} [payorId] The Payor ID for whom you wish to run the report. For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor. 
+     * @param {Date} [startDate] Start date, inclusive. Format is YYYY-MM-DD
+     * @param {Date} [endDate] End date, inclusive. Format is YYYY-MM-DD
      * @param {module:api/PaymentAuditServiceDeprecatedApi~exportTransactionsCSVV3Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PayorAmlTransactionV3}
      */
@@ -103,9 +103,9 @@ export default class PaymentAuditServiceDeprecatedApi {
      * Deprecated (use /v4/paymentaudit/fundings)
      * @param {String} payorId The account owner Payor ID
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
-     * @param {String} opts.sort List of sort fields. Example: ```?sort=destinationCurrency:asc,destinationAmount:asc``` Default is no sort. The supported sort fields are: dateTime and amount. 
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 25)] The number of results to return in a page
+     * @param {String} [sort] List of sort fields. Example: ```?sort=destinationCurrency:asc,destinationAmount:asc``` Default is no sort. The supported sort fields are: dateTime and amount. 
      * @param {module:api/PaymentAuditServiceDeprecatedApi~getFundingsV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetFundingsResponse}
      */
@@ -154,7 +154,7 @@ export default class PaymentAuditServiceDeprecatedApi {
      * Deprecated (use /v4/paymentaudit/payments/<paymentId> instead)
      * @param {String} paymentId Payment Id
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.sensitive Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
+     * @param {Boolean} [sensitive] Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
      * @param {module:api/PaymentAuditServiceDeprecatedApi~getPaymentDetailsV3Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaymentResponseV3}
      */
@@ -201,18 +201,18 @@ export default class PaymentAuditServiceDeprecatedApi {
      * Deprecated (use /v4/paymentaudit/payouts/<payoutId> instead)
      * @param {String} payoutId The id (UUID) of the payout.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.remoteId The remote id of the payees.
-     * @param {module:model/String} opts.status Payment Status
-     * @param {Number} opts.sourceAmountFrom The source amount from range filter. Filters for sourceAmount >= sourceAmountFrom
-     * @param {Number} opts.sourceAmountTo The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo
-     * @param {Number} opts.paymentAmountFrom The payment amount from range filter. Filters for paymentAmount >= paymentAmountFrom
-     * @param {Number} opts.paymentAmountTo The payment amount to range filter. Filters for paymentAmount ⇐ paymentAmountTo
-     * @param {Date} opts.submittedDateFrom The submitted date from range filter. Format is yyyy-MM-dd.
-     * @param {Date} opts.submittedDateTo The submitted date to range filter. Format is yyyy-MM-dd.
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
-     * @param {String} opts.sort <p>List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId</p> <p>The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status</p> 
-     * @param {Boolean} opts.sensitive Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
+     * @param {String} [remoteId] The remote id of the payees.
+     * @param {module:model/String} [status] Payment Status
+     * @param {Number} [sourceAmountFrom] The source amount from range filter. Filters for sourceAmount >= sourceAmountFrom
+     * @param {Number} [sourceAmountTo] The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo
+     * @param {Number} [paymentAmountFrom] The payment amount from range filter. Filters for paymentAmount >= paymentAmountFrom
+     * @param {Number} [paymentAmountTo] The payment amount to range filter. Filters for paymentAmount ⇐ paymentAmountTo
+     * @param {Date} [submittedDateFrom] The submitted date from range filter. Format is yyyy-MM-dd.
+     * @param {Date} [submittedDateTo] The submitted date to range filter. Format is yyyy-MM-dd.
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 25)] The number of results to return in a page
+     * @param {String} [sort] <p>List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId</p> <p>The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status</p> 
+     * @param {Boolean} [sensitive] Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
      * @param {module:api/PaymentAuditServiceDeprecatedApi~getPaymentsForPayoutPAV3Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetPaymentsForPayoutResponseV3}
      */
@@ -269,7 +269,7 @@ export default class PaymentAuditServiceDeprecatedApi {
      * V1 Get Payout Statistics
      * Deprecated (Use /v4/paymentaudit/payoutStatistics)
      * @param {Object} opts Optional parameters
-     * @param {String} opts.payorId The account owner Payor ID. Required for external users.
+     * @param {String} [payorId] The account owner Payor ID. Required for external users.
      * @param {module:api/PaymentAuditServiceDeprecatedApi~getPayoutStatsV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetPayoutStatistics}
      */
@@ -311,13 +311,13 @@ export default class PaymentAuditServiceDeprecatedApi {
      * Deprecated (use /v4/paymentaudit/payouts instead)
      * @param {String} payorId The account owner Payor ID
      * @param {Object} opts Optional parameters
-     * @param {String} opts.payoutMemo Payout Memo filter - case insensitive sub-string match
-     * @param {module:model/String} opts.status Payout Status
-     * @param {Date} opts.submittedDateFrom The submitted date from range filter. Format is yyyy-MM-dd.
-     * @param {Date} opts.submittedDateTo The submitted date to range filter. Format is yyyy-MM-dd.
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
-     * @param {String} opts.sort List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status. 
+     * @param {String} [payoutMemo] Payout Memo filter - case insensitive sub-string match
+     * @param {module:model/String} [status] Payout Status
+     * @param {Date} [submittedDateFrom] The submitted date from range filter. Format is yyyy-MM-dd.
+     * @param {Date} [submittedDateTo] The submitted date to range filter. Format is yyyy-MM-dd.
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 25)] The number of results to return in a page
+     * @param {String} [sort] List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status. 
      * @param {module:api/PaymentAuditServiceDeprecatedApi~getPayoutsForPayorV3Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetPayoutsResponseV3}
      */
@@ -371,8 +371,8 @@ export default class PaymentAuditServiceDeprecatedApi {
      * @param {String} payorId The Payor ID to find associated Payments
      * @param {Date} updatedSince The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 100)
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 100)] The number of results to return in a page
      * @param {module:api/PaymentAuditServiceDeprecatedApi~listPaymentChangesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaymentDeltaResponseV1}
      */
@@ -424,25 +424,25 @@ export default class PaymentAuditServiceDeprecatedApi {
      * V3 Get List of Payments
      * Deprecated (use /v4/paymentaudit/payments instead)
      * @param {Object} opts Optional parameters
-     * @param {String} opts.payeeId The UUID of the payee.
-     * @param {String} opts.payorId The account owner Payor Id. Required for external users.
-     * @param {String} opts.payorName The payor’s name. This filters via a case insensitive substring match.
-     * @param {String} opts.remoteId The remote id of the payees.
-     * @param {module:model/String} opts.status Payment Status
-     * @param {String} opts.sourceAccountName The source account name filter. This filters via a case insensitive substring match.
-     * @param {Number} opts.sourceAmountFrom The source amount from range filter. Filters for sourceAmount >= sourceAmountFrom
-     * @param {Number} opts.sourceAmountTo The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo
-     * @param {String} opts.sourceCurrency The source currency filter. Filters based on an exact match on the currency.
-     * @param {Number} opts.paymentAmountFrom The payment amount from range filter. Filters for paymentAmount >= paymentAmountFrom
-     * @param {Number} opts.paymentAmountTo The payment amount to range filter. Filters for paymentAmount ⇐ paymentAmountTo
-     * @param {String} opts.paymentCurrency The payment currency filter. Filters based on an exact match on the currency.
-     * @param {Date} opts.submittedDateFrom The submitted date from range filter. Format is yyyy-MM-dd.
-     * @param {Date} opts.submittedDateTo The submitted date to range filter. Format is yyyy-MM-dd.
-     * @param {String} opts.paymentMemo The payment memo filter. This filters via a case insensitive substring match.
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
-     * @param {String} opts.sort List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status 
-     * @param {Boolean} opts.sensitive Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
+     * @param {String} [payeeId] The UUID of the payee.
+     * @param {String} [payorId] The account owner Payor Id. Required for external users.
+     * @param {String} [payorName] The payor’s name. This filters via a case insensitive substring match.
+     * @param {String} [remoteId] The remote id of the payees.
+     * @param {module:model/String} [status] Payment Status
+     * @param {String} [sourceAccountName] The source account name filter. This filters via a case insensitive substring match.
+     * @param {Number} [sourceAmountFrom] The source amount from range filter. Filters for sourceAmount >= sourceAmountFrom
+     * @param {Number} [sourceAmountTo] The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo
+     * @param {String} [sourceCurrency] The source currency filter. Filters based on an exact match on the currency.
+     * @param {Number} [paymentAmountFrom] The payment amount from range filter. Filters for paymentAmount >= paymentAmountFrom
+     * @param {Number} [paymentAmountTo] The payment amount to range filter. Filters for paymentAmount ⇐ paymentAmountTo
+     * @param {String} [paymentCurrency] The payment currency filter. Filters based on an exact match on the currency.
+     * @param {Date} [submittedDateFrom] The submitted date from range filter. Format is yyyy-MM-dd.
+     * @param {Date} [submittedDateTo] The submitted date to range filter. Format is yyyy-MM-dd.
+     * @param {String} [paymentMemo] The payment memo filter. This filters via a case insensitive substring match.
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 25)] The number of results to return in a page
+     * @param {String} [sort] List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status 
+     * @param {Boolean} [sensitive] Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
      * @param {module:api/PaymentAuditServiceDeprecatedApi~listPaymentsAuditV3Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ListPaymentsResponseV3}
      */

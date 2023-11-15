@@ -19,7 +19,7 @@ import PayeeInvitationStatusResponseV4 from './PayeeInvitationStatusResponseV4';
 /**
  * The PagedPayeeInvitationStatusResponseV4 model module.
  * @module model/PagedPayeeInvitationStatusResponseV4
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class PagedPayeeInvitationStatusResponseV4 {
     /**

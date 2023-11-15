@@ -39,7 +39,7 @@ import ValidatePasswordResponse from '../model/ValidatePasswordResponse';
 /**
 * Users service.
 * @module api/UsersApi
-* @version 2.35.58-beta.1
+* @version 2.35.58
 */
 export default class UsersApi {
 
@@ -314,13 +314,13 @@ export default class UsersApi {
      * List Users
      * Get a paginated response listing the Users
      * @param {Object} opts Optional parameters
-     * @param {module:model/UserType} opts.type The Type of the User.
-     * @param {module:model/UserStatus} opts.status The status of the User.
-     * @param {String} opts.entityId The entityId of the User.
-     * @param {module:model/PayeeType} opts.payeeType The Type of the Payee entity. Either COMPANY or INDIVIDUAL.
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
-     * @param {String} opts.sort List of sort fields (e.g. ?sort=email:asc,lastName:asc) Default is email:asc 'name' The supported sort fields are - email, lastNmae.  (default to 'email:asc')
+     * @param {module:model/UserType} [type] The Type of the User.
+     * @param {module:model/UserStatus} [status] The status of the User.
+     * @param {String} [entityId] The entityId of the User.
+     * @param {module:model/PayeeType} [payeeType] The Type of the Payee entity. Either COMPANY or INDIVIDUAL.
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 25)] The number of results to return in a page
+     * @param {String} [sort = 'email:asc')] List of sort fields (e.g. ?sort=email:asc,lastName:asc) Default is email:asc 'name' The supported sort fields are - email, lastNmae. 
      * @param {module:api/UsersApi~listUsersCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PagedUserResponse}
      */
@@ -592,7 +592,7 @@ export default class UsersApi {
      * <p>Unregister the MFA device for the user </p> <p>If the user does not require further verification then a register new MFA device token will be sent to them via their email address</p> 
      * @param {module:model/SelfMFATypeUnregisterRequest} selfMFATypeUnregisterRequest The MFA Type to unregister
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Bearer token authorization leg of validate
+     * @param {String} [authorization] Bearer token authorization leg of validate
      * @param {module:api/UsersApi~unregisterMFAForSelfCallback} callback The callback function, accepting three arguments: error, data, response
      */
     unregisterMFAForSelf(selfMFATypeUnregisterRequest, opts, callback) {

@@ -17,7 +17,7 @@ import CreatePayeesCSVRequestV4 from './CreatePayeesCSVRequestV4';
 /**
  * The V4CreatePayeeRequest model module.
  * @module model/V4CreatePayeeRequest
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class V4CreatePayeeRequest {
     /**

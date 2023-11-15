@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListPaymentsResponseV3Page model module.
  * @module model/ListPaymentsResponseV3Page
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class ListPaymentsResponseV3Page {
     /**

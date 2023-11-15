@@ -17,7 +17,7 @@ import PayeeTypeEnum from './PayeeTypeEnum';
 /**
  * The CreatePayeesCSVRequestV3 model module.
  * @module model/CreatePayeesCSVRequestV3
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class CreatePayeesCSVRequestV3 {
     /**

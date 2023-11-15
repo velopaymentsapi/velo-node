@@ -26,7 +26,7 @@ import WebhooksResponse from '../model/WebhooksResponse';
 /**
 * Webhooks service.
 * @module api/WebhooksApi
-* @version 2.35.58-beta.1
+* @version 2.35.58
 */
 export default class WebhooksApi {
 
@@ -54,7 +54,7 @@ export default class WebhooksApi {
      * Create Webhook
      * Create Webhook
      * @param {Object} opts Optional parameters
-     * @param {module:model/CreateWebhookRequest} opts.createWebhookRequest 
+     * @param {module:model/CreateWebhookRequest} [createWebhookRequest] 
      * @param {module:api/WebhooksApi~createWebhookV1Callback} callback The callback function, accepting three arguments: error, data, response
      */
     createWebhookV1(opts, callback) {
@@ -137,8 +137,8 @@ export default class WebhooksApi {
      * List the details about the webhooks for the given payor.
      * @param {String} payorId The Payor ID
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 25)] The number of results to return in a page
      * @param {module:api/WebhooksApi~listWebhooksV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhooksResponse}
      */
@@ -227,7 +227,7 @@ export default class WebhooksApi {
      * Update Webhook
      * @param {String} webhookId Webhook id
      * @param {Object} opts Optional parameters
-     * @param {module:model/UpdateWebhookRequest} opts.updateWebhookRequest 
+     * @param {module:model/UpdateWebhookRequest} [updateWebhookRequest] 
      * @param {module:api/WebhooksApi~updateWebhookV1Callback} callback The callback function, accepting three arguments: error, data, response
      */
     updateWebhookV1(webhookId, opts, callback) {

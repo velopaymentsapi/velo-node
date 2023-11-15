@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetNotificationsRequest model module.
  * @module model/SetNotificationsRequest
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class SetNotificationsRequest {
     /**

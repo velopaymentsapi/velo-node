@@ -22,7 +22,7 @@ import PayeePayorRefV3 from './PayeePayorRefV3';
 /**
  * The CreatePayeeV3 model module.
  * @module model/CreatePayeeV3
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class CreatePayeeV3 {
     /**

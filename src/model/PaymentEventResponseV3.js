@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PaymentEventResponseV3 model module.
  * @module model/PaymentEventResponseV3
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class PaymentEventResponseV3 {
     /**

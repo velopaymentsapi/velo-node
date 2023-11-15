@@ -19,7 +19,7 @@ import PaymentDelta from './PaymentDelta';
 /**
  * The PaymentDeltaResponse model module.
  * @module model/PaymentDeltaResponse
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class PaymentDeltaResponse {
     /**

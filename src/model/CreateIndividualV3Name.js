@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateIndividualV3Name model module.
  * @module model/CreateIndividualV3Name
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class CreateIndividualV3Name {
     /**

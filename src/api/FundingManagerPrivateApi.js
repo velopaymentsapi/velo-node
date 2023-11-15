@@ -23,7 +23,7 @@ import InlineResponse409 from '../model/InlineResponse409';
 /**
 * FundingManagerPrivate service.
 * @module api/FundingManagerPrivateApi
-* @version 2.35.58-beta.1
+* @version 2.35.58
 */
 export default class FundingManagerPrivateApi {
 
@@ -51,7 +51,7 @@ export default class FundingManagerPrivateApi {
      * Create Funding Account
      * Create Funding Account
      * @param {Object} opts Optional parameters
-     * @param {module:model/CreateFundingAccountRequestV2} opts.createFundingAccountRequestV2 
+     * @param {module:model/CreateFundingAccountRequestV2} [createFundingAccountRequestV2] 
      * @param {module:api/FundingManagerPrivateApi~createFundingAccountV2Callback} callback The callback function, accepting three arguments: error, data, response
      */
     createFundingAccountV2(opts, callback) {

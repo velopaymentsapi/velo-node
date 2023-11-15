@@ -32,7 +32,7 @@ import UpdateRemoteIdRequestV4 from '../model/UpdateRemoteIdRequestV4';
 /**
 * Payees service.
 * @module api/PayeesApi
-* @version 2.35.58-beta.1
+* @version 2.35.58
 */
 export default class PayeesApi {
 
@@ -145,7 +145,7 @@ export default class PayeesApi {
      * <p>Use v4 instead</p> <p>Get Payee by Id</p> 
      * @param {String} payeeId The UUID of the payee.
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.sensitive Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
+     * @param {Boolean} [sensitive] Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
      * @param {module:api/PayeesApi~getPayeeByIdV3Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PayeeDetailResponseV3}
      */
@@ -192,7 +192,7 @@ export default class PayeesApi {
      * Get Payee by Id
      * @param {String} payeeId The UUID of the payee.
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.sensitive Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
+     * @param {Boolean} [sensitive] Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
      * @param {module:api/PayeesApi~getPayeeByIdV4Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PayeeDetailResponseV4}
      */
@@ -240,8 +240,8 @@ export default class PayeesApi {
      * @param {String} payorId The Payor ID to find associated Payees
      * @param {Date} updatedSince The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize Page size. Default is 100. Max allowable is 1000. (default to 100)
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 100)] Page size. Default is 100. Max allowable is 1000.
      * @param {module:api/PayeesApi~listPayeeChangesV3Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PayeeDeltaResponseV3}
      */
@@ -295,8 +295,8 @@ export default class PayeesApi {
      * @param {String} payorId The Payor ID to find associated Payees
      * @param {Date} updatedSince The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize Page size. Default is 100. Max allowable is 1000. (default to 100)
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 100)] Page size. Default is 100. Max allowable is 1000.
      * @param {module:api/PayeesApi~listPayeeChangesV4Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PayeeDeltaResponseV4}
      */
@@ -349,17 +349,17 @@ export default class PayeesApi {
      * <p>Use v4 instead</p> Get a paginated response listing the payees for a payor. 
      * @param {String} payorId The account owner Payor ID
      * @param {Object} opts Optional parameters
-     * @param {String} opts.watchlistStatus The watchlistStatus of the payees.
-     * @param {Boolean} opts.disabled Payee disabled
-     * @param {String} opts.onboardedStatus The onboarded status of the payees.
-     * @param {String} opts.email Email address
-     * @param {String} opts.displayName The display name of the payees.
-     * @param {String} opts.remoteId The remote id of the payees.
-     * @param {String} opts.payeeType The onboarded status of the payees.
-     * @param {String} opts.payeeCountry The country of the payee - 2 letter ISO 3166-1 country code (upper case)
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize Page size. Default is 25. Max allowable is 100. (default to 25)
-     * @param {String} opts.sort List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus.  (default to 'displayName:asc')
+     * @param {String} [watchlistStatus] The watchlistStatus of the payees.
+     * @param {Boolean} [disabled] Payee disabled
+     * @param {String} [onboardedStatus] The onboarded status of the payees.
+     * @param {String} [email] Email address
+     * @param {String} [displayName] The display name of the payees.
+     * @param {String} [remoteId] The remote id of the payees.
+     * @param {String} [payeeType] The onboarded status of the payees.
+     * @param {String} [payeeCountry] The country of the payee - 2 letter ISO 3166-1 country code (upper case)
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 25)] Page size. Default is 25. Max allowable is 100.
+     * @param {String} [sort = 'displayName:asc')] List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
      * @param {module:api/PayeesApi~listPayeesV3Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PagedPayeeResponseV3}
      */
@@ -416,18 +416,18 @@ export default class PayeesApi {
      * Get a paginated response listing the payees for a payor.
      * @param {String} payorId The account owner Payor ID
      * @param {Object} opts Optional parameters
-     * @param {String} opts.watchlistStatus The watchlistStatus of the payees.
-     * @param {Boolean} opts.disabled Payee disabled
-     * @param {String} opts.onboardedStatus The onboarded status of the payees.
-     * @param {String} opts.email Email address
-     * @param {String} opts.displayName The display name of the payees.
-     * @param {String} opts.remoteId The remote id of the payees.
-     * @param {String} opts.payeeType The onboarded status of the payees.
-     * @param {String} opts.payeeCountry The country of the payee - 2 letter ISO 3166-1 country code (upper case)
-     * @param {String} opts.ofacStatus The ofacStatus of the payees.
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize Page size. Default is 25. Max allowable is 100. (default to 25)
-     * @param {String} opts.sort List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus.  (default to 'displayName:asc')
+     * @param {String} [watchlistStatus] The watchlistStatus of the payees.
+     * @param {Boolean} [disabled] Payee disabled
+     * @param {String} [onboardedStatus] The onboarded status of the payees.
+     * @param {String} [email] Email address
+     * @param {String} [displayName] The display name of the payees.
+     * @param {String} [remoteId] The remote id of the payees.
+     * @param {String} [payeeType] The onboarded status of the payees.
+     * @param {String} [payeeCountry] The country of the payee - 2 letter ISO 3166-1 country code (upper case)
+     * @param {String} [ofacStatus] The ofacStatus of the payees.
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 25)] Page size. Default is 25. Max allowable is 100.
+     * @param {String} [sort = 'displayName:asc')] List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
      * @param {module:api/PayeesApi~listPayeesV4Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PagedPayeeResponseV4}
      */

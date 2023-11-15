@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListSourceAccountResponseV3Links model module.
  * @module model/ListSourceAccountResponseV3Links
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class ListSourceAccountResponseV3Links {
     /**

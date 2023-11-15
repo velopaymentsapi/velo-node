@@ -19,7 +19,7 @@ import PaymentResponseV3 from './PaymentResponseV3';
 /**
  * The ListPaymentsResponseV3 model module.
  * @module model/ListPaymentsResponseV3
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class ListPaymentsResponseV3 {
     /**

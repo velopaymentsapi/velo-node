@@ -30,7 +30,7 @@ import WithdrawPaymentRequest from '../model/WithdrawPaymentRequest';
 /**
 * Payouts service.
 * @module api/PayoutsApi
-* @version 2.35.58-beta.1
+* @version 2.35.58
 */
 export default class PayoutsApi {
 
@@ -144,14 +144,14 @@ export default class PayoutsApi {
      * Retrieve payments for a payout
      * @param {String} payoutId Id of the payout
      * @param {Object} opts Optional parameters
-     * @param {module:model/String} opts.status Payment Status * ACCEPTED: any payment which was accepted at submission time (status may have changed since) * REJECTED: any payment rejected by initial submission processing * WITHDRAWN: any payment which has been withdrawn * WITHDRAWABLE: any payment eligible for withdrawal 
-     * @param {String} opts.remoteId The remote id of the payees.
-     * @param {String} opts.payorPaymentId Payor's Id of the Payment
-     * @param {String} opts.sourceAccountName Physical Account Name
-     * @param {module:model/String} opts.transmissionType Transmission Type * ACH * SAME_DAY_ACH * WIRE 
-     * @param {String} opts.paymentMemo Payment Memo of the Payment
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
+     * @param {module:model/String} [status] Payment Status * ACCEPTED: any payment which was accepted at submission time (status may have changed since) * REJECTED: any payment rejected by initial submission processing * WITHDRAWN: any payment which has been withdrawn * WITHDRAWABLE: any payment eligible for withdrawal 
+     * @param {String} [remoteId] The remote id of the payees.
+     * @param {String} [payorPaymentId] Payor's Id of the Payment
+     * @param {String} [sourceAccountName] Physical Account Name
+     * @param {module:model/String} [transmissionType] Transmission Type * ACH * SAME_DAY_ACH * WIRE 
+     * @param {String} [paymentMemo] Payment Memo of the Payment
+     * @param {Number} [pageSize = 25)] The number of results to return in a page
+     * @param {Number} [page = 1)] Page number. Default is 1.
      * @param {module:api/PayoutsApi~getPaymentsForPayoutV3Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PagedPaymentsResponseV3}
      */
@@ -248,7 +248,7 @@ export default class PayoutsApi {
      * Instruct a payout to be made for the specified payoutId.
      * @param {String} payoutId Id of the payout
      * @param {Object} opts Optional parameters
-     * @param {module:model/InstructPayoutRequestV3} opts.instructPayoutRequestV3 Additional instruct payout parameters
+     * @param {module:model/InstructPayoutRequestV3} [instructPayoutRequestV3] Additional instruct payout parameters
      * @param {module:api/PayoutsApi~instructPayoutV3Callback} callback The callback function, accepting three arguments: error, data, response
      */
     instructPayoutV3(payoutId, opts, callback) {
@@ -293,7 +293,7 @@ export default class PayoutsApi {
      * <p>Schedule a payout for auto-instruction in the future or update existing payout schedule if the payout has been scheduled before.</p> 
      * @param {String} payoutId Id of the payout
      * @param {Object} opts Optional parameters
-     * @param {module:model/SchedulePayoutRequestV3} opts.schedulePayoutRequestV3 schedule payout parameters
+     * @param {module:model/SchedulePayoutRequestV3} [schedulePayoutRequestV3] schedule payout parameters
      * @param {module:api/PayoutsApi~scheduleForPayoutCallback} callback The callback function, accepting three arguments: error, data, response
      */
     scheduleForPayout(payoutId, opts, callback) {

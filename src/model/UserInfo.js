@@ -18,7 +18,7 @@ import UserType2 from './UserType2';
 /**
  * The UserInfo model module.
  * @module model/UserInfo
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class UserInfo {
     /**

@@ -19,7 +19,7 @@ import PayeePayorRefV4 from './PayeePayorRefV4';
 /**
  * The GetPayeeListResponseV4 model module.
  * @module model/GetPayeeListResponseV4
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class GetPayeeListResponseV4 {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InvitePayeeRequestV3 model module.
  * @module model/InvitePayeeRequestV3
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class InvitePayeeRequestV3 {
     /**

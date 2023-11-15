@@ -17,7 +17,7 @@ import IndividualV3Name from './IndividualV3Name';
 /**
  * The IndividualV3 model module.
  * @module model/IndividualV3
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class IndividualV3 {
     /**

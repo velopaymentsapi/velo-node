@@ -21,7 +21,7 @@ import PayeeTypeEnum from './PayeeTypeEnum';
 /**
  * The UpdatePayeeDetailsRequestV4 model module.
  * @module model/UpdatePayeeDetailsRequestV4
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class UpdatePayeeDetailsRequestV4 {
     /**

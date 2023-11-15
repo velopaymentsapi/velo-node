@@ -18,7 +18,7 @@ import SourceAccountSummaryV3 from './SourceAccountSummaryV3';
 /**
  * The PayoutSummaryAuditV3 model module.
  * @module model/PayoutSummaryAuditV3
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class PayoutSummaryAuditV3 {
     /**

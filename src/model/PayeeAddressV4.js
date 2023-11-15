@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PayeeAddressV4 model module.
  * @module model/PayeeAddressV4
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class PayeeAddressV4 {
     /**

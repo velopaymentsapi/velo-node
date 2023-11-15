@@ -24,7 +24,7 @@ import ResetPasswordRequest from '../model/ResetPasswordRequest';
 /**
 * Login service.
 * @module api/LoginApi
-* @version 2.35.58-beta.1
+* @version 2.35.58
 */
 export default class LoginApi {
 
@@ -130,7 +130,7 @@ export default class LoginApi {
      * <p>The second part of login involves validating using an MFA device</p> <p>An access token with PRE_AUTH authorities is required</p> 
      * @param {module:model/AccessTokenValidationRequest} accessTokenValidationRequest An OTP from the user's registered MFA Device 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.authorization Bearer token authorization leg of validate
+     * @param {String} [authorization] Bearer token authorization leg of validate
      * @param {module:api/LoginApi~validateAccessTokenCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AccessTokenResponse}
      */
@@ -175,7 +175,7 @@ export default class LoginApi {
      * Authentication endpoint
      * <p>Use this endpoint to obtain an access token for calling Velo Payments APIs. </p> <p>You need your API key and API secret issued by Velo</p> <p>To login and get an access token the API key and API secret must be Base64 encoded by concatenating them with a colon between them</p> <p>e.g. Given an ApiKey: 44a9537d-d55d-4b47-8082-14061c2bcdd8 and ApiSecret: c396b26b-137a-44fd-87f5-34631f8fd529</p> <p>Using a Base64 encode function Base64Encoder().encode(\"44a9537d-d55d-4b47-8082-14061c2bcdd8:c396b26b-137a-44fd-87f5-34631f8fd529\")</p> <p>Included as a Basic Authorization header: -H \"Authorization: Basic NDRhOTUzN2QtZDU1ZC00YjQ3LTgwODItMTQwNjFjMmJjZGQ4OmMzOTZiMjZiLTEzN2EtNDRmZC04N2Y1LTM0NjMxZjhmZDUyOQ==\" </p> 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.grantType OAuth grant type. Should use 'client_credentials' (default to 'client_credentials')
+     * @param {String} [grantType = 'client_credentials')] OAuth grant type. Should use 'client_credentials'
      * @param {module:api/LoginApi~veloAuthCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/AuthResponse}
      */

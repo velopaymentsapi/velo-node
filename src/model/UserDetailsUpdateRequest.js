@@ -17,7 +17,7 @@ import MFAType from './MFAType';
 /**
  * The UserDetailsUpdateRequest model module.
  * @module model/UserDetailsUpdateRequest
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class UserDetailsUpdateRequest {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListFundingAccountsResponseV2Page model module.
  * @module model/ListFundingAccountsResponseV2Page
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class ListFundingAccountsResponseV2Page {
     /**

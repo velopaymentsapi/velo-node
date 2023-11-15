@@ -21,7 +21,7 @@ import PayorLinksResponse from '../model/PayorLinksResponse';
 /**
 * PayorHierarchy service.
 * @module api/PayorHierarchyApi
-* @version 2.35.58-beta.1
+* @version 2.35.58
 */
 export default class PayorHierarchyApi {
 
@@ -49,9 +49,9 @@ export default class PayorHierarchyApi {
      * List Payor Links
      * <p>If the payor is set up as part of a hierarchy you can use this API to traverse the hierarchy</p> 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.descendantsOfPayor The Payor ID from which to start the query to show all descendants
-     * @param {String} opts.parentOfPayor Query for the parent payor details for this payor id
-     * @param {String} opts.fields <p>List of additional Payor fields to include in the response for each Payor</p> <p>The values of payorId and payorName are always included for each Payor by default</p> <p>You can add fields to the response for each payor by including them in the fields parameter separated by commas</p> <p>The supported fields are any combination of: primaryContactEmail,kycState</p> 
+     * @param {String} [descendantsOfPayor] The Payor ID from which to start the query to show all descendants
+     * @param {String} [parentOfPayor] Query for the parent payor details for this payor id
+     * @param {String} [fields] <p>List of additional Payor fields to include in the response for each Payor</p> <p>The values of payorId and payorName are always included for each Payor by default</p> <p>You can add fields to the response for each payor by including them in the fields parameter separated by commas</p> <p>The supported fields are any combination of: primaryContactEmail,kycState</p> 
      * @param {module:api/PayorHierarchyApi~payorLinksV1Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PayorLinksResponse}
      */

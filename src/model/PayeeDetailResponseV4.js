@@ -21,7 +21,7 @@ import PayeePayorRefV4 from './PayeePayorRefV4';
 /**
  * The PayeeDetailResponseV4 model module.
  * @module model/PayeeDetailResponseV4
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class PayeeDetailResponseV4 {
     /**

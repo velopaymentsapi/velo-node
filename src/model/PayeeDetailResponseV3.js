@@ -21,7 +21,7 @@ import PayeePayorRefV3 from './PayeePayorRefV3';
 /**
  * The PayeeDetailResponseV3 model module.
  * @module model/PayeeDetailResponseV3
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class PayeeDetailResponseV3 {
     /**

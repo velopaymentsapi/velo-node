@@ -27,7 +27,7 @@ import PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditRespons
 /**
 * Funding service.
 * @module api/FundingApi
-* @version 2.35.58-beta.1
+* @version 2.35.58
 */
 export default class FundingApi {
 
@@ -150,7 +150,7 @@ export default class FundingApi {
      * Get Funding Account by ID
      * @param {String} fundingAccountId 
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.sensitive  (default to false)
+     * @param {Boolean} [sensitive = false)] 
      * @param {module:api/FundingApi~getFundingAccountV2Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FundingAccountResponseV2}
      */
@@ -196,15 +196,15 @@ export default class FundingApi {
      * Get Funding Accounts
      * Get the funding accounts.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.payorId 
-     * @param {String} opts.name The descriptive funding account name
-     * @param {String} opts.country The 2 letter ISO 3166-1 country code (upper case)
-     * @param {String} opts.currency The ISO 4217 currency code
-     * @param {String} opts.type The type of funding account.
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
-     * @param {String} opts.sort List of sort fields (e.g. ?sort=accountName:asc,name:asc) Default is accountName:asc The supported sort fields are - accountName, name. (default to 'accountName:asc')
-     * @param {Boolean} opts.sensitive  (default to false)
+     * @param {String} [payorId] 
+     * @param {String} [name] The descriptive funding account name
+     * @param {String} [country] The 2 letter ISO 3166-1 country code (upper case)
+     * @param {String} [currency] The ISO 4217 currency code
+     * @param {String} [type] The type of funding account.
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 25)] The number of results to return in a page
+     * @param {String} [sort = 'accountName:asc')] List of sort fields (e.g. ?sort=accountName:asc,name:asc) Default is accountName:asc The supported sort fields are - accountName, name.
+     * @param {Boolean} [sensitive = false)] 
      * @param {module:api/FundingApi~getFundingAccountsV2Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ListFundingAccountsResponseV2}
      */
@@ -298,8 +298,8 @@ export default class FundingApi {
      * @param {String} payorId 
      * @param {Date} updatedSince 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 25)] The number of results to return in a page
      * @param {module:api/FundingApi~listFundingAuditDeltasCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse}
      */

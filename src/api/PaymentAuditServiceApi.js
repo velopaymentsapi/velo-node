@@ -29,7 +29,7 @@ import PayorAmlTransaction from '../model/PayorAmlTransaction';
 /**
 * PaymentAuditService service.
 * @module api/PaymentAuditServiceApi
-* @version 2.35.58-beta.1
+* @version 2.35.58
 */
 export default class PaymentAuditServiceApi {
 
@@ -57,10 +57,10 @@ export default class PaymentAuditServiceApi {
      * Export Transactions
      * Download a CSV file containing payments in a date range. Uses Transfer-Encoding - chunked to stream to the client. Date range is inclusive of both the start and end dates.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.payorId <p>The Payor ID for whom you wish to run the report.</p> <p>For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor.</p> 
-     * @param {Date} opts.startDate Start date, inclusive. Format is YYYY-MM-DD
-     * @param {Date} opts.endDate End date, inclusive. Format is YYYY-MM-DD
-     * @param {module:model/String} opts.include <p>Mode to determine whether to include other Payor's data in the results.</p> <p>May only be used if payorId is specified.</p> <p>Can be omitted or set to 'payorOnly' or 'payorAndDescendants'.</p> <p>payorOnly: Only include results for the specified Payor. This is the default if 'include' is omitted.</p> <p>payorAndDescendants: Aggregate results for all descendant Payors of the specified Payor. Should only be used if the Payor with the specified payorId has at least one child Payor.</p> <p>Note when a Payor requests the report and include=payorAndDescendants is used, the following additional columns are included in the CSV: Payor Name, Payor Id</p> 
+     * @param {String} [payorId] <p>The Payor ID for whom you wish to run the report.</p> <p>For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor.</p> 
+     * @param {Date} [startDate] Start date, inclusive. Format is YYYY-MM-DD
+     * @param {Date} [endDate] End date, inclusive. Format is YYYY-MM-DD
+     * @param {module:model/String} [include] <p>Mode to determine whether to include other Payor's data in the results.</p> <p>May only be used if payorId is specified.</p> <p>Can be omitted or set to 'payorOnly' or 'payorAndDescendants'.</p> <p>payorOnly: Only include results for the specified Payor. This is the default if 'include' is omitted.</p> <p>payorAndDescendants: Aggregate results for all descendant Payors of the specified Payor. Should only be used if the Payor with the specified payorId has at least one child Payor.</p> <p>Note when a Payor requests the report and include=payorAndDescendants is used, the following additional columns are included in the CSV: Payor Name, Payor Id</p> 
      * @param {module:api/PaymentAuditServiceApi~exportTransactionsCSVV4Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PayorAmlTransaction}
      */
@@ -105,10 +105,10 @@ export default class PaymentAuditServiceApi {
      * <p>Get a list of Fundings for a payor.</p> 
      * @param {String} payorId The account owner Payor ID
      * @param {Object} opts Optional parameters
-     * @param {String} opts.sourceAccountName The source account name
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
-     * @param {String} opts.sort List of sort fields. Example: ```?sort=destinationCurrency:asc,destinationAmount:asc``` Default is no sort. The supported sort fields are: dateTime and amount. 
+     * @param {String} [sourceAccountName] The source account name
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 25)] The number of results to return in a page
+     * @param {String} [sort] List of sort fields. Example: ```?sort=destinationCurrency:asc,destinationAmount:asc``` Default is no sort. The supported sort fields are: dateTime and amount. 
      * @param {module:api/PaymentAuditServiceApi~getFundingsV4Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetFundingsResponse}
      */
@@ -158,7 +158,7 @@ export default class PaymentAuditServiceApi {
      * Get the payment with the given id. This contains the payment history. 
      * @param {String} paymentId Payment Id
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.sensitive Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
+     * @param {Boolean} [sensitive] Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
      * @param {module:api/PaymentAuditServiceApi~getPaymentDetailsV4Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaymentResponseV4}
      */
@@ -205,21 +205,21 @@ export default class PaymentAuditServiceApi {
      * Get List of payments for Payout, allowing for RETURNED status 
      * @param {String} payoutId The id (UUID) of the payout.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.railsId Payout Rails ID filter - case insensitive match. Any value is allowed, but you should use one of the supported railsId values. To get this list of values, you should call the 'Get Supported Rails' endpoint. 
-     * @param {String} opts.remoteId The remote id of the payees.
-     * @param {String} opts.remoteSystemId The id of the remote system that is orchestrating payments
-     * @param {module:model/String} opts.status Payment Status
-     * @param {Number} opts.sourceAmountFrom The source amount from range filter. Filters for sourceAmount >= sourceAmountFrom
-     * @param {Number} opts.sourceAmountTo The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo
-     * @param {Number} opts.paymentAmountFrom The payment amount from range filter. Filters for paymentAmount >= paymentAmountFrom
-     * @param {Number} opts.paymentAmountTo The payment amount to range filter. Filters for paymentAmount ⇐ paymentAmountTo
-     * @param {Date} opts.submittedDateFrom The submitted date from range filter. Format is yyyy-MM-dd.
-     * @param {Date} opts.submittedDateTo The submitted date to range filter. Format is yyyy-MM-dd.
-     * @param {module:model/String} opts.transmissionType Transmission Type * ACH * SAME_DAY_ACH * WIRE * GACHO 
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
-     * @param {String} opts.sort List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status 
-     * @param {Boolean} opts.sensitive Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
+     * @param {String} [railsId] Payout Rails ID filter - case insensitive match. Any value is allowed, but you should use one of the supported railsId values. To get this list of values, you should call the 'Get Supported Rails' endpoint. 
+     * @param {String} [remoteId] The remote id of the payees.
+     * @param {String} [remoteSystemId] The id of the remote system that is orchestrating payments
+     * @param {module:model/String} [status] Payment Status
+     * @param {Number} [sourceAmountFrom] The source amount from range filter. Filters for sourceAmount >= sourceAmountFrom
+     * @param {Number} [sourceAmountTo] The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo
+     * @param {Number} [paymentAmountFrom] The payment amount from range filter. Filters for paymentAmount >= paymentAmountFrom
+     * @param {Number} [paymentAmountTo] The payment amount to range filter. Filters for paymentAmount ⇐ paymentAmountTo
+     * @param {Date} [submittedDateFrom] The submitted date from range filter. Format is yyyy-MM-dd.
+     * @param {Date} [submittedDateTo] The submitted date to range filter. Format is yyyy-MM-dd.
+     * @param {module:model/String} [transmissionType] Transmission Type * ACH * SAME_DAY_ACH * WIRE * GACHO 
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 25)] The number of results to return in a page
+     * @param {String} [sort] List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status 
+     * @param {Boolean} [sensitive] Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
      * @param {module:api/PaymentAuditServiceApi~getPaymentsForPayoutV4Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetPaymentsForPayoutResponseV4}
      */
@@ -279,7 +279,7 @@ export default class PaymentAuditServiceApi {
      * Get Payout Statistics
      * <p>Get payout statistics for a payor.</p> 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.payorId The account owner Payor ID. Required for external users.
+     * @param {String} [payorId] The account owner Payor ID. Required for external users.
      * @param {module:api/PaymentAuditServiceApi~getPayoutStatsV4Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetPayoutStatistics}
      */
@@ -320,18 +320,18 @@ export default class PaymentAuditServiceApi {
      * Get Payouts for Payor
      * Get List of payouts for payor 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.payorId The id (UUID) of the payor funding the payout or the payor whose payees are being paid.
-     * @param {String} opts.payoutMemo Payout Memo filter - case insensitive sub-string match
-     * @param {module:model/String} opts.status Payout Status
-     * @param {Date} opts.submittedDateFrom The submitted date from range filter. Format is yyyy-MM-dd.
-     * @param {Date} opts.submittedDateTo The submitted date to range filter. Format is yyyy-MM-dd.
-     * @param {String} opts.fromPayorName The name of the payor whose payees are being paid. This filters via a case insensitive substring match.
-     * @param {Date} opts.scheduledForDateFrom Filter payouts scheduled to run on or after the given date. Format is yyyy-MM-dd.
-     * @param {Date} opts.scheduledForDateTo Filter payouts scheduled to run on or before the given date. Format is yyyy-MM-dd.
-     * @param {module:model/String} opts.scheduleStatus Payout Schedule Status
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
-     * @param {String} opts.sort List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments, payoutId, scheduledFor 
+     * @param {String} [payorId] The id (UUID) of the payor funding the payout or the payor whose payees are being paid.
+     * @param {String} [payoutMemo] Payout Memo filter - case insensitive sub-string match
+     * @param {module:model/String} [status] Payout Status
+     * @param {Date} [submittedDateFrom] The submitted date from range filter. Format is yyyy-MM-dd.
+     * @param {Date} [submittedDateTo] The submitted date to range filter. Format is yyyy-MM-dd.
+     * @param {String} [fromPayorName] The name of the payor whose payees are being paid. This filters via a case insensitive substring match.
+     * @param {Date} [scheduledForDateFrom] Filter payouts scheduled to run on or after the given date. Format is yyyy-MM-dd.
+     * @param {Date} [scheduledForDateTo] Filter payouts scheduled to run on or before the given date. Format is yyyy-MM-dd.
+     * @param {module:model/String} [scheduleStatus] Payout Schedule Status
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 25)] The number of results to return in a page
+     * @param {String} [sort] List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments, payoutId, scheduledFor 
      * @param {module:api/PaymentAuditServiceApi~getPayoutsForPayorV4Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GetPayoutsResponse}
      */
@@ -385,8 +385,8 @@ export default class PaymentAuditServiceApi {
      * @param {String} payorId The Payor ID to find associated Payments
      * @param {Date} updatedSince The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 100)
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 100)] The number of results to return in a page
      * @param {module:api/PaymentAuditServiceApi~listPaymentChangesV4Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaymentDeltaResponse}
      */
@@ -438,32 +438,32 @@ export default class PaymentAuditServiceApi {
      * Get List of Payments
      * Get payments for the given payor Id
      * @param {Object} opts Optional parameters
-     * @param {String} opts.payeeId The UUID of the payee.
-     * @param {String} opts.payorId The account owner Payor Id. Required for external users.
-     * @param {String} opts.payorName The payor’s name. This filters via a case insensitive substring match.
-     * @param {String} opts.remoteId The remote id of the payees.
-     * @param {String} opts.remoteSystemId The id of the remote system that is orchestrating payments
-     * @param {module:model/String} opts.status Payment Status
-     * @param {module:model/String} opts.transmissionType Transmission Type * ACH * SAME_DAY_ACH * WIRE * GACHO 
-     * @param {String} opts.sourceAccountName The source account name filter. This filters via a case insensitive substring match.
-     * @param {Number} opts.sourceAmountFrom The source amount from range filter. Filters for sourceAmount >= sourceAmountFrom
-     * @param {Number} opts.sourceAmountTo The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo
-     * @param {String} opts.sourceCurrency The source currency filter. Filters based on an exact match on the currency.
-     * @param {Number} opts.paymentAmountFrom The payment amount from range filter. Filters for paymentAmount >= paymentAmountFrom
-     * @param {Number} opts.paymentAmountTo The payment amount to range filter. Filters for paymentAmount ⇐ paymentAmountTo
-     * @param {String} opts.paymentCurrency The payment currency filter. Filters based on an exact match on the currency.
-     * @param {Date} opts.submittedDateFrom The submitted date from range filter. Format is yyyy-MM-dd.
-     * @param {Date} opts.submittedDateTo The submitted date to range filter. Format is yyyy-MM-dd.
-     * @param {String} opts.paymentMemo The payment memo filter. This filters via a case insensitive substring match.
-     * @param {String} opts.railsId Payout Rails ID filter - case insensitive match. Any value is allowed, but you should use one of the supported railsId values. To get this list of values, you should call the 'Get Supported Rails' endpoint. 
-     * @param {Date} opts.scheduledForDateFrom Filter payouts scheduled to run on or after the given date. Format is yyyy-MM-dd.
-     * @param {Date} opts.scheduledForDateTo Filter payouts scheduled to run on or before the given date. Format is yyyy-MM-dd.
-     * @param {module:model/String} opts.scheduleStatus Payout Schedule Status
-     * @param {module:model/String} opts.postInstructFxStatus The status of the post instruct FX step if one was required for the payment
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
-     * @param {String} opts.sort List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by submittedDateTime:desc,paymentId:asc The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime, status and paymentId 
-     * @param {Boolean} opts.sensitive Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
+     * @param {String} [payeeId] The UUID of the payee.
+     * @param {String} [payorId] The account owner Payor Id. Required for external users.
+     * @param {String} [payorName] The payor’s name. This filters via a case insensitive substring match.
+     * @param {String} [remoteId] The remote id of the payees.
+     * @param {String} [remoteSystemId] The id of the remote system that is orchestrating payments
+     * @param {module:model/String} [status] Payment Status
+     * @param {module:model/String} [transmissionType] Transmission Type * ACH * SAME_DAY_ACH * WIRE * GACHO 
+     * @param {String} [sourceAccountName] The source account name filter. This filters via a case insensitive substring match.
+     * @param {Number} [sourceAmountFrom] The source amount from range filter. Filters for sourceAmount >= sourceAmountFrom
+     * @param {Number} [sourceAmountTo] The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo
+     * @param {String} [sourceCurrency] The source currency filter. Filters based on an exact match on the currency.
+     * @param {Number} [paymentAmountFrom] The payment amount from range filter. Filters for paymentAmount >= paymentAmountFrom
+     * @param {Number} [paymentAmountTo] The payment amount to range filter. Filters for paymentAmount ⇐ paymentAmountTo
+     * @param {String} [paymentCurrency] The payment currency filter. Filters based on an exact match on the currency.
+     * @param {Date} [submittedDateFrom] The submitted date from range filter. Format is yyyy-MM-dd.
+     * @param {Date} [submittedDateTo] The submitted date to range filter. Format is yyyy-MM-dd.
+     * @param {String} [paymentMemo] The payment memo filter. This filters via a case insensitive substring match.
+     * @param {String} [railsId] Payout Rails ID filter - case insensitive match. Any value is allowed, but you should use one of the supported railsId values. To get this list of values, you should call the 'Get Supported Rails' endpoint. 
+     * @param {Date} [scheduledForDateFrom] Filter payouts scheduled to run on or after the given date. Format is yyyy-MM-dd.
+     * @param {Date} [scheduledForDateTo] Filter payouts scheduled to run on or before the given date. Format is yyyy-MM-dd.
+     * @param {module:model/String} [scheduleStatus] Payout Schedule Status
+     * @param {module:model/String} [postInstructFxStatus] The status of the post instruct FX step if one was required for the payment
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 25)] The number of results to return in a page
+     * @param {String} [sort] List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by submittedDateTime:desc,paymentId:asc The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime, status and paymentId 
+     * @param {Boolean} [sensitive] Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
      * @param {module:api/PaymentAuditServiceApi~listPaymentsAuditV4Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ListPaymentsResponseV4}
      */

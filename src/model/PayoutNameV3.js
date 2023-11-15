@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PayoutNameV3 model module.
  * @module model/PayoutNameV3
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class PayoutNameV3 {
     /**

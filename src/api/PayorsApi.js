@@ -29,7 +29,7 @@ import PayorV2 from '../model/PayorV2';
 /**
 * Payors service.
 * @module api/PayorsApi
-* @version 2.35.58-beta.1
+* @version 2.35.58
 */
 export default class PayorsApi {
 
@@ -144,7 +144,7 @@ export default class PayorsApi {
      * <p>Add Payor Logo</p> <p>Logo file is used in your branding and emails sent to payees</p> 
      * @param {String} payorId The Payor Id
      * @param {Object} opts Optional parameters
-     * @param {File} opts.logo 
+     * @param {File} [logo] 
      * @param {module:api/PayorsApi~payorAddPayorLogoV1Callback} callback The callback function, accepting three arguments: error, data, response
      */
     payorAddPayorLogoV1(payorId, opts, callback) {

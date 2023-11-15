@@ -19,7 +19,7 @@ import PayoutSchedule from './PayoutSchedule';
 /**
  * The GetPaymentsForPayoutResponseV4Summary model module.
  * @module model/GetPaymentsForPayoutResponseV4Summary
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class GetPaymentsForPayoutResponseV4Summary {
     /**

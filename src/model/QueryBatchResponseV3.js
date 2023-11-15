@@ -17,7 +17,7 @@ import FailedSubmissionV3 from './FailedSubmissionV3';
 /**
  * The QueryBatchResponseV3 model module.
  * @module model/QueryBatchResponseV3
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class QueryBatchResponseV3 {
     /**

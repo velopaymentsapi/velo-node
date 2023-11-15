@@ -22,7 +22,7 @@ import PayeePayorRefV4 from './PayeePayorRefV4';
 /**
  * The FailedPayeeV4 model module.
  * @module model/FailedPayeeV4
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class FailedPayeeV4 {
     /**

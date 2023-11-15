@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NameV4 model module.
  * @module model/NameV4
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class NameV4 {
     /**

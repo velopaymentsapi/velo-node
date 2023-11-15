@@ -18,7 +18,7 @@ import SourceEvent from './SourceEvent';
 /**
  * The DebitEvent model module.
  * @module model/DebitEvent
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class DebitEvent {
     /**

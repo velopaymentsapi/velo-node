@@ -17,7 +17,7 @@ import NameV4 from './NameV4';
 /**
  * The GetPayeeListResponseIndividualV4 model module.
  * @module model/GetPayeeListResponseIndividualV4
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class GetPayeeListResponseIndividualV4 {
     /**

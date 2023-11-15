@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TransmissionTypes2 model module.
  * @module model/TransmissionTypes2
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class TransmissionTypes2 {
     /**

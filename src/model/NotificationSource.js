@@ -25,7 +25,7 @@ import Ping from './Ping';
 /**
  * The NotificationSource model module.
  * @module model/NotificationSource
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class NotificationSource {
     /**

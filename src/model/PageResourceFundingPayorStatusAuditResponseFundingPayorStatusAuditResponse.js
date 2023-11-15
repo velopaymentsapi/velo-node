@@ -19,7 +19,7 @@ import PageForResponse from './PageForResponse';
 /**
  * The PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse model module.
  * @module model/PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse {
     /**

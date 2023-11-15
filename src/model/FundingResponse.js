@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FundingResponse model module.
  * @module model/FundingResponse
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class FundingResponse {
     /**

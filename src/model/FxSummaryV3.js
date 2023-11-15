@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FxSummaryV3 model module.
  * @module model/FxSummaryV3
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class FxSummaryV3 {
     /**

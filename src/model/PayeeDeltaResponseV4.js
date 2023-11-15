@@ -19,7 +19,7 @@ import PayeeDeltaV4 from './PayeeDeltaV4';
 /**
  * The PayeeDeltaResponseV4 model module.
  * @module model/PayeeDeltaResponseV4
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class PayeeDeltaResponseV4 {
     /**

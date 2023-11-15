@@ -18,7 +18,7 @@ import DebitStatusChangedAllOf from './DebitStatusChangedAllOf';
 /**
  * The DebitStatusChanged model module.
  * @module model/DebitStatusChanged
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class DebitStatusChanged {
     /**

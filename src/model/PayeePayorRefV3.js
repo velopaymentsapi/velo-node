@@ -17,7 +17,7 @@ import PayableIssueV3 from './PayableIssueV3';
 /**
  * The PayeePayorRefV3 model module.
  * @module model/PayeePayorRefV3
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class PayeePayorRefV3 {
     /**

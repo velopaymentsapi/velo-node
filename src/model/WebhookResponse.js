@@ -17,7 +17,7 @@ import Category from './Category';
 /**
  * The WebhookResponse model module.
  * @module model/WebhookResponse
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class WebhookResponse {
     /**

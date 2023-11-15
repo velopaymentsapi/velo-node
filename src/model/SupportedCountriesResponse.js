@@ -17,7 +17,7 @@ import SupportedCountry from './SupportedCountry';
 /**
  * The SupportedCountriesResponse model module.
  * @module model/SupportedCountriesResponse
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class SupportedCountriesResponse {
     /**

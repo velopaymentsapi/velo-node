@@ -20,7 +20,7 @@ import PostInstructFxInfo from './PostInstructFxInfo';
 /**
  * The PaymentResponseV4 model module.
  * @module model/PaymentResponseV4
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class PaymentResponseV4 {
     /**

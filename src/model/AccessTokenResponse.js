@@ -17,7 +17,7 @@ import UserInfo from './UserInfo';
 /**
  * The AccessTokenResponse model module.
  * @module model/AccessTokenResponse
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class AccessTokenResponse {
     /**

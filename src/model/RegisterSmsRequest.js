@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RegisterSmsRequest model module.
  * @module model/RegisterSmsRequest
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class RegisterSmsRequest {
     /**

@@ -17,7 +17,7 @@ import NotificationSource from './NotificationSource';
 /**
  * The Notification model module.
  * @module model/Notification
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class Notification {
     /**

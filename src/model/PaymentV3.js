@@ -17,7 +17,7 @@ import PayoutPayeeV3 from './PayoutPayeeV3';
 /**
  * The PaymentV3 model module.
  * @module model/PaymentV3
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class PaymentV3 {
     /**

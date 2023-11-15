@@ -17,7 +17,7 @@ import CreatePayeeV3 from './CreatePayeeV3';
 /**
  * The CreatePayeesRequestV3 model module.
  * @module model/CreatePayeesRequestV3
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class CreatePayeesRequestV3 {
     /**

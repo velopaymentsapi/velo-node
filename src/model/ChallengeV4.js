@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ChallengeV4 model module.
  * @module model/ChallengeV4
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class ChallengeV4 {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LocalisationDetails model module.
  * @module model/LocalisationDetails
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class LocalisationDetails {
     /**

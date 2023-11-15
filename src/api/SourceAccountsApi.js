@@ -29,7 +29,7 @@ import TransferRequestV3 from '../model/TransferRequestV3';
 /**
 * SourceAccounts service.
 * @module api/SourceAccountsApi
-* @version 2.35.58-beta.1
+* @version 2.35.58
 */
 export default class SourceAccountsApi {
 
@@ -143,13 +143,13 @@ export default class SourceAccountsApi {
      * Get list of source accounts
      * List source accounts.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.physicalAccountName Physical Account Name
-     * @param {String} opts.physicalAccountId The physical account ID
-     * @param {String} opts.payorId The account owner Payor ID
-     * @param {String} opts.fundingAccountId The funding account ID
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
-     * @param {String} opts.sort List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance  (default to 'fundingRef:asc')
+     * @param {String} [physicalAccountName] Physical Account Name
+     * @param {String} [physicalAccountId] The physical account ID
+     * @param {String} [payorId] The account owner Payor ID
+     * @param {String} [fundingAccountId] The funding account ID
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 25)] The number of results to return in a page
+     * @param {String} [sort = 'fundingRef:asc')] List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance 
      * @param {module:api/SourceAccountsApi~getSourceAccountsV2Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ListSourceAccountResponseV2}
      */
@@ -196,15 +196,15 @@ export default class SourceAccountsApi {
      * Get list of source accounts
      * List source accounts.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.physicalAccountName Physical Account Name
-     * @param {String} opts.physicalAccountId The physical account ID
-     * @param {String} opts.payorId The account owner Payor ID
-     * @param {String} opts.fundingAccountId The funding account ID
-     * @param {Boolean} opts.includeUserDeleted A filter for retrieving both active accounts and user deleted ones
-     * @param {String} opts.type The type of source account.
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize The number of results to return in a page (default to 25)
-     * @param {String} opts.sort List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance  (default to 'fundingRef:asc')
+     * @param {String} [physicalAccountName] Physical Account Name
+     * @param {String} [physicalAccountId] The physical account ID
+     * @param {String} [payorId] The account owner Payor ID
+     * @param {String} [fundingAccountId] The funding account ID
+     * @param {Boolean} [includeUserDeleted] A filter for retrieving both active accounts and user deleted ones
+     * @param {String} [type] The type of source account.
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 25)] The number of results to return in a page
+     * @param {String} [sort = 'fundingRef:asc')] List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance 
      * @param {module:api/SourceAccountsApi~getSourceAccountsV3Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ListSourceAccountResponseV3}
      */

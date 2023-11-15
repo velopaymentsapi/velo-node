@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PagedPayeeResponseV3Summary model module.
  * @module model/PagedPayeeResponseV3Summary
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class PagedPayeeResponseV3Summary {
     /**

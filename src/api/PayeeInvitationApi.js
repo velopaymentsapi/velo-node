@@ -34,7 +34,7 @@ import V4CreatePayeeRequest from '../model/V4CreatePayeeRequest';
 /**
 * PayeeInvitation service.
 * @module api/PayeeInvitationApi
-* @version 2.35.58-beta.1
+* @version 2.35.58
 */
 export default class PayeeInvitationApi {
 
@@ -62,7 +62,7 @@ export default class PayeeInvitationApi {
      * Initiate Payee Creation
      * <p>Use v4 instead</p> Initiate the process of creating 1 to 2000 payees in a batch Use the response location header to query for status (201 - Created, 400 - invalid request body. In addition to standard semantic validations, a 400 will also result if there is a duplicate remote id within the batch / if there is a duplicate email within the batch, i.e. if there is a conflict between the data provided for one payee within the batch and that provided for another payee within the same batch). The validation at this stage is intra-batch only. Validation against payees who have already been invited occurs subsequently during processing of the batch. 
      * @param {Object} opts Optional parameters
-     * @param {module:model/CreatePayeesRequestV3} opts.createPayeesRequestV3 Post payees to create.
+     * @param {module:model/CreatePayeesRequestV3} [createPayeesRequestV3] Post payees to create.
      * @param {module:api/PayeeInvitationApi~createPayeeV3Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CreatePayeesCSVResponseV3}
      */
@@ -103,10 +103,10 @@ export default class PayeeInvitationApi {
      * <p>Use v4 instead</p> <p>Returns a filtered, paginated list of payees associated with a payor, along with invitation status and grace period end date.</p> 
      * @param {String} payorId The account owner Payor ID
      * @param {Object} opts Optional parameters
-     * @param {String} opts.payeeId The UUID of the payee.
-     * @param {String} opts.invitationStatus The invitation status of the payees.
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize Page size. Default is 25. Max allowable is 100. (default to 25)
+     * @param {String} [payeeId] The UUID of the payee.
+     * @param {String} [invitationStatus] The invitation status of the payees.
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 25)] Page size. Default is 25. Max allowable is 100.
      * @param {module:api/PayeeInvitationApi~getPayeesInvitationStatusV3Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PagedPayeeInvitationStatusResponseV3}
      */
@@ -156,10 +156,10 @@ export default class PayeeInvitationApi {
      * Returns a filtered, paginated list of payees associated with a payor, along with invitation status and grace period end date. 
      * @param {String} payorId The account owner Payor ID
      * @param {Object} opts Optional parameters
-     * @param {String} opts.payeeId The UUID of the payee.
-     * @param {String} opts.invitationStatus The invitation status of the payees.
-     * @param {Number} opts.page Page number. Default is 1. (default to 1)
-     * @param {Number} opts.pageSize Page size. Default is 25. Max allowable is 100. (default to 25)
+     * @param {String} [payeeId] The UUID of the payee.
+     * @param {String} [invitationStatus] The invitation status of the payees.
+     * @param {Number} [page = 1)] Page number. Default is 1.
+     * @param {Number} [pageSize = 25)] Page size. Default is 25. Max allowable is 100.
      * @param {module:api/PayeeInvitationApi~getPayeesInvitationStatusV4Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PagedPayeeInvitationStatusResponseV4}
      */
@@ -388,7 +388,7 @@ export default class PayeeInvitationApi {
      * Initiate Payee Creation
      * <p>Initiate the process of creating 1 to 2000 payees in a batch</p> <p>Use the batchId in the response to query for status.</p> <p>In addition to standard semantic validations, a 400 will also result if: </p> <ul> <li>there is a duplicate remote id within the batch</li> <li>there is a duplicate email within the batch, i.e. if there is a conflict between the data provided for one payee within the batch and that provided for another payee within the same batch).</li> </ul> <p>The validation at this stage is intra-batch only.</p> <p>Validation against payees who have already been invited occurs subsequently during processing of the batch.</p> 
      * @param {Object} opts Optional parameters
-     * @param {module:model/CreatePayeesRequestV4} opts.createPayeesRequestV4 Post payees to create.
+     * @param {module:model/CreatePayeesRequestV4} [createPayeesRequestV4] Post payees to create.
      * @param {module:api/PayeeInvitationApi~v4CreatePayeeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CreatePayeesCSVResponseV4}
      */

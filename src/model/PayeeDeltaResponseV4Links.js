@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PayeeDeltaResponseV4Links model module.
  * @module model/PayeeDeltaResponseV4Links
- * @version 2.35.58-beta.1
+ * @version 2.35.58
  */
 class PayeeDeltaResponseV4Links {
     /**
