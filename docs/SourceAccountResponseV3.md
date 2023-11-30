@@ -22,5 +22,6 @@ Name | Type | Description | Notes
 **deleted** | **Boolean** | An optional flag for whether the source account has been deleted. Only present in the response if true. | [optional] 
 **userDeleted** | **Boolean** | An optional flag for whether the source account has been deleted by a user. Only present in the response if true. | [optional] 
 **deletedAt** | **Date** | An optional timestamp when the source account has been deleted. Only present in the response if deleted. | [optional] 
+**transmissionTypes** | **[String]** | List of supported transmission types. | [optional] 
 
 

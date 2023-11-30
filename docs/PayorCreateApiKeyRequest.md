@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 ## Enum: [RolesEnum]
 
 
-* `admin` (value: `"velo.payor.admin"`)
+* `admin` (value: `"payor.admin"`)
 
-* `support` (value: `"velo.payor.support"`)
+* `support` (value: `"payor.support"`)
 
 
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **accountName** | **String** | Required if type is either FBO or PRIVATE | [optional] 
 **accountNumber** | **String** | Required if type is either FBO or PRIVATE | [optional] 
 **routingNumber** | **String** | Required if type is either FBO or PRIVATE | [optional] 
-**currency** | **String** | ISO 4217 currency code, Required if type is either WUBS_DECOUPLED or PRIVATE | [optional] 
+**countryCode** | **String** | ISO 3166-1 2 letter country code (upper case) | 
 
 
 
@@ -18,8 +18,6 @@ Name | Type | Description | Notes
 
 
 * `FBO` (value: `"FBO"`)
-
-* `WUBS_DECOUPLED` (value: `"WUBS_DECOUPLED"`)
 
 * `PRIVATE` (value: `"PRIVATE"`)
 

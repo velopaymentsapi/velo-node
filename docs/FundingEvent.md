@@ -4,9 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**eventId** | **String** |  | [optional] 
-**eventDateTime** | **Date** |  | [optional] 
-**fundingEventType** | **String** | Funding event type. One of the following values: PAYOR_FUNDING_DETECTED, PAYOR_FUNDING_REQUESTED, PAYOR_FUNDING_RETURN_RECEIVED, FUNDING_RETURN_DETECTED, PAYOR_FUNDING_REQUEST_SUBMITTED, PAYOR_FUNDING_ENTRY_DETAIL_RECEIVED, FUNDING_DEALLOCATED | [optional] 
-**principal** | **String** |  | [optional] 
+**sourceType** | **String** | OA3 Schema type name for the source info which is used as the discriminator value to ensure that data binding works correctly | 
+**eventId** | **String** | UUID id of the source event in the Velo platform | 
+**createdAt** | **Date** | ISO8601 timestamp indicating when the source event was created | 
 
 

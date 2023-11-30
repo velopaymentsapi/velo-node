@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **disabled** | **Boolean** |  | [optional] 
 **disabledComment** | **String** |  | [optional] 
 **disabledUpdatedTimestamp** | **Date** |  | [optional] 
+**managedByPayorId** | **String** | The id of the payor if the payee is managed | [optional] 
 **individual** | [**GetPayeeListResponseIndividualV4**](GetPayeeListResponseIndividualV4.md) |  | [optional] 
 **company** | [**GetPayeeListResponseCompanyV4**](GetPayeeListResponseCompanyV4.md) |  | [optional] 
 

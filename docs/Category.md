@@ -9,4 +9,6 @@
 
 * `debit` (value: `"debit"`)
 
+* `funding` (value: `"funding"`)
+
 

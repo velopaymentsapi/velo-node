@@ -14,10 +14,11 @@ Name | Type | Description | Notes
 **payee** | [**PayoutPayeeV3**](PayoutPayeeV3.md) |  | [optional] 
 **withdrawable** | **Boolean** | Can this paynent be withdrawn | [optional] 
 **status** | **String** | Current status of payment. One of the following values: SUBMITTED, ACCEPTED, REJECTED, WITHDRAWN, RETURNED, AWAITING_FUNDS, FUNDED, UNFUNDED, CANCELLED, BANK_PAYMENT_REQUESTED | [optional] 
-**transmissionType** | **String** | The transmission method of the payment. One of the following values: ACH, SAME_DAY_ACH, WIRE, LOCAL, SWIFT | [optional] 
+**transmissionType** | **String** | &lt;p&gt;The transmission method of the payment.&lt;/p&gt; &lt;p&gt;Valid values for transmissionType can be found attached to the Source Account&lt;/p&gt;  | [optional] 
 **remoteSystemId** | **String** | &lt;p&gt;The identifier for the remote payments system if not Velo&lt;/p&gt;  | [optional] 
 **paymentMetadata** | **String** | &lt;p&gt;Metadata about the payment that may be relevant to the specific rails or remote system making the payout&lt;/p&gt; &lt;p&gt;The structure of the data will be dictated by the requirements of the payment rails&lt;/p&gt;  | [optional] 
 **autoWithdrawnReasonCode** | **String** | Populated only if the payment was automatically withdrawn during instruction for being invalid | [optional] 
 **railsId** | **String** | Indicates the 3rd party system involved in making this payment | [optional] 
+**transactionId** | **String** | The id of the transaction associated with this payment if there was one | [optional] 
 
 

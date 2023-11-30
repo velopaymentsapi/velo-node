@@ -28,7 +28,7 @@ OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.FundingManagerPrivateApi();
 let opts = {
-  'createFundingAccountRequestV2': {"type":"FBO","name":"My FBO Account","payorId":"ee53e01d-c078-43fd-abd4-47e92f4a06cf","accountName":"My Account Name","accountNumber":1231231234556,"routingNumber":123456789} // CreateFundingAccountRequestV2 | 
+  'createFundingAccountRequestV2': {"type":"FBO","name":"My FBO Account","payorId":"ee53e01d-c078-43fd-abd4-47e92f4a06cf","accountName":"My Account Name","accountNumber":1231231234556,"routingNumber":123456789,"countryCode":"US"} // CreateFundingAccountRequestV2 | 
 };
 apiInstance.createFundingAccountV2(opts, (error, data, response) => {
   if (error) {

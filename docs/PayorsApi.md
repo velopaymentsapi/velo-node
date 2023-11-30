@@ -4,7 +4,6 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPayorByIdV1**](PayorsApi.md#getPayorByIdV1) | **GET** /v1/payors/{payorId} | Get Payor
 [**getPayorByIdV2**](PayorsApi.md#getPayorByIdV2) | **GET** /v2/payors/{payorId} | Get Payor
 [**payorAddPayorLogoV1**](PayorsApi.md#payorAddPayorLogoV1) | **POST** /v1/payors/{payorId}/branding/logos | Add Logo
 [**payorCreateApiKeyV1**](PayorsApi.md#payorCreateApiKeyV1) | **POST** /v1/payors/{payorId}/applications/{applicationId}/keys | Create API Key
@@ -12,55 +11,6 @@ Method | HTTP request | Description
 [**payorEmailOptOut**](PayorsApi.md#payorEmailOptOut) | **POST** /v1/payors/{payorId}/reminderEmailsUpdate | Reminder Email Opt-Out
 [**payorGetBranding**](PayorsApi.md#payorGetBranding) | **GET** /v1/payors/{payorId}/branding | Get Branding
 
-
-
-## getPayorByIdV1
-
-> PayorV1 getPayorByIdV1(payorId)
-
-Get Payor
-
-&lt;p&gt;Get a Single Payor by Id.&lt;/p&gt; &lt;p&gt;deprecated since v2.10 - Use /v2/payors 
-
-### Example
-
-```javascript
-import VeloPayments from 'velo-payments';
-let defaultClient = VeloPayments.ApiClient.instance;
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
-
-let apiInstance = new VeloPayments.PayorsApi();
-let payorId = "payorId_example"; // String | The Payor Id
-apiInstance.getPayorByIdV1(payorId, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **payorId** | **String**| The Payor Id | 
-
-### Return type
-
-[**PayorV1**](PayorV1.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
 
 
 ## getPayorByIdV2
@@ -81,7 +31,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayorsApi();
-let payorId = "payorId_example"; // String | The Payor Id
+let payorId = "payorId_example"; // String | The account owner Payor ID
 apiInstance.getPayorByIdV2(payorId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -96,7 +46,7 @@ apiInstance.getPayorByIdV2(payorId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | **String**| The Payor Id | 
+ **payorId** | **String**| The account owner Payor ID | 
 
 ### Return type
 
@@ -130,7 +80,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayorsApi();
-let payorId = "payorId_example"; // String | The Payor Id
+let payorId = "payorId_example"; // String | The account owner Payor ID
 let opts = {
   'logo': "/path/to/file" // File | 
 };
@@ -148,7 +98,7 @@ apiInstance.payorAddPayorLogoV1(payorId, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | **String**| The Payor Id | 
+ **payorId** | **String**| The account owner Payor ID | 
  **logo** | **File**|  | [optional] 
 
 ### Return type
@@ -171,7 +121,7 @@ null (empty response body)
 
 Create API Key
 
-&lt;p&gt;Create an an API key for the given payor Id and application Id&lt;/p&gt; &lt;p&gt;You can create multiple API Keys for a given application&lt;/p&gt; &lt;p&gt;API Keys are programmatic users for integrating your application with the Velo platform&lt;/p&gt; 
+&lt;p&gt;Create an an API key for the given payor Id and application Id&lt;/p&gt; &lt;p&gt;You can create multiple API Keys for a given application&lt;/p&gt; &lt;p&gt;API Keys are programmatic users for integrating your application with the Velo platform&lt;/p&gt; &lt;p&gt;The response will return the API Key and the secret. This is the only time you will be able to see the secret&lt;/p&gt; 
 
 ### Example
 
@@ -183,7 +133,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayorsApi();
-let payorId = "payorId_example"; // String | The Payor Id
+let payorId = "payorId_example"; // String | The account owner Payor ID
 let applicationId = "applicationId_example"; // String | Application ID
 let payorCreateApiKeyRequest = new VeloPayments.PayorCreateApiKeyRequest(); // PayorCreateApiKeyRequest | Details of application API key to create
 apiInstance.payorCreateApiKeyV1(payorId, applicationId, payorCreateApiKeyRequest, (error, data, response) => {
@@ -200,7 +150,7 @@ apiInstance.payorCreateApiKeyV1(payorId, applicationId, payorCreateApiKeyRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | **String**| The Payor Id | 
+ **payorId** | **String**| The account owner Payor ID | 
  **applicationId** | **String**| Application ID | 
  **payorCreateApiKeyRequest** | [**PayorCreateApiKeyRequest**](PayorCreateApiKeyRequest.md)| Details of application API key to create | 
 
@@ -236,7 +186,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayorsApi();
-let payorId = "payorId_example"; // String | The Payor Id
+let payorId = "payorId_example"; // String | The account owner Payor ID
 let payorCreateApplicationRequest = new VeloPayments.PayorCreateApplicationRequest(); // PayorCreateApplicationRequest | Details of application to create
 apiInstance.payorCreateApplicationV1(payorId, payorCreateApplicationRequest, (error, data, response) => {
   if (error) {
@@ -252,7 +202,7 @@ apiInstance.payorCreateApplicationV1(payorId, payorCreateApplicationRequest, (er
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | **String**| The Payor Id | 
+ **payorId** | **String**| The account owner Payor ID | 
  **payorCreateApplicationRequest** | [**PayorCreateApplicationRequest**](PayorCreateApplicationRequest.md)| Details of application to create | 
 
 ### Return type
@@ -287,7 +237,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayorsApi();
-let payorId = "payorId_example"; // String | The Payor Id
+let payorId = "payorId_example"; // String | The account owner Payor ID
 let payorEmailOptOutRequest = new VeloPayments.PayorEmailOptOutRequest(); // PayorEmailOptOutRequest | Reminder Emails Opt-Out Request
 apiInstance.payorEmailOptOut(payorId, payorEmailOptOutRequest, (error, data, response) => {
   if (error) {
@@ -303,7 +253,7 @@ apiInstance.payorEmailOptOut(payorId, payorEmailOptOutRequest, (error, data, res
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | **String**| The Payor Id | 
+ **payorId** | **String**| The account owner Payor ID | 
  **payorEmailOptOutRequest** | [**PayorEmailOptOutRequest**](PayorEmailOptOutRequest.md)| Reminder Emails Opt-Out Request | 
 
 ### Return type
@@ -338,7 +288,7 @@ let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new VeloPayments.PayorsApi();
-let payorId = "payorId_example"; // String | The Payor Id
+let payorId = "payorId_example"; // String | The account owner Payor ID
 apiInstance.payorGetBranding(payorId, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -353,7 +303,7 @@ apiInstance.payorGetBranding(payorId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payorId** | **String**| The Payor Id | 
+ **payorId** | **String**| The account owner Payor ID | 
 
 ### Return type
 

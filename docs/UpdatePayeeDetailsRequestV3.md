@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **payeeType** | [**PayeeTypeEnum**](PayeeTypeEnum.md) |  | [optional] 
 **challenge** | [**ChallengeV3**](ChallengeV3.md) |  | [optional] 
 **email** | **String** |  | [optional] 
+**contactSmsNumber** | **String** | The phone number of a device that the payee wishes to receive sms messages on  | [optional] 
 
 

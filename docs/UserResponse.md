@@ -69,6 +69,8 @@ Name | Type | Description | Notes
 
 * `UNREGISTERED` (value: `"UNREGISTERED"`)
 
+* `VERIFIED` (value: `"VERIFIED"`)
+
 
 
 

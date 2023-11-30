@@ -1,8 +1,8 @@
 /**
  * Velo Payments APIs
- * ## Terms and Definitions  Throughout this document and the Velo platform the following terms are used:  * **Payor.** An entity (typically a corporation) which wishes to pay funds to one or more payees via a payout. * **Payee.** The recipient of funds paid out by a payor. * **Payment.** A single transfer of funds from a payor to a payee. * **Payout.** A batch of Payments, typically used by a payor to logically group payments (e.g. by business day). Technically there need be no relationship between the payments in a payout - a single payout can contain payments to multiple payees and/or multiple payments to a single payee. * **Sandbox.** An integration environment provided by Velo Payments which offers a similar API experience to the production environment, but all funding and payment events are simulated, along with many other services such as OFAC sanctions list checking.  ## Overview  The Velo Payments API allows a payor to perform a number of operations. The following is a list of the main capabilities in a natural order of execution:  * Authenticate with the Velo platform * Maintain a collection of payees * Query the payor’s current balance of funds within the platform and perform additional funding * Issue payments to payees * Query the platform for a history of those payments  This document describes the main concepts and APIs required to get up and running with the Velo Payments platform. It is not an exhaustive API reference. For that, please see the separate Velo Payments API Reference.  ## API Considerations  The Velo Payments API is REST based and uses the JSON format for requests and responses.  Most calls are secured using OAuth 2 security and require a valid authentication access token for successful operation. See the Authentication section for details.  Where a dynamic value is required in the examples below, the {token} format is used, suggesting that the caller needs to supply the appropriate value of the token in question (without including the { or } characters).  Where curl examples are given, the –d @filename.json approach is used, indicating that the request body should be placed into a file named filename.json in the current directory. Each of the curl examples in this document should be considered a single line on the command-line, regardless of how they appear in print.  ## Authenticating with the Velo Platform  Once Velo backoffice staff have added your organization as a payor within the Velo platform sandbox, they will create you a payor Id, an API key and an API secret and share these with you in a secure manner.  You will need to use these values to authenticate with the Velo platform in order to gain access to the APIs. The steps to take are explained in the following:  create a string comprising the API key (e.g. 44a9537d-d55d-4b47-8082-14061c2bcdd8) and API secret (e.g. c396b26b-137a-44fd-87f5-34631f8fd529) with a colon between them. E.g. 44a9537d-d55d-4b47-8082-14061c2bcdd8:c396b26b-137a-44fd-87f5-34631f8fd529  base64 encode this string. E.g.: NDRhOTUzN2QtZDU1ZC00YjQ3LTgwODItMTQwNjFjMmJjZGQ4OmMzOTZiMjZiLTEzN2EtNDRmZC04N2Y1LTM0NjMxZjhmZDUyOQ==  create an HTTP **Authorization** header with the value set to e.g. Basic NDRhOTUzN2QtZDU1ZC00YjQ3LTgwODItMTQwNjFjMmJjZGQ4OmMzOTZiMjZiLTEzN2EtNDRmZC04N2Y1LTM0NjMxZjhmZDUyOQ==  perform the Velo authentication REST call using the HTTP header created above e.g. via curl:  ```   curl -X POST \\   -H \"Content-Type: application/json\" \\   -H \"Authorization: Basic NDRhOTUzN2QtZDU1ZC00YjQ3LTgwODItMTQwNjFjMmJjZGQ4OmMzOTZiMjZiLTEzN2EtNDRmZC04N2Y1LTM0NjMxZjhmZDUyOQ==\" \\   'https://api.sandbox.velopayments.com/v1/authenticate?grant_type=client_credentials' ```  If successful, this call will result in a **200** HTTP status code and a response body such as:  ```   {     \"access_token\":\"19f6bafd-93fd-4747-b229-00507bbc991f\",     \"token_type\":\"bearer\",     \"expires_in\":1799,     \"scope\":\"...\"   } ``` ## API access following authentication Following successful authentication, the value of the access_token field in the response (indicated in green above) should then be presented with all subsequent API calls to allow the Velo platform to validate that the caller is authenticated.  This is achieved by setting the HTTP Authorization header with the value set to e.g. Bearer 19f6bafd-93fd-4747-b229-00507bbc991f such as the curl example below:  ```   -H \"Authorization: Bearer 19f6bafd-93fd-4747-b229-00507bbc991f \" ```  If you make other Velo API calls which require authorization but the Authorization header is missing or invalid then you will get a **401** HTTP status response. 
+ * ## Terms and Definitions  Throughout this document and the Velo platform the following terms are used:  * **Payor.** An entity (typically a corporation) which wishes to pay funds to one or more payees via a payout. * **Payee.** The recipient of funds paid out by a payor. * **Payment.** A single transfer of funds from a payor to a payee. * **Payout.** A batch of Payments, typically used by a payor to logically group payments (e.g. by business day). Technically there need be no relationship between the payments in a payout - a single payout can contain payments to multiple payees and/or multiple payments to a single payee. * **Sandbox.** An integration environment provided by Velo Payments which offers a similar API experience to the production environment, but all funding and payment events are simulated, along with many other services such as OFAC sanctions list checking.  ## Overview  The Velo Payments API allows a payor to perform a number of operations. The following is a list of the main capabilities in a natural order of execution:  * Authenticate with the Velo platform * Maintain a collection of payees * Query the payor’s current balance of funds within the platform and perform additional funding * Issue payments to payees * Query the platform for a history of those payments  This document describes the main concepts and APIs required to get up and running with the Velo Payments platform. It is not an exhaustive API reference. For that, please see the separate Velo Payments API Reference.  ## API Considerations  The Velo Payments API is REST based and uses the JSON format for requests and responses.  Most calls are secured using OAuth 2 security and require a valid authentication access token for successful operation. See the Authentication section for details.  Where a dynamic value is required in the examples below, the {token} format is used, suggesting that the caller needs to supply the appropriate value of the token in question (without including the { or } characters).  Where curl examples are given, the –d @filename.json approach is used, indicating that the request body should be placed into a file named filename.json in the current directory. Each of the curl examples in this document should be considered a single line on the command-line, regardless of how they appear in print.  ## Authenticating with the Velo Platform  Once Velo backoffice staff have added your organization as a payor within the Velo platform sandbox, they will create you a payor Id, an API key and an API secret and share these with you in a secure manner.  You will need to use these values to authenticate with the Velo platform in order to gain access to the APIs. The steps to take are explained in the following:  create a string comprising the API key (e.g. 44a9537d-d55d-4b47-8082-14061c2bcdd8) and API secret (e.g. c396b26b-137a-44fd-87f5-34631f8fd529) with a colon between them. E.g. 44a9537d-d55d-4b47-8082-14061c2bcdd8:c396b26b-137a-44fd-87f5-34631f8fd529  base64 encode this string. E.g.: NDRhOTUzN2QtZDU1ZC00YjQ3LTgwODItMTQwNjFjMmJjZGQ4OmMzOTZiMjZiLTEzN2EtNDRmZC04N2Y1LTM0NjMxZjhmZDUyOQ==  create an HTTP **Authorization** header with the value set to e.g. Basic NDRhOTUzN2QtZDU1ZC00YjQ3LTgwODItMTQwNjFjMmJjZGQ4OmMzOTZiMjZiLTEzN2EtNDRmZC04N2Y1LTM0NjMxZjhmZDUyOQ==  perform the Velo authentication REST call using the HTTP header created above e.g. via curl:  ```   curl -X POST \\   -H \"Content-Type: application/json\" \\   -H \"Authorization: Basic NDRhOTUzN2QtZDU1ZC00YjQ3LTgwODItMTQwNjFjMmJjZGQ4OmMzOTZiMjZiLTEzN2EtNDRmZC04N2Y1LTM0NjMxZjhmZDUyOQ==\" \\   'https://api.sandbox.velopayments.com/v1/authenticate?grant_type=client_credentials' ```  If successful, this call will result in a **200** HTTP status code and a response body such as:  ```   {     \"access_token\":\"19f6bafd-93fd-4747-b229-00507bbc991f\",     \"token_type\":\"bearer\",     \"expires_in\":1799,     \"scope\":\"...\"   } ``` ## API access following authentication Following successful authentication, the value of the access_token field in the response (indicated in green above) should then be presented with all subsequent API calls to allow the Velo platform to validate that the caller is authenticated.  This is achieved by setting the HTTP Authorization header with the value set to e.g. Bearer 19f6bafd-93fd-4747-b229-00507bbc991f such as the curl example below:  ```   -H \"Authorization: Bearer 19f6bafd-93fd-4747-b229-00507bbc991f \" ```  If you make other Velo API calls which require authorization but the Authorization header is missing or invalid then you will get a **401** HTTP status response.   ## Http Status Codes Following is a list of Http Status codes that could be returned by the platform      | Status Code            | Description                                                                          |     | -----------------------| -------------------------------------------------------------------------------------|     | 200 OK                 | The request was successfully processed and usually returns a json response           |     | 201 Created            | A resource was created and a Location header is returned linking to the new resource |     | 202 Accepted           | The request has been accepted for processing                                         |     | 204 No Content         | The request has been processed and there is no response (usually deletes and updates)|     | 400 Bad Request        | The request is invalid and should be fixed before retrying                           |     | 401 Unauthorized       | Authentication has failed, usually means the token has expired                       |     | 403 Forbidden          | The user does not have permissions for the request                                   |     | 404 Not Found          | The resource was not found                                                           |     | 409 Conflict           | The resource already exists and there is a conflict                                  |     | 429 Too Many Requests  | The user has submitted too many requests in a given amount of time                   |     | 5xx Server Error       | Platform internal error (should rarely happen)                                       | 
  *
- * The version of the OpenAPI document: 2.35.58
+ * The version of the OpenAPI document: 2.37.150
  * 
  *
  * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
@@ -16,12 +16,15 @@ import ApiClient from './ApiClient';
 import AcceptedPaymentV3 from './model/AcceptedPaymentV3';
 import AccessTokenResponse from './model/AccessTokenResponse';
 import AccessTokenValidationRequest from './model/AccessTokenValidationRequest';
+import AddressV4 from './model/AddressV4';
 import AuthResponse from './model/AuthResponse';
 import AutoTopUpConfigV2 from './model/AutoTopUpConfigV2';
 import AutoTopUpConfigV3 from './model/AutoTopUpConfigV3';
 import Category from './model/Category';
 import ChallengeV3 from './model/ChallengeV3';
 import ChallengeV4 from './model/ChallengeV4';
+import CommonLinkObject from './model/CommonLinkObject';
+import CommonPageObject from './model/CommonPageObject';
 import CompanyV3 from './model/CompanyV3';
 import CompanyV4 from './model/CompanyV4';
 import CreateFundingAccountRequestV2 from './model/CreateFundingAccountRequestV2';
@@ -40,10 +43,13 @@ import CreatePayeesCSVResponseV3RejectedCsvRows from './model/CreatePayeesCSVRes
 import CreatePayeesCSVResponseV4 from './model/CreatePayeesCSVResponseV4';
 import CreatePayeesRequestV3 from './model/CreatePayeesRequestV3';
 import CreatePayeesRequestV4 from './model/CreatePayeesRequestV4';
+import CreatePaymentChannelRequestV4 from './model/CreatePaymentChannelRequestV4';
 import CreatePaymentChannelV3 from './model/CreatePaymentChannelV3';
 import CreatePaymentChannelV4 from './model/CreatePaymentChannelV4';
 import CreatePayorLinkRequest from './model/CreatePayorLinkRequest';
 import CreatePayoutRequestV3 from './model/CreatePayoutRequestV3';
+import CreateTransactionRequest from './model/CreateTransactionRequest';
+import CreateTransactionResponse from './model/CreateTransactionResponse';
 import CreateWebhookRequest from './model/CreateWebhookRequest';
 import DebitEvent from './model/DebitEvent';
 import DebitEventAllOf from './model/DebitEventAllOf';
@@ -59,6 +65,7 @@ import FailedSubmissionV4 from './model/FailedSubmissionV4';
 import FundingAccountResponseV2 from './model/FundingAccountResponseV2';
 import FundingAudit from './model/FundingAudit';
 import FundingEvent from './model/FundingEvent';
+import FundingEvent2 from './model/FundingEvent2';
 import FundingPayorStatusAuditResponse from './model/FundingPayorStatusAuditResponse';
 import FundingRequestV2 from './model/FundingRequestV2';
 import FundingRequestV3 from './model/FundingRequestV3';
@@ -98,7 +105,6 @@ import InvitePayeeRequestV4 from './model/InvitePayeeRequestV4';
 import InviteUserRequest from './model/InviteUserRequest';
 import LinkForResponse from './model/LinkForResponse';
 import ListFundingAccountsResponseV2 from './model/ListFundingAccountsResponseV2';
-import ListFundingAccountsResponseV2Links from './model/ListFundingAccountsResponseV2Links';
 import ListFundingAccountsResponseV2Page from './model/ListFundingAccountsResponseV2Page';
 import ListPaymentsResponseV3 from './model/ListPaymentsResponseV3';
 import ListPaymentsResponseV3Page from './model/ListPaymentsResponseV3Page';
@@ -119,6 +125,7 @@ import NotificationsV3 from './model/NotificationsV3';
 import OnboardingStatusChanged from './model/OnboardingStatusChanged';
 import PageForResponse from './model/PageForResponse';
 import PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse from './model/PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse';
+import PageResourceTransactions from './model/PageResourceTransactions';
 import PagedPayeeInvitationStatusResponseV3 from './model/PagedPayeeInvitationStatusResponseV3';
 import PagedPayeeInvitationStatusResponseV3Page from './model/PagedPayeeInvitationStatusResponseV3Page';
 import PagedPayeeInvitationStatusResponseV4 from './model/PagedPayeeInvitationStatusResponseV4';
@@ -158,8 +165,12 @@ import PayeeType from './model/PayeeType';
 import PayeeTypeEnum from './model/PayeeTypeEnum';
 import PayeeUserSelfUpdateRequest from './model/PayeeUserSelfUpdateRequest';
 import PaymentChannelCountry from './model/PaymentChannelCountry';
+import PaymentChannelOrderRequestV4 from './model/PaymentChannelOrderRequestV4';
+import PaymentChannelResponseV4 from './model/PaymentChannelResponseV4';
 import PaymentChannelRule from './model/PaymentChannelRule';
 import PaymentChannelRulesResponse from './model/PaymentChannelRulesResponse';
+import PaymentChannelSummaryV4 from './model/PaymentChannelSummaryV4';
+import PaymentChannelsResponseV4 from './model/PaymentChannelsResponseV4';
 import PaymentDelta from './model/PaymentDelta';
 import PaymentDeltaResponse from './model/PaymentDeltaResponse';
 import PaymentDeltaResponseV1 from './model/PaymentDeltaResponseV1';
@@ -177,7 +188,6 @@ import PaymentResponseV4Payout from './model/PaymentResponseV4Payout';
 import PaymentStatusChanged from './model/PaymentStatusChanged';
 import PaymentStatusChangedAllOf from './model/PaymentStatusChangedAllOf';
 import PaymentV3 from './model/PaymentV3';
-import PayorAddress from './model/PayorAddress';
 import PayorAddressV2 from './model/PayorAddressV2';
 import PayorAmlTransaction from './model/PayorAmlTransaction';
 import PayorAmlTransactionV3 from './model/PayorAmlTransactionV3';
@@ -186,11 +196,13 @@ import PayorCreateApiKeyRequest from './model/PayorCreateApiKeyRequest';
 import PayorCreateApiKeyResponse from './model/PayorCreateApiKeyResponse';
 import PayorCreateApplicationRequest from './model/PayorCreateApplicationRequest';
 import PayorEmailOptOutRequest from './model/PayorEmailOptOutRequest';
+import PayorFundingDetected from './model/PayorFundingDetected';
+import PayorFundingDetectedAllOf from './model/PayorFundingDetectedAllOf';
 import PayorLinksResponse from './model/PayorLinksResponse';
 import PayorLinksResponseLinks from './model/PayorLinksResponseLinks';
 import PayorLinksResponsePayors from './model/PayorLinksResponsePayors';
 import PayorLogoRequest from './model/PayorLogoRequest';
-import PayorV1 from './model/PayorV1';
+import PayorToPaymentChannelMappingV4 from './model/PayorToPaymentChannelMappingV4';
 import PayorV2 from './model/PayorV2';
 import PayoutCompanyV3 from './model/PayoutCompanyV3';
 import PayoutIndividualV3 from './model/PayoutIndividualV3';
@@ -236,13 +248,13 @@ import SupportedCountry from './model/SupportedCountry';
 import SupportedCountryV2 from './model/SupportedCountryV2';
 import SupportedCurrencyResponseV2 from './model/SupportedCurrencyResponseV2';
 import SupportedCurrencyV2 from './model/SupportedCurrencyV2';
+import TransactionResponse from './model/TransactionResponse';
 import TransferRequestV2 from './model/TransferRequestV2';
 import TransferRequestV3 from './model/TransferRequestV3';
-import TransmissionTypes from './model/TransmissionTypes';
-import TransmissionTypes2 from './model/TransmissionTypes2';
 import UnregisterMFARequest from './model/UnregisterMFARequest';
 import UpdatePayeeDetailsRequestV3 from './model/UpdatePayeeDetailsRequestV3';
 import UpdatePayeeDetailsRequestV4 from './model/UpdatePayeeDetailsRequestV4';
+import UpdatePaymentChannelRequestV4 from './model/UpdatePaymentChannelRequestV4';
 import UpdateRemoteIdRequestV3 from './model/UpdateRemoteIdRequestV3';
 import UpdateRemoteIdRequestV4 from './model/UpdateRemoteIdRequestV4';
 import UpdateWebhookRequest from './model/UpdateWebhookRequest';
@@ -263,6 +275,7 @@ import FundingApi from './api/FundingApi';
 import FundingManagerPrivateApi from './api/FundingManagerPrivateApi';
 import LoginApi from './api/LoginApi';
 import PayeeInvitationApi from './api/PayeeInvitationApi';
+import PayeePaymentChannelsApi from './api/PayeePaymentChannelsApi';
 import PayeesApi from './api/PayeesApi';
 import PaymentAuditServiceApi from './api/PaymentAuditServiceApi';
 import PaymentAuditServiceDeprecatedApi from './api/PaymentAuditServiceDeprecatedApi';
@@ -272,12 +285,13 @@ import PayorsPrivateApi from './api/PayorsPrivateApi';
 import PayoutsApi from './api/PayoutsApi';
 import SourceAccountsApi from './api/SourceAccountsApi';
 import TokensApi from './api/TokensApi';
+import TransactionsApi from './api/TransactionsApi';
 import UsersApi from './api/UsersApi';
 import WebhooksApi from './api/WebhooksApi';
 
 
 /**
-* ## Terms and Definitions  Throughout this document and the Velo platform the following terms are used:  * **Payor.** An entity (typically a corporation) which wishes to pay funds to one or more payees via a payout. * **Payee.** The recipient of funds paid out by a payor. * **Payment.** A single transfer of funds from a payor to a payee. * **Payout.** A batch of Payments, typically used by a payor to logically group payments (e.g. by business day). Technically there need be no relationship between the payments in a payout - a single payout can contain payments to multiple payees and/or multiple payments to a single payee. * **Sandbox.** An integration environment provided by Velo Payments which offers a similar API experience to the production environment, but all funding and payment events are simulated, along with many other services such as OFAC sanctions list checking.  ## Overview  The Velo Payments API allows a payor to perform a number of operations. The following is a list of the main capabilities in a natural order of execution:  * Authenticate with the Velo platform * Maintain a collection of payees * Query the payor’s current balance of funds within the platform and perform additional funding * Issue payments to payees * Query the platform for a history of those payments  This document describes the main concepts and APIs required to get up and running with the Velo Payments platform. It is not an exhaustive API reference. For that, please see the separate Velo Payments API Reference.  ## API Considerations  The Velo Payments API is REST based and uses the JSON format for requests and responses.  Most calls are secured using OAuth 2 security and require a valid authentication access token for successful operation. See the Authentication section for details.  Where a dynamic value is required in the examples below, the {token} format is used, suggesting that the caller needs to supply the appropriate value of the token in question (without including the { or } characters).  Where curl examples are given, the –d @filename.json approach is used, indicating that the request body should be placed into a file named filename.json in the current directory. Each of the curl examples in this document should be considered a single line on the command-line, regardless of how they appear in print.  ## Authenticating with the Velo Platform  Once Velo backoffice staff have added your organization as a payor within the Velo platform sandbox, they will create you a payor Id, an API key and an API secret and share these with you in a secure manner.  You will need to use these values to authenticate with the Velo platform in order to gain access to the APIs. The steps to take are explained in the following:  create a string comprising the API key (e.g. 44a9537d-d55d-4b47-8082-14061c2bcdd8) and API secret (e.g. c396b26b-137a-44fd-87f5-34631f8fd529) with a colon between them. E.g. 44a9537d-d55d-4b47-8082-14061c2bcdd8:c396b26b-137a-44fd-87f5-34631f8fd529  base64 encode this string. E.g.: NDRhOTUzN2QtZDU1ZC00YjQ3LTgwODItMTQwNjFjMmJjZGQ4OmMzOTZiMjZiLTEzN2EtNDRmZC04N2Y1LTM0NjMxZjhmZDUyOQ&#x3D;&#x3D;  create an HTTP **Authorization** header with the value set to e.g. Basic NDRhOTUzN2QtZDU1ZC00YjQ3LTgwODItMTQwNjFjMmJjZGQ4OmMzOTZiMjZiLTEzN2EtNDRmZC04N2Y1LTM0NjMxZjhmZDUyOQ&#x3D;&#x3D;  perform the Velo authentication REST call using the HTTP header created above e.g. via curl:  &#x60;&#x60;&#x60;   curl -X POST \\   -H \&quot;Content-Type: application/json\&quot; \\   -H \&quot;Authorization: Basic NDRhOTUzN2QtZDU1ZC00YjQ3LTgwODItMTQwNjFjMmJjZGQ4OmMzOTZiMjZiLTEzN2EtNDRmZC04N2Y1LTM0NjMxZjhmZDUyOQ&#x3D;&#x3D;\&quot; \\   &#39;https://api.sandbox.velopayments.com/v1/authenticate?grant_type&#x3D;client_credentials&#39; &#x60;&#x60;&#x60;  If successful, this call will result in a **200** HTTP status code and a response body such as:  &#x60;&#x60;&#x60;   {     \&quot;access_token\&quot;:\&quot;19f6bafd-93fd-4747-b229-00507bbc991f\&quot;,     \&quot;token_type\&quot;:\&quot;bearer\&quot;,     \&quot;expires_in\&quot;:1799,     \&quot;scope\&quot;:\&quot;...\&quot;   } &#x60;&#x60;&#x60; ## API access following authentication Following successful authentication, the value of the access_token field in the response (indicated in green above) should then be presented with all subsequent API calls to allow the Velo platform to validate that the caller is authenticated.  This is achieved by setting the HTTP Authorization header with the value set to e.g. Bearer 19f6bafd-93fd-4747-b229-00507bbc991f such as the curl example below:  &#x60;&#x60;&#x60;   -H \&quot;Authorization: Bearer 19f6bafd-93fd-4747-b229-00507bbc991f \&quot; &#x60;&#x60;&#x60;  If you make other Velo API calls which require authorization but the Authorization header is missing or invalid then you will get a **401** HTTP status response. .<br>
+* ## Terms and Definitions  Throughout this document and the Velo platform the following terms are used:  * **Payor.** An entity (typically a corporation) which wishes to pay funds to one or more payees via a payout. * **Payee.** The recipient of funds paid out by a payor. * **Payment.** A single transfer of funds from a payor to a payee. * **Payout.** A batch of Payments, typically used by a payor to logically group payments (e.g. by business day). Technically there need be no relationship between the payments in a payout - a single payout can contain payments to multiple payees and/or multiple payments to a single payee. * **Sandbox.** An integration environment provided by Velo Payments which offers a similar API experience to the production environment, but all funding and payment events are simulated, along with many other services such as OFAC sanctions list checking.  ## Overview  The Velo Payments API allows a payor to perform a number of operations. The following is a list of the main capabilities in a natural order of execution:  * Authenticate with the Velo platform * Maintain a collection of payees * Query the payor’s current balance of funds within the platform and perform additional funding * Issue payments to payees * Query the platform for a history of those payments  This document describes the main concepts and APIs required to get up and running with the Velo Payments platform. It is not an exhaustive API reference. For that, please see the separate Velo Payments API Reference.  ## API Considerations  The Velo Payments API is REST based and uses the JSON format for requests and responses.  Most calls are secured using OAuth 2 security and require a valid authentication access token for successful operation. See the Authentication section for details.  Where a dynamic value is required in the examples below, the {token} format is used, suggesting that the caller needs to supply the appropriate value of the token in question (without including the { or } characters).  Where curl examples are given, the –d @filename.json approach is used, indicating that the request body should be placed into a file named filename.json in the current directory. Each of the curl examples in this document should be considered a single line on the command-line, regardless of how they appear in print.  ## Authenticating with the Velo Platform  Once Velo backoffice staff have added your organization as a payor within the Velo platform sandbox, they will create you a payor Id, an API key and an API secret and share these with you in a secure manner.  You will need to use these values to authenticate with the Velo platform in order to gain access to the APIs. The steps to take are explained in the following:  create a string comprising the API key (e.g. 44a9537d-d55d-4b47-8082-14061c2bcdd8) and API secret (e.g. c396b26b-137a-44fd-87f5-34631f8fd529) with a colon between them. E.g. 44a9537d-d55d-4b47-8082-14061c2bcdd8:c396b26b-137a-44fd-87f5-34631f8fd529  base64 encode this string. E.g.: NDRhOTUzN2QtZDU1ZC00YjQ3LTgwODItMTQwNjFjMmJjZGQ4OmMzOTZiMjZiLTEzN2EtNDRmZC04N2Y1LTM0NjMxZjhmZDUyOQ&#x3D;&#x3D;  create an HTTP **Authorization** header with the value set to e.g. Basic NDRhOTUzN2QtZDU1ZC00YjQ3LTgwODItMTQwNjFjMmJjZGQ4OmMzOTZiMjZiLTEzN2EtNDRmZC04N2Y1LTM0NjMxZjhmZDUyOQ&#x3D;&#x3D;  perform the Velo authentication REST call using the HTTP header created above e.g. via curl:  &#x60;&#x60;&#x60;   curl -X POST \\   -H \&quot;Content-Type: application/json\&quot; \\   -H \&quot;Authorization: Basic NDRhOTUzN2QtZDU1ZC00YjQ3LTgwODItMTQwNjFjMmJjZGQ4OmMzOTZiMjZiLTEzN2EtNDRmZC04N2Y1LTM0NjMxZjhmZDUyOQ&#x3D;&#x3D;\&quot; \\   &#39;https://api.sandbox.velopayments.com/v1/authenticate?grant_type&#x3D;client_credentials&#39; &#x60;&#x60;&#x60;  If successful, this call will result in a **200** HTTP status code and a response body such as:  &#x60;&#x60;&#x60;   {     \&quot;access_token\&quot;:\&quot;19f6bafd-93fd-4747-b229-00507bbc991f\&quot;,     \&quot;token_type\&quot;:\&quot;bearer\&quot;,     \&quot;expires_in\&quot;:1799,     \&quot;scope\&quot;:\&quot;...\&quot;   } &#x60;&#x60;&#x60; ## API access following authentication Following successful authentication, the value of the access_token field in the response (indicated in green above) should then be presented with all subsequent API calls to allow the Velo platform to validate that the caller is authenticated.  This is achieved by setting the HTTP Authorization header with the value set to e.g. Bearer 19f6bafd-93fd-4747-b229-00507bbc991f such as the curl example below:  &#x60;&#x60;&#x60;   -H \&quot;Authorization: Bearer 19f6bafd-93fd-4747-b229-00507bbc991f \&quot; &#x60;&#x60;&#x60;  If you make other Velo API calls which require authorization but the Authorization header is missing or invalid then you will get a **401** HTTP status response.   ## Http Status Codes Following is a list of Http Status codes that could be returned by the platform      | Status Code            | Description                                                                          |     | -----------------------| -------------------------------------------------------------------------------------|     | 200 OK                 | The request was successfully processed and usually returns a json response           |     | 201 Created            | A resource was created and a Location header is returned linking to the new resource |     | 202 Accepted           | The request has been accepted for processing                                         |     | 204 No Content         | The request has been processed and there is no response (usually deletes and updates)|     | 400 Bad Request        | The request is invalid and should be fixed before retrying                           |     | 401 Unauthorized       | Authentication has failed, usually means the token has expired                       |     | 403 Forbidden          | The user does not have permissions for the request                                   |     | 404 Not Found          | The resource was not found                                                           |     | 409 Conflict           | The resource already exists and there is a conflict                                  |     | 429 Too Many Requests  | The user has submitted too many requests in a given amount of time                   |     | 5xx Server Error       | Platform internal error (should rarely happen)                                       | .<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
@@ -305,7 +319,7 @@ import WebhooksApi from './api/WebhooksApi';
 * </pre>
 * </p>
 * @module index
-* @version 2.35.58
+* @version 2.37.150-beta.1
 */
 export {
     /**
@@ -331,6 +345,12 @@ export {
      * @property {module:model/AccessTokenValidationRequest}
      */
     AccessTokenValidationRequest,
+
+    /**
+     * The AddressV4 model constructor.
+     * @property {module:model/AddressV4}
+     */
+    AddressV4,
 
     /**
      * The AuthResponse model constructor.
@@ -367,6 +387,18 @@ export {
      * @property {module:model/ChallengeV4}
      */
     ChallengeV4,
+
+    /**
+     * The CommonLinkObject model constructor.
+     * @property {module:model/CommonLinkObject}
+     */
+    CommonLinkObject,
+
+    /**
+     * The CommonPageObject model constructor.
+     * @property {module:model/CommonPageObject}
+     */
+    CommonPageObject,
 
     /**
      * The CompanyV3 model constructor.
@@ -477,6 +509,12 @@ export {
     CreatePayeesRequestV4,
 
     /**
+     * The CreatePaymentChannelRequestV4 model constructor.
+     * @property {module:model/CreatePaymentChannelRequestV4}
+     */
+    CreatePaymentChannelRequestV4,
+
+    /**
      * The CreatePaymentChannelV3 model constructor.
      * @property {module:model/CreatePaymentChannelV3}
      */
@@ -499,6 +537,18 @@ export {
      * @property {module:model/CreatePayoutRequestV3}
      */
     CreatePayoutRequestV3,
+
+    /**
+     * The CreateTransactionRequest model constructor.
+     * @property {module:model/CreateTransactionRequest}
+     */
+    CreateTransactionRequest,
+
+    /**
+     * The CreateTransactionResponse model constructor.
+     * @property {module:model/CreateTransactionResponse}
+     */
+    CreateTransactionResponse,
 
     /**
      * The CreateWebhookRequest model constructor.
@@ -589,6 +639,12 @@ export {
      * @property {module:model/FundingEvent}
      */
     FundingEvent,
+
+    /**
+     * The FundingEvent2 model constructor.
+     * @property {module:model/FundingEvent2}
+     */
+    FundingEvent2,
 
     /**
      * The FundingPayorStatusAuditResponse model constructor.
@@ -825,12 +881,6 @@ export {
     ListFundingAccountsResponseV2,
 
     /**
-     * The ListFundingAccountsResponseV2Links model constructor.
-     * @property {module:model/ListFundingAccountsResponseV2Links}
-     */
-    ListFundingAccountsResponseV2Links,
-
-    /**
      * The ListFundingAccountsResponseV2Page model constructor.
      * @property {module:model/ListFundingAccountsResponseV2Page}
      */
@@ -949,6 +999,12 @@ export {
      * @property {module:model/PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse}
      */
     PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse,
+
+    /**
+     * The PageResourceTransactions model constructor.
+     * @property {module:model/PageResourceTransactions}
+     */
+    PageResourceTransactions,
 
     /**
      * The PagedPayeeInvitationStatusResponseV3 model constructor.
@@ -1185,6 +1241,18 @@ export {
     PaymentChannelCountry,
 
     /**
+     * The PaymentChannelOrderRequestV4 model constructor.
+     * @property {module:model/PaymentChannelOrderRequestV4}
+     */
+    PaymentChannelOrderRequestV4,
+
+    /**
+     * The PaymentChannelResponseV4 model constructor.
+     * @property {module:model/PaymentChannelResponseV4}
+     */
+    PaymentChannelResponseV4,
+
+    /**
      * The PaymentChannelRule model constructor.
      * @property {module:model/PaymentChannelRule}
      */
@@ -1195,6 +1263,18 @@ export {
      * @property {module:model/PaymentChannelRulesResponse}
      */
     PaymentChannelRulesResponse,
+
+    /**
+     * The PaymentChannelSummaryV4 model constructor.
+     * @property {module:model/PaymentChannelSummaryV4}
+     */
+    PaymentChannelSummaryV4,
+
+    /**
+     * The PaymentChannelsResponseV4 model constructor.
+     * @property {module:model/PaymentChannelsResponseV4}
+     */
+    PaymentChannelsResponseV4,
 
     /**
      * The PaymentDelta model constructor.
@@ -1299,12 +1379,6 @@ export {
     PaymentV3,
 
     /**
-     * The PayorAddress model constructor.
-     * @property {module:model/PayorAddress}
-     */
-    PayorAddress,
-
-    /**
      * The PayorAddressV2 model constructor.
      * @property {module:model/PayorAddressV2}
      */
@@ -1353,6 +1427,18 @@ export {
     PayorEmailOptOutRequest,
 
     /**
+     * The PayorFundingDetected model constructor.
+     * @property {module:model/PayorFundingDetected}
+     */
+    PayorFundingDetected,
+
+    /**
+     * The PayorFundingDetectedAllOf model constructor.
+     * @property {module:model/PayorFundingDetectedAllOf}
+     */
+    PayorFundingDetectedAllOf,
+
+    /**
      * The PayorLinksResponse model constructor.
      * @property {module:model/PayorLinksResponse}
      */
@@ -1377,10 +1463,10 @@ export {
     PayorLogoRequest,
 
     /**
-     * The PayorV1 model constructor.
-     * @property {module:model/PayorV1}
+     * The PayorToPaymentChannelMappingV4 model constructor.
+     * @property {module:model/PayorToPaymentChannelMappingV4}
      */
-    PayorV1,
+    PayorToPaymentChannelMappingV4,
 
     /**
      * The PayorV2 model constructor.
@@ -1653,6 +1739,12 @@ export {
     SupportedCurrencyV2,
 
     /**
+     * The TransactionResponse model constructor.
+     * @property {module:model/TransactionResponse}
+     */
+    TransactionResponse,
+
+    /**
      * The TransferRequestV2 model constructor.
      * @property {module:model/TransferRequestV2}
      */
@@ -1663,18 +1755,6 @@ export {
      * @property {module:model/TransferRequestV3}
      */
     TransferRequestV3,
-
-    /**
-     * The TransmissionTypes model constructor.
-     * @property {module:model/TransmissionTypes}
-     */
-    TransmissionTypes,
-
-    /**
-     * The TransmissionTypes2 model constructor.
-     * @property {module:model/TransmissionTypes2}
-     */
-    TransmissionTypes2,
 
     /**
      * The UnregisterMFARequest model constructor.
@@ -1693,6 +1773,12 @@ export {
      * @property {module:model/UpdatePayeeDetailsRequestV4}
      */
     UpdatePayeeDetailsRequestV4,
+
+    /**
+     * The UpdatePaymentChannelRequestV4 model constructor.
+     * @property {module:model/UpdatePaymentChannelRequestV4}
+     */
+    UpdatePaymentChannelRequestV4,
 
     /**
      * The UpdateRemoteIdRequestV3 model constructor.
@@ -1815,6 +1901,12 @@ export {
     PayeeInvitationApi,
 
     /**
+    * The PayeePaymentChannelsApi service constructor.
+    * @property {module:api/PayeePaymentChannelsApi}
+    */
+    PayeePaymentChannelsApi,
+
+    /**
     * The PayeesApi service constructor.
     * @property {module:api/PayeesApi}
     */
@@ -1867,6 +1959,12 @@ export {
     * @property {module:api/TokensApi}
     */
     TokensApi,
+
+    /**
+    * The TransactionsApi service constructor.
+    * @property {module:api/TransactionsApi}
+    */
+    TransactionsApi,
 
     /**
     * The UsersApi service constructor.

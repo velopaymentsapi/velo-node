@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/csv
+- **Accept**: application/csv, application/json
 
 
 ## getFundingsV4
@@ -482,11 +482,14 @@ let opts = {
   'submittedDateFrom': new Date("2013-10-20"), // Date | The submitted date from range filter. Format is yyyy-MM-dd.
   'submittedDateTo': new Date("2013-10-20"), // Date | The submitted date to range filter. Format is yyyy-MM-dd.
   'paymentMemo': "paymentMemo_example", // String | The payment memo filter. This filters via a case insensitive substring match.
+  'payorPaymentId': "payorPaymentId_example", // String | Payor's Id of the Payment
   'railsId': "railsId_example", // String | Payout Rails ID filter - case insensitive match. Any value is allowed, but you should use one of the supported railsId values. To get this list of values, you should call the 'Get Supported Rails' endpoint. 
   'scheduledForDateFrom': new Date("2013-10-20"), // Date | Filter payouts scheduled to run on or after the given date. Format is yyyy-MM-dd.
   'scheduledForDateTo': new Date("2013-10-20"), // Date | Filter payouts scheduled to run on or before the given date. Format is yyyy-MM-dd.
   'scheduleStatus': "scheduleStatus_example", // String | Payout Schedule Status
   'postInstructFxStatus': "postInstructFxStatus_example", // String | The status of the post instruct FX step if one was required for the payment
+  'transactionReference': "transactionReference_example", // String | Query for all payments associated with a specific transaction reference
+  'transactionId': "transactionId_example", // String | Query for all payments associated with a specific transaction id
   'page': 1, // Number | Page number. Default is 1.
   'pageSize': 25, // Number | The number of results to return in a page
   'sort': "sort_example", // String | List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by submittedDateTime:desc,paymentId:asc The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime, status and paymentId 
@@ -523,11 +526,14 @@ Name | Type | Description  | Notes
  **submittedDateFrom** | **Date**| The submitted date from range filter. Format is yyyy-MM-dd. | [optional] 
  **submittedDateTo** | **Date**| The submitted date to range filter. Format is yyyy-MM-dd. | [optional] 
  **paymentMemo** | **String**| The payment memo filter. This filters via a case insensitive substring match. | [optional] 
+ **payorPaymentId** | **String**| Payor&#39;s Id of the Payment | [optional] 
  **railsId** | **String**| Payout Rails ID filter - case insensitive match. Any value is allowed, but you should use one of the supported railsId values. To get this list of values, you should call the &#39;Get Supported Rails&#39; endpoint.  | [optional] 
  **scheduledForDateFrom** | **Date**| Filter payouts scheduled to run on or after the given date. Format is yyyy-MM-dd. | [optional] 
  **scheduledForDateTo** | **Date**| Filter payouts scheduled to run on or before the given date. Format is yyyy-MM-dd. | [optional] 
  **scheduleStatus** | **String**| Payout Schedule Status | [optional] 
  **postInstructFxStatus** | **String**| The status of the post instruct FX step if one was required for the payment | [optional] 
+ **transactionReference** | **String**| Query for all payments associated with a specific transaction reference | [optional] 
+ **transactionId** | **String**| Query for all payments associated with a specific transaction id | [optional] 
  **page** | **Number**| Page number. Default is 1. | [optional] [default to 1]
  **pageSize** | **Number**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,status:asc). Default is sort by submittedDateTime:desc,paymentId:asc The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime, status and paymentId  | [optional] 
